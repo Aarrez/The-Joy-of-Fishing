@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -1, y: -1, z: 0}
-      leftTangent: {x: 0.53597367, y: -0.00048214197, z: -0}
-      rightTangent: {x: -0.53597367, y: 0.00048214197, z: 0}
+    - position: {x: -7.2016253, y: -2.2265053, z: 0}
+      leftTangent: {x: -0.08648482, y: -2.0032253, z: -0}
+      rightTangent: {x: 0.1551342, y: 3.5933328, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -2, y: 1, z: 0}
+    - position: {x: -2.4145932, y: 2.5892744, z: 0}
       leftTangent: {x: -1.0023332, y: 0.0010559559, z: 0}
       rightTangent: {x: 1.0023332, y: -0.0010559559, z: -0}
       mode: 1
@@ -260,9 +260,9 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 2, y: 1, z: 0}
-      leftTangent: {x: -1.0005913, y: -0.0016920567, z: -0}
-      rightTangent: {x: 1.0005913, y: 0.0016920567, z: 0}
+    - position: {x: 2.3309977, y: 1.1436412, z: 0}
+      leftTangent: {x: -0.8343884, y: 0.5522508, z: -0}
+      rightTangent: {x: 0.48435807, y: -0.3205787, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -270,9 +270,39 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 1, y: -1, z: 0}
-      leftTangent: {x: 0.54391515, y: 0.0004222989, z: 0}
-      rightTangent: {x: -0.54391515, y: -0.0004222989, z: -0}
+    - position: {x: 3.957674, y: -2.3200521, z: 0}
+      leftTangent: {x: -1.1716604, y: 0.9885631, z: -0}
+      rightTangent: {x: 1.4658327, y: -1.2367647, z: 0}
+      mode: 1
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 9.011214, y: -3.9165592, z: 0}
+      leftTangent: {x: 0.09298229, y: 1.4644852, z: 0}
+      rightTangent: {x: -0.07592106, y: -1.2408099, z: 0}
+      mode: 1
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: 0.5705707, y: -7.7549844, z: 0}
+      leftTangent: {x: 3.8994076, y: 1.6664834, z: 0}
+      rightTangent: {x: -6.0801873, y: -2.5984797, z: -0}
+      mode: 1
+      height: 1
+      bevelCutoff: 0
+      bevelSize: 0
+      spriteIndex: 0
+      corner: 1
+      m_CornerMode: 1
+    - position: {x: -5.7002735, y: -5.9700856, z: 0}
+      leftTangent: {x: 0.8377316, y: -1.0023588, z: -0}
+      rightTangent: {x: -0.61379766, y: 0.7344184, z: 0}
       mode: 1
       height: 1
       bevelCutoff: 0
@@ -352,8 +382,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0.00029850006, y: -0.0002721548, z: 0}
-    m_Extent: {x: 2.8385468, y: 1.500067, z: 0}
+    m_Center: {x: 0.90215635, y: -3.0636911, z: 0}
+    m_Extent: {x: 8.607191, y: 6.1529455, z: 0}
 --- !u!4 &1288949260
 Transform:
   m_ObjectHideFlags: 0
