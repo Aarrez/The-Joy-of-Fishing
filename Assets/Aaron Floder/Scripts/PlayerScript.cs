@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ExampleUnityScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     private Rigidbody2D rig2d;
 
@@ -9,7 +9,7 @@ public class ExampleUnityScript : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 10f;
 
-    [SerializeField] private uint health = 100;
+    [SerializeField] protected uint health = 100;
     private uint currentHealth;
 
     private Vector2 InputVector = Vector2.zero;
@@ -26,11 +26,13 @@ public class ExampleUnityScript : MonoBehaviour
         currentHealth = health;
     }
 
+    //Subscribes the GetInput function to DoMove event
     private void OnEnable()
     {
         InputScript.DoMove += GetInput;
     }
 
+    //UnSubscribes the GetInput function
     private void OnDisable()
     {
         InputScript.DoMove -= GetInput;
@@ -38,15 +40,11 @@ public class ExampleUnityScript : MonoBehaviour
 
     private void Update()
     {
-        Movement();
     }
 
     private void FixedUpdate()
     {
-    }
-
-    private void LateUpdate()
-    {
+        Movement(); //If using Rigidbody
     }
 
     private void GetInput()
@@ -54,11 +52,13 @@ public class ExampleUnityScript : MonoBehaviour
         InputVector = InputScript.MoveCtx().ReadValue<Vector2>();
     }
 
+    //The method takes care of player movement
     private void Movement()
     {
         rig2d.velocity = InputVector * moveSpeed;
     }
 
+    //Call this method to reduce the amount health
     private void TakeDamage()
     {
         currentHealth -= 10;

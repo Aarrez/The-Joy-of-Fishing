@@ -9,6 +9,14 @@ public class MoveAi : MonoBehaviour
     private AIPath path;
     private Transform player;
 
+    private Vector3 wander = Vector3.zero;
+
+    //Max distance from the Ai it can wander
+    [SerializeField] private float wanderRadius = 10f;
+
+    //The amount of random movment when moveing towards the destination
+    [SerializeField] private float wanderJitter = 1f;
+
     private float dist = 0f;
 
     private void Awake()
@@ -28,13 +36,7 @@ public class MoveAi : MonoBehaviour
         AiMovement();
     }
 
-    private Vector3 wander = Vector3.zero;
-
-    [SerializeField] private float wanderRadius = 10f;
-
-    [SerializeField] private float wanderDist = 15f;
-    [SerializeField] private float wanderJitter = 1f;
-
+    //Method that gets a random position in the world and sets the destination
     private void Wander()
     {
         wander += new Vector3(Random.Range(-1f, 1f) * wanderJitter, Random.Range(-1f, 1f) * wanderJitter);
@@ -42,24 +44,26 @@ public class MoveAi : MonoBehaviour
         wander = wander.normalized;
         wander *= wanderRadius;
 
-        Vector3 targetLocal = wander + new Vector3(0f, 0f, wanderDist);
-        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(targetLocal);
+        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(wander);
 
         Seek(targetWorld);
     }
 
+    //Sets a position for the Ai to move towards
     private void Seek(Vector3 target)
     {
         agent.StartPath(this.transform.position, target);
     }
 
+    //Does the exact opposite of Seek()
     private void Flee(Vector3 position)
     {
         Vector3 fleeVector = position - this.transform.position;
         Vector3 fleePos = this.transform.position - fleeVector;
-        agent.StartPath(this.transform.position, this.transform.position - fleeVector);
+        agent.StartPath(this.transform.position, fleePos);
     }
 
+    //Main movement method
     private void AiMovement()
     {
         dist = Vector3.Distance(this.transform.position, player.position);
