@@ -6,10 +6,19 @@
             "id": "5a42b186-8fb9-4689-9e6f-707cd75d8cdf",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "MoveBoat",
                     "type": "Value",
                     "id": "ba9bc187-58d8-426f-9dc4-03e996c53676",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "FishingBait",
+                    "type": "Value",
+                    "id": "52e30900-4b25-440a-b0ac-92ce207b9c71",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -41,7 +50,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -52,7 +61,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -63,7 +72,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -74,7 +83,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -85,7 +94,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -96,7 +105,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -107,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -118,7 +127,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -129,7 +138,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -140,7 +149,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -151,7 +160,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -162,7 +171,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Move",
+                    "action": "MoveBoat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -253,6 +262,39 @@
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "b851d816-6a57-4811-b6dd-77e61492458a",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FishingBait",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5e2f92cb-e373-4b7f-9aaa-105a7689f379",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "FishingBait",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "3c134801-e072-4d62-a9df-a189b2e340f0",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "FishingBait",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

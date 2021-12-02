@@ -8,7 +8,9 @@ public class InputScript : MonoBehaviour
 
     public static event Action DoMove;
 
-    public static Func<InputAction.CallbackContext> MoveCtx;
+    public static event Action MoveLine;
+
+    public static Func<InputAction.CallbackContext> MoveCtx, LineCtx;
 
     private void Awake()
     {
@@ -17,23 +19,39 @@ public class InputScript : MonoBehaviour
 
     private void OnEnable()
     {
-        joyOfFishing.Player.Move.performed += context =>
+        joyOfFishing.Player.MoveBoat.performed += context =>
         {
             MoveCtx = delegate () { return context; };
             DoMove?.Invoke();
         };
 
-        joyOfFishing.Player.Move.canceled += context =>
+        joyOfFishing.Player.MoveBoat.canceled += context =>
         {
             MoveCtx = delegate () { return context; };
             DoMove?.Invoke();
         };
 
-        joyOfFishing.Player.Move.Enable();
+        joyOfFishing.Player.MoveBoat.Enable();
+
+        joyOfFishing.Player.FishingBait.performed += ctx =>
+        {
+            LineCtx = delegate () { return ctx; };
+            MoveLine?.Invoke();
+        };
+
+        joyOfFishing.Player.FishingBait.canceled += ctx =>
+        {
+            LineCtx = delegate () { return ctx; };
+            MoveLine?.Invoke();
+        };
+
+        joyOfFishing.Player.FishingBait.Enable();
     }
 
     private void OnDisable()
     {
-        joyOfFishing.Player.Move.Disable();
+        joyOfFishing.Player.MoveBoat.Disable();
+
+        joyOfFishing.Player.FishingBait.Disable();
     }
 }
