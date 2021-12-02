@@ -77,7 +77,7 @@ public class MoveAi : MonoBehaviour
         if (dist < 5)
         {
             path.canMove = true;
-            Flee(player.position);
+            Seek(player.position);
         }
     }
 }
