@@ -203,8 +203,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27126746}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.069999695, y: -22, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -7.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -260,9 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bf7cda3dcbf764baefe4390b8a749a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reelUpGravity: -1
-  reelDownGravity: 2
-  noInputGravity: 1
+  reelUp: 0.02
+  reelDown: 0.04
 --- !u!114 &27126754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &107371592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -739,7 +738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &509573255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -979,7 +978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.9999967, y: -7.6500497, z: -10}
+  m_LocalPosition: {x: 8.070001, y: 6.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1094,7 +1093,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 698022384}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.00000333786, y: -0.23995066, z: 0}
+  m_LocalPosition: {x: -0.0000009536743, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1458,7 +1457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1759035869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,8 +1836,8 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 22.000113
+  m_AutoConfigureDistance: 0
+  m_Distance: 7.41
   m_MaxDistanceOnly: 1
 --- !u!50 &1971367278
 Rigidbody2D:

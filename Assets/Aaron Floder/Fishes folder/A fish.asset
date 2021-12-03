@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a7562ddd627da468899b305a8d868f, type: 3}
   m_Name: A fish
   m_EditorClassIdentifier: 
-  fishId: 0
   fishName: Lax
   weight: 10
   length: 11
   value: 10
+  baitAttractionRadius: 10
+  fishColor: {r: 1, g: 0, b: 0.878747, a: 1}
   struggleCount: 1
   excitementLevel: 0

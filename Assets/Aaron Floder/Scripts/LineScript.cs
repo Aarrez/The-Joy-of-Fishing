@@ -5,12 +5,14 @@ public class LineScript : MonoBehaviour
 {
     private Rigidbody2D rig2d;
 
+    private DistanceJoint2D distJoint2d;
+
+    private Transform boat;
+
     [Header("Change gravity affects the bait")]
-    [SerializeField] private float reelUpGravity = -1f;
+    [SerializeField] private float reelUp = 1f;
 
-    [SerializeField] private float reelDownGravity = 2f;
-
-    [SerializeField] private float noInputGravity = 1f;
+    [SerializeField] private float reelDown = 1f;
 
     private float inputValueY = 0f;
 
@@ -19,18 +21,23 @@ public class LineScript : MonoBehaviour
     private void Awake()
     {
         rig2d = GetComponent<Rigidbody2D>();
+        distJoint2d = GetComponentInParent<DistanceJoint2D>();
+        boat = GetComponentInParent<BoatScript>().transform;
     }
 
     private void OnEnable()
     {
         InputScript.DoMove += GetInput;
-        InputScript.DoMove += GHookMovement;
     }
 
     private void OnDisable()
     {
         InputScript.DoMove -= GetInput;
-        InputScript.DoMove -= GHookMovement;
+    }
+
+    private void Update()
+    {
+        HookMovement();
     }
 
     private void GetInput()
@@ -39,20 +46,20 @@ public class LineScript : MonoBehaviour
         inputValueY = InputVector.y;
     }
 
-    private void GHookMovement()
+    private void HookMovement()
     {
         switch (inputValueY)
         {
             case 0:
-                rig2d.gravityScale = noInputGravity;
+                distJoint2d.distance += Time.fixedDeltaTime;
                 break;
 
             case 1:
-                rig2d.gravityScale = reelUpGravity;
+                distJoint2d.distance -= reelUp;
                 break;
 
             case -1:
-                rig2d.gravityScale = reelDownGravity;
+                rig2d.gravityScale += reelDown;
                 break;
         }
     }

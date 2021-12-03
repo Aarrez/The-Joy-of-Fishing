@@ -7,13 +7,24 @@ public class Fish : ScriptableObject
     [SerializeField] private string fishName = "";
 
     [Tooltip("In g")]
-    [SerializeField] private float weight;
+    public float weight;
 
     [Tooltip("In cm")]
-    [SerializeField] private float length;
+    public float length;
 
     [Tooltip("The amount of money you get when the fish is sold")]
-    [SerializeField] private float value = 10f;
+    [SerializeField] public float value = 10f;
+
+    [SerializeField] private float baitAttractionRadius = 10f;
+
+    public Color fishColor;
+
+    private enum Bait : int
+    {
+        Worm = 0,
+        SmallerFish = 1,
+        Stone = 2
+    }
 
     [Range(0, 4)] [SerializeField] private uint struggleCount = 0;
 

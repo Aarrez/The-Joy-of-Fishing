@@ -28,6 +28,7 @@ public class MoveAi : MonoBehaviour
 
     private void Start()
     {
+        GetComponent<SpriteRenderer>().color = fishStats.fishColor;
         Wander();
     }
 
