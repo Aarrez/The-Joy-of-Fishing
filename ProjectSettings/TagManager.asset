@@ -50,3 +50,9 @@ TagManager:
   - name: AI
     uniqueID: 1709047881
     locked: 0
+  - name: Lake
+    uniqueID: 3223912707
+    locked: 0
+  - name: UI
+    uniqueID: 1015922365
+    locked: 0
