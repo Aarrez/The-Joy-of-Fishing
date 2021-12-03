@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
@@ -16,6 +14,8 @@ public class MoveAi : MonoBehaviour
 
     //The amount of random movment when moveing towards the destination
     [SerializeField] private float wanderJitter = 1f;
+
+    [SerializeField] private Fish fishStats;
 
     private float dist = 0f;
 
