@@ -9,10 +9,10 @@ public class LineScript : MonoBehaviour
 
     private Transform boat;
 
-    [Header("Change gravity affects the bait")]
-    [SerializeField] private float reelUp = 1f;
+    [Header("Speed when reeling up and down")]
+    [SerializeField] private float reelUp = 0.02f;
 
-    [SerializeField] private float reelDown = 1f;
+    [SerializeField] private float reelDown = 0.04f;
 
     private float inputValueY = 0f;
 
@@ -35,7 +35,7 @@ public class LineScript : MonoBehaviour
         InputScript.DoMove -= GetInput;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         HookMovement();
     }
@@ -51,7 +51,8 @@ public class LineScript : MonoBehaviour
         switch (inputValueY)
         {
             case 0:
-                distJoint2d.distance += Time.fixedDeltaTime;
+                if (distJoint2d.distance < 22)
+                    distJoint2d.distance += Time.fixedDeltaTime * 2;
                 break;
 
             case 1:
@@ -59,7 +60,8 @@ public class LineScript : MonoBehaviour
                 break;
 
             case -1:
-                rig2d.gravityScale += reelDown;
+                if (distJoint2d.distance < 22)
+                    distJoint2d.distance += reelDown;
                 break;
         }
     }

@@ -260,8 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bf7cda3dcbf764baefe4390b8a749a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reelUp: 0.02
-  reelDown: 0.04
+  reelUp: 0.1
+  reelDown: 0.1
 --- !u!114 &27126754
 MonoBehaviour:
   m_ObjectHideFlags: 0
