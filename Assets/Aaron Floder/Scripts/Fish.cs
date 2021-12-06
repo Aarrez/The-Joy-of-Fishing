@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+/*
+ * Creates a asset with stats to more easely make fish.
+ */
+
 [CreateAssetMenu(fileName = "FishStats", order = 0)]
 public class Fish : ScriptableObject
 {

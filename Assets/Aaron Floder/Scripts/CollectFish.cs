@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 
+/*
+ * The CollectFish script takes the children of the gameojbect taged with "Bait"
+ * and puts them in the gameobject with the tag "FishInventory".
+ */
+
 public class CollectFish : MonoBehaviour
 {
-    [SerializeField, ReadOnly] private List<Transform> fishList = new List<Transform>();
-
     private Transform hook;
 
     private Transform fishInventory;
@@ -15,7 +18,7 @@ public class CollectFish : MonoBehaviour
 
     private void Awake()
     {
-        hook = this.transform.GetChild(0);
+        hook = GameObject.FindGameObjectWithTag("Bait").transform;
         fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform;
     }
 

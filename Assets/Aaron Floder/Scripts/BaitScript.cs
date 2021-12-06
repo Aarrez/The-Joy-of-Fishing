@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
-using FMODUnity;
+
+/* This script is for when you have cought a fish.
+ * It makes the fish a child of the transform the script is on.
+ */
 
 public class BaitScript : MonoBehaviour
 {
     public static event Action FishCought;
-
-    public static event Func<int> FishOnHook;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,7 +15,6 @@ public class BaitScript : MonoBehaviour
         {
             FishCought?.Invoke();
             collision.transform.parent = this.transform;
-            FishOnHook = delegate () { return this.transform.childCount; };
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;

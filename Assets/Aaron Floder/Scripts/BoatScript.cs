@@ -3,14 +3,14 @@ using UnityEngine;
 public class BoatScript : MonoBehaviour
 {
     private Rigidbody2D rig2d;
+    private AnimationCurve moveAnimCurve;
 
-    [SerializeField] private AnimationCurve moveForceCurve;
+    [Header("Movement stuff")]
+    [SerializeField] private float boatSpeed = 10f;
 
-    private float boatSpeed = 0f;
+    [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
 
     private float inputValueX = 0f;
-
-    private float theTime;
 
     private float currentTime;
 
@@ -21,19 +21,28 @@ public class BoatScript : MonoBehaviour
 
     private void Start()
     {
-        var aKey = moveForceCurve.keys[moveForceCurve.length - 1];
-        theTime = aKey.time;
-        currentTime = theTime;
+        MakeAnimationCurve();
     }
+
+    #region Make a animation curve
+
+    private void MakeAnimationCurve()
+    {
+        moveAnimCurve = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(rampUpTime, 1f));
+        moveAnimCurve.preWrapMode = WrapMode.PingPong;
+        moveAnimCurve.postWrapMode = WrapMode.PingPong;
+    }
+
+    #endregion Make a animation curve
 
     private void OnEnable()
     {
-        InputScript.MoveLine += GetInput;
+        InputScript.DoMove += GetInput;
     }
 
     private void OnDisable()
     {
-        InputScript.MoveLine -= GetInput;
+        InputScript.DoMove -= GetInput;
     }
 
     private void FixedUpdate()
@@ -43,14 +52,24 @@ public class BoatScript : MonoBehaviour
 
     private void GetInput()
     {
-        inputValueX = InputScript.LineCtx().ReadValue<float>();
-        currentTime = theTime;
+        inputValueX = InputScript.MoveCtx().ReadValue<float>();
     }
 
     private void MoveLeftRight()
     {
-        currentTime -= Time.fixedDeltaTime;
-        boatSpeed = moveForceCurve.Evaluate(currentTime);
-        rig2d.AddForce(new Vector2(inputValueX * boatSpeed, 0f), ForceMode2D.Force);
+        switch (inputValueX)
+        {
+            case 0:
+                currentTime = Mathf.Clamp01(currentTime);
+                currentTime -= Time.fixedDeltaTime;
+                break;
+
+            default:
+                currentTime = Mathf.Clamp01(currentTime);
+                currentTime += Time.fixedDeltaTime;
+                float animEval = moveAnimCurve.Evaluate(currentTime);
+                rig2d.AddForce(new Vector2(inputValueX * animEval * boatSpeed, 0f), ForceMode2D.Force);
+                break;
+        }
     }
 }

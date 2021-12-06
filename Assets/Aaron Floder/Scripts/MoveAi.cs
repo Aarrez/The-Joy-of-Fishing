@@ -1,6 +1,12 @@
 using UnityEngine;
 using Pathfinding;
 
+/*
+ * The fish Ai.
+ * Takes care of all the fish movement.
+ * Uses the AStar pathfinding prodject to get the walkable surfaces.
+ */
+
 public class MoveAi : MonoBehaviour
 {
     private Seeker agent;

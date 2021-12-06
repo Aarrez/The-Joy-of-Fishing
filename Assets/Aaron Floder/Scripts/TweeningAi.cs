@@ -1,6 +1,10 @@
 using UnityEngine;
 using DG.Tweening;
 
+/*
+ * A test script testing animation curves and Sine curevs as movement
+ */
+
 public class TweeningAi : MonoBehaviour
 {
     [SerializeField] private AnimationCurve animCurve;

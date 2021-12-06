@@ -4,35 +4,55 @@ using UnityEngine;
 public class LineScript : MonoBehaviour
 {
     private DistanceJoint2D distJoint2d;
-    private float reelTime;
+    private AnimationCurve reelUpCurve;
+    private AnimationCurve reelDownCurve;
 
-    [Header("Speed when reeling up and down")]
-    [SerializeField] private float reelUp = 0.02f;
+    [Header("Reel Speed and RampUp time")]
+    [SerializeField] private float reelSpeed = 0.1f;
 
-    [SerializeField] private float reelDown = 0.04f;
+    [Min(0.02f), SerializeField] private float rampUpTime = 1f;
 
-    [Header("Animation reel curves")]
-    [SerializeField] private AnimationCurve reelUpCurve;
+    [Header("Line Distance")]
+    [SerializeField] private float maxLineDist = 22f;
 
-    [SerializeField] private AnimationCurve reelDownCurve;
-
-    private float inputValueY = 0f;
-
-    private Vector2 InputVector = Vector2.zero;
+    private float currentTime = 0f;
+    private int inputValueY = 0;
 
     private void Awake()
     {
         distJoint2d = GetComponentInParent<DistanceJoint2D>();
     }
 
+    private void Start()
+    {
+        AddKeys();
+    }
+
+    #region Add keys to animation curve
+
+    //Creates an animation curve with keyframes
+    private void AddKeys()
+    {
+        reelUpCurve = new AnimationCurve(new Keyframe(0f, 0.02f), new Keyframe(rampUpTime, 1f));
+        reelUpCurve.preWrapMode = WrapMode.PingPong;
+        reelUpCurve.postWrapMode = WrapMode.PingPong;
+
+        reelDownCurve = new AnimationCurve(new Keyframe(rampUpTime, 1f), new Keyframe(0f, 0.02f));
+        reelUpCurve.preWrapMode = WrapMode.PingPong;
+        reelUpCurve.postWrapMode = WrapMode.PingPong;
+    }
+
+    #endregion Add keys to animation curve
+
+    //GetInput method is called when WS or UpDown arrow keys are pressed
     private void OnEnable()
     {
-        InputScript.DoMove += GetInput;
+        InputScript.MoveLine += GetInput;
     }
 
     private void OnDisable()
     {
-        InputScript.DoMove -= GetInput;
+        InputScript.MoveLine -= GetInput;
     }
 
     private void FixedUpdate()
@@ -42,33 +62,35 @@ public class LineScript : MonoBehaviour
 
     private void GetInput()
     {
-        InputVector = InputScript.MoveCtx().ReadValue<Vector2>();
-        inputValueY = InputVector.y;
+        inputValueY = (int)InputScript.LineCtx().ReadValue<float>();
     }
 
     private void HookMovement()
     {
         switch (inputValueY)
         {
+            //Constant increse in distance from boat if no input
             case 0:
-                if (distJoint2d.distance < 22)
-                    distJoint2d.distance += Time.fixedDeltaTime * 2;
-                reelTime = 0;
-                break;
-
-            case 1:
-
-                distJoint2d.distance -= reelUpCurve.Evaluate(reelTime);
-                reelTime += reelUp;
-                reelTime = Mathf.Clamp(reelTime, 0, 2);
-                break;
-
-            case -1:
-                if (distJoint2d.distance < 22)
+                if (distJoint2d.distance <= maxLineDist)
                 {
-                    distJoint2d.distance += reelDownCurve.Evaluate(reelTime);
-                    reelTime -= reelDown;
-                    reelTime = Mathf.Clamp(reelTime, 0, 2);
+                    currentTime = Mathf.Clamp(currentTime, 0.02f, rampUpTime);
+                    distJoint2d.distance += Time.fixedDeltaTime;
+                    currentTime -= Time.fixedDeltaTime;
+                }
+                break;
+            //Decreses the distance from the boat if pressing W or Up Arrow key is pressed
+            case 1:
+                currentTime = Mathf.Clamp(currentTime, 0.02f, rampUpTime);
+                currentTime += Time.fixedDeltaTime;
+                distJoint2d.distance -= reelUpCurve.Evaluate(currentTime) * reelSpeed;
+                break;
+            //Faster increse of distance from the boat if the S or Down Arrow key is pressed
+            case -1:
+                if (distJoint2d.distance <= maxLineDist)
+                {
+                    currentTime = Mathf.Clamp(currentTime, 0f, rampUpTime);
+                    currentTime += Time.fixedDeltaTime;
+                    distJoint2d.distance += reelDownCurve.Evaluate(currentTime) * reelSpeed;
                 }
                 break;
         }

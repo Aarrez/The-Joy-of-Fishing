@@ -2,6 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/*
+ * Takes care of all the inputs and sends a call to any method that want to listen.
+ */
+
 public class InputScript : MonoBehaviour
 {
     private TheJoyofFishing joyOfFishing;
