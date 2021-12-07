@@ -1,5 +1,6 @@
 using UnityEngine;
 using Pathfinding;
+using System;
 
 /*
  * The fish Ai.
@@ -7,6 +8,7 @@ using Pathfinding;
  * Uses the AStar pathfinding prodject to get the walkable surfaces.
  */
 
+[RequireComponent(typeof(Seeker), typeof(AIPath))]
 public class MoveAi : MonoBehaviour
 {
     private Seeker agent;
@@ -29,12 +31,17 @@ public class MoveAi : MonoBehaviour
     {
         agent = GetComponent<Seeker>();
         path = GetComponent<AIPath>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Bait").transform;
     }
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().color = fishStats.fishColor;
+        try { GetComponent<SpriteRenderer>().color = fishStats.fishColor; }
+        catch (NullReferenceException e)
+        {
+            Debug.Log("There is no Fish asset in the Fishstats property");
+            Debug.LogError(e.Message);
+        }
         Wander();
     }
 
@@ -46,7 +53,7 @@ public class MoveAi : MonoBehaviour
     //Method that gets a random position in the world and sets the destination
     private void Wander()
     {
-        wander += new Vector3(Random.Range(-1f, 1f) * wanderJitter, Random.Range(-1f, 1f) * wanderJitter);
+        wander += new Vector3(UnityEngine.Random.Range(-1f, 1f) * wanderJitter, UnityEngine.Random.Range(-1f, 1f) * wanderJitter);
 
         wander = wander.normalized;
         wander *= wanderRadius;

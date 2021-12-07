@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fish
   - FishInventory
+  - Bait
+  - Boat
   layers:
   - Default
   - TransparentFX

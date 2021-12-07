@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class LineScript : MonoBehaviour
 {
     private DistanceJoint2D distJoint2d;
@@ -20,7 +21,7 @@ public class LineScript : MonoBehaviour
 
     private void Awake()
     {
-        distJoint2d = GetComponentInParent<DistanceJoint2D>();
+        distJoint2d = FindObjectOfType<DistanceJoint2D>();
     }
 
     private void Start()
@@ -77,12 +78,14 @@ public class LineScript : MonoBehaviour
                     distJoint2d.distance += Time.fixedDeltaTime;
                     currentTime -= Time.fixedDeltaTime;
                 }
+
                 break;
             //Decreses the distance from the boat if pressing W or Up Arrow key is pressed
             case 1:
                 currentTime = Mathf.Clamp(currentTime, 0.02f, rampUpTime);
                 currentTime += Time.fixedDeltaTime;
                 distJoint2d.distance -= reelUpCurve.Evaluate(currentTime) * reelSpeed;
+
                 break;
             //Faster increse of distance from the boat if the S or Down Arrow key is pressed
             case -1:
@@ -92,6 +95,7 @@ public class LineScript : MonoBehaviour
                     currentTime += Time.fixedDeltaTime;
                     distJoint2d.distance += reelDownCurve.Evaluate(currentTime) * reelSpeed;
                 }
+
                 break;
         }
     }
