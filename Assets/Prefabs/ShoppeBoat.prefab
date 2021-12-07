@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6916328482143140262}
   - component: {fileID: 6916328482143140261}
   - component: {fileID: 6916328482143140263}
-  - component: {fileID: 4930541560629794743}
+  - component: {fileID: 32775773}
   m_Layer: 0
   m_Name: ShoppeBoat
   m_TagString: Untagged
@@ -191,7 +191,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4930541560629794743
+--- !u!114 &32775773
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,9 +200,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6916328482143140260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d1ce288e1028ce46af306d6aaa8e58d, type: 3}
+  m_Script: {fileID: 11500000, guid: c589505277a2a554ca571605033e6dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingStrength: 0.09
-  applyBobOffset: 0
-  bobOffsetAmount: 0
+  yBobbingStrength: 0.2
+  applyBobOffset: 1
+  bobOffsetAmount: 3

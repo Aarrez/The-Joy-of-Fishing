@@ -444,11 +444,11 @@ GameObject:
   - component: {fileID: 7824927940298590364}
   - component: {fileID: 7824927940298590367}
   - component: {fileID: 4048207142641665964}
-  - component: {fileID: 2018631587}
   - component: {fileID: 3978649204138341754}
   - component: {fileID: 6041324265593011362}
   - component: {fileID: 7890050411347847053}
   - component: {fileID: 1480747033619020377}
+  - component: {fileID: 2018631590}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -545,21 +545,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2018631587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824927940298590366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d1ce288e1028ce46af306d6aaa8e58d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yBobbingStrength: 0.1
-  applyBobOffset: 0
-  bobOffsetAmount: 0
 --- !u!50 &3978649204138341754
 Rigidbody2D:
   serializedVersion: 4
@@ -626,3 +611,18 @@ DistanceJoint2D:
   m_AutoConfigureDistance: 1
   m_Distance: 5.505159
   m_MaxDistanceOnly: 1
+--- !u!114 &2018631590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824927940298590366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c589505277a2a554ca571605033e6dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yBobbingStrength: 0.1
+  applyBobOffset: 0
+  bobOffsetAmount: 0
