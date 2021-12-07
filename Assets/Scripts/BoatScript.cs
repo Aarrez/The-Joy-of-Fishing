@@ -6,7 +6,7 @@ public class BoatScript : MonoBehaviour
     private AnimationCurve moveAnimCurve;
 
     [Header("Movement stuff")]
-    [SerializeField] private float boatSpeed = 10f;
+    [SerializeField] private float boatSpeed = 1f;
 
     [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
 
@@ -62,13 +62,15 @@ public class BoatScript : MonoBehaviour
             case 0:
                 currentTime = Mathf.Clamp01(currentTime);
                 currentTime -= Time.fixedDeltaTime;
+                float animEval = moveAnimCurve.Evaluate(currentTime);
+                transform.Translate(new Vector2(inputValueX * animEval, 0f));
                 break;
 
             default:
                 currentTime = Mathf.Clamp01(currentTime);
                 currentTime += Time.fixedDeltaTime;
-                float animEval = moveAnimCurve.Evaluate(currentTime);
-                rig2d.AddForce(new Vector2(inputValueX * animEval * boatSpeed, 0f), ForceMode2D.Force);
+                animEval = moveAnimCurve.Evaluate(currentTime);
+                transform.Translate(new Vector2(inputValueX * animEval, 0f));
                 break;
         }
     }

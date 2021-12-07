@@ -18,7 +18,11 @@ public class CollectFish : MonoBehaviour
 
     private void Awake()
     {
-        hook = GameObject.FindGameObjectWithTag("Bait").transform;
+        try { hook = GameObject.FindGameObjectWithTag("Bait").transform; }
+        catch
+        {
+            Debug.Log($"There is no Gameobject with the tag 'Bait'");
+        }
         fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform;
     }
 

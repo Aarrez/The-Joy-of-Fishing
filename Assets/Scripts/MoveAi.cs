@@ -31,7 +31,15 @@ public class MoveAi : MonoBehaviour
     {
         agent = GetComponent<Seeker>();
         path = GetComponent<AIPath>();
-        player = GameObject.FindGameObjectWithTag("Bait").transform;
+        try
+        {
+            player = GameObject.FindGameObjectWithTag("Bait").transform;
+        }
+        catch (NullReferenceException e)
+        {
+            Debug.Log("There is no object with the tag Bait");
+            player = new GameObject().transform;
+        }
     }
 
     private void Start()
