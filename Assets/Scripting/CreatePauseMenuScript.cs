@@ -44,6 +44,13 @@ public class CreatePauseMenuScript : MonoBehaviour
 
     }
 
+    public void UnPause()
+    {
+        Time.timeScale = 1;
+        Debug.Log("DONE THROUGH BUTTOPN");
+        pauseCanvas.SetActive(false);
+    }
+
 
 
 }
