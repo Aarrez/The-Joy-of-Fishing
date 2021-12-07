@@ -49,6 +49,9 @@ TagManager:
   - name: Background
     uniqueID: 1797823873
     locked: 0
+  - name: LakeBKG
+    uniqueID: 4254908463
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
