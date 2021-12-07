@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1ce288e1028ce46af306d6aaa8e58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bobbingStrength: 0.1
+  yBobbingStrength: 0.1
   applyBobOffset: 0
   bobOffsetAmount: 0
 --- !u!50 &3978649204138341754
