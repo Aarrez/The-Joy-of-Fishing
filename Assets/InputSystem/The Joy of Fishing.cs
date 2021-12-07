@@ -899,6 +899,34 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""EscapeToPause"",
+            ""id"": ""8f8301ae-d8f3-4555-a94c-3e1b4a349efd"",
+            ""actions"": [
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e976734-5e9a-4b9f-9fd2-8a1203b245e6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e1a7374f-8043-4c57-b9f5-bc54a7f01c44"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -983,6 +1011,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // EscapeToPause
+        m_EscapeToPause = asset.FindActionMap("EscapeToPause", throwIfNotFound: true);
+        m_EscapeToPause_Pause = m_EscapeToPause.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1208,6 +1239,39 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // EscapeToPause
+    private readonly InputActionMap m_EscapeToPause;
+    private IEscapeToPauseActions m_EscapeToPauseActionsCallbackInterface;
+    private readonly InputAction m_EscapeToPause_Pause;
+    public struct EscapeToPauseActions
+    {
+        private @TheJoyofFishing m_Wrapper;
+        public EscapeToPauseActions(@TheJoyofFishing wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Pause => m_Wrapper.m_EscapeToPause_Pause;
+        public InputActionMap Get() { return m_Wrapper.m_EscapeToPause; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(EscapeToPauseActions set) { return set.Get(); }
+        public void SetCallbacks(IEscapeToPauseActions instance)
+        {
+            if (m_Wrapper.m_EscapeToPauseActionsCallbackInterface != null)
+            {
+                @Pause.started -= m_Wrapper.m_EscapeToPauseActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_EscapeToPauseActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_EscapeToPauseActionsCallbackInterface.OnPause;
+            }
+            m_Wrapper.m_EscapeToPauseActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+            }
+        }
+    }
+    public EscapeToPauseActions @EscapeToPause => new EscapeToPauseActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1273,5 +1337,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IEscapeToPauseActions
+    {
+        void OnPause(InputAction.CallbackContext context);
     }
 }
