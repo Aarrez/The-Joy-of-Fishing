@@ -205,7 +205,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4962793760303239591}
   - component: {fileID: 4962793760303239590}
-  m_Layer: 0
+  - component: {fileID: 8388405802348014933}
+  - component: {fileID: 603671712848768501}
+  m_Layer: 6
   m_Name: CM vcam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,6 +268,30 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4962793761902421645}
+--- !u!114 &8388405802348014933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962793760303239608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &603671712848768501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962793760303239608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4962793760359185374
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +441,7 @@ GameObject:
   - component: {fileID: 4962793761672495736}
   m_Layer: 0
   m_Name: Viewportcamera
-  m_TagString: Player
+  m_TagString: Playerview
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,7 +673,7 @@ GameObject:
   - component: {fileID: 4962793761902421645}
   - component: {fileID: 4962793761902421643}
   - component: {fileID: 4962793761902421644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +813,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 5.3999996
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
