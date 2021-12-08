@@ -9,6 +9,7 @@ TagManager:
   - Bait
   - Boat
   - String
+  - Crank
   layers:
   - Default
   - TransparentFX
