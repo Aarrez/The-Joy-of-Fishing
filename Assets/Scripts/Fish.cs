@@ -1,48 +1,78 @@
 using System;
 using UnityEngine;
+using Unity.Collections;
 
 /*
- * Creates a asset with stats to more easely make fish.
+ * Creates a asset with stats to easily make fish.
  */
 
 [CreateAssetMenu(fileName = "FishStats", order = 0)]
 public class Fish : ScriptableObject
 {
-    [SerializeField] private string fishName = "";
+    public Sprite[] sprite;
 
-    [Tooltip("In g")]
+    public string fishName = "";
+
+    [Header("The length and weight affects " +
+        "excitementLevel, struggleCount, baitLevel")]
+    [Tooltip("In cg")]
     public float weight;
 
-    [Tooltip("In cm")]
+    [Tooltip("In dm")]
     public float length;
 
     [Tooltip("The amount of money you get when the fish is sold")]
-    [SerializeField] public float value = 10f;
+    public float value = 10f;
 
-    [SerializeField] private float baitAttractionRadius = 10f;
+    public float baitAttractionRadius = 10f;
 
-    public Color fishColor;
+    public Color fishColor = Color.white;
 
-    private enum Bait : int
+    public int struggleCount;
+
+    public int excitementLevel;
+
+    public int baitLevel;
+
+    public enum BaitLevel : int
     {
         Worm = 0,
-        SmallerFish = 1,
-        Stone = 2
+        Pellet = 1,
+        LittleFish = 2,
+        MediumBait = 3
     }
 
-    [Range(0, 4)] [SerializeField] private uint struggleCount = 0;
-
-    [Range(0, 1)] [Unity.Collections.ReadOnly, SerializeField] protected int excitementLevel;
-
-    private void OnEnable()
+    private void OnValidate()
     {
-        if (weight > 100 && length > 10)
+        float wlValue = weight + length;
+        switch (wlValue)
         {
-            excitementLevel = 1;
-        }
-        else
-        {
-            excitementLevel = 0;
+            case < 30f:
+
+                excitementLevel = 1;
+                struggleCount = UnityEngine.Random.Range(0, 1);
+                baitLevel = 0;
+                break;
+
+            case > 30f when wlValue < 60f:
+
+                excitementLevel = 1;
+                struggleCount = UnityEngine.Random.Range(2, 3);
+                baitLevel = 1;
+                break;
+
+            case > 60f when wlValue < 90f:
+
+                excitementLevel = 2;
+                struggleCount = 3;
+                baitLevel = 2;
+                break;
+
+            default:
+                excitementLevel = 2;
+                struggleCount = 4;
+                baitLevel = 3;
+                break;
         }
     }
 }

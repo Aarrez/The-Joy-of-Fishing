@@ -5,11 +5,12 @@ using UnityEngine;
 public class RopePartScript : MonoBehaviour
 {
     public GameObject connectedAbove, connectedBelow;
-    void Start()
+
+    private void Start()
     {
         connectedAbove = GetComponent<HingeJoint2D>().connectedBody.gameObject;
         RopePartScript abovePart = connectedAbove.GetComponent<RopePartScript>();
-        if(abovePart != null)
+        if (abovePart != null)
         {
             abovePart.connectedBelow = gameObject;
             float spriteBottom = connectedAbove.GetComponent<SpriteRenderer>().bounds.size.y;
@@ -18,4 +19,7 @@ public class RopePartScript : MonoBehaviour
         else { GetComponent<HingeJoint2D>().connectedAnchor = new Vector2(0, 0); }
     }
 
+    public void ResetAnchor()
+    {
+    }
 }

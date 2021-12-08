@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 using Pathfinding;
 using System;
 
@@ -14,11 +15,12 @@ public class MoveAi : MonoBehaviour
     private Seeker agent;
     private AIPath path;
     private Transform player;
+    private SpriteRenderer sprRend;
 
     private Vector3 wander = Vector3.zero;
 
     //Max distance from the Ai it can wander
-    [SerializeField] private float wanderRadius = 10f;
+    [SerializeField] private float wanderRadius = 5f;
 
     //The amount of random movment when moveing towards the destination
     [SerializeField] private float wanderJitter = 1f;
@@ -31,31 +33,25 @@ public class MoveAi : MonoBehaviour
     {
         agent = GetComponent<Seeker>();
         path = GetComponent<AIPath>();
-        try
-        {
-            player = GameObject.FindGameObjectWithTag("Bait").transform;
-        }
-        catch (NullReferenceException e)
-        {
-            Debug.Log("There is no object with the tag Bait");
-            player = new GameObject().transform;
-        }
+        player = GameObject.FindGameObjectWithTag("Bait").transform;
+        sprRend = GetComponentInChildren<SpriteRenderer>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        try { GetComponent<SpriteRenderer>().color = fishStats.fishColor; }
-        catch (NullReferenceException e)
-        {
-            Debug.Log("There is no Fish asset in the Fishstats property");
-            Debug.LogError(e.Message);
-        }
         Wander();
+        SetFishStats();
     }
 
     private void LateUpdate()
     {
         AiMovement();
+    }
+
+    private void SetFishStats()
+    {
+        sprRend.sprite = fishStats.sprite[0];
+        sprRend.color = fishStats.fishColor;
     }
 
     //Method that gets a random position in the world and sets the destination
@@ -89,14 +85,14 @@ public class MoveAi : MonoBehaviour
     private void AiMovement()
     {
         dist = Vector3.Distance(this.transform.position, player.position);
-        if (dist > 5)
+        if (dist > fishStats.baitAttractionRadius)
         {
             if (path.reachedEndOfPath)
             {
                 Wander();
             }
         }
-        if (dist < 5)
+        if (dist < fishStats.baitAttractionRadius)
         {
             path.canMove = true;
             Seek(player.position);
