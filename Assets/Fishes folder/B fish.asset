@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a7562ddd627da468899b305a8d868f, type: 3}
   m_Name: B fish
   m_EditorClassIdentifier: 
+  sprite:
+  - {fileID: -1197886520, guid: 8799b7b2c2f30244e8c6c774a6e67ea2, type: 3}
+  - {fileID: 373814693, guid: 8799b7b2c2f30244e8c6c774a6e67ea2, type: 3}
+  - {fileID: 2039262762, guid: 8799b7b2c2f30244e8c6c774a6e67ea2, type: 3}
+  - {fileID: -2145836888, guid: 8799b7b2c2f30244e8c6c774a6e67ea2, type: 3}
   fishName: Abborre
-  weight: 1
-  length: 10
+  weight: 20
+  length: 20
   value: 5
-  baitAttractionRadius: 10
-  fishColor: {r: 1, g: 0.90821296, b: 0, a: 1}
-  struggleCount: 1
+  baitAttractionRadius: 5
+  fishColor: {r: 1, g: 1, b: 1, a: 1}
+  struggleCount: 2
   excitementLevel: 1
+  baitLevel: 1
