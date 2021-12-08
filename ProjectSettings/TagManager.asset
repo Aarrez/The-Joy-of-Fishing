@@ -10,6 +10,8 @@ TagManager:
   - Boat
   - String
   - Crank
+  - Playerview
+  - Rope
   layers:
   - Default
   - TransparentFX

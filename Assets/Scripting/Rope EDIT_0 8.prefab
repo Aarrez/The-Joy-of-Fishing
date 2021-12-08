@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4349441365200370887}
   m_Layer: 0
   m_Name: Rope EDIT_0 8
-  m_TagString: Untagged
+  m_TagString: Rope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
