@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using Unity.Collections;
 
 /*
  * Creates a asset with stats to easily make fish.

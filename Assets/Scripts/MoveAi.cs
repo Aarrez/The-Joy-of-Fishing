@@ -1,7 +1,5 @@
-using UnityEngine;
-using UnityEditor;
 using Pathfinding;
-using System;
+using UnityEngine;
 
 /*
  * The fish Ai.

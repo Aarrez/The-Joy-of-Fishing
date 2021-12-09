@@ -1,22 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MoveRopeHook : MonoBehaviour
 {
-    TheJoyofFishing getKey;
-    InputAction actionSwingLeft;
-    InputAction actionSwingRight;
+    MoveRopeHook()
+    {
+    }
+
+    private TheJoyofFishing getKey;
+    private InputAction actionSwingLeft;
+    private InputAction actionSwingRight;
 
     public float pushForce = 10f;
 
     public Rigidbody2D rb;
 
-    Keyboard kb;
+    private Keyboard kb;
 
-    Transform gettransform;
-    void Start()
+    private Transform gettransform;
+
+    private void Start()
     {
         getKey = new TheJoyofFishing();
         actionSwingLeft = getKey.Player.SwingLeft;
@@ -28,10 +31,9 @@ public class MoveRopeHook : MonoBehaviour
         gettransform = GetComponent<Transform>();
     }
 
-
-    void Update()
+    private void Update()
     {
-       if (kb.leftArrowKey.wasPressedThisFrame)
+        if (kb.leftArrowKey.wasPressedThisFrame)
         {
             CheckSwingLeft();
         }
@@ -42,31 +44,26 @@ public class MoveRopeHook : MonoBehaviour
         }
     }
 
-    void CheckSwingLeft()
+    private void CheckSwingLeft()
     {
         gettransform.transform.position = new Vector3(gettransform.position.x - 1, gettransform.position.y, gettransform.position.z);
         Debug.Log("LEFTPOLEAS");
     }
 
-    void CheckSwingRight()
+    private void CheckSwingRight()
     {
         gettransform.transform.position = new Vector3(gettransform.position.x + 1, gettransform.position.y, gettransform.position.z);
         Debug.Log("RIGht P{LEASE");
     }
 
-
-    void OnEnable()
+    private void OnEnable()
     {
         actionSwingLeft.Enable();
         actionSwingRight.Enable();
-
-
-
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
-
         actionSwingLeft.Disable();
         actionSwingRight.Disable();
     }
