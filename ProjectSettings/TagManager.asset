@@ -12,7 +12,7 @@ TagManager:
   - Crank
   - Playerview
   - Rope
-  - GameBound
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -21,8 +21,8 @@ TagManager:
   - Water
   - UI
   - PostProcessing Layer
-  - 
-  - 
+  - RopeLayer
+  - CollisionWithRope
   - 
   - 
   - 
