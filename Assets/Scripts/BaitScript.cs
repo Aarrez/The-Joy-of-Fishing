@@ -6,6 +6,7 @@ using UnityEngine;
  * It makes the fish a child of the transform the script is on.
  */
 
+[RequireComponent(typeof(Collider2D))]
 public class BaitScript : MonoBehaviour
 {
     public static event Action FishCought;

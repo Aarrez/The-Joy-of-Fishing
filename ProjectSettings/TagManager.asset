@@ -8,6 +8,10 @@ TagManager:
   - FishInventory
   - Bait
   - Boat
+  - String
+  - Crank
+  - Playerview
+  - Rope
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - PostProcessing Layer
   - 
   - 
   - 
@@ -47,6 +51,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1797823873
+    locked: 0
+  - name: LakeBKG
+    uniqueID: 4254908463
     locked: 0
   - name: Default
     uniqueID: 0
