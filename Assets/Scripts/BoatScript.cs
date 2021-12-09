@@ -63,14 +63,14 @@ public class BoatScript : MonoBehaviour
                 currentTime = Mathf.Clamp01(currentTime);
                 currentTime -= Time.fixedDeltaTime;
                 float animEval = moveAnimCurve.Evaluate(currentTime);
-                transform.Translate(new Vector2(inputValueX * animEval, 0f));
+                transform.Translate(new Vector2(inputValueX * animEval * Time.fixedDeltaTime, 0f));
                 break;
 
             default:
                 currentTime = Mathf.Clamp01(currentTime);
                 currentTime += Time.fixedDeltaTime;
                 animEval = moveAnimCurve.Evaluate(currentTime);
-                transform.Translate(new Vector2(inputValueX * animEval, 0f));
+                transform.Translate(new Vector2(inputValueX * animEval * Time.fixedDeltaTime, 0f));
                 break;
         }
     }

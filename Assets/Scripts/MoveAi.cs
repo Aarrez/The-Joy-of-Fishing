@@ -8,6 +8,7 @@ using UnityEngine;
  */
 
 [RequireComponent(typeof(Seeker), typeof(AIPath))]
+
 public class MoveAi : MonoBehaviour
 {
     private Seeker agent;
@@ -23,7 +24,7 @@ public class MoveAi : MonoBehaviour
     //The amount of random movment when moveing towards the destination
     [SerializeField] private float wanderJitter = 1f;
 
-    [SerializeField] private Fish fishStats;
+    public Fish fishStats;
 
     private float dist = 0f;
 
@@ -48,14 +49,18 @@ public class MoveAi : MonoBehaviour
 
     private void SetFishStats()
     {
-        sprRend.sprite = fishStats.sprite[0];
+        sprRend.sprite = fishStats.sprite;
+
         sprRend.color = fishStats.fishColor;
+
+        GetComponentInChildren<Animator>().runtimeAnimatorController = fishStats.animatorController;
+        GetComponentInChildren<Animator>().SetBool("Moveing", true);
     }
 
     //Method that gets a random position in the world and sets the destination
     private void Wander()
     {
-        wander += new Vector3(UnityEngine.Random.Range(-1f, 1f) * wanderJitter, UnityEngine.Random.Range(-1f, 1f) * wanderJitter);
+        wander += new Vector3(Random.Range(-1f, 1f) * wanderJitter, Random.Range(-1f, 1f) * wanderJitter);
 
         wander = wander.normalized;
         wander *= wanderRadius;
@@ -95,5 +100,8 @@ public class MoveAi : MonoBehaviour
             path.canMove = true;
             Seek(player.position);
         }
+
+        //Just trying the ?: operator
+        var x = transform.rotation.z < 0 ? sprRend.flipY = true : sprRend.flipY = false;
     }
 }

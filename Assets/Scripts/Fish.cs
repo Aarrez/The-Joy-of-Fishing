@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEditor.Animations;
 /*
  * Creates a asset with stats to easily make fish.
  */
@@ -7,7 +7,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FishStats", order = 0)]
 public class Fish : ScriptableObject
 {
-    public Sprite[] sprite;
+    public Sprite sprite;
+
+    public AnimatorController animatorController;
 
     public string fishName = "";
 
@@ -41,6 +43,11 @@ public class Fish : ScriptableObject
     }
 
     private void OnValidate()
+    {
+        CheckValue();
+    }
+
+    private void CheckValue()
     {
         float wlValue = weight + length;
         switch (wlValue)

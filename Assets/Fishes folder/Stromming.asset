@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a7562ddd627da468899b305a8d868f, type: 3}
+  m_Name: Stromming
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1553179748, guid: e2115e26431098741a0483bca60a4d70, type: 3}
+  animatorController: {fileID: 9100000, guid: 9b9af511ebbfe11439d479094f1a6aaa, type: 2}
+  fishName: Stromming
+  weight: 120
+  length: 20
+  value: 10
+  baitAttractionRadius: 10
+  fishColor: {r: 1, g: 1, b: 1, a: 1}
+  struggleCount: 4
+  excitementLevel: 2
+  baitLevel: 3

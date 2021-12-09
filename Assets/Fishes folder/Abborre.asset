@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8a7562ddd627da468899b305a8d868f, type: 3}
-  m_Name: C fish
+  m_Name: Abborre
   m_EditorClassIdentifier: 
-  fishName: Makril
-  weight: 120
+  sprite: {fileID: -1197886520, guid: 8799b7b2c2f30244e8c6c774a6e67ea2, type: 3}
+  animatorController: {fileID: 9100000, guid: cc4d78189f436084e8f54619ee591b6a, type: 2}
+  fishName: Abborre
+  weight: 20
   length: 20
-  value: 10
-  baitAttractionRadius: 10
-  fishColor: {r: 0.08611512, g: 1, b: 0, a: 1}
+  value: 5
+  baitAttractionRadius: 5
+  fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 2
   excitementLevel: 1
+  baitLevel: 1
