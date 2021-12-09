@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2381567195000421086}
   - component: {fileID: 8669227603278004348}
   - component: {fileID: 2835021994106126005}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rope EDIT_0 13
   m_TagString: Rope
   m_Icon: {fileID: 0}
@@ -100,9 +100,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0.75
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.99
   m_GravityScale: 0.05
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -129,10 +129,10 @@ HingeJoint2D:
   m_Motor:
     m_MotorSpeed: 0
     m_MaximumMotorForce: 10000
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+    m_LowerAngle: -55.3
+    m_UpperAngle: 52.61
 --- !u!61 &8669227603278004348
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,13 +140,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7651687457725418650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08}
+  m_Offset: {x: 0, y: -0.090463184}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
@@ -157,7 +157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.04, y: 0.16}
+  m_Size: {x: 0.04, y: 0.045709774}
   m_EdgeRadius: 0
 --- !u!114 &2835021994106126005
 MonoBehaviour:
@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedAbove: {fileID: 0}
   connectedBelow: {fileID: 0}
+  speed: 0
