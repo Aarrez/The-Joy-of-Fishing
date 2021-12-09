@@ -13,6 +13,7 @@ TagManager:
   - Playerview
   - Rope
   - Wall
+  - GameBound
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a7562ddd627da468899b305a8d868f, type: 3}
+  m_Name: SeaHourse
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1419070592, guid: d72cca1dc3990864a93ba5809aa167a8, type: 3}
+  animatorController: {fileID: 9100000, guid: df5dcb15564abdf4dbbdcb3c4649cf58, type: 2}
+  fishName: SeaHouse
+  weight: 5
+  length: 8
+  value: 10
+  baitAttractionRadius: 10
+  fishColor: {r: 1, g: 1, b: 1, a: 1}
+  struggleCount: 0
+  excitementLevel: 1
+  baitLevel: 0

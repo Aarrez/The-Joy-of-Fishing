@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a7562ddd627da468899b305a8d868f, type: 3}
+  m_Name: Char
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -1007938043, guid: a9259cc0acca095428de96a41174a874, type: 3}
+  animatorController: {fileID: 9100000, guid: c73a5b2a571103c4291cc61e39bb3d2d, type: 2}
+  fishName: Char
+  weight: 30
+  length: 10
+  value: 30
+  baitAttractionRadius: 10
+  fishColor: {r: 1, g: 1, b: 1, a: 1}
+  struggleCount: 2
+  excitementLevel: 1
+  baitLevel: 1
