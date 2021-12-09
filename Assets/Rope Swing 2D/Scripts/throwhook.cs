@@ -5,15 +5,21 @@ public class throwhook : MonoBehaviour {
 
 	//hook prefab
 	public GameObject hook;
+	Transform getGoodTransform;
 
 	//holds whether rope is active or not
 	bool ropeActive;
 
 	//current hook on the scene
 	GameObject curHook;
-		
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+		getGoodTransform = GameObject.Find("GetGood").GetComponent<Transform>();
+    }
+
+    // Update is called once per frame
+    void Update () {
 	
 		//on left click
 		if (Input.GetMouseButtonDown (0)) {
@@ -22,7 +28,7 @@ public class throwhook : MonoBehaviour {
 			if (ropeActive == false) {
 
 				//destiny is where the mouse is
-				Vector2 destiny = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				Vector2 destiny = getGoodTransform.transform.position;//Camera.main.ScreenToWorldPoint (Input.mousePosition);
 
 				//creates a hook
 				curHook = (GameObject)Instantiate (hook, transform.position, Quaternion.identity);

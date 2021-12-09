@@ -31,7 +31,7 @@ public class RopeScript : MonoBehaviour {
 	int vertexCount=2;
 
 	//list of all nodes instantiated
-	List<GameObject> Nodes = new List<GameObject>();
+	public List<GameObject> Nodes = new List<GameObject>();
 
 	//check if the full rope is created
 	bool done=false;
