@@ -315,3 +315,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forcetoAdd: 5
+  player: 0
+  hook: 1

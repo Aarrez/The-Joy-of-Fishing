@@ -22,7 +22,7 @@ public class throwhook : MonoBehaviour {
     void Update () {
 	
 		//on left click
-		if (Input.GetMouseButtonDown (0)) {
+		//if (Input.GetMouseButtonDown (0)) {
 
 			//when rope is not activated
 			if (ropeActive == false) {
@@ -39,16 +39,22 @@ public class throwhook : MonoBehaviour {
 				//sets rope to enabled
 				ropeActive = true;
 
+            if (ropeActive == true)
+            {
+                return;
+            }
 
-			} else {
+        //}
+            //else
+            //{
 
-				//delete rope
-				Destroy (curHook);
+            //    //delete rope
+            //    Destroy(curHook);
 
-				//sets rope to disabled
-				ropeActive = false;
+            //    //sets rope to disabled
+            //    ropeActive = false;
 
-			}
+            //}
 		}
 	}
 }

@@ -101,7 +101,7 @@ public class RopeScript : MonoBehaviour {
 		if ((Vector2)transform.position != destiny && !done) {
 
 			//if distance from last node to player, is big enough
-			if (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) {
+			if (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance && Input.GetKey(KeyCode.Space)) {
 
 				//create a node
 				CreateNode ();
