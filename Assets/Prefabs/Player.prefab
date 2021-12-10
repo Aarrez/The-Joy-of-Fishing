@@ -128,7 +128,6 @@ GameObject:
   - component: {fileID: 3239065537959043001}
   - component: {fileID: 4381097790388635783}
   - component: {fileID: 7455145181207423391}
-  - component: {fileID: 4122047491502000435}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Player
@@ -230,22 +229,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.634862, y: 0.6539364}
   m_EdgeRadius: 0
---- !u!114 &4122047491502000435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4053748894634533293}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8a95205defc2094db9431862bcb6eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabRope:
-  - {fileID: 2357627989726194840, guid: a5ada995842da6b4196ff72fa663944a, type: 3}
-  - {fileID: 3461725475251722365, guid: e6d0a59296978b64d876bdde4497b0da, type: 3}
-  bait: {fileID: 3838465366234068353, guid: c0d3584a25a21d045bb03bb65fca3610, type: 3}
 --- !u!1 &5034702049854073347
 GameObject:
   m_ObjectHideFlags: 0

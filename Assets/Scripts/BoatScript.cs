@@ -14,6 +14,10 @@ public class BoatScript : MonoBehaviour
 
     private float currentTime;
 
+    private bool BoatCanMove = true;
+
+    public static event System.Action<bool> IsFishing;
+
     private void Awake()
     {
         rig2d = GetComponent<Rigidbody2D>();
@@ -38,11 +42,14 @@ public class BoatScript : MonoBehaviour
     private void OnEnable()
     {
         InputScript.DoMove += GetInput;
+        IsFishing += delegate (bool theFishing) { BoatCanMove = theFishing; };
+
     }
 
     private void OnDisable()
     {
         InputScript.DoMove -= GetInput;
+        IsFishing -= delegate (bool theFishsing) { BoatCanMove = theFishsing; };
     }
 
     private void FixedUpdate()
@@ -57,6 +64,8 @@ public class BoatScript : MonoBehaviour
 
     private void MoveLeftRight()
     {
+        if (!BoatCanMove) { return; }
+
         switch (inputValueX)
         {
             case 0:
