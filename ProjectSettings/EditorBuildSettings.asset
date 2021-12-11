@@ -5,11 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Leo CamTest Assets Implementation Scene.unity
-    guid: b7fcc8283b4b0084aad79e49af51bcda
+    path: Assets/Scenes/Main Scene.unity
+    guid: 4aec74d0c4077954e8b0abc1eace7549
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0dc8ab25c4a2bbf4884b75c9480e8273, type: 2}
