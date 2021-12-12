@@ -5,7 +5,7 @@ public class throwhook : MonoBehaviour {
 
 	//hook prefab
 	public GameObject hook;
-	public Transform lurePoint;
+	public Transform baitpoint;
 
 	//holds whether rope is active or not
 	bool ropeActive;
@@ -14,9 +14,7 @@ public class throwhook : MonoBehaviour {
 	GameObject curHook;
 		
 	// Update is called once per frame
-	void Update () 
-	
-	{
+	void Update () {
 	
 		//on left click
 		if (Input.GetMouseButtonDown (0)) {
@@ -25,7 +23,7 @@ public class throwhook : MonoBehaviour {
 			if (ropeActive == false) {
 
 				//destiny is where the mouse is
-				Vector2 destiny = lurePoint.transform.position;
+				Vector2 destiny = baitpoint.position;	//Camera.main.ScreenToWorldPoint (Input.mousePosition);
 
 				//creates a hook
 				curHook = (GameObject)Instantiate (hook, transform.position, Quaternion.identity);
@@ -40,10 +38,10 @@ public class throwhook : MonoBehaviour {
 			} else {
 
 				//delete rope
-				//Destroy (curHook);
+				Destroy (curHook);
 
 				//sets rope to disabled
-				//ropeActive = false;
+				ropeActive = false;
 
 			}
 		}

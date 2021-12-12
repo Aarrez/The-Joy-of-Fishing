@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class RopeScript : MonoBehaviour 
-{
+public class RopeScript : MonoBehaviour {
 
 	//holds where the hook is going to
 	[HideInInspector]
@@ -20,7 +19,7 @@ public class RopeScript : MonoBehaviour
 	public GameObject nodePrefab;
 
 	//player gameobject
-	public GameObject playerRodPoint;
+	public GameObject player;
 
 	//last node instantiated
 	GameObject lastNode;
@@ -44,14 +43,14 @@ public class RopeScript : MonoBehaviour
 	HingeJoint2D hinge;
 
 	// Use this for initialization
-	void Start () 
-	{
+	void Start () {
+	
 		//sets the line renderer
 		lr = GetComponent<LineRenderer> ();
 
-		//sets PlayerRod Point
-		if(playerRodPoint==null)
-		playerRodPoint = GameObject.FindGameObjectWithTag ("PlayerRod");
+		//sets player
+		if(player==null)
+		player = GameObject.FindGameObjectWithTag ("PlayerRod");
 
 		//sets last node to the hook
 		lastNode = transform.gameObject;
@@ -64,8 +63,7 @@ public class RopeScript : MonoBehaviour
 		Collider2D col = Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (Input.mousePosition));
 
 		//check if object has rigidbody
-		if (col != null && col.GetComponent<Rigidbody2D>()!=null) 
-		{
+		if (col != null && col.GetComponent<Rigidbody2D>()!=null) {
 
 			//set it as the targe
 			target = col.transform;
@@ -90,9 +88,14 @@ public class RopeScript : MonoBehaviour
 
 	}
 	
-	// Update is called once per frame
-	void Update () 
+	void OnReelDown()
 	{
+		done = false;
+		Debug.Log("test");
+	}
+	// Update is called once per frame
+	void Update () {
+
 	
 
 		//moves hook to desired position
@@ -101,12 +104,10 @@ public class RopeScript : MonoBehaviour
 
 
 		//while hook is not on destiny
-		if ((Vector2)transform.position != destiny && !done) 
-		{
+		if ((Vector2)transform.position != destiny && !done) {
 
 			//if distance from last node to player, is big enough
-			if (Vector2.Distance (playerRodPoint.transform.position, lastNode.transform.position) > distance) 
-			{
+			if (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) {
 
 				//create a node
 				CreateNode ();
@@ -114,16 +115,14 @@ public class RopeScript : MonoBehaviour
 			}
 
 			//if node is on position and rope is not yet done
-		} else if (done == false) 
-		{
+		} else if (done == false) {
 
 			//set it to done
 			done = true;
 
 
 			//creates node between last node and player (in the same frame)
-			while (Vector2.Distance (playerRodPoint.transform.position, lastNode.transform.position) > distance) 
-			{
+			while (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) {
 				CreateNode ();
 			}
 
@@ -132,7 +131,7 @@ public class RopeScript : MonoBehaviour
 			hinge.autoConfigureConnectedAnchor = false;
 
 			//binds last node to player
-			lastNode.GetComponent<HingeJoint2D> ().connectedBody = playerRodPoint.GetComponent<Rigidbody2D> ();
+			lastNode.GetComponent<HingeJoint2D> ().connectedBody = player.GetComponent<Rigidbody2D> ();
 
 
 		} 
@@ -149,14 +148,13 @@ public class RopeScript : MonoBehaviour
 		lr.positionCount =vertexCount;
 	
 		//each node is a vertex oft the rope
-		for (i = 0; i < Nodes.Count; i++) 
-		{
+		for (i = 0; i < Nodes.Count; i++) {
 			
 			lr.SetPosition (i, Nodes [i].transform.position);
 		}
 
 		//sets last vetex of rope to be the player
-		lr.SetPosition (i, playerRodPoint.transform.position);
+		lr.SetPosition (i, player.transform.position);
 
 	}
 
@@ -166,7 +164,7 @@ public class RopeScript : MonoBehaviour
 		//finds position to create and creates node (vertex)
 
 		//makes vector that points from last node to player
-		Vector2 pos2Create = playerRodPoint.transform.position - lastNode.transform.position;
+		Vector2 pos2Create = player.transform.position - lastNode.transform.position;
 
 		//makes it desired lenght
 		pos2Create.Normalize ();
@@ -185,8 +183,7 @@ public class RopeScript : MonoBehaviour
 		lastNode.GetComponent<HingeJoint2D> ().connectedBody = go.GetComponent<Rigidbody2D> ();
 
 		//if attached to an object, turn of colliders (you may want this to be deleted in some cases)
-		if (target != null && go.GetComponent<Collider2D>()!=null) 
-		{
+		if (target != null && go.GetComponent<Collider2D>()!=null) {
 			go.GetComponent<Collider2D> ().enabled = false;
 		}
 

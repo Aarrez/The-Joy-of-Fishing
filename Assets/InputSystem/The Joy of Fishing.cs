@@ -116,6 +116,15 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CastOut"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6e8b318-751a-4ea9-86c9-cb428876be48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -479,6 +488,17 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Mouse1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""559306e6-123a-47f0-908b-a32557410897"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""CastOut"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1104,6 +1124,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player_SwingLeft = m_Player.FindAction("SwingLeft", throwIfNotFound: true);
         m_Player_SwingRight = m_Player.FindAction("SwingRight", throwIfNotFound: true);
         m_Player_Mouse1 = m_Player.FindAction("Mouse1", throwIfNotFound: true);
+        m_Player_CastOut = m_Player.FindAction("CastOut", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1188,6 +1209,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwingLeft;
     private readonly InputAction m_Player_SwingRight;
     private readonly InputAction m_Player_Mouse1;
+    private readonly InputAction m_Player_CastOut;
     public struct PlayerActions
     {
         private @TheJoyofFishing m_Wrapper;
@@ -1202,6 +1224,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public InputAction @SwingLeft => m_Wrapper.m_Player_SwingLeft;
         public InputAction @SwingRight => m_Wrapper.m_Player_SwingRight;
         public InputAction @Mouse1 => m_Wrapper.m_Player_Mouse1;
+        public InputAction @CastOut => m_Wrapper.m_Player_CastOut;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1241,6 +1264,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @Mouse1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
                 @Mouse1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
                 @Mouse1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
+                @CastOut.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @CastOut.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @CastOut.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1275,6 +1301,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @Mouse1.started += instance.OnMouse1;
                 @Mouse1.performed += instance.OnMouse1;
                 @Mouse1.canceled += instance.OnMouse1;
+                @CastOut.started += instance.OnCastOut;
+                @CastOut.performed += instance.OnCastOut;
+                @CastOut.canceled += instance.OnCastOut;
             }
         }
     }
@@ -1474,6 +1503,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnSwingLeft(InputAction.CallbackContext context);
         void OnSwingRight(InputAction.CallbackContext context);
         void OnMouse1(InputAction.CallbackContext context);
+        void OnCastOut(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

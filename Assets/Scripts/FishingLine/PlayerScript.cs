@@ -3,7 +3,7 @@ using System.Collections;
 
 
 //auxiliar script
-public class HookScript : MonoBehaviour {
+public class PlayerScript : MonoBehaviour {
 
 	Rigidbody2D rb;
 	public float forcetoAdd=100;
