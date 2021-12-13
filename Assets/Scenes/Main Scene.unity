@@ -1545,7 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.97
+  parallaxAmount: 1
   SetYParallax: 1
   yoffset_select_all_objs_w_this_script: -19.2
 --- !u!212 &121409794
@@ -2274,7 +2274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165722989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.847576, y: 11.293168, z: 0.7626428}
+  m_LocalPosition: {x: -35.75, y: 11.293168, z: 0.7626428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3706,7 +3706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.95
+  parallaxAmount: 0.97
   SetYParallax: 1
   yoffset_select_all_objs_w_this_script: -19.2
 --- !u!212 &552157081
@@ -13609,7 +13609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903126956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.84243, y: 12.003167, z: 0.7626428}
+  m_LocalPosition: {x: 41.84243, y: 9, z: 0.7626428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14999,7 +14999,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8581590831025062255, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8024235
+      value: -29.1
       objectReference: {fileID: 0}
     - target: {fileID: 8581590831025062255, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
       propertyPath: m_LocalPosition.y
