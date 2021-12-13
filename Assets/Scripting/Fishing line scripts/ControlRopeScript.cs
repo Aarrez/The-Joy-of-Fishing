@@ -33,8 +33,8 @@ public class ControlRopeScript : MonoBehaviour
     void Awake()
     {
         getKey = new TheJoyofFishing();
-        actionReelUp = getKey.Player.ReelUp;
-        actionReelDown = getKey.Player.ReelDown;
+        //actionReelUp = getKey.Player.ReelUp;
+       //actionReelDown = getKey.Player.ReelDown;
         actionSwingLeft = getKey.Player.SwingLeft;
         actionSwingRight = getKey.Player.SwingRight;
 

@@ -51,24 +51,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ReelUp",
-                    "type": "Button",
-                    "id": "8393930a-05fc-4f44-afd9-1959054354a0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ReelDown",
-                    "type": "Button",
-                    "id": "c664a86a-87f5-4688-8ffd-a330ea903211",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "SwingLeft",
                     "type": "Button",
                     "id": "ebca5c00-5812-4efc-80d3-68989f6b3524",
@@ -103,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Reel",
+                    "type": "Value",
+                    "id": "78f7a38a-9782-4207-ae69-47a07490635b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -382,6 +373,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "",
+                    "id": "fab06b26-aa9d-42a2-a295-0c8565efe1d2",
+                    "path": "<Gamepad>/dpad/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "MoveBoat",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "1D Axis",
                     "id": "b851d816-6a57-4811-b6dd-77e61492458a",
                     "path": "1DAxis",
@@ -413,28 +415,6 @@
                     "action": "FishingBait",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "380231e3-5c84-41da-9918-37e07d773d51",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "ReelUp",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5eba274a-5d81-4e55-b5e4-1657d79cd766",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "ReelDown",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -479,6 +459,50 @@
                     "action": "CastOut",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "769f3b03-2f0f-4238-8cd7-690aaafed46f",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CastOut",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "ReelDirection",
+                    "id": "396eef6b-20fa-457c-b3ee-862938111e7e",
+                    "path": "1DAxis(whichSideWins=1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "8250682b-abc8-4b75-851d-e7e4bca0d9ce",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Reel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "79461fb7-3ae5-4704-a56b-97e9591d25c5",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Reel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

@@ -1,34 +1,33 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class BoatScript : MonoBehaviour
 {
     private Rigidbody2D rig2d;
     private AnimationCurve moveAnimCurve;
-
     [Header("Movement stuff")]
     [SerializeField] private float boatSpeed = 1f;
-
     [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
-
     private float inputValueX = 0f;
-
     private float currentTime;
-    public RopeScript ropeScriptLeaveEmpty;
-
     private bool BoatCanMove = true;
-
     public static event System.Action<bool> IsFishing;
+    //hook prefab
+    public GameObject hook;
+    public Transform baitpoint;
+    public Camera cameramachine;
 
+    //holds whether rope is active or not
+    bool ropeActive;
+    //current hook on the scene
+    GameObject curHook;
     private void Awake()
     {
         rig2d = GetComponent<Rigidbody2D>();
     }
-
     private void Start()
     {
         MakeAnimationCurve();
     }
-
     #region Make a animation curve
 
     private void MakeAnimationCurve()
@@ -44,6 +43,7 @@ public class BoatScript : MonoBehaviour
     {
         InputScript.DoMove += GetInput;
         IsFishing += delegate (bool theFishing) { BoatCanMove = theFishing; };
+
     }
 
     private void OnDisable()
@@ -84,15 +84,59 @@ public class BoatScript : MonoBehaviour
         }
     }
 
-    private void OnReelDown()
+	void OnReel(InputValue value)
+	{
+        ReelDirection();
+	}
+
+    void ReelDirection()
     {
-        if (ropeScriptLeaveEmpty == null)
+        if(RopeScript.instance.done == true)
         {
+            RopeScript.instance.CreateNode();
+        }
+        return;
+    }
+    /*void OnReelUp(InputValue value)
+    {
+        if (RopeScript.instance.done == true && !curHook == null)
+        {
+            RopeScript.instance.destiny = RopeScript.instance.reelinpoint.position;
+            RopeScript.instance.done = false;
+            Debug.Log("test");
+        }
+        else if (value == null && RopeScript.instance.done == false)
+        {
+            RopeScript.instance.done = true;
+        }
+    }*/
+
+    private void OnCastOut()
+    {
+        //when rope is not activated
+        if (ropeActive == false)
+        {
+            //destiny is where the mouse is
+            Vector2 destiny = baitpoint.position;   //Camera.main.ScreenToWorldPoint (Input.mousePosition);
+
+            //creates a hook
+            curHook = (GameObject)Instantiate(hook, transform.position, Quaternion.identity);
+
+            //sets its destiny
+            curHook.GetComponent<RopeScript>().destiny = destiny;
+
+            //sets rope to enabled
+            ropeActive = true;
         }
         else
         {
-            ropeScriptLeaveEmpty.done = false;
-            Debug.Log("test");
+
+            //delete rope
+            Destroy(curHook);
+
+            //sets rope to disabled
+            ropeActive = false;
+
         }
     }
 }
