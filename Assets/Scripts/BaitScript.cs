@@ -9,13 +9,26 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class BaitScript : MonoBehaviour
 {
-    public static event Action FishCought;
+    [SerializeField] private BaitScriptAbleObject[] bait;
+
+    [Range(0, 2)] [SerializeField] int currentBait;
+
+    public static Func<int> BaitLevel;
+
+    private void OnEnable()
+    {
+        BaitLevel += delegate () { return bait[currentBait].baitLevel; };
+    }
+
+    private void OnDisable()
+    {
+        BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Fish")
         {
-            FishCought?.Invoke();
             collision.transform.parent = this.transform;
             for (int i = 0; i < this.transform.childCount; i++)
             {

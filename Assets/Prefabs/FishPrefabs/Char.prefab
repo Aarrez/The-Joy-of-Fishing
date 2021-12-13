@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5883369509628922158}
   - component: {fileID: 3107338935538063745}
   - component: {fileID: 1287631276213243781}
+  - component: {fileID: 5023515390090069303}
   m_Layer: 0
   m_Name: Char
   m_TagString: Fish
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181217008843519828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.6143284, y: -2.989038, z: 0}
+  m_LocalPosition: {x: -3.7300367, y: 3.285487, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -118,9 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df30e90a46919864ca79b124c882e5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishStats: {fileID: 11400000, guid: 06d2810858ae18b49912236c896dff5f, type: 2}
+  sprRend: {fileID: 0}
   wanderRadius: 5
   wanderJitter: 1
-  fishStats: {fileID: 11400000, guid: 06d2810858ae18b49912236c896dff5f, type: 2}
 --- !u!70 &1287631276213243781
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,6 +139,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 1}
   m_Direction: 0
+--- !u!114 &5023515390090069303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181217008843519828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98caa799924fb004c9de084cd196e5df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishStats: {fileID: 11400000, guid: 06d2810858ae18b49912236c896dff5f, type: 2}
+  sprRend: {fileID: 0}
 --- !u!1 &6843878150318292005
 GameObject:
   m_ObjectHideFlags: 0
