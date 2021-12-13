@@ -58,7 +58,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""name"": ""FishingBait"",
                     ""type"": ""Value"",
                     ""id"": ""52e30900-4b25-440a-b0ac-92ce207b9c71"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -112,6 +112,15 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""name"": ""Mouse1"",
                     ""type"": ""Button"",
                     ""id"": ""0fcd6c29-676e-4c68-a09b-80250c5900f2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CastOut"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6e8b318-751a-4ea9-86c9-cb428876be48"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -395,6 +404,39 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""b851d816-6a57-4811-b6dd-77e61492458a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FishingBait"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""5e2f92cb-e373-4b7f-9aaa-105a7689f379"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""FishingBait"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3c134801-e072-4d62-a9df-a189b2e340f0"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""FishingBait"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
                     ""id"": ""380231e3-5c84-41da-9918-37e07d773d51"",
                     ""path"": ""<Keyboard>/w"",
@@ -450,59 +492,15 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""67f82d2b-e2ff-444f-ac57-102d560c27ca"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""559306e6-123a-47f0-908b-a32557410897"",
+                    ""path"": ""<Keyboard>/numpad0"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""FishingBait"",
-                    ""isComposite"": true,
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""CastOut"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""5ce3ced4-699e-4cb0-ba84-54d536f8859e"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""FishingBait"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""ea41ba01-c246-4b3e-b8cc-ea675a4afd2f"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""FishingBait"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""cb0ebed9-4408-45b9-92cf-b42d2f3bec02"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""FishingBait"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""f78321b1-38ef-4d60-a522-a4cb0530a632"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""FishingBait"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -1126,6 +1124,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player_SwingLeft = m_Player.FindAction("SwingLeft", throwIfNotFound: true);
         m_Player_SwingRight = m_Player.FindAction("SwingRight", throwIfNotFound: true);
         m_Player_Mouse1 = m_Player.FindAction("Mouse1", throwIfNotFound: true);
+        m_Player_CastOut = m_Player.FindAction("CastOut", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1210,6 +1209,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwingLeft;
     private readonly InputAction m_Player_SwingRight;
     private readonly InputAction m_Player_Mouse1;
+    private readonly InputAction m_Player_CastOut;
     public struct PlayerActions
     {
         private @TheJoyofFishing m_Wrapper;
@@ -1224,6 +1224,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public InputAction @SwingLeft => m_Wrapper.m_Player_SwingLeft;
         public InputAction @SwingRight => m_Wrapper.m_Player_SwingRight;
         public InputAction @Mouse1 => m_Wrapper.m_Player_Mouse1;
+        public InputAction @CastOut => m_Wrapper.m_Player_CastOut;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1263,6 +1264,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @Mouse1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
                 @Mouse1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
                 @Mouse1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
+                @CastOut.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @CastOut.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @CastOut.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1297,6 +1301,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @Mouse1.started += instance.OnMouse1;
                 @Mouse1.performed += instance.OnMouse1;
                 @Mouse1.canceled += instance.OnMouse1;
+                @CastOut.started += instance.OnCastOut;
+                @CastOut.performed += instance.OnCastOut;
+                @CastOut.canceled += instance.OnCastOut;
             }
         }
     }
@@ -1496,6 +1503,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnSwingLeft(InputAction.CallbackContext context);
         void OnSwingRight(InputAction.CallbackContext context);
         void OnMouse1(InputAction.CallbackContext context);
+        void OnCastOut(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

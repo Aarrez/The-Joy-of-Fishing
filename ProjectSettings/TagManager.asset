@@ -14,6 +14,7 @@ TagManager:
   - Rope
   - Wall
   - GameBound
+  - PlayerRod
   layers:
   - Default
   - TransparentFX

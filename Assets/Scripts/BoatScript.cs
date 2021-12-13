@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BoatScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BoatScript : MonoBehaviour
     private float inputValueX = 0f;
 
     private float currentTime;
+    public RopeScript ropeScriptLeaveEmpty;
 
     private bool BoatCanMove = true;
 
@@ -83,4 +85,17 @@ public class BoatScript : MonoBehaviour
                 break;
         }
     }
+
+	void OnReelDown()
+	{
+        if(ropeScriptLeaveEmpty == null)
+        {
+            
+        }
+        else
+        {
+		ropeScriptLeaveEmpty.done = false;
+		Debug.Log("test");
+        }
+	}
 }
