@@ -505,7 +505,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""positive"",
                     ""id"": ""8250682b-abc8-4b75-851d-e7e4bca0d9ce"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
@@ -516,7 +516,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""negative"",
                     ""id"": ""79461fb7-3ae5-4704-a56b-97e9591d25c5"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",

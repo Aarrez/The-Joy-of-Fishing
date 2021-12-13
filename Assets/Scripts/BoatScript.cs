@@ -14,12 +14,14 @@ public class BoatScript : MonoBehaviour
     //hook prefab
     public GameObject hook;
     public Transform baitpoint;
-    public Camera cameramachine;
-
     //holds whether rope is active or not
     bool ropeActive;
     //current hook on the scene
     GameObject curHook;
+
+
+
+
     private void Awake()
     {
         rig2d = GetComponent<Rigidbody2D>();
@@ -94,6 +96,7 @@ public class BoatScript : MonoBehaviour
         if(RopeScript.instance.done == true)
         {
             RopeScript.instance.CreateNode();
+            //RopeScript.instance.crankdown();
         }
         return;
     }
@@ -124,7 +127,9 @@ public class BoatScript : MonoBehaviour
 
             //sets its destiny
             curHook.GetComponent<RopeScript>().destiny = destiny;
-
+            GameManager.instance.Hook = curHook.transform;
+            GameManager.instance.baitCam = true;
+            GameManager.instance.moveCam = 3;
             //sets rope to enabled
             ropeActive = true;
         }
@@ -133,7 +138,8 @@ public class BoatScript : MonoBehaviour
 
             //delete rope
             Destroy(curHook);
-
+            GameManager.instance.baitCam = false;
+            GameManager.instance.moveCam = 1;
             //sets rope to disabled
             ropeActive = false;
 

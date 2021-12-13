@@ -17,8 +17,8 @@ public sealed class RopeScript : MonoBehaviour {
 	public float distance = 2;
 	//node prefab
 	public GameObject nodePrefab;
-	//player gameobject
-	public GameObject player;
+	//rodtransform gameobject
+	public GameObject rodtransform;
 	//last node instantiated
 	public GameObject lastNode;
 
@@ -49,9 +49,9 @@ public sealed class RopeScript : MonoBehaviour {
 	{
 			//sets the line renderer
 		lr = GetComponent<LineRenderer> ();
-		//sets player
-		if(player==null)
-		player = GameObject.FindGameObjectWithTag ("PlayerRod");
+		//sets rodtransform
+		if(rodtransform==null)
+		rodtransform = GameObject.FindGameObjectWithTag ("PlayerRod");
 		//sets last node to the hook
 		lastNode = transform.gameObject;
 		//add it to nodelist
@@ -106,8 +106,8 @@ void Update ()
 		if ((Vector2)transform.position != destiny && !done) 
 		{
 
-			//if distance from last node to player, is big enough
-			if (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) 
+			//if distance from last node to rodtransform, is big enough
+			if (Vector2.Distance (rodtransform.transform.position, lastNode.transform.position) > distance) 
 			{
 
 				//create a node
@@ -121,8 +121,8 @@ void Update ()
 		{
 		//set it to done
 		done = true;
-		//creates node between last node and player (in the same frame)
-		while (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) 
+		//creates node between last node and rodtransform (in the same frame)
+		while (Vector2.Distance (rodtransform.transform.position, lastNode.transform.position) > distance) 
 		{
 			CreateNode ();
 		}
@@ -131,8 +131,8 @@ void Update ()
 		if(hinge!=null)
 		hinge.autoConfigureConnectedAnchor = false;
 
-		//binds last node to player
-		lastNode.GetComponent<HingeJoint2D> ().connectedBody = player.GetComponent<Rigidbody2D> ();
+		//binds last node to rodtransform
+		lastNode.GetComponent<HingeJoint2D> ().connectedBody = rodtransform.GetComponent<Rigidbody2D> ();
 		} 
 		RenderLine ();
 
@@ -140,7 +140,10 @@ void Update ()
 
 public void crankdown()
 {
-
+	while (Vector2.Distance (rodtransform.transform.position, lastNode.transform.position) > distance) 
+	{
+		CreateNode ();
+	}
 }
 	//renders rope
 	void RenderLine()
@@ -155,8 +158,8 @@ public void crankdown()
 			lr.SetPosition (i, Nodes [i].transform.position);
 		}
 
-		//sets last vetex of rope to be the player
-		lr.SetPosition (i, player.transform.position);
+		//sets last vetex of rope to be the rodtransform
+		lr.SetPosition (i, rodtransform.transform.position);
 
 	}
 
@@ -165,8 +168,8 @@ public void crankdown()
 	{
 		//finds position to create and creates node (vertex)
 
-		//makes vector that points from last node to player
-		Vector2 pos2Create = player.transform.position - lastNode.transform.position;
+		//makes vector that points from last node to rodtransform
+		Vector2 pos2Create = rodtransform.transform.position - lastNode.transform.position;
 
 		//makes it desired lenght
 		pos2Create.Normalize ();

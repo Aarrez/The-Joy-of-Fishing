@@ -108,9 +108,9 @@ Rigidbody2D:
   m_AngularDrag: 0.1
   m_GravityScale: 0.4
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58000011381285992
 CircleCollider2D:
@@ -165,16 +165,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destiny: {x: 0, y: 0}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 512
   speed: 50
   distance: 1
-  reeloutpoint: {fileID: 0}
-  reelinpoint: {fileID: 0}
   nodePrefab: {fileID: 1000014215547198, guid: a02635807ba30044b8200e489d8cbdb9, type: 3}
-  player: {fileID: 0}
+  rodtransform: {fileID: 0}
+  lastNode: {fileID: 0}
+  lr: {fileID: 0}
+  vertexCount: 2
+  Nodes: []
   done: 0
+  target: {fileID: 0}
+  hinge: {fileID: 0}
 --- !u!120 &120000014128933588
 LineRenderer:
   m_ObjectHideFlags: 0
