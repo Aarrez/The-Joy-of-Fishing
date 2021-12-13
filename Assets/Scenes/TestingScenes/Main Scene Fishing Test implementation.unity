@@ -10562,11 +10562,6 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
---- !u!20 &1525618581 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 4962793762173381915, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
-  m_PrefabInstance: {fileID: 4962793760973506359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1535537773
 GameObject:
   m_ObjectHideFlags: 0
@@ -12980,11 +12975,6 @@ Transform:
   m_Father: {fileID: 1347715765}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.998}
---- !u!4 &1915441768 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2794254112950225140, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
-  m_PrefabInstance: {fileID: 7824927939095893822}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954328432
 GameObject:
   m_ObjectHideFlags: 0
@@ -14217,6 +14207,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2018631586}
+    - target: {fileID: 4962793760303239591, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962793762173381914, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6814995
+      objectReference: {fileID: 0}
     - target: {fileID: 4962793762173381915, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: orthographic size
       value: 5.625
@@ -14361,22 +14359,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2794254112950225140, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 2794254112950225140, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 6041324265593011362, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
-      propertyPath: cameramachine
-      value: 
-      objectReference: {fileID: 1525618581}
-    - target: {fileID: 6041324265593011362, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
-      propertyPath: actionReference
-      value: 
-      objectReference: {fileID: 6858621703244249633, guid: 0be9b65bb7e03834b818fe165e30cf6b, type: 3}
     - target: {fileID: 7824927940298590364, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -14425,13 +14407,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9003574985541585766, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
-      propertyPath: baitpoint
-      value: 
-      objectReference: {fileID: 1915441768}
-    m_RemovedComponents:
-    - {fileID: 2057018804318286289, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
-    - {fileID: 9003574985541585766, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
 --- !u!1001 &9132801945439384522
 PrefabInstance:
