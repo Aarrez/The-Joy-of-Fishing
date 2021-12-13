@@ -29,6 +29,6 @@ public class OverworldParallaxScript : MonoBehaviour
             yDistance = (insertCamera.transform.position.y * parallaxAmount);
         }
 
-        transform.position = new Vector3(startPos + xDistance, startPos + yoffset_select_all_objs_w_this_script + yDistance, transform.position.z);
+        transform.position = new Vector3(startPos + xDistance, startPos + yoffset_select_all_objs_w_this_script + yDistance, transform.position.z) ;
     }
 }
