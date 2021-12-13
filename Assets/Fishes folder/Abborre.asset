@@ -18,7 +18,7 @@ MonoBehaviour:
   weight: 20
   length: 20
   value: 5
-  baitAttractionRadius: 5
+  baitAttractionRadius: 3
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 2
   excitementLevel: 1

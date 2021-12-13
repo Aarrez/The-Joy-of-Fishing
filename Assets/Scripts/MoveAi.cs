@@ -32,7 +32,7 @@ public class MoveAi : MonoBehaviour
     {
         agent = GetComponent<Seeker>();
         path = GetComponent<AIPath>();
-        player = GameObject.FindGameObjectWithTag("Bait").transform;
+        player = FindObjectOfType<BaitScript>().transform;
         sprRend = GetComponentInChildren<SpriteRenderer>();
     }
 
