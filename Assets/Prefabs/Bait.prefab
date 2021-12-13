@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3838465366234068353}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.3769999, y: -6.9090004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -96,7 +96,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3838465366234068353}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -132,14 +132,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3838465366234068353}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1bf7cda3dcbf764baefe4390b8a749a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reelSpeed: 0.1
-  rampUpTime: 1
-  maxLineDist: 22
+  reelSpeed: 2
 --- !u!114 &1470225382571936955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d68e5a89fec7364a94583fe26034042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bait:
+  - {fileID: 11400000, guid: ef12b34bcf951e0448f6a8d8bac86170, type: 2}
+  - {fileID: 11400000, guid: 3cb2a833816582f48b62062c90a1df16, type: 2}
+  - {fileID: 11400000, guid: 3b706c610f3e3324b9775a0773b587d8, type: 2}
+  currentBait: 0

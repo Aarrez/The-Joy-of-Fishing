@@ -4,7 +4,7 @@ public class FishStats : MonoBehaviour
 {
     public Fish fishStats;
 
-    public SpriteRenderer sprRend;
+    internal SpriteRenderer sprRend;
 
 
     private void Start()

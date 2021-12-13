@@ -1,5 +1,6 @@
-using UnityEngine;
 using UnityEditor.Animations;
+using UnityEngine;
+
 /*
  * Creates a asset with stats to easily make fish.
  */

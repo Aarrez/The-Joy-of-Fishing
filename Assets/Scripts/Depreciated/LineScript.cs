@@ -1,10 +1,8 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class LineScript : MonoBehaviour
 {
-    
     private AnimationCurve reelUpCurve;
     private AnimationCurve reelDownCurve;
 
@@ -49,6 +47,7 @@ public class LineScript : MonoBehaviour
     {
         InputScript.MoveLine += GetInput;
     }
+
     //Called when object is destroyed of disabled
     private void OnDisable()
     {

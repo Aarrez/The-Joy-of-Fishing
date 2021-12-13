@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8898945665741332746}
   - component: {fileID: 8898945665741332789}
   - component: {fileID: 8898945665741332788}
-  - component: {fileID: 8898945665741332791}
   - component: {fileID: 2944203013556537439}
+  - component: {fileID: 8898945665741332791}
   m_Layer: 0
   m_Name: Abborre
   m_TagString: Fish
@@ -123,22 +123,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &8898945665741332791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8898945665741332790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df30e90a46919864ca79b124c882e5f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishStats: {fileID: 11400000, guid: b6c377b4baee9c441af8d56440698186, type: 2}
-  sprRend: {fileID: 0}
-  wanderRadius: 10
-  wanderJitter: 1
 --- !u!114 &2944203013556537439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +136,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: b6c377b4baee9c441af8d56440698186, type: 2}
-  sprRend: {fileID: 0}
+--- !u!114 &8898945665741332791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898945665741332790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df30e90a46919864ca79b124c882e5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishStats: {fileID: 11400000, guid: b6c377b4baee9c441af8d56440698186, type: 2}
+  wanderRadius: 10
+  wanderJitter: 1
 --- !u!1 &8898945666673987971
 GameObject:
   m_ObjectHideFlags: 0

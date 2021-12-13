@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class BoatScript : MonoBehaviour
 {
@@ -45,7 +44,6 @@ public class BoatScript : MonoBehaviour
     {
         InputScript.DoMove += GetInput;
         IsFishing += delegate (bool theFishing) { BoatCanMove = theFishing; };
-
     }
 
     private void OnDisable()
@@ -86,16 +84,15 @@ public class BoatScript : MonoBehaviour
         }
     }
 
-	void OnReelDown()
-	{
-        if(ropeScriptLeaveEmpty == null)
+    private void OnReelDown()
+    {
+        if (ropeScriptLeaveEmpty == null)
         {
-            
         }
         else
         {
-		ropeScriptLeaveEmpty.done = false;
-		Debug.Log("test");
+            ropeScriptLeaveEmpty.done = false;
+            Debug.Log("test");
         }
-	}
+    }
 }
