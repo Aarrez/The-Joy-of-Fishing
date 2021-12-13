@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973759246931036699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.91, y: -2, z: 0}
+  m_LocalPosition: {x: 6.34, y: -1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -305,6 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hook: {fileID: 1000012688847204, guid: ddbf897f9a3f2a04c82360e94d84e7d1, type: 3}
+  baitpoint: {fileID: 2794254112950225140}
+  playerInputHere: {fileID: 0}
 --- !u!1 &5034702049854073347
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boatSpeed: 10
   rampUpTime: 1
+  ropeScriptLeaveEmpty: {fileID: 0}
 --- !u!114 &7890050411347847053
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,14 +7,14 @@ public class CrankScript2extra : MonoBehaviour
 
     public float rotateSpeed = 10f;
     private Transform selected;
-    private WholeRopeScript rope;
+    private WholeRopeScript2extra rope;
     private int numLinks;
     public int maxLinks = 15;
 
     void Awake()
     {
         selected = transform.Find("Selected");
-        rope = transform.parent.GetComponent<WholeRopeScript>();
+        rope = transform.parent.GetComponent<WholeRopeScript2extra>();
         numLinks = rope.numLinks;
     }
 
