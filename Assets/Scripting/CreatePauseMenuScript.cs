@@ -7,6 +7,7 @@ public class CreatePauseMenuScript : MonoBehaviour
     TheJoyofFishing getKey;
     InputAction actionEscape;
     GameObject pauseCanvas;
+    public bool SetPause;
     void Awake()
     {
         getKey = new TheJoyofFishing();
@@ -40,7 +41,8 @@ public class CreatePauseMenuScript : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("ESCAPE PAUSE");
             pauseCanvas.SetActive(true);
-        } else { Time.timeScale = 1; Debug.Log("ESCAPE un-pause"); pauseCanvas.SetActive(false); }
+            SetPause = true;
+        } else { Time.timeScale = 1; Debug.Log("ESCAPE un-pause"); pauseCanvas.SetActive(false); SetPause = false; }
 
     }
 
@@ -49,6 +51,7 @@ public class CreatePauseMenuScript : MonoBehaviour
         Time.timeScale = 1;
         Debug.Log("DONE THROUGH BUTTOPN");
         pauseCanvas.SetActive(false);
+        SetPause = false;
     }
 
 
