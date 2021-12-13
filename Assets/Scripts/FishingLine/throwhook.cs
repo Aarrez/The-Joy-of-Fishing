@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class throwhook : MonoBehaviour {
 
 	//hook prefab
 	public GameObject hook;
 	public Transform baitpoint;
+	public PlayerInput playerInputHere;
 
 	//holds whether rope is active or not
 	bool ropeActive;
@@ -17,7 +19,8 @@ public class throwhook : MonoBehaviour {
 	void Update () {
 	
 		//on left click
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown (0)) 
+		{
 
 			//when rope is not activated
 			if (ropeActive == false) {

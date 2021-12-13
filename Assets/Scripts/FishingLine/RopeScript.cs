@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 
 public class RopeScript : MonoBehaviour {
@@ -14,6 +15,9 @@ public class RopeScript : MonoBehaviour {
 
 	//distance between each node
 	public float distance = 2;
+
+	public Transform reeloutpoint;
+	public PlayerInput playerInput;
 
 	//node prefab
 	public GameObject nodePrefab;
@@ -34,7 +38,7 @@ public class RopeScript : MonoBehaviour {
 	List<GameObject> Nodes = new List<GameObject>();
 
 	//check if the full rope is created
-	bool done=false;
+	public bool done=false;
 
 	//is something if an object with a rigidbody is hit
 	Transform target;
@@ -86,12 +90,6 @@ public class RopeScript : MonoBehaviour {
 		}
 
 
-	}
-	
-	void OnReelDown()
-	{
-		done = false;
-		Debug.Log("test");
 	}
 	// Update is called once per frame
 	void Update () {
@@ -159,7 +157,7 @@ public class RopeScript : MonoBehaviour {
 	}
 
 
-	void CreateNode()
+	public void CreateNode()
 	{
 		//finds position to create and creates node (vertex)
 
