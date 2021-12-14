@@ -25,9 +25,9 @@ TagManager:
   - PostProcessing Layer
   - RopeLayer
   - CollisionWithRope
-  - 
-  - 
-  - 
+  - LakeBottom
+  - BaitLayer
+  - PlayerBoat
   - 
   - 
   - 

@@ -4,70 +4,63 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
 
-public class RopeScript : MonoBehaviour {
+public sealed class RopeScript : MonoBehaviour {
 
 	//holds where the hook is going to
 	[HideInInspector]
 	public Vector2 destiny;
+	public static RopeScript instance;
 
 	//velocity that the hook goes onto the destiny
 	public float speed= 1;
-
 	//distance between each node
-	public float distance = 2;
-
-	public Transform reeloutpoint;
-	public PlayerInput playerInput;
-
+	public float distance = 0.5f;
 	//node prefab
 	public GameObject nodePrefab;
-
-	//player gameobject
-	public GameObject player;
-
+	//rodtransform gameobject
+	public GameObject rodtransform;
 	//last node instantiated
-	GameObject lastNode;
+	public GameObject lastNode;
 
 	//line that represents rope
-	LineRenderer lr;
+	public LineRenderer lr;
 
 	//initial points on the rope (beginning and end)
-	int vertexCount=2;
+	public int vertexCount=2;
 
 	//list of all nodes instantiated
-	List<GameObject> Nodes = new List<GameObject>();
+	public List<GameObject> Nodes = new List<GameObject>();
 
 	//check if the full rope is created
 	public bool done=false;
 
 	//is something if an object with a rigidbody is hit
-	Transform target;
+	public Transform target;
 
 	//added hinge joint if there is relative object
-	HingeJoint2D hinge;
+	public HingeJoint2D hinge;
 
-	// Use this for initialization
-	void Start () {
-	
-		//sets the line renderer
+    private void Awake()
+    {
+		instance = this;
+	}
+    // Use this for initialization
+    void Start () 
+	{
+			//sets the line renderer
 		lr = GetComponent<LineRenderer> ();
-
-		//sets player
-		if(player==null)
-		player = GameObject.FindGameObjectWithTag ("PlayerRod");
-
+		//sets rodtransform
+		if(rodtransform==null)
+		rodtransform = GameObject.FindGameObjectWithTag ("PlayerRod");
 		//sets last node to the hook
 		lastNode = transform.gameObject;
-
 		//add it to nodelist
 		Nodes.Add (transform.gameObject);
-
-
 		//if hit an object
 		Collider2D col = Physics2D.OverlapPoint (Camera.main.ScreenToWorldPoint (Input.mousePosition));
-
 		//check if object has rigidbody
-		if (col != null && col.GetComponent<Rigidbody2D>()!=null) {
+		if (col != null && col.GetComponent<Rigidbody2D>()!=null) 
+		{
 
 			//set it as the targe
 			target = col.transform;
@@ -85,16 +78,24 @@ public class RopeScript : MonoBehaviour {
 
 
 		//prevents game from freezing if distance is zero
-		if (distance == 0) {
-			distance = 1;
+		if (distance == 0)
+		{
+			distance = 0.5f;
 		}
 
 
 	}
-	// Update is called once per frame
-	void Update () {
+	public void OnDrawGizmos() {
 
-	
+        GUIStyle style = new GUIStyle();
+
+        Gizmos.DrawWireSphere(transform.position, 0.2f);
+
+    }
+	// Update is called once per frame
+void Update () 
+	{
+					
 
 		//moves hook to desired position
 		if(transform.position!=(Vector3)destiny && !done)
@@ -102,42 +103,48 @@ public class RopeScript : MonoBehaviour {
 
 
 		//while hook is not on destiny
-		if ((Vector2)transform.position != destiny && !done) {
+		if ((Vector2)transform.position != destiny && !done) 
+		{
 
-			//if distance from last node to player, is big enough
-			if (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) {
+			//if distance from last node to rodtransform, is big enough
+			if (Vector2.Distance (rodtransform.transform.position, lastNode.transform.position) > distance) 
+			{
 
 				//create a node
 				CreateNode ();
 
 			}
 
-			//if node is on position and rope is not yet done
-		} else if (done == false) {
-
-			//set it to done
-			done = true;
-
-
-			//creates node between last node and player (in the same frame)
-			while (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) {
-				CreateNode ();
-			}
-
-			//enables joint to move with object(happens only if target is not null)
-			if(hinge!=null)
-			hinge.autoConfigureConnectedAnchor = false;
-
-			//binds last node to player
-			lastNode.GetComponent<HingeJoint2D> ().connectedBody = player.GetComponent<Rigidbody2D> ();
-
-
 		} 
+		else if (done == false)
+		//if node is on position and rope is not yet done
+		{
+		//set it to done
+		done = true;
+		//creates node between last node and rodtransform (in the same frame)
+		while (Vector2.Distance (rodtransform.transform.position, lastNode.transform.position) > distance) 
+		{
+			CreateNode ();
+		}
 
+		//enables joint to move with object(happens only if target is not null)
+		if(hinge!=null)
+		hinge.autoConfigureConnectedAnchor = false;
 
+		//binds last node to rodtransform
+		lastNode.GetComponent<HingeJoint2D> ().connectedBody = rodtransform.GetComponent<Rigidbody2D> ();
+		} 
 		RenderLine ();
+
 	}
 
+public void crankdown()
+{
+	while (Vector2.Distance (rodtransform.transform.position, lastNode.transform.position) > distance) 
+	{
+		CreateNode ();
+	}
+}
 	//renders rope
 	void RenderLine()
 	{
@@ -146,13 +153,13 @@ public class RopeScript : MonoBehaviour {
 		lr.positionCount =vertexCount;
 	
 		//each node is a vertex oft the rope
-		for (i = 0; i < Nodes.Count; i++) {
-			
+		for (i = 0; i < Nodes.Count; i++) 
+		{
 			lr.SetPosition (i, Nodes [i].transform.position);
 		}
 
-		//sets last vetex of rope to be the player
-		lr.SetPosition (i, player.transform.position);
+		//sets last vetex of rope to be the rodtransform
+		lr.SetPosition (i, rodtransform.transform.position);
 
 	}
 
@@ -161,8 +168,8 @@ public class RopeScript : MonoBehaviour {
 	{
 		//finds position to create and creates node (vertex)
 
-		//makes vector that points from last node to player
-		Vector2 pos2Create = player.transform.position - lastNode.transform.position;
+		//makes vector that points from last node to rodtransform
+		Vector2 pos2Create = rodtransform.transform.position - lastNode.transform.position;
 
 		//makes it desired lenght
 		pos2Create.Normalize ();
@@ -181,7 +188,8 @@ public class RopeScript : MonoBehaviour {
 		lastNode.GetComponent<HingeJoint2D> ().connectedBody = go.GetComponent<Rigidbody2D> ();
 
 		//if attached to an object, turn of colliders (you may want this to be deleted in some cases)
-		if (target != null && go.GetComponent<Collider2D>()!=null) {
+		if (target != null && go.GetComponent<Collider2D>()!=null) 
+		{
 			go.GetComponent<Collider2D> ().enabled = false;
 		}
 
@@ -194,6 +202,47 @@ public class RopeScript : MonoBehaviour {
 
 		//increases number of nodes / vertices
 		vertexCount++;
+
+	}
+
+	public void DestroyNode()
+	{
+		//finds position to create and creates node (vertex)
+
+		//makes vector that points from last node to rodtransform
+		Vector2 pos2Destroy = rodtransform.transform.position - lastNode.transform.position;
+
+		//makes it desired lenght
+		pos2Destroy.Normalize ();
+		pos2Destroy *= distance;
+
+		//adds lastnode's position to that node
+		pos2Destroy += (Vector2)lastNode.transform.position;
+
+		//instantiates node at that position
+		GameObject go = (GameObject)	Instantiate (nodePrefab, pos2Destroy, Quaternion.identity);
+
+		//sets parent to be this hook
+		go.transform.SetParent (transform);
+
+		//sets hinge joint from last node to connect to this node
+		lastNode.GetComponent<HingeJoint2D> ().connectedBody = go.GetComponent<Rigidbody2D> ();
+
+		//if attached to an object, turn of colliders (you may want this to be deleted in some cases)
+		if (target != null && go.GetComponent<Collider2D>()!=null) 
+		{
+			go.GetComponent<Collider2D> ().enabled = false;
+		}
+
+
+		//sets this node as the last node instantiated
+		lastNode = go;
+
+		//removes node to node list
+		Nodes.Remove (lastNode);
+
+		//decrease number of nodes / vertices
+		vertexCount--;
 
 	}
 }

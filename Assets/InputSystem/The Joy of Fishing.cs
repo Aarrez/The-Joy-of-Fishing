@@ -73,24 +73,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""ReelUp"",
-                    ""type"": ""Button"",
-                    ""id"": ""8393930a-05fc-4f44-afd9-1959054354a0"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ReelDown"",
-                    ""type"": ""Button"",
-                    ""id"": ""c664a86a-87f5-4688-8ffd-a330ea903211"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""SwingLeft"",
                     ""type"": ""Button"",
                     ""id"": ""ebca5c00-5812-4efc-80d3-68989f6b3524"",
@@ -121,6 +103,24 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""name"": ""CastOut"",
                     ""type"": ""Button"",
                     ""id"": ""f6e8b318-751a-4ea9-86c9-cb428876be48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ReelUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""78f7a38a-9782-4207-ae69-47a07490635b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ReelDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c4c1b33-a9e3-43d1-9170-e511cd710386"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -404,6 +404,17 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""fab06b26-aa9d-42a2-a295-0c8565efe1d2"",
+                    ""path"": ""<Gamepad>/dpad/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""MoveBoat"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""1D Axis"",
                     ""id"": ""b851d816-6a57-4811-b6dd-77e61492458a"",
                     ""path"": ""1DAxis"",
@@ -435,28 +446,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""action"": ""FishingBait"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""380231e3-5c84-41da-9918-37e07d773d51"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5eba274a-5d81-4e55-b5e4-1657d79cd766"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -499,6 +488,39 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""CastOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""769f3b03-2f0f-4238-8cd7-690aaafed46f"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""CastOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""182754a0-7085-41bd-a226-04be6bfd0be5"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ReelUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2bae3623-95bf-4349-a07d-dc68fb84f632"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ReelDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1119,12 +1141,12 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_FishingBait = m_Player.FindAction("FishingBait", throwIfNotFound: true);
         m_Player_MoveBoat = m_Player.FindAction("MoveBoat", throwIfNotFound: true);
-        m_Player_ReelUp = m_Player.FindAction("ReelUp", throwIfNotFound: true);
-        m_Player_ReelDown = m_Player.FindAction("ReelDown", throwIfNotFound: true);
         m_Player_SwingLeft = m_Player.FindAction("SwingLeft", throwIfNotFound: true);
         m_Player_SwingRight = m_Player.FindAction("SwingRight", throwIfNotFound: true);
         m_Player_Mouse1 = m_Player.FindAction("Mouse1", throwIfNotFound: true);
         m_Player_CastOut = m_Player.FindAction("CastOut", throwIfNotFound: true);
+        m_Player_ReelUp = m_Player.FindAction("ReelUp", throwIfNotFound: true);
+        m_Player_ReelDown = m_Player.FindAction("ReelDown", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1204,12 +1226,12 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_FishingBait;
     private readonly InputAction m_Player_MoveBoat;
-    private readonly InputAction m_Player_ReelUp;
-    private readonly InputAction m_Player_ReelDown;
     private readonly InputAction m_Player_SwingLeft;
     private readonly InputAction m_Player_SwingRight;
     private readonly InputAction m_Player_Mouse1;
     private readonly InputAction m_Player_CastOut;
+    private readonly InputAction m_Player_ReelUp;
+    private readonly InputAction m_Player_ReelDown;
     public struct PlayerActions
     {
         private @TheJoyofFishing m_Wrapper;
@@ -1219,12 +1241,12 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @FishingBait => m_Wrapper.m_Player_FishingBait;
         public InputAction @MoveBoat => m_Wrapper.m_Player_MoveBoat;
-        public InputAction @ReelUp => m_Wrapper.m_Player_ReelUp;
-        public InputAction @ReelDown => m_Wrapper.m_Player_ReelDown;
         public InputAction @SwingLeft => m_Wrapper.m_Player_SwingLeft;
         public InputAction @SwingRight => m_Wrapper.m_Player_SwingRight;
         public InputAction @Mouse1 => m_Wrapper.m_Player_Mouse1;
         public InputAction @CastOut => m_Wrapper.m_Player_CastOut;
+        public InputAction @ReelUp => m_Wrapper.m_Player_ReelUp;
+        public InputAction @ReelDown => m_Wrapper.m_Player_ReelDown;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1249,12 +1271,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBoat.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBoat;
                 @MoveBoat.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBoat;
                 @MoveBoat.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBoat;
-                @ReelUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
-                @ReelUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
-                @ReelUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
-                @ReelDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
-                @ReelDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
-                @ReelDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
                 @SwingLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingLeft;
                 @SwingLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingLeft;
                 @SwingLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingLeft;
@@ -1267,6 +1283,12 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @CastOut.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
                 @CastOut.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
                 @CastOut.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @ReelUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
+                @ReelUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
+                @ReelUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
+                @ReelDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
+                @ReelDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
+                @ReelDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1286,12 +1308,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBoat.started += instance.OnMoveBoat;
                 @MoveBoat.performed += instance.OnMoveBoat;
                 @MoveBoat.canceled += instance.OnMoveBoat;
-                @ReelUp.started += instance.OnReelUp;
-                @ReelUp.performed += instance.OnReelUp;
-                @ReelUp.canceled += instance.OnReelUp;
-                @ReelDown.started += instance.OnReelDown;
-                @ReelDown.performed += instance.OnReelDown;
-                @ReelDown.canceled += instance.OnReelDown;
                 @SwingLeft.started += instance.OnSwingLeft;
                 @SwingLeft.performed += instance.OnSwingLeft;
                 @SwingLeft.canceled += instance.OnSwingLeft;
@@ -1304,6 +1320,12 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @CastOut.started += instance.OnCastOut;
                 @CastOut.performed += instance.OnCastOut;
                 @CastOut.canceled += instance.OnCastOut;
+                @ReelUp.started += instance.OnReelUp;
+                @ReelUp.performed += instance.OnReelUp;
+                @ReelUp.canceled += instance.OnReelUp;
+                @ReelDown.started += instance.OnReelDown;
+                @ReelDown.performed += instance.OnReelDown;
+                @ReelDown.canceled += instance.OnReelDown;
             }
         }
     }
@@ -1498,12 +1520,12 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnFishingBait(InputAction.CallbackContext context);
         void OnMoveBoat(InputAction.CallbackContext context);
-        void OnReelUp(InputAction.CallbackContext context);
-        void OnReelDown(InputAction.CallbackContext context);
         void OnSwingLeft(InputAction.CallbackContext context);
         void OnSwingRight(InputAction.CallbackContext context);
         void OnMouse1(InputAction.CallbackContext context);
         void OnCastOut(InputAction.CallbackContext context);
+        void OnReelUp(InputAction.CallbackContext context);
+        void OnReelDown(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

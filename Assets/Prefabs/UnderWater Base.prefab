@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 160601522}
   - component: {fileID: 160601521}
   - component: {fileID: 1389743226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closed Sprite Shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 295275753}
   - component: {fileID: 295275752}
   - component: {fileID: 295275751}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closed Sprite Shape (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1350714229}
   - component: {fileID: 1350714230}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spr_topside_grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 1449021298}
   - component: {fileID: 1449021297}
   - component: {fileID: 1449021296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closed Sprite Shape (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1219,7 +1219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1859893632}
   - component: {fileID: 1859893633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: spr_topside_grass (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1305,7 +1305,7 @@ GameObject:
   - component: {fileID: 228962426638748847}
   - component: {fileID: 228962426638748848}
   - component: {fileID: 228962426638748845}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2044,7 +2044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228962427965708497}
   - component: {fileID: 228962427965708498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level1 Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2168,7 +2168,7 @@ GameObject:
   - component: {fileID: 228962428062776190}
   - component: {fileID: 228962428062776191}
   - component: {fileID: 428963482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2839,7 +2839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7475115061793478997}
   - component: {fileID: 7373424855612631962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Level2 Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2963,7 +2963,7 @@ GameObject:
   - component: {fileID: 2632349300727661013}
   - component: {fileID: 3514308398790219712}
   - component: {fileID: 1206666851}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closed Sprite Shape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3523,7 +3523,7 @@ GameObject:
   - component: {fileID: 7237414460093496658}
   - component: {fileID: 8969048860630079450}
   - component: {fileID: 5322477064524105652}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closed Sprite Shape (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3739,7 +3739,7 @@ GameObject:
   - component: {fileID: 4596471784600154657}
   - component: {fileID: 6562424918926654798}
   - component: {fileID: 4424551723028460654}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closed Sprite Shape (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

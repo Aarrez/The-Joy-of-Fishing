@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 3239065537959043001}
   - component: {fileID: 4381097790388635783}
   - component: {fileID: 7455145181207423391}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Boat
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -269,7 +269,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3336968370139191567}
-  - component: {fileID: 9003574985541585766}
   m_Layer: 0
   m_Name: FishingRodPoint
   m_TagString: PlayerRod
@@ -292,21 +291,6 @@ Transform:
   m_Father: {fileID: 7824927940298590364}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9003574985541585766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4566488780851046515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f976af85a2ee3a44aa3a84d7638fbc5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hook: {fileID: 1000012688847204, guid: ddbf897f9a3f2a04c82360e94d84e7d1, type: 3}
-  baitpoint: {fileID: 2794254112950225140}
-  playerInputHere: {fileID: 0}
 --- !u!1 &5034702049854073347
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +523,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boatSpeed: 10
   rampUpTime: 1
-  ropeScriptLeaveEmpty: {fileID: 0}
+  hook: {fileID: 1000012688847204, guid: ddbf897f9a3f2a04c82360e94d84e7d1, type: 3}
+  baitpoint: {fileID: 2794254112950225140}
+  cameramachine: {fileID: 0}
 --- !u!114 &7890050411347847053
 MonoBehaviour:
   m_ObjectHideFlags: 0
