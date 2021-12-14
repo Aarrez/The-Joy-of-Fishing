@@ -14,6 +14,7 @@ public class ShopCamSwitchScript : MonoBehaviour
     void Start()
     {
         Buttontext = GameObject.Find("CallButtonText").GetComponent<TextMeshProUGUI>();
+        Buttontext.text = "Go to shop";
 
     }
     public void onButtonnClick()
@@ -21,10 +22,12 @@ public class ShopCamSwitchScript : MonoBehaviour
         if (GameManager.instance.moveCam == 1)
         {
             GameManager.instance.ChangeInteger();
+            Buttontext.text = "Return to fishing";
         }
         else if (GameManager.instance.moveCam == 2)
         { 
-            GameManager.instance.ChangeIntegerAgain(); 
+            GameManager.instance.ChangeIntegerAgain();
+            Buttontext.text = "Go to shop";
         }
     }
 
