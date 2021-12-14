@@ -14,7 +14,7 @@ public sealed class RopeScript : MonoBehaviour {
 	//velocity that the hook goes onto the destiny
 	public float speed= 1;
 	//distance between each node
-	public float distance = 2;
+	public float distance = 0.5f;
 	//node prefab
 	public GameObject nodePrefab;
 	//rodtransform gameobject
@@ -80,7 +80,7 @@ public sealed class RopeScript : MonoBehaviour {
 		//prevents game from freezing if distance is zero
 		if (distance == 0)
 		{
-			distance = 1;
+			distance = 0.5f;
 		}
 
 
@@ -202,6 +202,47 @@ public void crankdown()
 
 		//increases number of nodes / vertices
 		vertexCount++;
+
+	}
+
+	public void DestroyNode()
+	{
+		//finds position to create and creates node (vertex)
+
+		//makes vector that points from last node to rodtransform
+		Vector2 pos2Destroy = rodtransform.transform.position - lastNode.transform.position;
+
+		//makes it desired lenght
+		pos2Destroy.Normalize ();
+		pos2Destroy *= distance;
+
+		//adds lastnode's position to that node
+		pos2Destroy += (Vector2)lastNode.transform.position;
+
+		//instantiates node at that position
+		GameObject go = (GameObject)	Instantiate (nodePrefab, pos2Destroy, Quaternion.identity);
+
+		//sets parent to be this hook
+		go.transform.SetParent (transform);
+
+		//sets hinge joint from last node to connect to this node
+		lastNode.GetComponent<HingeJoint2D> ().connectedBody = go.GetComponent<Rigidbody2D> ();
+
+		//if attached to an object, turn of colliders (you may want this to be deleted in some cases)
+		if (target != null && go.GetComponent<Collider2D>()!=null) 
+		{
+			go.GetComponent<Collider2D> ().enabled = false;
+		}
+
+
+		//sets this node as the last node instantiated
+		lastNode = go;
+
+		//removes node to node list
+		Nodes.Remove (lastNode);
+
+		//decrease number of nodes / vertices
+		vertexCount--;
 
 	}
 }

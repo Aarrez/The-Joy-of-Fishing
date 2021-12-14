@@ -87,13 +87,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reel",
-                    "type": "Value",
+                    "name": "ReelUp",
+                    "type": "Button",
                     "id": "78f7a38a-9782-4207-ae69-47a07490635b",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ReelDown",
+                    "type": "Button",
+                    "id": "0c4c1b33-a9e3-43d1-9170-e511cd710386",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -466,43 +475,32 @@
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "CastOut",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "ReelDirection",
-                    "id": "396eef6b-20fa-457c-b3ee-862938111e7e",
-                    "path": "1DAxis(whichSideWins=1)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reel",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "positive",
-                    "id": "8250682b-abc8-4b75-851d-e7e4bca0d9ce",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Reel",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "negative",
-                    "id": "79461fb7-3ae5-4704-a56b-97e9591d25c5",
+                    "name": "",
+                    "id": "182754a0-7085-41bd-a226-04be6bfd0be5",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Reel",
+                    "action": "ReelUp",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2bae3623-95bf-4349-a07d-dc68fb84f632",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ReelDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

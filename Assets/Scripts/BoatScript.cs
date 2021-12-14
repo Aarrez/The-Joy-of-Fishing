@@ -86,33 +86,25 @@ public class BoatScript : MonoBehaviour
         }
     }
 
-	void OnReel(InputValue value)
+	void OnReelUp(InputValue value)
 	{
-        ReelDirection();
+        if(value.isPressed == true)
+        {
+            RopeScript.instance.DestroyNode();
+            //RopeScript.instance.crankdown();
+        }
+        return;
 	}
-
-    void ReelDirection()
+    void OnReelDown(InputValue value)
     {
-        if(RopeScript.instance.done == true)
+        if(value.isPressed == true)
         {
             RopeScript.instance.CreateNode();
             //RopeScript.instance.crankdown();
         }
         return;
     }
-    /*void OnReelUp(InputValue value)
-    {
-        if (RopeScript.instance.done == true && !curHook == null)
-        {
-            RopeScript.instance.destiny = RopeScript.instance.reelinpoint.position;
-            RopeScript.instance.done = false;
-            Debug.Log("test");
-        }
-        else if (value == null && RopeScript.instance.done == false)
-        {
-            RopeScript.instance.done = true;
-        }
-    }*/
+
 
     private void OnCastOut()
     {
