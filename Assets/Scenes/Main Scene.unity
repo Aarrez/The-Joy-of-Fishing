@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731261, g: 0.3807449, b: 0.35872787, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,7 +153,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 17
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.158}
 --- !u!212 &2329441
 SpriteRenderer:
@@ -392,7 +392,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108332775}
-  m_RootOrder: 3
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &24648083
 SpriteRenderer:
@@ -527,8 +527,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 36
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.786}
 --- !u!1 &33793667
 GameObject:
@@ -811,8 +811,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 6
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &58429610
 SpriteRenderer:
@@ -1254,7 +1254,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &90708499
 SpriteRenderer:
@@ -1338,6 +1338,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 852731525}
+  - {fileID: 151668561}
+  - {fileID: 1011986945}
+  - {fileID: 58429609}
+  - {fileID: 340582855}
+  - {fileID: 28364263}
+  - {fileID: 787098234}
+  - {fileID: 343162047}
   - {fileID: 1539837520}
   - {fileID: 302608797}
   - {fileID: 904828351}
@@ -1359,9 +1367,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.94
+  parallaxAmount: 0.74
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 4
+  yoffset_select_all_objs_w_this_script: -15.7
 --- !u!212 &108332777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1547,7 +1557,9 @@ MonoBehaviour:
   insertCamera: {fileID: 4962793760973506360}
   parallaxAmount: 1
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 7
+  yoffset_select_all_objs_w_this_script: -18.5
 --- !u!212 &121409794
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1944,7 +1956,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 22
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &150096087
 SpriteRenderer:
@@ -2027,8 +2039,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 29
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &151668562
 SpriteRenderer:
@@ -2658,7 +2670,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 35
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &272818915
 PrefabInstance:
@@ -2752,7 +2764,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108332775}
-  m_RootOrder: 1
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &302608798
 SpriteRenderer:
@@ -2971,8 +2983,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 37
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &343162046
 GameObject:
@@ -3003,8 +3015,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 1
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &343162048
 SpriteRenderer:
@@ -3088,7 +3100,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &396561080
 SpriteRenderer:
@@ -3706,9 +3718,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.97
+  parallaxAmount: 0.85
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 5
+  yoffset_select_all_objs_w_this_script: -15.7
 --- !u!212 &552157081
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4158,9 +4172,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.92
+  parallaxAmount: 0.72
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 2
+  yoffset_select_all_objs_w_this_script: -15.7
 --- !u!212 &613438881
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4517,7 +4533,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &645915073
 SpriteRenderer:
@@ -5254,8 +5270,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 3
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &787098235
 SpriteRenderer:
@@ -5861,7 +5877,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 18
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &830227356
 SpriteRenderer:
@@ -5945,7 +5961,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.265}
 --- !u!212 &850599923
 SpriteRenderer:
@@ -6081,7 +6097,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 38
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852731524
 GameObject:
@@ -6108,12 +6124,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852731524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.937576, y: 2.8931684, z: 0.7626428}
+  m_LocalPosition: {x: -37.937576, y: 2.3900003, z: 0.7626428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 32
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &852731526
 SpriteRenderer:
@@ -6539,7 +6555,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.786}
 --- !u!212 &903943480
 SpriteRenderer:
@@ -6623,7 +6639,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108332775}
-  m_RootOrder: 2
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &904828352
 SpriteRenderer:
@@ -6764,7 +6780,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 19
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &927911060
 SpriteRenderer:
@@ -6849,12 +6865,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 560167162}
-  - {fileID: 343162047}
   - {fileID: 954813633}
-  - {fileID: 787098234}
   - {fileID: 1193074266}
   - {fileID: 903943479}
-  - {fileID: 58429609}
   - {fileID: 1687312968}
   - {fileID: 90708498}
   - {fileID: 2001615772}
@@ -6875,17 +6888,12 @@ Transform:
   - {fileID: 1333435221}
   - {fileID: 940395111}
   - {fileID: 645915072}
-  - {fileID: 1011986945}
   - {fileID: 1535537774}
-  - {fileID: 151668561}
   - {fileID: 1373097773}
   - {fileID: 1259587339}
-  - {fileID: 852731525}
   - {fileID: 1762219304}
   - {fileID: 1635224013}
   - {fileID: 238465459}
-  - {fileID: 28364263}
-  - {fileID: 340582855}
   - {fileID: 852372066}
   m_Father: {fileID: 1362887744}
   m_RootOrder: 3
@@ -6903,9 +6911,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.93
+  parallaxAmount: 0.73
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 3
+  yoffset_select_all_objs_w_this_script: -15.7
 --- !u!212 &928638958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6988,7 +6998,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 25
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.948}
 --- !u!212 &940395112
 SpriteRenderer:
@@ -7156,7 +7166,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.948}
 --- !u!212 &954813634
 SpriteRenderer:
@@ -7783,8 +7793,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 928638956}
-  m_RootOrder: 27
+  m_Father: {fileID: 108332775}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1011986946
 SpriteRenderer:
@@ -8832,7 +8842,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1193074267
 SpriteRenderer:
@@ -9000,7 +9010,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.786}
 --- !u!212 &1225263000
 SpriteRenderer:
@@ -9304,7 +9314,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 31
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.901}
 --- !u!1 &1292317056
 GameObject:
@@ -9503,9 +9513,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.91
+  parallaxAmount: 0.71
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 1
+  yoffset_select_all_objs_w_this_script: -15.7
 --- !u!212 &1307364120
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9734,7 +9746,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 20
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.786}
 --- !u!212 &1327243307
 SpriteRenderer:
@@ -9964,7 +9976,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 24
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1333435222
 SpriteRenderer:
@@ -10427,7 +10439,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 30
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.761}
 --- !u!1 &1382834266
 GameObject:
@@ -10751,7 +10763,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 21
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1408835708
 SpriteRenderer:
@@ -11291,7 +11303,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 28
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.786}
 --- !u!212 &1535537775
 SpriteRenderer:
@@ -11427,7 +11439,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108332775}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1567013960
 GameObject:
@@ -11664,7 +11676,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 108332775}
-  m_RootOrder: 4
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1595758576
 SpriteRenderer:
@@ -11814,7 +11826,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 23
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.901}
 --- !u!212 &1632237564
 SpriteRenderer:
@@ -12034,7 +12046,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 34
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -3.395}
 --- !u!1 &1636283962
 GameObject:
@@ -12332,9 +12344,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.9
+  parallaxAmount: 0.7
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 0
+  yoffset_select_all_objs_w_this_script: -15.7
 --- !u!212 &1660991099
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12563,7 +12577,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 16
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1676706485
 SpriteRenderer:
@@ -12647,7 +12661,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.901}
 --- !u!212 &1687312969
 SpriteRenderer:
@@ -12995,7 +13009,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 33
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.948}
 --- !u!1 &1763977442
 GameObject:
@@ -13195,7 +13209,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 15
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -4.901}
 --- !u!212 &1791827438
 SpriteRenderer:
@@ -13776,7 +13790,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 14
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1885261134
 SpriteRenderer:
@@ -14187,7 +14201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2001615773
 SpriteRenderer:
@@ -14422,7 +14436,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 928638956}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 4.948}
 --- !u!212 &2057603632
 SpriteRenderer:
@@ -14876,9 +14890,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 4962793760973506360}
-  parallaxAmount: 0.96
+  parallaxAmount: 0.75
   SetYParallax: 1
-  yoffset_select_all_objs_w_this_script: -19.2
+  SetXParallax: 1
+  objNumber: 6
+  yoffset_select_all_objs_w_this_script: -15.7
 --- !u!212 &2091773683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15589,6 +15605,22 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 2018631586}
+    - target: {fileID: 4962793761672495737, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962793761672495737, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962793761672495737, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962793761672495737, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.71
+      objectReference: {fileID: 0}
     - target: {fileID: 4962793761883621274, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: m_PixelPerfect
       value: 1
@@ -15696,6 +15728,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1509017060159180765, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396815136688360669, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396815136688360669, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.59
+      objectReference: {fileID: 0}
     - target: {fileID: 4951095742338360477, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -15703,6 +15747,10 @@ PrefabInstance:
     - target: {fileID: 6916328482143140260, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
       propertyPath: m_Name
       value: ShoppeBoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916328482143140260, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6916328482143140262, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
       propertyPath: m_RootOrder
