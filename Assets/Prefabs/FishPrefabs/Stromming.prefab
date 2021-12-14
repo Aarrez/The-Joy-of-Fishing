@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 923512008135150387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4425864, y: 2.8976414, z: 0}
+  m_LocalPosition: {x: -4.315263, y: -2.5255706, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: 8b94fe352fb74dd439d2fbacfcda3faf, type: 2}
-  sprRend: {fileID: 0}
   wanderRadius: 10
   wanderJitter: 1
 --- !u!114 &7992369584329481837
@@ -257,4 +256,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: 8b94fe352fb74dd439d2fbacfcda3faf, type: 2}
-  sprRend: {fileID: 0}
