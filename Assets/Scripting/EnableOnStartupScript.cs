@@ -7,6 +7,7 @@ public class EnableOnStartupScript : MonoBehaviour
     public GameObject CreatePauseMenu;
     CreatePauseMenuScript GetC;
     public GameObject PauseCanvas;
+    public GameObject CallButton;
     void Start()
     {
         CreatePauseMenu.SetActive(true);
@@ -20,6 +21,12 @@ public class EnableOnStartupScript : MonoBehaviour
         {
             PauseCanvas.SetActive(false);
         }
+
+        if(GameManager.instance.moveCam == 3)
+        {
+            CallButton.SetActive(false);
+        }
+        else { CallButton.SetActive(true); }
     }
 
 

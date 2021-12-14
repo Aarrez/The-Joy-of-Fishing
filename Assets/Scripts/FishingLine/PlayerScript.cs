@@ -21,7 +21,8 @@ public class PlayerScript : MonoBehaviour {
 
 	void Update () {
 
-	 	//applies force to the left or right
+		//applies force to the left or right
+		rb.AddForce(Vector2.up * Input.GetAxisRaw("Vertical") * forcetoAdd); //CHANGE TO MORE SPECIFIC CONTROLS, I.e just arrowkeys istead of both it annd WASD
 		rb.AddForce(Vector2.right*Input.GetAxisRaw ("Horizontal")*forcetoAdd);
 	}			
 }
