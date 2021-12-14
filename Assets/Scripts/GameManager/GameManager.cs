@@ -11,16 +11,25 @@ public sealed class GameManager : MonoBehaviour
     [HideInInspector] public int moveCam = 1;
     [HideInInspector] public bool baitCam;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
-    private void Awake() 
+    private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("More than one Gamemanager");
+            Destroy(instance.gameObject);
+            instance = this;
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
         //CMcam = GetComponent<CinemachineVirtualCamera>();
         ShoppeBoat = GameObject.Find("ShoppeBoat").GetComponent<Transform>();
-        Player = GameObject.Find("Player").GetComponent<Transform>();  
+        Player = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
