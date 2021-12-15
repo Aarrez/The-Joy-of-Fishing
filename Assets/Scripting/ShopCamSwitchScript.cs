@@ -43,7 +43,7 @@ public class ShopCamSwitchScript : MonoBehaviour
     {
         if(GameManager.instance.moveCam == 1)
         {
-            cmVirt.m_Lens.OrthographicSize += Time.deltaTime * 2;
+            cmVirt.m_Lens.OrthographicSize += Time.deltaTime * 3;
             if (cmVirt.m_Lens.OrthographicSize >= 9)
             {
                 cmVirt.m_Lens.OrthographicSize = 9;
@@ -52,7 +52,7 @@ public class ShopCamSwitchScript : MonoBehaviour
 
         if (GameManager.instance.moveCam == 2)
         {
-            cmVirt.m_Lens.OrthographicSize -= Time.deltaTime * 2;
+            cmVirt.m_Lens.OrthographicSize -= Time.deltaTime * 3;
             if (cmVirt.m_Lens.OrthographicSize <= 5)
             {
                 cmVirt.m_Lens.OrthographicSize = 5;

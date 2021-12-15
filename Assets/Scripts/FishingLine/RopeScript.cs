@@ -43,6 +43,10 @@ public sealed class RopeScript : MonoBehaviour
     //added hinge joint if there is relative object
     public HingeJoint2D hinge;
 
+    BoatScript boatScript;
+    public bool grub;
+    public GameObject go;
+
     //private Transform transform;
 
     private void Awake()
@@ -65,8 +69,7 @@ public sealed class RopeScript : MonoBehaviour
         //sets rodtransform
         if (rodtransform == null)
             rodtransform = GameObject.FindGameObjectWithTag("PlayerRod");
-
-
+        boatScript = FindObjectOfType<BoatScript>();
         lastNode = base.transform.gameObject;
         //Nodes.Add(transform.gameObject);
 
@@ -193,14 +196,16 @@ public sealed class RopeScript : MonoBehaviour
         pos2Create += (Vector2)lastNode.transform.position;
 
         //instantiates node at that position
-        GameObject go = null;
+        go = null;
         if (Nodes.Count == 0)
         {
             go = (GameObject)Instantiate(hookPrefab, pos2Create, Quaternion.identity);
+            grub = true;
         }
         else
         {
             go = (GameObject)Instantiate(nodePrefab, pos2Create, Quaternion.identity);
+            grub = false;
         }
 
         //sets parent to be this hook
@@ -227,7 +232,7 @@ public sealed class RopeScript : MonoBehaviour
     {
         for (int i = 0; i < Nodes.Count - 1; i++)
         {
-            Nodes[i].transform.position = new Vector3(Nodes[i+1].transform.position.x, Nodes[i+1].transform.position.y, 0);
+            Nodes[i].transform.position = new Vector3(Nodes[i + 1].transform.position.x, Nodes[i + 1].transform.position.y, 0);
         }
 
         var go = Nodes[Nodes.Count - 1];
@@ -236,6 +241,12 @@ public sealed class RopeScript : MonoBehaviour
 
         lastNode = Nodes[Nodes.Count - 1];
         Nodes[Nodes.Count - 1].GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+
+
+        if (Nodes.Count == 1)
+        {
+            boatScript.DeleteRope();
+        }
 
     }
 }
