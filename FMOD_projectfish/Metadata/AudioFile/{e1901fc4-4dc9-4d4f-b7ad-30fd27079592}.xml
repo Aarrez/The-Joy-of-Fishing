@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e1901fc4-4dc9-4d4f-b7ad-30fd27079592}">
+		<property name="assetPath">
+			<value>ambience_boat_row-010.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.1883900226757369</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f97b6810-5b32-49c9-b34b-e70f6e53efe1}</destination>
+		</relationship>
+	</object>
+</objects>

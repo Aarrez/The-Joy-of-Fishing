@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{667c7bbb-bf03-420c-a62d-0da4c6978cc8}">
+		<property name="assetPath">
+			<value>ambience_boat_static-001.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.2046258503401361</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f97b6810-5b32-49c9-b34b-e70f6e53efe1}</destination>
+		</relationship>
+	</object>
+</objects>
