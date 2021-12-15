@@ -102,14 +102,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDrag: 0.8
-  m_AngularDrag: 0.1
-  m_GravityScale: 0.4
+  m_LinearDrag: 0.2
+  m_AngularDrag: 0.3
+  m_GravityScale: 0.2
   m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &58000011381285992
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -148,8 +148,8 @@ HingeJoint2D:
     m_MaximumMotorForce: 10000
   m_UseLimits: 1
   m_AngleLimits:
-    m_LowerAngle: -141.80365
-    m_UpperAngle: -38.11435
+    m_LowerAngle: -68.4
+    m_UpperAngle: 62.99
 --- !u!114 &1672819576055937797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2bea7e604deaa48af4fa4e115633d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcetoAdd: 1.5
+  forcetoAdd: 2.5
 --- !u!114 &-3000453649093772376
 MonoBehaviour:
   m_ObjectHideFlags: 0
