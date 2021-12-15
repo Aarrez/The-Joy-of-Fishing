@@ -15,9 +15,10 @@ public class BoatScript : MonoBehaviour
     public GameObject hook;
     public Transform baitpoint;
     //holds whether rope is active or not
-    bool ropeActive;
+    public bool ropeActive;
     //current hook on the scene
     GameObject curHook;
+    public Transform baitTransform;
 
 
 
@@ -88,7 +89,7 @@ public class BoatScript : MonoBehaviour
 
 	void OnReelUp(InputValue value)
 	{
-        if(value.isPressed == true)
+        if(value.isPressed == true && ropeActive == true)
         {
             RopeScript.instance.DestroyNode();
             //RopeScript.instance.crankdown();
@@ -97,7 +98,7 @@ public class BoatScript : MonoBehaviour
 	}
     void OnReelDown(InputValue value)
     {
-        if(value.isPressed == true)
+        if(value.isPressed == true && ropeActive == true)
         {
             RopeScript.instance.CreateNode();
             //RopeScript.instance.crankdown();
@@ -129,12 +130,17 @@ public class BoatScript : MonoBehaviour
         {
 
             //delete rope
-            Destroy(curHook);
-            GameManager.instance.baitCam = false;
-            GameManager.instance.moveCam = 1;
-            //sets rope to disabled
-            ropeActive = false;
+            DeleteRope();
 
         }
+    }
+
+    public void DeleteRope()
+    {
+        Destroy(curHook);
+        GameManager.instance.baitCam = false;
+        GameManager.instance.moveCam = 1;
+        //sets rope to disabled
+        ropeActive = false;
     }
 }
