@@ -2082,15 +2082,15 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.11845853, g: 0.11981673, b: 0.20754719, a: 1}
-  m_Intensity: 2.94
+  m_Color: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+  m_Intensity: 1
   m_LightVolumeIntensity: 1.04
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 030129c02fc09cfd4900de6533c3b6f9
+  m_ApplyToSortingLayers: 030129c02fc09cfd4900de65
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_OverlapOperation: 0
+  m_OverlapOperation: 1
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
@@ -2102,10 +2102,10 @@ MonoBehaviour:
   - position: {x: 149.4, y: -60, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -142.6, y: 13, z: 0}
+  - position: {x: -142.69153, y: 14.1897745, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: 144.5, y: 13, z: 0}
+  - position: {x: 147.22958, y: 13.795235, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
   - position: {x: -142.8, y: -60, z: 0}
@@ -2117,10 +2117,10 @@ MonoBehaviour:
   - position: {x: 149.4, y: -60, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: 144.5, y: 13, z: 0}
+  - position: {x: 147.22958, y: 13.795235, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
-  - position: {x: -142.6, y: 13, z: 0}
+  - position: {x: -142.69153, y: 14.1897745, z: 0}
     color: {r: 0, g: 0, b: 0, a: 1}
     uv: {x: 0, y: 0}
   - position: {x: -142.8, y: -60, z: 0}
@@ -2129,19 +2129,16 @@ MonoBehaviour:
   - position: {x: 149.4, y: -60, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 149.4, y: -60, z: 0}
+  - position: {x: 147.2295, y: 13.7952, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: 144.5, y: 13, z: 0}
+  - position: {x: -142.6915, y: 14.1897, z: 0}
     color: {r: 0, g: 0, b: 0, a: 0}
     uv: {x: 0, y: 0}
-  - position: {x: -142.6, y: 13, z: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
-    uv: {x: 0, y: 0}
-  m_Triangles: 000001000200010000000300040008000800040005000900040008000900050006000a00050009000a00060007000b0006000a000b0007000b000c0008000400070008000c000700
+  m_Triangles: 000001000200010000000300040008000800040005000900040008000900050006000a00050009000a00060007000b0006000a000b0008000400070008000b000700
   m_LocalBounds:
-    m_Center: {x: 3.2999954, y: -23.5, z: 0}
-    m_Extent: {x: 146.1, y: 36.5, z: 0}
+    m_Center: {x: 3.2999954, y: -22.905113, z: 0}
+    m_Extent: {x: 146.1, y: 37.094887, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2154,8 +2151,8 @@ MonoBehaviour:
   m_ShapePath:
   - {x: -142.8, y: -60, z: 0}
   - {x: 149.4, y: -60, z: 0}
-  - {x: 144.5, y: 13, z: 0}
-  - {x: -142.6, y: 13, z: 0}
+  - {x: 147.22958, y: 13.795235, z: 0}
+  - {x: -142.69153, y: 14.1897745, z: 0}
 --- !u!1 &228962428062776192
 GameObject:
   m_ObjectHideFlags: 0
@@ -2877,15 +2874,15 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 1}
+  m_Intensity: 1
   m_LightVolumeIntensity: 1.04
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 030129c02fc09cfd33c3b6f94900de65
+  m_ApplyToSortingLayers: 030129c02fc09cfd4900de65
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_OverlapOperation: 0
+  m_OverlapOperation: 1
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
