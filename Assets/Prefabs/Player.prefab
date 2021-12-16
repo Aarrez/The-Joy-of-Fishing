@@ -523,9 +523,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boatSpeed: 10
   rampUpTime: 1
-  hook: {fileID: 1000012688847204, guid: ddbf897f9a3f2a04c82360e94d84e7d1, type: 3}
+  hook: {fileID: 1867930385899082835, guid: f6204882aac42494e931530d178b4831, type: 3}
   baitpoint: {fileID: 2794254112950225140}
-  cameramachine: {fileID: 0}
 --- !u!114 &7890050411347847053
 MonoBehaviour:
   m_ObjectHideFlags: 0

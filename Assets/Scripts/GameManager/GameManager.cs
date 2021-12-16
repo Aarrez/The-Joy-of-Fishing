@@ -8,24 +8,40 @@ public sealed class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public CinemachineVirtualCamera CMcam;
+    CinemachineFramingTransposer CMcamBody;
     [HideInInspector] public int moveCam = 1;
     [HideInInspector] public bool baitCam;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
-    private void Awake() 
+    BoatScript boatScript;
+    private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("More than one Gamemanager");
+            Destroy(instance.gameObject);
+            instance = this;
+        }
     }
     // Start is called before the first frame update
     void Start()
     {
         //CMcam = GetComponent<CinemachineVirtualCamera>();
         ShoppeBoat = GameObject.Find("ShoppeBoat").GetComponent<Transform>();
-        Player = GameObject.Find("Player").GetComponent<Transform>();  
+        Player = GameObject.Find("Player").GetComponent<Transform>();
+        boatScript = FindObjectOfType<BoatScript>();
+        CMcamBody = CMcam.GetCinemachineComponent<CinemachineFramingTransposer>();
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (moveCam == 2 && baitCam == false)
         {
             ShopCamTrue();
@@ -55,16 +71,23 @@ public sealed class GameManager : MonoBehaviour
     public void ShopCamTrue()
     {
         CMcam.Follow = ShoppeBoat;
+        CMcamBody.m_TrackedObjectOffset.y = 3;
     }
 
     public void ShopCamFalse()
     {
         CMcam.Follow = Player;
+        CMcamBody.m_TrackedObjectOffset.y = 3;
     }
 
     public void BaitCam()
     {
-        CMcam.Follow = Hook;
+        if (RopeScript.instance.grub == true)
+        {
+            CMcam.Follow = RopeScript.instance.go.transform;
+            CMcamBody.m_TrackedObjectOffset.y = 0;
+        }
+
     }
 
 }

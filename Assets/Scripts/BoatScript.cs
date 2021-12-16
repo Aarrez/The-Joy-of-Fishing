@@ -15,12 +15,13 @@ public class BoatScript : MonoBehaviour
     public GameObject hook;
     public Transform baitpoint;
     //holds whether rope is active or not
-    bool ropeActive;
+    public bool ropeActive;
     //current hook on the scene
     GameObject curHook;
+    public Transform baitTransform;
 
-
-
+    TheJoyofFishing GetKey;
+    float elapsed = 0f;
 
     private void Awake()
     {
@@ -29,6 +30,8 @@ public class BoatScript : MonoBehaviour
     private void Start()
     {
         MakeAnimationCurve();
+        GetKey = new TheJoyofFishing();
+        GetKey.Enable();
     }
     #region Make a animation curve
 
@@ -57,6 +60,26 @@ public class BoatScript : MonoBehaviour
     private void FixedUpdate()
     {
         MoveLeftRight();
+
+    }
+
+    private void Update()
+    {
+        Vector2 reelfloatup = GetKey.Player.ReelUp.ReadValue<Vector2>();
+        Vector2 reelfloatdown = GetKey.Player.ReelDown.ReadValue<Vector2>();
+        elapsed += Time.deltaTime;
+        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f)
+        {
+            elapsed = elapsed % 0.2f;
+            RopeScript.instance.DestroyNode();
+        }
+
+        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f)
+        {
+            elapsed = elapsed % 0.2f;
+            RopeScript.instance.CreateNode();
+
+        }
     }
 
     private void GetInput()
@@ -86,24 +109,24 @@ public class BoatScript : MonoBehaviour
         }
     }
 
-	void OnReelUp(InputValue value)
-	{
-        if(value.isPressed == true)
-        {
-            RopeScript.instance.DestroyNode();
-            //RopeScript.instance.crankdown();
-        }
-        return;
-	}
-    void OnReelDown(InputValue value)
-    {
-        if(value.isPressed == true)
-        {
-            RopeScript.instance.CreateNode();
-            //RopeScript.instance.crankdown();
-        }
-        return;
-    }
+	//void OnReelUp(InputValue value)
+	//{
+ //       if(value.isPressed == true && ropeActive == true)
+ //       {
+ //           RopeScript.instance.DestroyNode();
+ //           //RopeScript.instance.crankdown();
+ //       }
+ //       return;
+	//}
+ //   void OnReelDown(InputValue value)
+ //   {
+ //       if(value.isPressed == true && ropeActive == true)
+ //       {
+ //           RopeScript.instance.CreateNode();
+ //           //RopeScript.instance.crankdown();
+ //       }
+ //       return;
+ //   }
 
 
     private void OnCastOut()
@@ -129,12 +152,17 @@ public class BoatScript : MonoBehaviour
         {
 
             //delete rope
-            Destroy(curHook);
-            GameManager.instance.baitCam = false;
-            GameManager.instance.moveCam = 1;
-            //sets rope to disabled
-            ropeActive = false;
+            DeleteRope();
 
         }
+    }
+
+    public void DeleteRope()
+    {
+        Destroy(curHook);
+        GameManager.instance.baitCam = false;
+        GameManager.instance.moveCam = 1;
+        //sets rope to disabled
+        ropeActive = false;
     }
 }
