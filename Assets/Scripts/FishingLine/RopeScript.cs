@@ -44,7 +44,7 @@ public sealed class RopeScript : MonoBehaviour
     public HingeJoint2D hinge;
 
     BoatScript boatScript;
-    public bool grub;
+    public bool ActualHookObject;
     public GameObject go;
 
     //private Transform transform;
@@ -200,12 +200,12 @@ public sealed class RopeScript : MonoBehaviour
         if (Nodes.Count == 0)
         {
             go = (GameObject)Instantiate(hookPrefab, pos2Create, Quaternion.identity);
-            grub = true;
+            ActualHookObject = true; 
         }
         else
         {
             go = (GameObject)Instantiate(nodePrefab, pos2Create, Quaternion.identity);
-            grub = false;
+            ActualHookObject = false;
         }
 
         //sets parent to be this hook
