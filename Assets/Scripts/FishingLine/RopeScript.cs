@@ -243,7 +243,7 @@ public sealed class RopeScript : MonoBehaviour
         Nodes[Nodes.Count - 1].GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
 
 
-        if (Nodes.Count == 1)
+        if (Nodes.Count <= 1)
         {
             boatScript.DeleteRope();
         }

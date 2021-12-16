@@ -87,22 +87,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ReelUp",
-                    "type": "Button",
-                    "id": "78f7a38a-9782-4207-ae69-47a07490635b",
-                    "expectedControlType": "Button",
+                    "name": "ReelDown",
+                    "type": "Value",
+                    "id": "0c4c1b33-a9e3-43d1-9170-e511cd710386",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ReelDown",
-                    "type": "Button",
-                    "id": "0c4c1b33-a9e3-43d1-9170-e511cd710386",
-                    "expectedControlType": "Button",
+                    "name": "ReelUp",
+                    "type": "Value",
+                    "id": "fe3152e0-96bd-4c89-b78c-c00f7bce226c",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -448,26 +448,114 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "182754a0-7085-41bd-a226-04be6bfd0be5",
-                    "path": "<Keyboard>/w",
+                    "name": "2D Vector",
+                    "id": "3afc0acf-5f58-49a0-afd5-98d482636926",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "",
                     "action": "ReelUp",
-                    "isComposite": false,
+                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "2bae3623-95bf-4349-a07d-dc68fb84f632",
+                    "name": "up",
+                    "id": "301719a0-d129-4ace-9262-3887d56acdad",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelUp",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "572893ae-de7f-4592-b094-8f9b6f3b942b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelUp",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "b2a010e6-9dd2-4326-8714-661715ccd6e0",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelUp",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "96a50b37-d658-4eb4-ad95-22507a1bf5e2",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelUp",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "b4905099-2225-4326-8642-bbf02ecfef31",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelDown",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "140cab5c-4ca3-44b5-a4fa-456639e208ca",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "d4107e52-4b75-497c-84f1-181be3d971c3",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ReelDown",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "afa04849-290c-4b03-80f9-3a934c62b26d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "699f9650-33ce-489c-be60-3037333eff4b",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReelDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
