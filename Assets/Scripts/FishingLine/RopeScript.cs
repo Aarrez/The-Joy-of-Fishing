@@ -74,42 +74,13 @@ public sealed class RopeScript : MonoBehaviour
         //Nodes.Add(transform.gameObject);
 
 
-        //if hit an object
-        Collider2D col = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        //check if object has rigidbody
-        if (col != null && col.GetComponent<Rigidbody2D>() != null)
-        {
-
-            //set it as the targe
-            target = col.transform;
-
-            //set hinge to dynamic
-            base.transform.GetComponent<Rigidbody2D>().isKinematic = false;
-
-            //get last hinge in inspector
-            hinge = GetComponents<HingeJoint2D>()[1];
-
-            //connect target's rigidbody
-            hinge.connectedBody = col.GetComponent<Rigidbody2D>();
-
-        }
-
-
         //prevents game from freezing if distance is zero
         if (distance == 0)
         {
             distance = 0.5f;
         }
     }
-    public void OnDrawGizmos()
-    {
 
-        GUIStyle style = new GUIStyle();
-
-        Gizmos.DrawWireSphere(base.transform.position, 0.2f);
-
-    }
-    // Update is called once per frame
     void Update()
     {
 
