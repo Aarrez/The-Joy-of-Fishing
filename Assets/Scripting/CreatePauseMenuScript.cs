@@ -39,17 +39,15 @@ public class CreatePauseMenuScript : MonoBehaviour
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
-            Debug.Log("ESCAPE PAUSE");
             pauseCanvas.SetActive(true);
             SetPause = true;
-        } else { Time.timeScale = 1; Debug.Log("ESCAPE un-pause"); pauseCanvas.SetActive(false); SetPause = false; }
+        } else { Time.timeScale = 1; pauseCanvas.SetActive(false); SetPause = false; }
 
     }
 
     public void UnPause()
     {
         Time.timeScale = 1;
-        Debug.Log("DONE THROUGH BUTTOPN");
         pauseCanvas.SetActive(false);
         SetPause = false;
     }
