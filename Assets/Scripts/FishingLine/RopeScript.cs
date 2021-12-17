@@ -197,6 +197,7 @@ public sealed class RopeScript : MonoBehaviour
 
         //adds node to node list
         Nodes.Add(lastNode);
+        lastNode.GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
     }
 
     public void DestroyNode()

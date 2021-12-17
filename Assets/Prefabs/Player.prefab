@@ -269,6 +269,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3336968370139191567}
+  - component: {fileID: 488150090}
+  - component: {fileID: 488150089}
   m_Layer: 0
   m_Name: FishingRodPoint
   m_TagString: PlayerRod
@@ -291,6 +293,51 @@ Transform:
   m_Father: {fileID: 7824927940298590364}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &488150090
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566488780851046515}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 6
+--- !u!233 &488150089
+HingeJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566488780851046515}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 1
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 18.018501, y: 12.457}
+  m_UseMotor: 0
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_AngleLimits:
+    m_LowerAngle: 0
+    m_UpperAngle: 359
 --- !u!1 &5034702049854073347
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +436,6 @@ GameObject:
   - component: {fileID: 3978649204138341754}
   - component: {fileID: 6041324265593011362}
   - component: {fileID: 7890050411347847053}
-  - component: {fileID: 2018631590}
   - component: {fileID: 7814803752114734574}
   m_Layer: 0
   m_Name: Player
@@ -525,6 +571,9 @@ MonoBehaviour:
   rampUpTime: 1
   hook: {fileID: 1867930385899082835, guid: f6204882aac42494e931530d178b4831, type: 3}
   baitpoint: {fileID: 2794254112950225140}
+  rodpoint: {fileID: 3336968370139191567}
+  ropeActive: 0
+  baitTransform: {fileID: 0}
 --- !u!114 &7890050411347847053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,21 +586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786263e28635b2e45869aaa0ddf84d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2018631590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7824927940298590366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c589505277a2a554ca571605033e6dc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yBobbingStrength: 0.1
-  applyBobOffset: 0
-  bobOffsetAmount: 0
 --- !u!114 &7814803752114734574
 MonoBehaviour:
   m_ObjectHideFlags: 0
