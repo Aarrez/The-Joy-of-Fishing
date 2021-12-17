@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
         if(cPauseScript.SetPause == false)
         {
             Vector2 inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
-            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd);
+            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * Time.deltaTime);
         }
 
     }
