@@ -8,6 +8,7 @@ public class EnableOnStartupScript : MonoBehaviour
     CreatePauseMenuScript GetC;
     public GameObject PauseCanvas;
     public GameObject CallButton;
+    public GameObject GoFishButton;
     void Start()
     {
         CreatePauseMenu.SetActive(true);
@@ -25,8 +26,19 @@ public class EnableOnStartupScript : MonoBehaviour
         if(GameManager.instance.moveCam == 3)
         {
             CallButton.SetActive(false);
+            GoFishButton.SetActive(false);
         }
         else { CallButton.SetActive(true); }
+
+        if(GameManager.instance.moveCam == 1)
+        {
+            GoFishButton.SetActive(true);
+        }
+
+        if(GameManager.instance.moveCam == 2)
+        {
+            GoFishButton.SetActive(false);
+        }
     }
 
 

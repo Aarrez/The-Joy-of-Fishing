@@ -78,15 +78,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "CastOut",
-                    "type": "Button",
-                    "id": "f6e8b318-751a-4ea9-86c9-cb428876be48",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "ReelDown",
                     "type": "Value",
                     "id": "0c4c1b33-a9e3-43d1-9170-e511cd710386",
@@ -449,28 +440,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Mouse1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "559306e6-123a-47f0-908b-a32557410897",
-                    "path": "<Keyboard>/numpad0",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "CastOut",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "769f3b03-2f0f-4238-8cd7-690aaafed46f",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "CastOut",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

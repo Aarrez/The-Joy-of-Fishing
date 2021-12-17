@@ -161,7 +161,7 @@ public class BoatScript : MonoBehaviour
  //   }
 
 
-    private void OnCastOut()
+    public void OnCastOut()
     {
         //when rope is not activated
         if (ropeActive == false)
@@ -181,13 +181,13 @@ public class BoatScript : MonoBehaviour
             //sets rope to enabled
             ropeActive = true;
         }
-        else
-        {
+        //else //commennt this else statement to remove "click 0 again to delet rope"
+        //{
 
-            //delete rope
-            DeleteRope();
+        //    //delete rope
+        //    DeleteRope();
 
-        }
+        //}
     }
 
     public void DeleteRope()

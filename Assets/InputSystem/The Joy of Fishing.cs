@@ -100,15 +100,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CastOut"",
-                    ""type"": ""Button"",
-                    ""id"": ""f6e8b318-751a-4ea9-86c9-cb428876be48"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""ReelDown"",
                     ""type"": ""Value"",
                     ""id"": ""0c4c1b33-a9e3-43d1-9170-e511cd710386"",
@@ -471,28 +462,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Mouse1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""559306e6-123a-47f0-908b-a32557410897"",
-                    ""path"": ""<Keyboard>/numpad0"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""CastOut"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""769f3b03-2f0f-4238-8cd7-690aaafed46f"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""CastOut"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1666,7 +1635,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player_SwingLeft = m_Player.FindAction("SwingLeft", throwIfNotFound: true);
         m_Player_SwingRight = m_Player.FindAction("SwingRight", throwIfNotFound: true);
         m_Player_Mouse1 = m_Player.FindAction("Mouse1", throwIfNotFound: true);
-        m_Player_CastOut = m_Player.FindAction("CastOut", throwIfNotFound: true);
         m_Player_ReelDown = m_Player.FindAction("ReelDown", throwIfNotFound: true);
         m_Player_ReelUp = m_Player.FindAction("ReelUp", throwIfNotFound: true);
         m_Player_ReelUpBoost = m_Player.FindAction("ReelUpBoost", throwIfNotFound: true);
@@ -1754,7 +1722,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwingLeft;
     private readonly InputAction m_Player_SwingRight;
     private readonly InputAction m_Player_Mouse1;
-    private readonly InputAction m_Player_CastOut;
     private readonly InputAction m_Player_ReelDown;
     private readonly InputAction m_Player_ReelUp;
     private readonly InputAction m_Player_ReelUpBoost;
@@ -1772,7 +1739,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public InputAction @SwingLeft => m_Wrapper.m_Player_SwingLeft;
         public InputAction @SwingRight => m_Wrapper.m_Player_SwingRight;
         public InputAction @Mouse1 => m_Wrapper.m_Player_Mouse1;
-        public InputAction @CastOut => m_Wrapper.m_Player_CastOut;
         public InputAction @ReelDown => m_Wrapper.m_Player_ReelDown;
         public InputAction @ReelUp => m_Wrapper.m_Player_ReelUp;
         public InputAction @ReelUpBoost => m_Wrapper.m_Player_ReelUpBoost;
@@ -1811,9 +1777,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @Mouse1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
                 @Mouse1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
                 @Mouse1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
-                @CastOut.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
-                @CastOut.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
-                @CastOut.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
                 @ReelDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
                 @ReelDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
                 @ReelDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
@@ -1857,9 +1820,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @Mouse1.started += instance.OnMouse1;
                 @Mouse1.performed += instance.OnMouse1;
                 @Mouse1.canceled += instance.OnMouse1;
-                @CastOut.started += instance.OnCastOut;
-                @CastOut.performed += instance.OnCastOut;
-                @CastOut.canceled += instance.OnCastOut;
                 @ReelDown.started += instance.OnReelDown;
                 @ReelDown.performed += instance.OnReelDown;
                 @ReelDown.canceled += instance.OnReelDown;
@@ -2072,7 +2032,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnSwingLeft(InputAction.CallbackContext context);
         void OnSwingRight(InputAction.CallbackContext context);
         void OnMouse1(InputAction.CallbackContext context);
-        void OnCastOut(InputAction.CallbackContext context);
         void OnReelDown(InputAction.CallbackContext context);
         void OnReelUp(InputAction.CallbackContext context);
         void OnReelUpBoost(InputAction.CallbackContext context);

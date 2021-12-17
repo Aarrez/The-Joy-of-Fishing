@@ -8,23 +8,36 @@ public class BoatSliderScript : MonoBehaviour
     Transform playerTransform;
     Transform hookTransform;
     float playerIniPos;
+    float playerIniPosY;
     float sliderMaxMin;
     public bool thisIsBoatSlider;
     float elapsed;
     BoatScript boatScript;
     bool cache;
+    public bool thisIsHookSliderVertical;
     void Start()
     {
         getSlider = GetComponent<Slider>();
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         //hookTransform = GameObject.FindGameObjectWithTag("Bait").GetComponent<Transform>();
         playerIniPos = playerTransform.position.x;
-        getSlider.value = playerIniPos;
-        sliderMaxMin = playerIniPos * 5;
+        playerIniPosY = playerTransform.position.y;
+
+        ////sliderMaxMin = playerIniPos * 5;
         boatScript = FindObjectOfType<BoatScript>();
         cache = false;
         //getSlider.maxValue = playerIniPos + sliderMaxMin;
         //getSlider.minValue = playerIniPos - sliderMaxMin;
+
+        if(thisIsBoatSlider == true || thisIsBoatSlider == false)
+        {
+            getSlider.value = playerIniPos;
+        }
+
+        if(thisIsHookSliderVertical == true)
+        {
+            getSlider.value = playerIniPosY;
+        }
     }
 
     // Update is called once per frame
@@ -38,7 +51,7 @@ public class BoatSliderScript : MonoBehaviour
             if (elapsed >= 0.2f)
             {
                 elapsed = elapsed % 0.2f;
-                hookTransform = GameObject.Find("Hook(Clone)").GetComponent<Transform>();
+                hookTransform = GameObject.FindGameObjectWithTag("Bait").GetComponent<Transform>();
                 cache = true;
             }
 
@@ -58,6 +71,11 @@ public class BoatSliderScript : MonoBehaviour
         if (thisIsBoatSlider == false && cache == true)
         {
             getSlider.value = hookTransform.position.x;
+        }
+
+        if(thisIsHookSliderVertical == true && cache == true)
+        {
+            getSlider.value = hookTransform.position.y;
         }
     }
 }
