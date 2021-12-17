@@ -776,6 +776,8 @@ MonoBehaviour:
   CreatePauseMenu: {fileID: 0}
   PauseCanvas: {fileID: 0}
   CallButton: {fileID: 0}
+  GoFishButton: {fileID: 0}
+  ControlPanel: {fileID: 0}
 --- !u!1 &6065598665313872858
 GameObject:
   m_ObjectHideFlags: 0

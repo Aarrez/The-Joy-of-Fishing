@@ -595,7 +595,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10
-  m_LinearDrag: 10
+  m_LinearDrag: 1000
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -622,7 +622,7 @@ MonoBehaviour:
   rodpoint: {fileID: 3336968370139191567}
   ropeActive: 0
   baitTransform: {fileID: 0}
-  BoatSpeedForce: 100
+  BoatSpeedForce: 1000000
 --- !u!114 &7890050411347847053
 MonoBehaviour:
   m_ObjectHideFlags: 0

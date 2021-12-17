@@ -25,7 +25,7 @@ public class ShopCamSwitchScript : MonoBehaviour
         if (GameManager.instance.moveCam == 1)
         {
             GameManager.instance.ChangeInteger();
-            Buttontext.text = "Return to fishing";
+            
 
 
 
@@ -33,7 +33,7 @@ public class ShopCamSwitchScript : MonoBehaviour
         else if (GameManager.instance.moveCam == 2)
         { 
             GameManager.instance.ChangeIntegerAgain();
-            Buttontext.text = "Go to shop";
+           
 
             
         }
@@ -48,6 +48,8 @@ public class ShopCamSwitchScript : MonoBehaviour
             {
                 cmVirt.m_Lens.OrthographicSize = 9;
             }
+            Buttontext.text = "Go to shop";
+
         }
 
         if (GameManager.instance.moveCam == 2)
@@ -56,6 +58,16 @@ public class ShopCamSwitchScript : MonoBehaviour
             if (cmVirt.m_Lens.OrthographicSize <= 5)
             {
                 cmVirt.m_Lens.OrthographicSize = 5;
+            }
+            Buttontext.text = "Return to fishing";
+        }
+
+        if (GameManager.instance.moveCam == 3)
+        {
+            cmVirt.m_Lens.OrthographicSize += Time.deltaTime * 3;
+            if (cmVirt.m_Lens.OrthographicSize >= 9)
+            {
+                cmVirt.m_Lens.OrthographicSize = 9;
             }
         }
     }

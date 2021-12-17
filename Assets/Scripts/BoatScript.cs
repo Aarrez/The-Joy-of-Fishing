@@ -26,6 +26,8 @@ public class BoatScript : MonoBehaviour
 
     public float BoatSpeedForce = 10f;
 
+    bool boostbool;
+
     private void Awake()
     {
         rig2d = GetComponent<Rigidbody2D>();
@@ -70,10 +72,24 @@ public class BoatScript : MonoBehaviour
     {
         Vector2 reelfloatup = GetKey.Player.ReelUp.ReadValue<Vector2>();
         Vector2 reelfloatdown = GetKey.Player.ReelDown.ReadValue<Vector2>();
+        Vector2 reelupboost = GetKey.Player.ReelUpBoost.ReadValue<Vector2>();
         elapsed += Time.deltaTime;
-        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0))
+
+        if (reelupboost == Vector2.up)
+        {
+            boostbool = true;
+        }
+        else { boostbool = false; }
+
+        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && boostbool == false)
         {
             elapsed = elapsed % 0.2f;
+            RopeScript.instance.DestroyNode();
+
+
+        }else if(boostbool == true && elapsed >= 0.1f && ropeActive == true && rig2d.velocity.x.Equals(0))
+        {
+            elapsed = elapsed % 0.1f;
             RopeScript.instance.DestroyNode();
         }
 
@@ -88,13 +104,11 @@ public class BoatScript : MonoBehaviour
         Vector2 boatright= GetKey.Player.BoatRight.ReadValue<Vector2>();
         if (boatleft == Vector2.left)
         {
-            Debug.Log(boatleft);
             rig2d.AddForce(new Vector2(boatleft.x, 0) * BoatSpeedForce * Time.deltaTime);
             
         }
         if (boatright == Vector2.right)
         {
-            Debug.Log(boatright);
             rig2d.AddForce(new Vector2(boatright.x, 0) * BoatSpeedForce * Time.deltaTime);
         }
     }
@@ -147,7 +161,7 @@ public class BoatScript : MonoBehaviour
  //   }
 
 
-    private void OnCastOut()
+    public void OnCastOut()
     {
         //when rope is not activated
         if (ropeActive == false)
@@ -167,13 +181,13 @@ public class BoatScript : MonoBehaviour
             //sets rope to enabled
             ropeActive = true;
         }
-        else
-        {
+        //else //commennt this else statement to remove "click 0 again to delet rope"
+        //{
 
-            //delete rope
-            DeleteRope();
+        //    //delete rope
+        //    DeleteRope();
 
-        }
+        //}
     }
 
     public void DeleteRope()
