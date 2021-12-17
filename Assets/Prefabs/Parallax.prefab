@@ -16066,6 +16066,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1419649679874298324}
     m_Modifications:
+    - target: {fileID: 3943114656924836343, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.690001
+      objectReference: {fileID: 0}
     - target: {fileID: 5595996061469258357, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
       propertyPath: m_Name
       value: SkyBkg
