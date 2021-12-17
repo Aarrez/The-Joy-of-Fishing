@@ -82,7 +82,7 @@ public sealed class GameManager : MonoBehaviour
 
     public void BaitCam()
     {
-        if (RopeScript.instance.grub == true)
+        if (RopeScript.instance.ActualHookObject == true)
         {
             CMcam.Follow = RopeScript.instance.go.transform;
             CMcamBody.m_TrackedObjectOffset.y = 0;

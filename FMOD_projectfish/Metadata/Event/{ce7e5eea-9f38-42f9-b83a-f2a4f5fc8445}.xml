@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{40843cc9-2432-4f36-86da-833bc2358516}</destination>
+			<destination>{8c289d8b-28d4-4d35-a7e8-0072ebf5d749}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{97c4dd69-7d76-4ac5-aedc-000e269111b9}</destination>
@@ -96,7 +96,7 @@
 			<value>2</value>
 		</property>
 		<property name="volume">
-			<value>-11</value>
+			<value>10</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
 			<value>2500</value>

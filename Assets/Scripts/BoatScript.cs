@@ -13,7 +13,8 @@ public class BoatScript : MonoBehaviour
     public static event System.Action<bool> IsFishing;
     //hook prefab
     public GameObject hook;
-    public Transform baitpoint;
+    public Transform baitpoint; 
+    public Transform rodpoint;
     //holds whether rope is active or not
     public bool ropeActive;
     //current hook on the scene
@@ -139,9 +140,10 @@ public class BoatScript : MonoBehaviour
 
             //creates a hook
             curHook = (GameObject)Instantiate(hook, transform.position, Quaternion.identity);
-
+            curHook.transform.parent = rodpoint;
             //sets its destiny
             curHook.GetComponent<RopeScript>().destiny = destiny;
+
             GameManager.instance.Hook = curHook.transform;
             GameManager.instance.baitCam = true;
             GameManager.instance.moveCam = 3;
