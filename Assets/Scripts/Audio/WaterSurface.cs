@@ -5,18 +5,46 @@ using UnityEngine;
 
 public class WaterSurface : MonoBehaviour
 {
+   [SerializeField] private bool hookSubmerged = false; //Hook is under the watersurface
+
     private FMOD.Studio.EventInstance splashEvent;
+    
+    //water ambience MOVE ME TO BETTER PLACE LATER?
+    private FMOD.Studio.EventInstance lakeAmbienceEvent;
 
     private void Awake()
     {
+        splashEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         splashEvent = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/hook_splash");
         //splashEvent.start();
+        
+        lakeAmbienceEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/ambience_lake");
+        lakeAmbienceEvent.start();
+    }
+
+    private void Update()
+    {
+        if (hookSubmerged)
+        {
+            lakeAmbienceEvent.setParameterByName("Pause", 1);
+        }
+        else
+        {
+            lakeAmbienceEvent.setParameterByName("Pause", 0); //not paused
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) //WaterSurface need to be BaitLayer. This ok?
     {
         if (other.gameObject.CompareTag("Bait"))
         {
+            // For play lake ambience, maybe move me lateR?
+            hookSubmerged = !hookSubmerged; //swap bool mode
+             
+            
+            
+            
+            //Play FMOD Splash if not already playing to avoid duplicates
             FMOD.Studio.PLAYBACK_STATE pbState;
             splashEvent.getPlaybackState(out pbState);
             if (pbState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
