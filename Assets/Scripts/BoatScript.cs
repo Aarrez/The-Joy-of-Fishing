@@ -13,7 +13,8 @@ public class BoatScript : MonoBehaviour
     public static event System.Action<bool> IsFishing;
     //hook prefab
     public GameObject hook;
-    public Transform baitpoint;
+    public Transform baitpoint; 
+    public Transform rodpoint;
     //holds whether rope is active or not
     public bool ropeActive;
     //current hook on the scene
@@ -22,6 +23,8 @@ public class BoatScript : MonoBehaviour
 
     TheJoyofFishing GetKey;
     float elapsed = 0f;
+
+    public float BoatSpeedForce = 10f;
 
     private void Awake()
     {
@@ -68,19 +71,34 @@ public class BoatScript : MonoBehaviour
         Vector2 reelfloatup = GetKey.Player.ReelUp.ReadValue<Vector2>();
         Vector2 reelfloatdown = GetKey.Player.ReelDown.ReadValue<Vector2>();
         elapsed += Time.deltaTime;
-        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f)
+        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0))
         {
             elapsed = elapsed % 0.2f;
             RopeScript.instance.DestroyNode();
         }
 
-        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f)
+        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0))
         {
             elapsed = elapsed % 0.2f;
             RopeScript.instance.CreateNode();
 
         }
+
+        Vector2 boatleft = GetKey.Player.BoatLeft.ReadValue<Vector2>();
+        Vector2 boatright= GetKey.Player.BoatRight.ReadValue<Vector2>();
+        if (boatleft == Vector2.left)
+        {
+            Debug.Log(boatleft);
+            rig2d.AddForce(new Vector2(boatleft.x, 0) * BoatSpeedForce * Time.deltaTime);
+            
+        }
+        if (boatright == Vector2.right)
+        {
+            Debug.Log(boatright);
+            rig2d.AddForce(new Vector2(boatright.x, 0) * BoatSpeedForce * Time.deltaTime);
+        }
     }
+
 
     private void GetInput()
     {
@@ -139,9 +157,10 @@ public class BoatScript : MonoBehaviour
 
             //creates a hook
             curHook = (GameObject)Instantiate(hook, transform.position, Quaternion.identity);
-
+            curHook.transform.parent = rodpoint;
             //sets its destiny
             curHook.GetComponent<RopeScript>().destiny = destiny;
+
             GameManager.instance.Hook = curHook.transform;
             GameManager.instance.baitCam = true;
             GameManager.instance.moveCam = 3;
