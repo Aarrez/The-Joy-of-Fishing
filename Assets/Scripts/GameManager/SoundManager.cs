@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
     private float musicVolume = 0.5f;
     private float sfxVolume = 0.5f;
     private float masterVolume = 1f;
-    private float ambienceVolume = 0.5f;
+    private float ambienceVolume = 0.05f;
     // Any sliders connected to these values must on start have the same in insepctor component.
     // Slider component's "Value" setting Must match these float values.
     
