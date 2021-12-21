@@ -54,12 +54,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _WindInfluenceMask: 1.3
-    - _WindScale: 0.2
-    - _WindSpeed: 0.3
+    - _WindInfluenceMask: 1
+    - _WindScale: 0.3
+    - _WindSpeed: 0.35
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _WindDirection: {r: 0.4, g: 0, b: 0, a: 0}
+    - _WindDirection: {r: 0.1, g: 0.6, b: 0, a: 0}
   m_BuildTextureStacks: []
