@@ -2,31 +2,30 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class BoatScript : MonoBehaviour
 {
+    
+
+    //Privates
+    [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
+    private float currentTime, elapsed = 0f, inputValueX = 0f;
+    private bool BoatCanMove = true;
+    private GameObject curHook;
     private Rigidbody2D rig2d;
     private AnimationCurve moveAnimCurve;
+    TheJoyofFishing GetKey;
+
+
+
+    //Publics
     [Header("Movement stuff")]
-    [SerializeField] private float boatSpeed = 1f;
-    [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
-    private float inputValueX = 0f;
-    private float currentTime;
-    private bool BoatCanMove = true;
+    [SerializeField] public float boatSpeed = 1f, BoatSpeedForce = 10f;
     public static event System.Action<bool> IsFishing;
     //hook prefab
     public GameObject hook;
-    public Transform baitpoint; 
-    public Transform rodpoint;
+    public Transform baitpoint, baitTransform, rodpoint; 
     //holds whether rope is active or not
-    public bool ropeActive;
+    [HideInInspector] public bool ropeActive, boostbool;
     //current hook on the scene
-    GameObject curHook;
-    public Transform baitTransform;
 
-    TheJoyofFishing GetKey;
-    float elapsed = 0f;
-
-    public float BoatSpeedForce = 10f;
-
-    bool boostbool;
 
     private void Awake()
     {
