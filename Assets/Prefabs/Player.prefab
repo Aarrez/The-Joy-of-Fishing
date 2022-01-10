@@ -615,14 +615,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e8324945a6bef42834a76c619b9d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boatSpeed: 10
   rampUpTime: 1
+  boatSpeed: 10
+  BoatSpeedForce: 1000000
   hook: {fileID: 1867930385899082835, guid: f6204882aac42494e931530d178b4831, type: 3}
   baitpoint: {fileID: 2794254112950225140}
+  baitTransform: {fileID: 0}
   rodpoint: {fileID: 3336968370139191567}
   ropeActive: 0
-  baitTransform: {fileID: 0}
-  BoatSpeedForce: 1000000
+  boostbool: 0
 --- !u!114 &7890050411347847053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -659,7 +660,115 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ba9bc187-58d8-426f-9dc4-03e996c53676
+    m_ActionName: Player/Move[/Gamepad/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d55f57d-ec3c-4094-bdd2-a46f27a34d0b
+    m_ActionName: Player/MoveBait[/Gamepad/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c44538e2-cba9-42ee-b1c2-a790f42e7d6e
+    m_ActionName: Player/Fire[/Gamepad/rightTrigger,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 52e30900-4b25-440a-b0ac-92ce207b9c71
+    m_ActionName: Player/FishingBait[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6041324265593011362}
+        m_TargetAssemblyTypeName: BoatScript, Assembly-CSharp
+        m_MethodName: MovePlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d0636dc7-4779-46d1-8f1e-3c6618590c5a
+    m_ActionName: Player/MoveBoat[/Keyboard/leftArrow,/Keyboard/a,/Keyboard/rightArrow,/Keyboard/d,/Gamepad/dpad/x]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ebca5c00-5812-4efc-80d3-68989f6b3524
+    m_ActionName: Player/SwingLeft[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 044a92e9-32fd-47ce-bc04-ec7c4c47aee5
+    m_ActionName: Player/SwingRight[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0fcd6c29-676e-4c68-a09b-80250c5900f2
+    m_ActionName: Player/Mouse1[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c4c1b33-a9e3-43d1-9170-e511cd710386
+    m_ActionName: Player/ReelDown[/Keyboard/s,/Gamepad/leftStick/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fe3152e0-96bd-4c89-b78c-c00f7bce226c
+    m_ActionName: Player/ReelUp[/Keyboard/w,/Gamepad/leftStick/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4936f5a6-7512-4999-8cd3-76aa0e846e89
+    m_ActionName: Player/ReelUpBoost[/Keyboard/space,/Gamepad/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a3b7113a-29fe-41ce-a255-3c30003fe8d4
+    m_ActionName: Player/BoatLeft[/Keyboard/a,/Gamepad/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a9e584a7-3a9b-4733-9571-d88d3cba6993
+    m_ActionName: Player/BoatRight[/Keyboard/d,/Gamepad/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f6840d2d-ab35-4573-b379-34bdb32cd84f
+    m_ActionName: UI/Navigate[/Gamepad/leftStick/up,/Gamepad/rightStick/up,/Gamepad/leftStick/down,/Gamepad/rightStick/down,/Gamepad/leftStick/left,/Gamepad/rightStick/left,/Gamepad/leftStick/right,/Gamepad/rightStick/right,/Gamepad/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1048387-c70b-4fc5-bfc0-d37fa435a759
+    m_ActionName: UI/Submit[/Keyboard/enter,/Gamepad/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eab956f9-f5ef-430f-ae8d-75aa1b9e48af
+    m_ActionName: UI/Cancel[/Keyboard/escape,/Gamepad/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 211de4c9-612f-4506-894d-856768bb38d5
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5f378321-a045-4221-852a-6777d6e8b9e7
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c92e1711-e815-451d-9176-94c5723b32de
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c6b95256-eb1a-41e4-b9ac-a1857566469c
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c1ad24c2-5886-4fe1-9508-a89ab9606065
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cf64193d-81fa-4e8d-868b-e8aad6b210c9
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 34ab1fc4-b34b-4656-866f-4ce90aaa6933
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7e976734-5e9a-4b9f-9fd2-8a1203b245e6
+    m_ActionName: EscapeToPause/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
