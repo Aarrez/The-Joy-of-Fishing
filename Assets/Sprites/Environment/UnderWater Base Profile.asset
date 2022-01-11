@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 6.75
   intensity:
     m_OverrideState: 1
-    m_Value: 10.16
+    m_Value: 27.13
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Value: 65472
   tint:
     m_OverrideState: 1
-    m_Value: {r: 0.008009953, g: 0.44791502, b: 0.5660378, a: 1}
+    m_Value: {r: 0.3443396, g: 0.37286612, b: 1, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Value: {fileID: 2800000, guid: 809788950a1ca445c8fe514721122b3e, type: 3}
   dirtIntensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 5.8
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,21 +53,4 @@ MonoBehaviour:
   m_Name: UnderWater Base Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 3320953364428746288}
   - {fileID: -2726001889771413891}
---- !u!114 &3320953364428746288
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
-  m_Name: Tonemapping
-  m_EditorClassIdentifier: 
-  active: 1
-  mode:
-    m_OverrideState: 1
-    m_Value: 2

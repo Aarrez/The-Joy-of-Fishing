@@ -4463,8 +4463,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5450490334302937624}
-  - component: {fileID: 886366900}
-  - component: {fileID: 886366899}
   m_Layer: 6
   m_Name: UnderWater Base
   m_TagString: Untagged
@@ -4504,36 +4502,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &886366900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2323536340567072471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 0
-  priority: 0
-  blendDistance: 1
-  weight: 0.82
-  sharedProfile: {fileID: 11400000, guid: b819029bc8cf43a4e9e7bb97a151c82c, type: 2}
---- !u!65 &886366899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2323536340567072471}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 308.15692, y: 286.65356, z: 1}
-  m_Center: {x: 9.126373, y: -134.01382, z: 0}
 --- !u!1 &2697470972405550060
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,7 +4551,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.887
   m_Color: {r: 0.254717, g: 0.23669456, b: 0.23669456, a: 1}
-  m_Intensity: 0.3
+  m_Intensity: 0.6
   m_LightVolumeIntensity: 1.65
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 030129c02fc09cfd4900de65
