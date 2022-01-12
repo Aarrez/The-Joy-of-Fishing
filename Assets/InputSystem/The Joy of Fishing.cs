@@ -1029,7 +1029,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""3f8de225-2555-446a-8716-aa81e24688ea"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

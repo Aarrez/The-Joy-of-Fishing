@@ -12,12 +12,20 @@ public class PlayerScript : MonoBehaviour
 	public float forcetoAdd = 100;
 	TheJoyofFishing GetKey;
     CreatePauseMenuScript cPauseScript;
-    float elapsed = 4f;
+    public float elapsed = 4f;
     float gruggers;
+    Vector2 UpRight = (Vector2.up + Vector2.right).normalized;
+    Vector2 UpLeft = (Vector2.up + Vector2.left).normalized;
+    Vector2 UpUp = Vector2.up.normalized;
+    Vector2 inputvector;
+    Vector2 inputvector2;
+
+    float check_x;
+    float check_y;
 
     //RopeScript callRopeScript;
 
-	void Start()
+    void Start()
 	{
         cPauseScript = FindObjectOfType<CreatePauseMenuScript>();
 		//assigns rigidbody
@@ -28,7 +36,7 @@ public class PlayerScript : MonoBehaviour
 
         GetKey = new TheJoyofFishing();
         GetKey.Player.Enable();
-       
+
     }
 
    
@@ -40,39 +48,62 @@ public class PlayerScript : MonoBehaviour
 
         if (cPauseScript.SetPause == false)
         {
-            Vector2 inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
+            inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
             rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * Time.deltaTime);
+            inputvector2 = GetKey.Player.RocketBoost.ReadValue<Vector2>();
 
-            Vector2 inputvector2 = GetKey.Player.RocketBoost.ReadValue<Vector2>();
-            //if (inputvector2 == Vector2.up && elapsed >= 5f)
-            //{
-            //    rb.AddForce(new Vector3(0, inputvector2.y, 0) * forcetoAdd * gruggers * Time.deltaTime);
-            //    elapsed = elapsed % 5f;
-            //}
-            if(inputvector == Vector2.)
+            check_x = inputvector.x;
+            check_y = inputvector.y;
+
+            if (check_y <= Mathf.Sqrt(3) / 2 && check_y >= 1 / 2 && inputvector != Vector2.zero)
             {
-                Debug.Log("MEMES2");
-                ////if(inputvector2 == Vector2.up && elapsed >= 5f)
-                ////{
-                ////    rb.AddForce(new Vector3(0, inputvector2.y, 0) * forcetoAdd * gruggers * Time.deltaTime);
-                ////    elapsed = elapsed % 5f;
-                ////}
+                if (check_x >= 1 / 2 && check_x <= Mathf.Sqrt(3) / 2) //right joystick up-right ^>
+                {
+                    if (inputvector2 == Vector2.up && elapsed >= 5f)
+                    {
+                        RocketBoostUpAndDir();
+                    }
+
+                }
+                if(check_x <= -1 / 2 && check_x >= -Mathf.Sqrt(3) / 2) //right joystick up-left <^
+                {
+                    if (inputvector2 == Vector2.up && elapsed >= 5f)
+                    {
+                        RocketBoostUpAndDir();
+
+                    }
+
+                }
+            }
+
+            if(check_y >= Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight up
+            {
+                if(inputvector2 == Vector2.up && elapsed >= 5f) 
+                {
+                    RocketBoostUp();
+                }
 
             }
 
-            ////if (inputvector2 == Vector2.up && elapsed >= 5f && inputvector == Vector2.left && inputvector == Vector2.up)
-            ////{
-            ////    rb.AddForce(new Vector3(-inputvector2.x, 0, 0) * forcetoAdd * gruggers * Time.deltaTime);
-            ////    elapsed = elapsed % 5f;
-            ////}
         }
         if (elapsed >= 5f)
         {
             elapsed = 5f;
         }
-        Debug.Log(elapsed + "   hello   " + gruggers);
 
 
+    }
+
+    void RocketBoostUp()
+    {
+        rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd * (gruggers / 2) * Time.deltaTime);
+        elapsed = elapsed % 5f;
+    }
+
+    void RocketBoostUpAndDir()
+    {
+        rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * (gruggers / 2) * Time.deltaTime);
+        elapsed = elapsed % 5f;
     }
     
 }
