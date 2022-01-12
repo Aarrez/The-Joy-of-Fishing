@@ -43,53 +43,62 @@ public class PlayerScript : MonoBehaviour
 
     private void Update()
     {
-        elapsed += Time.deltaTime;
+ 
         gruggers = RopeScript.instance.Nodes.Count;
 
         if (cPauseScript.SetPause == false)
         {
-            inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
-            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * Time.deltaTime);
-            inputvector2 = GetKey.Player.RocketBoost.ReadValue<Vector2>();
-
-            check_x = inputvector.x;
-            check_y = inputvector.y;
-
-            if (check_y <= Mathf.Sqrt(3) / 2 && check_y >= 1 / 2 && inputvector != Vector2.zero)
+            if(GameManager.instance.moveCam == 3)
             {
-                if (check_x >= 1 / 2 && check_x <= Mathf.Sqrt(3) / 2) //right joystick up-right ^>
+
+               elapsed += Time.deltaTime;
+
+                Debug.Log(elapsed);
+                inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
+                rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * Time.deltaTime);
+                inputvector2 = GetKey.Player.RocketBoost.ReadValue<Vector2>();
+
+                check_x = inputvector.x;
+                check_y = inputvector.y;
+
+                if (check_y <= Mathf.Sqrt(3) / 2 && check_y >= 1 / 2 && inputvector != Vector2.zero)
+                {
+                    if (check_x >= 1 / 2 && check_x <= Mathf.Sqrt(3) / 2) //right joystick up-right ^>
+                    {
+                        if (inputvector2 == Vector2.up && elapsed >= 5f)
+                        {
+                            RocketBoostUpAndDir();
+                        }
+
+                    }
+                    if (check_x <= -1 / 2 && check_x >= -Mathf.Sqrt(3) / 2) //right joystick up-left <^
+                    {
+                        if (inputvector2 == Vector2.up && elapsed >= 5f)
+                        {
+                            RocketBoostUpAndDir();
+
+                        }
+
+                    }
+                }
+
+                if (check_y >= Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight up
                 {
                     if (inputvector2 == Vector2.up && elapsed >= 5f)
                     {
-                        RocketBoostUpAndDir();
+                        RocketBoostUp();
                     }
 
                 }
-                if(check_x <= -1 / 2 && check_x >= -Mathf.Sqrt(3) / 2) //right joystick up-left <^
-                {
-                    if (inputvector2 == Vector2.up && elapsed >= 5f)
-                    {
-                        RocketBoostUpAndDir();
 
-                    }
-
-                }
             }
-
-            if(check_y >= Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight up
+            if (elapsed >= 5f)
             {
-                if(inputvector2 == Vector2.up && elapsed >= 5f) 
-                {
-                    RocketBoostUp();
-                }
-
+                elapsed = 5f;
             }
-
         }
-        if (elapsed >= 5f)
-        {
-            elapsed = 5f;
-        }
+           
+        
 
 
     }

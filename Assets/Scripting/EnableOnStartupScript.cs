@@ -12,6 +12,8 @@ public class EnableOnStartupScript : MonoBehaviour
     public GameObject GoFishButton;
     public GameObject ControlPanel;
     public GameObject CoolDownUIText;
+    public GameObject NodesCountUI;
+    TextMeshProUGUI NodesCountText;
     TextMeshProUGUI CoolDownText;
     bool controlPanelBool;
     PlayerScript callPlayerScript;
@@ -24,6 +26,8 @@ public class EnableOnStartupScript : MonoBehaviour
         ControlPanel.SetActive(false);
         CoolDownText = CoolDownUIText.GetComponent<TextMeshProUGUI>();
         CoolDownUIText.SetActive(false);
+        NodesCountText = NodesCountUI.GetComponent<TextMeshProUGUI>();
+        NodesCountUI.SetActive(false);
 
         cache = false;
     }
@@ -43,22 +47,34 @@ public class EnableOnStartupScript : MonoBehaviour
             CallButton.SetActive(false);
             GoFishButton.SetActive(false);
             CoolDownUIText.SetActive(true);
+            NodesCountUI.SetActive(true);
 
             if (cache == false)
             {
                 cacheTimeElapsed += Time.deltaTime;
-                if (cacheTimeElapsed >= 0.1f)
+                if (cacheTimeElapsed >= 0.5f)
                 {
-                    cacheTimeElapsed = cacheTimeElapsed % 0.1f;
+                    cacheTimeElapsed = cacheTimeElapsed % 0.5f;
                     callPlayerScript = FindObjectOfType<PlayerScript>();
-                    cache = true;
-                    Debug.Log("CHACHE");
+                    cache = true; 
                 }
             }
 
-            CoolDownText.text = "RocketBoost Cooldown: " + callPlayerScript.elapsed;
+            NodesCountText.text = "Line Length (feet): " + RopeScript.instance.Nodes.Count;
+            if(callPlayerScript.elapsed >= 5)
+            {
+                CoolDownText.text = "RocketBoost Ready";
+            }else if (callPlayerScript.elapsed <= 5)
+            {
+                CoolDownText.text = "RocketBoost Cooldown: " + callPlayerScript.elapsed.ToString("F1");
+            }
+
+
         }
-        else { CallButton.SetActive(true); }
+        else { CallButton.SetActive(true); CoolDownUIText.SetActive(false); NodesCountUI.SetActive(false); }
+
+
+
 
         if(GameManager.instance.moveCam == 1) //cam following player, overwater
         {
