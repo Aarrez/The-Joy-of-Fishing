@@ -26,13 +26,20 @@ public class CollectFish : MonoBehaviour
     }
 
     //Need to add to Main Scene: A object with fishinventory tag
-    private void FindHookAndInventory()
+    private void FindHookAndInventory(bool bait)
     {
-        try { fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform; }
-        catch { fishInventory = new GameObject().transform; }
+        if (bait)
+        {
+            try { fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform; }
+            catch { fishInventory = new GameObject().transform; }
 
-        hook = FindObjectOfType<BaitScript>().transform;
-        CanCatchFish = true;
+            hook = FindObjectOfType<BaitScript>().transform;
+            CanCatchFish = bait;
+        }
+        else
+        {
+            CanCatchFish = bait;
+        }
     }
 
     private void Update()

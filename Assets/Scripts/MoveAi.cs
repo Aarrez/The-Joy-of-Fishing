@@ -35,10 +35,14 @@ public class MoveAi : FishStats
     private void OnEnable()
     {
         Wander();
-        BaitScript.BaitIsOut += delegate ()
+        BaitScript.BaitIsOut += delegate (bool theBait)
         {
-            CanFish = true;
-            player = FindObjectOfType<BaitScript>().transform;
+            if (theBait)
+                player = FindObjectOfType<BaitScript>().transform;
+            else if (!theBait)
+                player = FindObjectOfType<BoatScript>().transform;
+            CanFish = theBait;
+            
         };
     }
 
@@ -108,7 +112,7 @@ public class MoveAi : FishStats
             path.canMove = true;
             if (fishStats.baitLevel == BaitScript.BaitLevel())
             {
-                Seek(player.position);
+                agent.StartPath(this.transform.position, player.position);
             }
             else
             {

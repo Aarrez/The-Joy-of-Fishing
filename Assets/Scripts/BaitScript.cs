@@ -16,17 +16,18 @@ public class BaitScript : MonoBehaviour
     public static Func<int> BaitLevel;
 
     //Used to get in ColletFish and in MoveAi to get when the bait is out.
-    public static event Action BaitIsOut;
+    public static event Action<bool> BaitIsOut;
 
     private void OnEnable()
     {
         BaitLevel += delegate () { return bait[currentBait].baitLevel; };
-        BaitIsOut();
+        BaitIsOut(true);
     }
 
     private void OnDisable()
     {
         BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
+        BaitIsOut(false);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
