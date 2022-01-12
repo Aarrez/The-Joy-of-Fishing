@@ -80,9 +80,9 @@ public class BoatScript : MonoBehaviour
         }
         else { boostbool = false; }
 
-        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.05f && rig2d.velocity.x.Equals(0) && boostbool == false)
+        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && boostbool == false)
         {
-            elapsed = elapsed % 0.2f;
+            elapsed = elapsed % 0.2f; //polish would need floats in these statements varaibled so changeability with upgrades can be done.
             RopeScript.instance.DestroyNode();
 
 
@@ -92,7 +92,7 @@ public class BoatScript : MonoBehaviour
             RopeScript.instance.DestroyNode();
         }
 
-        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.1f && rig2d.velocity.x.Equals(0))
+        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0))
         {
             elapsed = elapsed % 0.2f;
             RopeScript.instance.CreateNode();

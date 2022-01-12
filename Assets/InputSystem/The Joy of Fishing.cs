@@ -134,6 +134,15 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RocketBoost"",
+                    ""type"": ""Value"",
+                    ""id"": ""7b10dccf-2140-429f-b357-413d073c0cab"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -950,6 +959,116 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""action"": ""ReelUpBoost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Boost Up Keyboard"",
+                    ""id"": ""d640e64a-817c-45cf-bb03-0077a35be9c5"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""0fbcbfed-b478-47b0-932f-6bbffff805f2"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""45da78ba-cebd-4b80-9cb0-11bb82df57b3"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b7e23189-c40d-41e4-ac68-68ae85bdbd0a"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8fabb410-ab78-43ed-98d9-3ac60f7d589e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Boost Up Gamepad"",
+                    ""id"": ""ce66e07c-f7d0-4726-9ccd-c3b6235e70ae"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3f8de225-2555-446a-8716-aa81e24688ea"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b6930f7b-1979-4c14-aa5b-c63f8e59fadc"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9471facb-b9ae-45cf-8958-49a2f5149f44"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c5fd9d1c-9944-45d4-b2a0-58522b5ec935"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -1575,6 +1694,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player_ReelUpBoost = m_Player.FindAction("ReelUpBoost", throwIfNotFound: true);
         m_Player_BoatLeft = m_Player.FindAction("BoatLeft", throwIfNotFound: true);
         m_Player_BoatRight = m_Player.FindAction("BoatRight", throwIfNotFound: true);
+        m_Player_RocketBoost = m_Player.FindAction("RocketBoost", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1661,6 +1781,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ReelUpBoost;
     private readonly InputAction m_Player_BoatLeft;
     private readonly InputAction m_Player_BoatRight;
+    private readonly InputAction m_Player_RocketBoost;
     public struct PlayerActions
     {
         private @TheJoyofFishing m_Wrapper;
@@ -1677,6 +1798,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public InputAction @ReelUpBoost => m_Wrapper.m_Player_ReelUpBoost;
         public InputAction @BoatLeft => m_Wrapper.m_Player_BoatLeft;
         public InputAction @BoatRight => m_Wrapper.m_Player_BoatRight;
+        public InputAction @RocketBoost => m_Wrapper.m_Player_RocketBoost;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1722,6 +1844,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @BoatRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
                 @BoatRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
                 @BoatRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
+                @RocketBoost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
+                @RocketBoost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
+                @RocketBoost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1762,6 +1887,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @BoatRight.started += instance.OnBoatRight;
                 @BoatRight.performed += instance.OnBoatRight;
                 @BoatRight.canceled += instance.OnBoatRight;
+                @RocketBoost.started += instance.OnRocketBoost;
+                @RocketBoost.performed += instance.OnRocketBoost;
+                @RocketBoost.canceled += instance.OnRocketBoost;
             }
         }
     }
@@ -1963,6 +2091,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnReelUpBoost(InputAction.CallbackContext context);
         void OnBoatLeft(InputAction.CallbackContext context);
         void OnBoatRight(InputAction.CallbackContext context);
+        void OnRocketBoost(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
