@@ -11,7 +11,7 @@ public class EnableOnStartupScript : MonoBehaviour
     public GameObject CallButton;
     public GameObject GoFishButton;
     public GameObject ControlPanel;
-    public GameObject CoolDownUIText;
+    [SerializeField] GameObject CoolDownUIText;
     public GameObject NodesCountUI;
     TextMeshProUGUI NodesCountText;
     TextMeshProUGUI CoolDownText;
@@ -25,7 +25,6 @@ public class EnableOnStartupScript : MonoBehaviour
         GetC = CreatePauseMenu.GetComponent<CreatePauseMenuScript>();
         ControlPanel.SetActive(false);
         CoolDownText = CoolDownUIText.GetComponent<TextMeshProUGUI>();
-        CoolDownUIText.SetActive(false);
         NodesCountText = NodesCountUI.GetComponent<TextMeshProUGUI>();
         NodesCountUI.SetActive(false);
 
@@ -46,7 +45,7 @@ public class EnableOnStartupScript : MonoBehaviour
         {
             CallButton.SetActive(false);
             GoFishButton.SetActive(false);
-            CoolDownUIText.SetActive(true);
+            CoolDownText.color = new Color(1, 1, 1, 1);
             NodesCountUI.SetActive(true);
 
             if (cache == false)
@@ -56,22 +55,41 @@ public class EnableOnStartupScript : MonoBehaviour
                 {
                     cacheTimeElapsed = cacheTimeElapsed % 0.5f;
                     callPlayerScript = FindObjectOfType<PlayerScript>();
-                    cache = true; 
+                    cache = true;
+                }
+            }
+
+            if(cache == true && !callPlayerScript)
+            {
+
+                cacheTimeElapsed += Time.deltaTime;
+                if (cacheTimeElapsed >= 0.5f)
+                {
+                    callPlayerScript = FindObjectOfType<PlayerScript>();
                 }
             }
 
             NodesCountText.text = "Line Length (feet): " + RopeScript.instance.Nodes.Count;
-            if(callPlayerScript.elapsed >= 5)
+            if(callPlayerScript && callPlayerScript.elapsed <= 0f)
             {
                 CoolDownText.text = "RocketBoost Ready";
-            }else if (callPlayerScript.elapsed <= 5)
+            }else if (callPlayerScript && callPlayerScript.elapsed <= 5)
             {
                 CoolDownText.text = "RocketBoost Cooldown: " + callPlayerScript.elapsed.ToString("F1");
             }
 
 
         }
-        else { CallButton.SetActive(true); CoolDownUIText.SetActive(false); NodesCountUI.SetActive(false); }
+        else { CallButton.SetActive(true); NodesCountUI.SetActive(false); CoolDownText.color = new Color(1, 1, 1, 0);
+
+            if (!callPlayerScript)
+            {
+                CoolDownText.text = "RocketBoost Offline";
+            }
+
+            
+
+        }
 
 
 
