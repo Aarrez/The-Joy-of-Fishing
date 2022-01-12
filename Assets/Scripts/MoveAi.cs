@@ -1,4 +1,5 @@
 using Pathfinding;
+
 using UnityEngine;
 
 /*
@@ -15,6 +16,8 @@ public class MoveAi : FishStats
     private Transform player;
 
     private Vector3 wander = Vector3.zero;
+
+    private OnPathDelegate pathCallback;
 
     //Max distance from the Ai it can wander
     [SerializeField] private float wanderRadius = 5f;
@@ -49,7 +52,7 @@ public class MoveAi : FishStats
         wander = wander.normalized;
         wander *= wanderRadius;
 
-        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(wander);
+        Vector3 targetWorld = this.gameObject.transform.TransformVector(wander);
 
         Seek(targetWorld);
     }
@@ -57,7 +60,7 @@ public class MoveAi : FishStats
     //Sets a position for the Ai to move towards
     private void Seek(Vector3 target)
     {
-        agent.StartPath(this.transform.position, target);
+        agent.StartPath(this.transform.position, target, pathCallback);
     }
 
     //Does the exact opposite of Seek()
@@ -65,11 +68,19 @@ public class MoveAi : FishStats
     {
         Vector3 fleeVector = position - this.transform.position;
         Vector3 fleePos = this.transform.position - fleeVector;
-        agent.StartPath(this.transform.position, fleePos);
+        agent.StartPath(this.transform.position, fleePos, pathCallback);
     }
 
     //Main movement method
     private void AiMovement()
+    {
+        if (path.reachedEndOfPath)
+        {
+            Wander();
+        }
+    }
+
+    private void HookIsOut()
     {
         dist = Vector3.Distance(this.transform.position, player.position);
         if (dist > base.fishStats.baitAttractionRadius)
@@ -82,15 +93,13 @@ public class MoveAi : FishStats
         if (dist < base.fishStats.baitAttractionRadius)
         {
             path.canMove = true;
-            switch (fishStats.baitLevel == BaitScript.BaitLevel())
+            if (fishStats.baitLevel == BaitScript.BaitLevel())
             {
-                case true:
-                    Seek(player.position);
-                    break;
-
-                case false:
-                    Flee(player.position);
-                    break;
+                Seek(player.position);
+            }
+            else
+            {
+                Flee(player.position);
             }
         }
 
