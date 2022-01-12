@@ -15,9 +15,12 @@ public class BaitScript : MonoBehaviour
 
     public static Func<int> BaitLevel;
 
+    public static event Action BaitIsOut;
+
     private void OnEnable()
     {
         BaitLevel += delegate () { return bait[currentBait].baitLevel; };
+        BaitIsOut();
     }
 
     private void OnDisable()

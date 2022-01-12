@@ -17,8 +17,6 @@ public class MoveAi : FishStats
 
     private Vector3 wander = Vector3.zero;
 
-    private OnPathDelegate pathCallback;
-
     //Max distance from the Ai it can wander
     [SerializeField] private float wanderRadius = 5f;
 
@@ -27,21 +25,37 @@ public class MoveAi : FishStats
 
     private float dist = 0f;
 
+    private bool CanFish = false;
+
     private void Awake()
     {
         agent = GetComponent<Seeker>();
         path = GetComponent<AIPath>();
-        player = FindObjectOfType<BaitScript>().transform;
+        player = new GameObject().transform;
     }
 
     private void OnEnable()
     {
         Wander();
+        BaitScript.BaitIsOut += delegate () 
+        {
+            Debug.Log("Is Happening");
+            CanFish = true;
+            player = FindObjectOfType<BaitScript>().transform;
+        };
     }
 
     private void LateUpdate()
     {
-        AiMovement();
+        if (CanFish)
+        {
+            HookOut();
+        }
+        else
+        {
+            HookIn();
+        }
+        
     }
 
     //Method that gets a random position in the world and sets the destination
@@ -60,7 +74,7 @@ public class MoveAi : FishStats
     //Sets a position for the Ai to move towards
     private void Seek(Vector3 target)
     {
-        agent.StartPath(this.transform.position, target, pathCallback);
+        agent.StartPath(this.transform.position, target);
     }
 
     //Does the exact opposite of Seek()
@@ -68,19 +82,21 @@ public class MoveAi : FishStats
     {
         Vector3 fleeVector = position - this.transform.position;
         Vector3 fleePos = this.transform.position - fleeVector;
-        agent.StartPath(this.transform.position, fleePos, pathCallback);
+        agent.StartPath(this.transform.position, fleePos);
     }
 
     //Main movement method
-    private void AiMovement()
+    private void HookIn()
     {
         if (path.reachedEndOfPath)
         {
             Wander();
         }
+
+        var x = transform.rotation.z < 0 ? base.sprRend.flipY = true : base.sprRend.flipY = false;
     }
 
-    private void HookIsOut()
+    private void HookOut()
     {
         dist = Vector3.Distance(this.transform.position, player.position);
         if (dist > base.fishStats.baitAttractionRadius)
@@ -102,8 +118,7 @@ public class MoveAi : FishStats
                 Flee(player.position);
             }
         }
-
-        //Just trying the ?: operator
+        
         var x = transform.rotation.z < 0 ? base.sprRend.flipY = true : base.sprRend.flipY = false;
     }
 }

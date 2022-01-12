@@ -13,18 +13,31 @@ public class CollectFish : MonoBehaviour
 
     private float distToCollectFish = 5f;
 
-    private void Awake()
+    private bool CanCatchFish = false;
+
+    private void OnEnable()
     {
-        try { hook = GameObject.FindGameObjectWithTag("Bait").transform; }
-        catch
-        {
-            Debug.Log($"There is no Gameobject with the tag 'Bait'");
-        }
-        fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform;
+        BaitScript.BaitIsOut += FindHookAndInventory;
+    }
+
+    private void OnDisable()
+    {
+        BaitScript.BaitIsOut -= FindHookAndInventory;
+    }
+
+    private void FindHookAndInventory()
+    {
+        try { fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform; }
+        catch { fishInventory = new GameObject().transform; }
+
+        hook = FindObjectOfType<BaitScript>().transform;
+        CanCatchFish = true;
     }
 
     private void Update()
     {
+        if (!CanCatchFish) { return; }
+
         float dist = Vector3.Distance(this.transform.position, hook.position);
         if (dist < distToCollectFish)
         {
