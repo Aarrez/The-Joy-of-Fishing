@@ -46,15 +46,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""c44538e2-cba9-42ee-b1c2-a790f42e7d6e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""FishingBait"",
                     ""type"": ""Value"",
                     ""id"": ""52e30900-4b25-440a-b0ac-92ce207b9c71"",
@@ -277,61 +268,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""action"": ""MoveBait"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -1629,7 +1565,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_MoveBait = m_Player.FindAction("MoveBait", throwIfNotFound: true);
-        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_FishingBait = m_Player.FindAction("FishingBait", throwIfNotFound: true);
         m_Player_MoveBoat = m_Player.FindAction("MoveBoat", throwIfNotFound: true);
         m_Player_SwingLeft = m_Player.FindAction("SwingLeft", throwIfNotFound: true);
@@ -1716,7 +1651,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_MoveBait;
-    private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_FishingBait;
     private readonly InputAction m_Player_MoveBoat;
     private readonly InputAction m_Player_SwingLeft;
@@ -1733,7 +1667,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public PlayerActions(@TheJoyofFishing wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @MoveBait => m_Wrapper.m_Player_MoveBait;
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @FishingBait => m_Wrapper.m_Player_FishingBait;
         public InputAction @MoveBoat => m_Wrapper.m_Player_MoveBoat;
         public InputAction @SwingLeft => m_Wrapper.m_Player_SwingLeft;
@@ -1759,9 +1692,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
                 @MoveBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
                 @MoveBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @FishingBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
                 @FishingBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
                 @FishingBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
@@ -1802,9 +1732,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBait.started += instance.OnMoveBait;
                 @MoveBait.performed += instance.OnMoveBait;
                 @MoveBait.canceled += instance.OnMoveBait;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
                 @FishingBait.started += instance.OnFishingBait;
                 @FishingBait.performed += instance.OnFishingBait;
                 @FishingBait.canceled += instance.OnFishingBait;
@@ -2026,7 +1953,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnMoveBait(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
         void OnFishingBait(InputAction.CallbackContext context);
         void OnMoveBoat(InputAction.CallbackContext context);
         void OnSwingLeft(InputAction.CallbackContext context);
