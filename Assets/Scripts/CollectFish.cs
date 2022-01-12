@@ -25,6 +25,7 @@ public class CollectFish : MonoBehaviour
         BaitScript.BaitIsOut -= FindHookAndInventory;
     }
 
+    //Need to add to Main Scene: A object with fishinventory tag
     private void FindHookAndInventory()
     {
         try { fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform; }

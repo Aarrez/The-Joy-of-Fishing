@@ -1,5 +1,4 @@
 using Pathfinding;
-
 using UnityEngine;
 
 /*
@@ -31,15 +30,13 @@ public class MoveAi : FishStats
     {
         agent = GetComponent<Seeker>();
         path = GetComponent<AIPath>();
-        player = new GameObject().transform;
     }
 
     private void OnEnable()
     {
         Wander();
-        BaitScript.BaitIsOut += delegate () 
+        BaitScript.BaitIsOut += delegate ()
         {
-            Debug.Log("Is Happening");
             CanFish = true;
             player = FindObjectOfType<BaitScript>().transform;
         };
@@ -55,7 +52,6 @@ public class MoveAi : FishStats
         {
             HookIn();
         }
-        
     }
 
     //Method that gets a random position in the world and sets the destination
@@ -66,7 +62,7 @@ public class MoveAi : FishStats
         wander = wander.normalized;
         wander *= wanderRadius;
 
-        Vector3 targetWorld = this.gameObject.transform.TransformVector(wander);
+        Vector3 targetWorld = this.gameObject.transform.InverseTransformVector(wander);
 
         Seek(targetWorld);
     }
@@ -74,7 +70,8 @@ public class MoveAi : FishStats
     //Sets a position for the Ai to move towards
     private void Seek(Vector3 target)
     {
-        agent.StartPath(this.transform.position, target);
+        Vector3 currTarget = this.transform.position + target;
+        agent.StartPath(this.transform.position, currTarget);
     }
 
     //Does the exact opposite of Seek()
@@ -118,7 +115,7 @@ public class MoveAi : FishStats
                 Flee(player.position);
             }
         }
-        
+
         var x = transform.rotation.z < 0 ? base.sprRend.flipY = true : base.sprRend.flipY = false;
     }
 }
