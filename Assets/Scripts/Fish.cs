@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 /*
@@ -10,7 +9,7 @@ public class Fish : ScriptableObject
 {
     public Sprite sprite;
 
-    public AnimatorController animatorController;
+    public RuntimeAnimatorController animatorController;
 
     public string fishName = "";
 
