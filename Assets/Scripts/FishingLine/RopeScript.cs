@@ -17,13 +17,10 @@ public sealed class RopeScript : MonoBehaviour
     //distance between each node
     public float distance = 0.5f;
     //node prefab
-    public GameObject nodePrefab;
+    public GameObject nodePrefab,hookPrefab, rodtransform, lastNode;
     //hook prefab
-    public GameObject hookPrefab;
     //rodtransform gameobject
-    public GameObject rodtransform;
     //last node instantiated
-    public GameObject lastNode;
 
     //line that represents rope
     public LineRenderer lr;
