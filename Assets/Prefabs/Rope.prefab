@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destiny: {x: 0, y: 0}
-  speed: 50
-  distance: 0.2
+  speed: 70
+  distance: 0.3
   nodePrefab: {fileID: 1000014215547198, guid: a02635807ba30044b8200e489d8cbdb9, type: 3}
   hookPrefab: {fileID: 1000012688847204, guid: ddbf897f9a3f2a04c82360e94d84e7d1, type: 3}
   rodtransform: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   done: 0
   target: {fileID: 0}
   hinge: {fileID: 0}
-  grub: 0
+  ActualHookObject: 0
   go: {fileID: 0}
 --- !u!120 &8172718192836871165
 LineRenderer:

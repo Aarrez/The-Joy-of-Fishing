@@ -46,15 +46,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Fire"",
-                    ""type"": ""Button"",
-                    ""id"": ""c44538e2-cba9-42ee-b1c2-a790f42e7d6e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""FishingBait"",
                     ""type"": ""Value"",
                     ""id"": ""52e30900-4b25-440a-b0ac-92ce207b9c71"",
@@ -139,6 +130,15 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""name"": ""BoatRight"",
                     ""type"": ""Value"",
                     ""id"": ""a9e584a7-3a9b-4733-9571-d88d3cba6993"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RocketBoost"",
+                    ""type"": ""Value"",
+                    ""id"": ""7b10dccf-2140-429f-b357-413d073c0cab"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -277,61 +277,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""action"": ""MoveBait"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Gamepad"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""886e731e-7071-4ae4-95c0-e61739dad6fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Touch"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ee3d0cd2-254e-47a7-a8cb-bc94d9658c54"",
-                    ""path"": ""<Joystick>/trigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Joystick"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8255d333-5683-4943-a58a-ccb207ff1dce"",
-                    ""path"": ""<XRController>/{PrimaryAction}"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""XR"",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -1014,6 +959,116 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""action"": ""ReelUpBoost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Boost Up Keyboard"",
+                    ""id"": ""d640e64a-817c-45cf-bb03-0077a35be9c5"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""0fbcbfed-b478-47b0-932f-6bbffff805f2"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""45da78ba-cebd-4b80-9cb0-11bb82df57b3"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""b7e23189-c40d-41e4-ac68-68ae85bdbd0a"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""8fabb410-ab78-43ed-98d9-3ac60f7d589e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Boost Up Gamepad"",
+                    ""id"": ""ce66e07c-f7d0-4726-9ccd-c3b6235e70ae"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""3f8de225-2555-446a-8716-aa81e24688ea"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b6930f7b-1979-4c14-aa5b-c63f8e59fadc"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9471facb-b9ae-45cf-8958-49a2f5149f44"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c5fd9d1c-9944-45d4-b2a0-58522b5ec935"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RocketBoost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -1629,7 +1684,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_MoveBait = m_Player.FindAction("MoveBait", throwIfNotFound: true);
-        m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_FishingBait = m_Player.FindAction("FishingBait", throwIfNotFound: true);
         m_Player_MoveBoat = m_Player.FindAction("MoveBoat", throwIfNotFound: true);
         m_Player_SwingLeft = m_Player.FindAction("SwingLeft", throwIfNotFound: true);
@@ -1640,6 +1694,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player_ReelUpBoost = m_Player.FindAction("ReelUpBoost", throwIfNotFound: true);
         m_Player_BoatLeft = m_Player.FindAction("BoatLeft", throwIfNotFound: true);
         m_Player_BoatRight = m_Player.FindAction("BoatRight", throwIfNotFound: true);
+        m_Player_RocketBoost = m_Player.FindAction("RocketBoost", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1716,7 +1771,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_MoveBait;
-    private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_FishingBait;
     private readonly InputAction m_Player_MoveBoat;
     private readonly InputAction m_Player_SwingLeft;
@@ -1727,13 +1781,13 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ReelUpBoost;
     private readonly InputAction m_Player_BoatLeft;
     private readonly InputAction m_Player_BoatRight;
+    private readonly InputAction m_Player_RocketBoost;
     public struct PlayerActions
     {
         private @TheJoyofFishing m_Wrapper;
         public PlayerActions(@TheJoyofFishing wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @MoveBait => m_Wrapper.m_Player_MoveBait;
-        public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @FishingBait => m_Wrapper.m_Player_FishingBait;
         public InputAction @MoveBoat => m_Wrapper.m_Player_MoveBoat;
         public InputAction @SwingLeft => m_Wrapper.m_Player_SwingLeft;
@@ -1744,6 +1798,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public InputAction @ReelUpBoost => m_Wrapper.m_Player_ReelUpBoost;
         public InputAction @BoatLeft => m_Wrapper.m_Player_BoatLeft;
         public InputAction @BoatRight => m_Wrapper.m_Player_BoatRight;
+        public InputAction @RocketBoost => m_Wrapper.m_Player_RocketBoost;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1759,9 +1814,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
                 @MoveBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
                 @MoveBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @FishingBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
                 @FishingBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
                 @FishingBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
@@ -1792,6 +1844,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @BoatRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
                 @BoatRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
                 @BoatRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
+                @RocketBoost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
+                @RocketBoost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
+                @RocketBoost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1802,9 +1857,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBait.started += instance.OnMoveBait;
                 @MoveBait.performed += instance.OnMoveBait;
                 @MoveBait.canceled += instance.OnMoveBait;
-                @Fire.started += instance.OnFire;
-                @Fire.performed += instance.OnFire;
-                @Fire.canceled += instance.OnFire;
                 @FishingBait.started += instance.OnFishingBait;
                 @FishingBait.performed += instance.OnFishingBait;
                 @FishingBait.canceled += instance.OnFishingBait;
@@ -1835,6 +1887,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @BoatRight.started += instance.OnBoatRight;
                 @BoatRight.performed += instance.OnBoatRight;
                 @BoatRight.canceled += instance.OnBoatRight;
+                @RocketBoost.started += instance.OnRocketBoost;
+                @RocketBoost.performed += instance.OnRocketBoost;
+                @RocketBoost.canceled += instance.OnRocketBoost;
             }
         }
     }
@@ -2026,7 +2081,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnMoveBait(InputAction.CallbackContext context);
-        void OnFire(InputAction.CallbackContext context);
         void OnFishingBait(InputAction.CallbackContext context);
         void OnMoveBoat(InputAction.CallbackContext context);
         void OnSwingLeft(InputAction.CallbackContext context);
@@ -2037,6 +2091,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnReelUpBoost(InputAction.CallbackContext context);
         void OnBoatLeft(InputAction.CallbackContext context);
         void OnBoatRight(InputAction.CallbackContext context);
+        void OnRocketBoost(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

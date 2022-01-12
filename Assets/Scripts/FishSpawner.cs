@@ -4,7 +4,7 @@ public class FishSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] fishPrefabs;
 
-    private Camera mainCamera;
+    public Transform spawnerPoint;
 
     private GameObject gameBound;
 
@@ -14,7 +14,7 @@ public class FishSpawner : MonoBehaviour
 
     private void Awake()
     {
-        mainCamera = FindObjectOfType<Camera>();
+        //mainCamera = FindObjectOfType<Camera>();
     }
 
     private void Start()
@@ -32,7 +32,7 @@ public class FishSpawner : MonoBehaviour
 
             RandTarget *= spawnRadius;
 
-            Vector2 targetWorld = mainCamera.transform.TransformPoint(RandTarget);
+            Vector2 targetWorld = spawnerPoint.transform.TransformPoint(RandTarget);
             fishPrefabs[i].transform.position = targetWorld;
             Instantiate(fishPrefabs[i]);
         }
