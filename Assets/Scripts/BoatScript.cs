@@ -13,8 +13,6 @@ public class BoatScript : MonoBehaviour
     private AnimationCurve moveAnimCurve;
     TheJoyofFishing GetKey;
 
-
-
     //Publics
     [Header("Movement stuff")]
     [SerializeField] public float boatSpeed = 1f, BoatSpeedForce = 10f;

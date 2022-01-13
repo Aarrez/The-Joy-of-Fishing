@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class FishStats : MonoBehaviour
 {
-    public Fish fishStats;
+    [SerializeField] private protected Fish fishStats;
 
-    internal SpriteRenderer sprRend;
-
+    internal SpriteRenderer sprRend; 
 
     private void Start()
     {
