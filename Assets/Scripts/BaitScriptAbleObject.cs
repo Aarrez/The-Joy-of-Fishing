@@ -5,6 +5,8 @@ public class BaitScriptAbleObject : ScriptableObject
 {
     public string baitName;
 
+    public SpriteRenderer baitSprite;
+
     [TextArea(2, 10)] public string baitDescription;
 
     public int baitLevel;
