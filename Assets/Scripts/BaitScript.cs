@@ -12,7 +12,7 @@ public class BaitScript : MonoBehaviour
 {
     [SerializeField] private BaitScriptAbleObject[] bait;
 
-    [Range(0, 3)] [SerializeField] int currentBait;
+    [Range(0, 1)] [SerializeField] int currentBait;
 
     public static Func<int> BaitLevel;
 
@@ -44,7 +44,7 @@ public class BaitScript : MonoBehaviour
                 this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
                 this.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
                 this.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
-
+                this.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
 
             }
         }                                                                      
