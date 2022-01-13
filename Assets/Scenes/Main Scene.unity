@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731261, g: 0.3807449, b: 0.35872787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1950,9 +1950,9 @@ RectTransform:
   m_Father: {fileID: 2077455494}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 700, y: 316}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -297, y: -223}
   m_SizeDelta: {x: 395, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408895241
@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4853,7 +4853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959794836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70, y: -97.8, z: 0}
+  m_LocalPosition: {x: 61.7, y: -90.6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7343,9 +7343,9 @@ RectTransform:
   m_Father: {fileID: 159089217}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -210.99, y: 32.8}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -265.46, y: -248.2}
   m_SizeDelta: {x: 395, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1511010201
@@ -7402,7 +7402,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -10405,6 +10405,10 @@ PrefabInstance:
       propertyPath: insertCamera
       value: 
       objectReference: {fileID: 1485656630}
+    - target: {fileID: 9033308003501282445, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: insertCamera
+      value: 
+      objectReference: {fileID: 1485656630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
 --- !u!1001 &2053220649185691632
@@ -10600,19 +10604,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10652,11 +10656,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 700
+      value: -297
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 378
+      value: -161
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112274, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10681,6 +10685,10 @@ PrefabInstance:
     - target: {fileID: 2750391319262112276, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750391319262112276, guid: 9c24331022f129c498fdd32159fff485, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2750391319262112277, guid: 9c24331022f129c498fdd32159fff485, type: 3}
       propertyPath: m_Name

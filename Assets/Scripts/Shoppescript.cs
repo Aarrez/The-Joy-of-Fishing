@@ -7,6 +7,8 @@ public class Shoppescript : MonoBehaviour
     public List<GameObject> ShopList;
     public List<Transform> ShopListPosition;
 
+    public GameObject Shoppe;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,8 @@ public class Shoppescript : MonoBehaviour
         {
             if (i <= ShopListPosition.Count)
             {
-                Object.Instantiate(ShopItem, ShopListPosition[i].position, ShopListPosition[i].rotation);
+                GameObject childObject = Instantiate(ShopItem, ShopListPosition[i].position, ShopListPosition[i].rotation);
+                childObject.transform.parent = Shoppe.transform;
                 
                 i++;
             }
