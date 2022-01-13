@@ -11,7 +11,7 @@ public class BaitScript : MonoBehaviour
 {
     [SerializeField] private BaitScriptAbleObject[] bait;
 
-    [Range(0, 2)] [SerializeField] int currentBait;
+    [Range(0, 3)] [SerializeField] int currentBait;
 
     public static Func<int> BaitLevel;
 
@@ -32,13 +32,13 @@ public class BaitScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Fish")
+        if (collision.collider.CompareTag("Fish"))
         {
             collision.transform.parent = this.transform;
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
             }
-        }
+        }                                                                      
     }
 }

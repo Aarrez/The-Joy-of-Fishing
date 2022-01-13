@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8a7562ddd627da468899b305a8d868f, type: 3}
+  m_Name: Haj
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -252920803, guid: 2b320ad940d9bf5429418986f8823a1b, type: 3}
+  animatorController: {fileID: 9100000, guid: daf32c9ea1990ec4cbbb4e113d6fb913, type: 2}
+  fishName: Haj
+  weight: 100
+  length: 100
+  value: 200
+  baitAttractionRadius: 15
+  fishColor: {r: 1, g: 1, b: 1, a: 1}
+  struggleCount: 4
+  excitementLevel: 2
+  baitLevel: 3

@@ -11,7 +11,7 @@ public class CollectFish : MonoBehaviour
 
     private Transform fishInventory;
 
-    private float distToCollectFish = 5f;
+    [SerializeField] private float distToCollectFish = 5f;
 
     private bool CanCatchFish = false;
 
@@ -31,7 +31,11 @@ public class CollectFish : MonoBehaviour
         if (bait)
         {
             try { fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform; }
-            catch { fishInventory = new GameObject().transform; }
+            catch 
+            {
+                GameObject fishGameObject = new GameObject();
+                fishInventory = fishGameObject.transform;
+            }
 
             hook = FindObjectOfType<BaitScript>().transform;
             CanCatchFish = bait;

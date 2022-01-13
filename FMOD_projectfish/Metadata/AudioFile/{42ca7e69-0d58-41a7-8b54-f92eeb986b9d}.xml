@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{42ca7e69-0d58-41a7-8b54-f92eeb986b9d}">
+		<property name="assetPath">
+			<value>goose-013.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2987755102040817</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f97b6810-5b32-49c9-b34b-e70f6e53efe1}</destination>
+		</relationship>
+	</object>
+</objects>
