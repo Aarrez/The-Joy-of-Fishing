@@ -72,10 +72,10 @@ public class EnableOnStartupScript : MonoBehaviour
             NodesCountText.text = "Line Length (feet): " + RopeScript.instance.Nodes.Count;
             if(callPlayerScript && callPlayerScript.elapsed <= 0f)
             {
-                CoolDownText.text = "RocketBoost Ready";
+                CoolDownText.text = "RocketBoost: Ready";
             }else if (callPlayerScript && callPlayerScript.elapsed <= 5)
             {
-                CoolDownText.text = "RocketBoost Cooldown: " + callPlayerScript.elapsed.ToString("F1");
+                CoolDownText.text = "RocketBoost: Cooldown " + callPlayerScript.elapsed.ToString("F1");
             }
 
 
