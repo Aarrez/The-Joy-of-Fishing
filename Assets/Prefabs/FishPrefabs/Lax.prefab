@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2845925592975786864}
   - component: {fileID: 7303657116404306776}
   - component: {fileID: 8857384086911774905}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Lax GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,8 @@ GameObject:
   - component: {fileID: 8677036353826985008}
   - component: {fileID: 8677036353826985011}
   - component: {fileID: -4094757392423002753}
-  m_Layer: 0
+  - component: {fileID: 1429879552876426781}
+  m_Layer: 12
   m_Name: Lax
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -134,7 +135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8677036353826985018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.40100288, y: -4.9838934, z: 0}
+  m_LocalPosition: {x: 3.1414084, y: -3.8899293, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -256,3 +257,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: f4229b996dc9b0447805cfcd65890afe, type: 2}
+--- !u!50 &1429879552876426781
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8677036353826985018}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.7853982
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

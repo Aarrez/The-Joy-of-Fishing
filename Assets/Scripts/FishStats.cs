@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FishStats : MonoBehaviour
 {
-    [SerializeField] private protected Fish fishStats;
+    public Fish fishStats;
 
     internal SpriteRenderer sprRend; 
 

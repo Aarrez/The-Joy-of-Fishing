@@ -34,6 +34,8 @@ public class CollectFish : MonoBehaviour
             catch 
             {
                 GameObject fishGameObject = new GameObject();
+                fishGameObject.tag = "FishInventory";
+                fishGameObject.name = "FishCollection";
                 fishInventory = fishGameObject.transform;
             }
 
