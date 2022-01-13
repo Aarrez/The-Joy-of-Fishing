@@ -165,7 +165,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forcetoAdd: 1200
   elapsed: 4
-  CoolDownTimerUI: {fileID: 0}
 --- !u!114 &-3000453649093772376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,9 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bait:
-  - {fileID: 11400000, guid: ef12b34bcf951e0448f6a8d8bac86170, type: 2}
   - {fileID: 11400000, guid: 3cb2a833816582f48b62062c90a1df16, type: 2}
+  - {fileID: 11400000, guid: ef12b34bcf951e0448f6a8d8bac86170, type: 2}
   - {fileID: 11400000, guid: 3b706c610f3e3324b9775a0773b587d8, type: 2}
+  - {fileID: 11400000, guid: 72210c9bd1c88db49b5a6a38e8500122, type: 2}
   currentBait: 0
 --- !u!114 &4292488945438747900
 MonoBehaviour:
