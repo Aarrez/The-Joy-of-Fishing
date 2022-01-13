@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3510123287781701017}
   - component: {fileID: 1956698279509302586}
   - component: {fileID: 1470225382571936955}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bait
   m_TagString: Bait
   m_Icon: {fileID: 0}
@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bait:
-  - {fileID: 11400000, guid: ef12b34bcf951e0448f6a8d8bac86170, type: 2}
   - {fileID: 11400000, guid: 3cb2a833816582f48b62062c90a1df16, type: 2}
+  - {fileID: 11400000, guid: ef12b34bcf951e0448f6a8d8bac86170, type: 2}
   - {fileID: 11400000, guid: 3b706c610f3e3324b9775a0773b587d8, type: 2}
   - {fileID: 11400000, guid: 72210c9bd1c88db49b5a6a38e8500122, type: 2}
   currentBait: 0

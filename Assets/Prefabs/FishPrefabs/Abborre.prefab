@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 8898945665741332744}
   - component: {fileID: 8898945665741332746}
   - component: {fileID: 8898945665741332789}
-  - component: {fileID: 8898945665741332788}
   - component: {fileID: 2944203013556537439}
   - component: {fileID: 8898945665741332791}
-  m_Layer: 0
+  - component: {fileID: 8898945665741332788}
+  - component: {fileID: 1857647540791038501}
+  m_Layer: 12
   m_Name: Abborre
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8898945665741332790}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.647318, y: 2.1782236, z: 0}
+  m_LocalPosition: {x: 2.2866478, y: 4.4464865, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107,22 +108,6 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 1
---- !u!58 &8898945665741332788
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8898945665741332790}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &2944203013556537439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +136,43 @@ MonoBehaviour:
   fishStats: {fileID: 11400000, guid: b6c377b4baee9c441af8d56440698186, type: 2}
   wanderRadius: 10
   wanderJitter: 1
+--- !u!58 &8898945665741332788
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898945665741332790}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &1857647540791038501
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8898945665741332790}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 0.7853982
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8898945666673987971
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +184,7 @@ GameObject:
   - component: {fileID: 8898945666673987968}
   - component: {fileID: 8898945666673987969}
   - component: {fileID: 8898945666673987974}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Abborre GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
