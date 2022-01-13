@@ -12,23 +12,29 @@ public class BaitScript : MonoBehaviour
 {
     [SerializeField] private BaitScriptAbleObject[] bait;
 
-    [Range(0, 1)] [SerializeField] int currentBait;
+    private int currentBait;
 
     public static Func<int> BaitLevel;
 
     //Used to get in ColletFish and in MoveAi to get when the bait is out.
     public static event Action<bool> BaitIsOut;
 
+    public static Action FishOnHook;
+
     private void OnEnable()
     {
         BaitLevel += delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(true);
+
+        FishOnHook += CheckBaitLevel;
     }
 
     private void OnDisable()
     {
         BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(false);
+
+        FishOnHook += CheckBaitLevel;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -45,8 +51,20 @@ public class BaitScript : MonoBehaviour
                 this.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
                 this.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
                 this.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
-
+                FishOnHook?.Invoke();
             }
         }                                                                      
+    }
+
+    private void CheckBaitLevel()
+    {
+        if (this.transform.childCount > 0)
+        {
+            currentBait = this.transform.GetChild(0).GetComponent<FishStats>().fishStats.baitLevel + 1;
+        }
+        else if (this.transform.childCount < 0)
+        {
+            currentBait--;
+        }
     }
 }

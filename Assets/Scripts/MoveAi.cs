@@ -86,7 +86,6 @@ public class MoveAi : FishStats
         agent.StartPath(this.transform.position, fleePos);
     }
 
-    //Main movement method
     private void HookIn()
     {
         if (path.reachedEndOfPath)
@@ -110,8 +109,8 @@ public class MoveAi : FishStats
         if (dist < base.fishStats.baitAttractionRadius)
         {
             path.canMove = true;
-            if (fishStats.baitLevel == BaitScript.BaitLevel() && player.transform.childCount <= 0)
-            {
+            if (fishStats.baitLevel == BaitScript.BaitLevel() && player.transform.childCount <= 1)
+            { 
                 agent.StartPath(this.transform.position, player.position);
             }
             else
