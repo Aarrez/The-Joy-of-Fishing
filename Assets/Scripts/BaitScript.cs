@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+
 /*
  * This script is for when you have cought a fish.
  * It makes the fish a child of the transform the script is on.
@@ -35,11 +36,16 @@ public class BaitScript : MonoBehaviour
         if (collision.collider.CompareTag("Fish"))
         {
             if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait) { return; }
-
+            else if (this.transform.childCount > 0) { return; }
+            
             collision.transform.parent = this.transform;
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
+                this.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
+                this.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
+
+
             }
         }                                                                      
     }
