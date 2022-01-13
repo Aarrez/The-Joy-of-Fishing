@@ -52,7 +52,6 @@ public class PlayerScript : MonoBehaviour
 
                elapsed -= Time.deltaTime;
 
-                Debug.Log(elapsed);
                 inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
                 rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * Time.deltaTime);
                 inputvector2 = GetKey.Player.RocketBoost.ReadValue<Vector2>();
