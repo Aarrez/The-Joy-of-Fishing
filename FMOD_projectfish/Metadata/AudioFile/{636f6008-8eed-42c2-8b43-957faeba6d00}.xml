@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{636f6008-8eed-42c2-8b43-957faeba6d00}">
+		<property name="assetPath">
+			<value>buzz-003.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.5734013605442181</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f97b6810-5b32-49c9-b34b-e70f6e53efe1}</destination>
+		</relationship>
+	</object>
+</objects>
