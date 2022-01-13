@@ -7689,6 +7689,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logo
       objectReference: {fileID: 0}
+    - target: {fileID: 7662885546978897340, guid: aec341e7505bb4a0384fe422872be82d, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 102055972}
     - target: {fileID: 7662885546978897341, guid: aec341e7505bb4a0384fe422872be82d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
