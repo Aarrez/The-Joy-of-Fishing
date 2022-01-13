@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class BoatSliderScript : MonoBehaviour
 {
+    public GameObject getSliderObject;
+    public GameObject getBackground;
     Slider getSlider;
+    Image getSliderImage;
+    public GameObject getHandle;
+    Image getHandleImage;
     Transform playerTransform;
     Transform hookTransform;
     float playerIniPos;
@@ -15,32 +21,52 @@ public class BoatSliderScript : MonoBehaviour
     BoatScript boatScript;
     bool cache;
     public bool thisIsHookSliderVertical;
+    public bool thisIsHookSliderHorizontal;
+    public bool thisIsDepthMeter;
+    BoatSliderScript callBoatSliderScriptOfHookVertical;
+
+
+    TextMeshProUGUI DepthMeterText;
+    public float DepthValueVert;
+    float depthOffset = -11f;
+    float depthMathTotal;
     void Start()
     {
-        getSlider = GetComponent<Slider>();
+        DepthMeterText = GameObject.Find("DepthMeter").GetComponent<TextMeshProUGUI>();
+        if(thisIsHookSliderHorizontal || thisIsHookSliderVertical || thisIsBoatSlider && !thisIsDepthMeter)
+        {
+            getSlider = getSliderObject.GetComponent<Slider>();
+        }
+
+        if(thisIsHookSliderHorizontal || thisIsHookSliderVertical && !thisIsDepthMeter)
+        {
+            getSliderImage = getBackground.GetComponent<Image>();
+            getHandleImage = getHandle.GetComponent<Image>();
+        }
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
-        //hookTransform = GameObject.FindGameObjectWithTag("Bait").GetComponent<Transform>();
         playerIniPos = playerTransform.position.x;
         playerIniPosY = playerTransform.position.y;
 
-        ////sliderMaxMin = playerIniPos * 5;
+
         boatScript = FindObjectOfType<BoatScript>();
         cache = false;
-        //getSlider.maxValue = playerIniPos + sliderMaxMin;
-        //getSlider.minValue = playerIniPos - sliderMaxMin;
 
-        if(thisIsBoatSlider == true || thisIsBoatSlider == false)
+
+        if(thisIsBoatSlider == true || thisIsHookSliderHorizontal == true)
         {
             getSlider.value = playerIniPos;
         }
 
-        if(thisIsHookSliderVertical == true)
+        if(thisIsHookSliderVertical == true && !thisIsDepthMeter)
         {
             getSlider.value = playerIniPosY;
         }
+
+        callBoatSliderScriptOfHookVertical = GameObject.Find("HookSliderVertical").GetComponent<BoatSliderScript>();
+       
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 
@@ -68,14 +94,43 @@ public class BoatSliderScript : MonoBehaviour
         {
             getSlider.value = playerTransform.position.x;
         }
-        if (thisIsBoatSlider == false && cache == true)
+        if (thisIsHookSliderHorizontal && cache == true)
         {
+            getSliderImage.color = new Color(1, 1, 1, 1);
+            getHandleImage.color = new Color(1, 1, 1, 1);
             getSlider.value = hookTransform.position.x;
         }
-
-        if(thisIsHookSliderVertical == true && cache == true)
+        else if (thisIsHookSliderHorizontal && cache == false)
         {
-            getSlider.value = hookTransform.position.y;
+            getSliderImage.color = new Color(1, 1, 1, 0);
+            getHandleImage.color = new Color(1, 1, 1, 0);
         }
+
+        if (thisIsHookSliderVertical == true && cache == true && !thisIsDepthMeter)
+        {
+            getSliderImage.color = new Color(1, 1, 1, 1);
+            getHandleImage.color = new Color(1, 1, 1, 1);
+            getSlider.value = hookTransform.position.y;
+            DepthValueVert = getSlider.value;
+            
+        }else if(thisIsHookSliderVertical == true && cache == false && !thisIsDepthMeter)
+        {
+            getSliderImage.color = new Color(1, 1, 1, 0);
+            getHandleImage.color = new Color(1, 1, 1, 0);
+        }
+
+        if(thisIsDepthMeter == true && cache == true)
+        {
+            depthMathTotal = depthOffset + callBoatSliderScriptOfHookVertical.DepthValueVert;
+            DepthMeterText.color = new Color(1, 1, 1, 1);
+            DepthMeterText.text = "Depth (meters): " + depthMathTotal.ToString("F1");
+        }
+        else if (thisIsDepthMeter == true && cache == false)
+        {
+            DepthMeterText.color = new Color(1, 1, 1, 0);
+            DepthMeterText.text = "DepthMeter Offline";
+
+        }
+       
     }
 }
