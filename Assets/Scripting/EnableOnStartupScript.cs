@@ -73,7 +73,7 @@ public class EnableOnStartupScript : MonoBehaviour
             }
 
             
-            if(RopeScript.instance.Nodes.Count >= callBoatScript.maxLineLength)
+            if(RopeScript.instance.Nodes.Count == callBoatScript.maxLineLength)
             {
                 NodesCountText.text = "Line Length (feet): MAX" + "(" + RopeScript.instance.Nodes.Count + ")";
             }

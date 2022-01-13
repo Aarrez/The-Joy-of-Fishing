@@ -93,7 +93,7 @@ public class BoatScript : MonoBehaviour
             RopeScript.instance.DestroyNode();
         }
 
-        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && RopeScript.instance.Nodes.Count <= maxLineLength)
+        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && RopeScript.instance.Nodes.Count < maxLineLength)
         {
             elapsed = elapsed % 0.2f;
             RopeScript.instance.CreateNode();
