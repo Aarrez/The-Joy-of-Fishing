@@ -16640,11 +16640,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   insertCamera: {fileID: 0}
-  parallaxAmount: 0.74
+  parallaxAmount: 0.4
   SetYParallax: 0
   SetXParallax: 1
   objNumber: 11
-  yoffset_select_all_objs_w_this_script: -5.5
+  yoffset_select_all_objs_w_this_script: -14
 --- !u!212 &3708561136325905486
 SpriteRenderer:
   m_ObjectHideFlags: 0
