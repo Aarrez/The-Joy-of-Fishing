@@ -16,6 +16,7 @@ public class Shoppescript : MonoBehaviour
             if (i <= ShopListPosition.Count)
             {
                 Object.Instantiate(ShopItem, ShopListPosition[i].position, ShopListPosition[i].rotation);
+                
                 i++;
             }
             else break;
