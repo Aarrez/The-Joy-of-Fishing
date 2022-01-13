@@ -11,19 +11,14 @@ public class logoreactionscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnyButton();
-    }
-
-    private void AnyButton()
-    {
         if (Keyboard.current.anyKey.IsPressed())
         {
             StartCoroutine("ActiveLogo");
         }
-        else if(Gamepad.current.xButton.IsPressed())
+        /*else if(Gamepad.current.xButton.IsPressed())
         {
             StartCoroutine("ActiveLogo");
-        }
+        }*/
         else if(Mouse.current.leftButton.IsPressed())
         {
             StartCoroutine("ActiveLogo");
