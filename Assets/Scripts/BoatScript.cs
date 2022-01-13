@@ -1,40 +1,45 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 public class BoatScript : MonoBehaviour
 {
-    
-
     //Privates
     [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
+
     private float currentTime, elapsed = 0f, inputValueX = 0f;
     private bool BoatCanMove = true;
     private GameObject curHook;
     private Rigidbody2D rig2d;
     private AnimationCurve moveAnimCurve;
-    TheJoyofFishing GetKey;
+    private TheJoyofFishing GetKey;
 
     //Publics
     [Header("Movement stuff")]
     [SerializeField] public float boatSpeed = 1f, BoatSpeedForce = 10f;
+
     public static event System.Action<bool> IsFishing;
+
     //hook prefab
     public GameObject hook;
-    public Transform baitpoint, baitTransform, rodpoint; 
+
+    public Transform baitpoint, baitTransform, rodpoint;
+
     //holds whether rope is active or not
     [HideInInspector] public bool ropeActive, boostbool;
-    //current hook on the scene
 
+    //current hook on the scene
 
     private void Awake()
     {
         rig2d = GetComponent<Rigidbody2D>();
     }
+
     private void Start()
     {
         MakeAnimationCurve();
         GetKey = new TheJoyofFishing();
         GetKey.Enable();
     }
+
     #region Make a animation curve
 
     private void MakeAnimationCurve()
@@ -50,7 +55,6 @@ public class BoatScript : MonoBehaviour
     {
         InputScript.DoMove += GetInput;
         IsFishing += delegate (bool theFishing) { BoatCanMove = theFishing; };
-
     }
 
     private void OnDisable()
@@ -62,7 +66,6 @@ public class BoatScript : MonoBehaviour
     private void FixedUpdate()
     {
         MoveLeftRight();
-
     }
 
     private void Update()
@@ -82,9 +85,8 @@ public class BoatScript : MonoBehaviour
         {
             elapsed = elapsed % 0.2f; //polish would need floats in these statements varaibled so changeability with upgrades can be done.
             RopeScript.instance.DestroyNode();
-
-
-        }else if(boostbool == true && elapsed >= 0.1f && ropeActive == true && rig2d.velocity.x.Equals(0))
+        }
+        else if (boostbool == true && elapsed >= 0.1f && ropeActive == true && rig2d.velocity.x.Equals(0))
         {
             elapsed = elapsed % 0.1f;
             RopeScript.instance.DestroyNode();
@@ -94,22 +96,19 @@ public class BoatScript : MonoBehaviour
         {
             elapsed = elapsed % 0.2f;
             RopeScript.instance.CreateNode();
-
         }
 
         Vector2 boatleft = GetKey.Player.BoatLeft.ReadValue<Vector2>();
-        Vector2 boatright= GetKey.Player.BoatRight.ReadValue<Vector2>();
+        Vector2 boatright = GetKey.Player.BoatRight.ReadValue<Vector2>();
         if (boatleft == Vector2.left)
         {
             rig2d.AddForce(new Vector2(boatleft.x, 0) * BoatSpeedForce * Time.deltaTime);
-            
         }
         if (boatright == Vector2.right)
         {
             rig2d.AddForce(new Vector2(boatright.x, 0) * BoatSpeedForce * Time.deltaTime);
         }
     }
-
 
     private void GetInput()
     {
@@ -138,25 +137,24 @@ public class BoatScript : MonoBehaviour
         }
     }
 
-	//void OnReelUp(InputValue value)
-	//{
- //       if(value.isPressed == true && ropeActive == true)
- //       {
- //           RopeScript.instance.DestroyNode();
- //           //RopeScript.instance.crankdown();
- //       }
- //       return;
-	//}
- //   void OnReelDown(InputValue value)
- //   {
- //       if(value.isPressed == true && ropeActive == true)
- //       {
- //           RopeScript.instance.CreateNode();
- //           //RopeScript.instance.crankdown();
- //       }
- //       return;
- //   }
-
+    //void OnReelUp(InputValue value)
+    //{
+    //       if(value.isPressed == true && ropeActive == true)
+    //       {
+    //           RopeScript.instance.DestroyNode();
+    //           //RopeScript.instance.crankdown();
+    //       }
+    //       return;
+    //}
+    //   void OnReelDown(InputValue value)
+    //   {
+    //       if(value.isPressed == true && ropeActive == true)
+    //       {
+    //           RopeScript.instance.CreateNode();
+    //           //RopeScript.instance.crankdown();
+    //       }
+    //       return;
+    //   }
 
     public void OnCastOut()
     {
@@ -179,7 +177,6 @@ public class BoatScript : MonoBehaviour
         }
         //else //commennt this else statement to remove "click 0 again to delet rope"
         //{
-
         //    //delete rope
         //    DeleteRope();
 

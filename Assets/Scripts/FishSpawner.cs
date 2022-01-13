@@ -34,6 +34,7 @@ public class FishSpawner : MonoBehaviour
 
             Vector2 targetWorld = spawnerPoint.transform.TransformPoint(RandTarget);
             fishPrefabs[i].transform.position = targetWorld;
+            fishPrefabs[i].transform.position = new Vector3(fishPrefabs[i].transform.position.x, fishPrefabs[i].transform.position.y, 0f);
             Instantiate(fishPrefabs[i]);
             
         }

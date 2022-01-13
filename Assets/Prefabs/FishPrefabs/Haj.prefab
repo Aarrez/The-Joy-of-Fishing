@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 5883369509628922158}
   - component: {fileID: 3107338935538063745}
   - component: {fileID: 709717564203911704}
-  - component: {fileID: 5338910895164843043}
-  m_Layer: 0
+  - component: {fileID: -5600569158608685252}
+  - component: {fileID: 7458559981645361609}
+  m_Layer: 12
   m_Name: Haj
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181217008843519828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.9686584, y: 0.55895615, z: 0}
+  m_LocalPosition: {x: 4.9952993, y: -0.21676101, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -135,8 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: 289e36e8ba67443479eb675186ba4e1d, type: 2}
---- !u!58 &5338910895164843043
-CircleCollider2D:
+--- !u!70 &-5600569158608685252
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,9 +149,30 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.3
+  m_Offset: {x: -0.1, y: 0}
+  m_Size: {x: 1.265, y: 3.1}
+  m_Direction: 0
+--- !u!50 &7458559981645361609
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181217008843519828}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 1
+  m_Mass: 3.5780885
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6843878150318292005
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,7 +184,7 @@ GameObject:
   - component: {fileID: 2341939686376205290}
   - component: {fileID: 2240174114467267567}
   - component: {fileID: 6238731737291048182}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fish GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
