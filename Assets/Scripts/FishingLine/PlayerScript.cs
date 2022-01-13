@@ -36,7 +36,6 @@ public class PlayerScript : MonoBehaviour
 
         GetKey = new TheJoyofFishing();
         GetKey.Player.Enable();
-
     }
 
    
@@ -51,7 +50,7 @@ public class PlayerScript : MonoBehaviour
             if(GameManager.instance.moveCam == 3)
             {
 
-               elapsed += Time.deltaTime;
+               elapsed -= Time.deltaTime;
 
                 Debug.Log(elapsed);
                 inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
@@ -65,7 +64,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     if (check_x >= 1 / 2 && check_x <= Mathf.Sqrt(3) / 2) //right joystick up-right ^>
                     {
-                        if (inputvector2 == Vector2.up && elapsed >= 5f)
+                        if (inputvector2 == Vector2.up && elapsed <= 0f)
                         {
                             RocketBoostUpAndDir();
                         }
@@ -73,7 +72,7 @@ public class PlayerScript : MonoBehaviour
                     }
                     if (check_x <= -1 / 2 && check_x >= -Mathf.Sqrt(3) / 2) //right joystick up-left <^
                     {
-                        if (inputvector2 == Vector2.up && elapsed >= 5f)
+                        if (inputvector2 == Vector2.up && elapsed <= 0f)
                         {
                             RocketBoostUpAndDir();
 
@@ -84,7 +83,7 @@ public class PlayerScript : MonoBehaviour
 
                 if (check_y >= Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight up
                 {
-                    if (inputvector2 == Vector2.up && elapsed >= 5f)
+                    if (inputvector2 == Vector2.up && elapsed <= 0f)
                     {
                         RocketBoostUp();
                     }
@@ -92,9 +91,9 @@ public class PlayerScript : MonoBehaviour
                 }
 
             }
-            if (elapsed >= 5f)
+            if (elapsed <= 0f)
             {
-                elapsed = 5f;
+                elapsed = 0f;
             }
         }
            
@@ -106,13 +105,13 @@ public class PlayerScript : MonoBehaviour
     void RocketBoostUp()
     {
         rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd * (gruggers / 2) * Time.deltaTime);
-        elapsed = elapsed % 5f;
+        elapsed = 5f;
     }
 
     void RocketBoostUpAndDir()
     {
         rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * (gruggers / 2) * Time.deltaTime);
-        elapsed = elapsed % 5f;
+        elapsed = 5f;
     }
     
 }

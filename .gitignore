@@ -89,4 +89,7 @@ UserSettings/Layouts/default-2021.dwlt
 fmod.log
 fmod_editor.log
 
+# Fmod cache stuff
+FMOD_projectfish/.cache/*
+
 
