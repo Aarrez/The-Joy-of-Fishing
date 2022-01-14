@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-
 /*
  * This script is for when you have cought a fish.
  * It makes the fish a child of the transform the script is on.
@@ -46,7 +45,7 @@ public class BaitScript : MonoBehaviour
         {
             if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel > currentBait) { return; }
             else if (this.transform.childCount > 1) { return; }
-            
+
             collision.transform.parent = this.transform;
             if (this.transform.childCount == 2)
             {
@@ -60,7 +59,7 @@ public class BaitScript : MonoBehaviour
                 this.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
                 FishOnHook?.Invoke();
             }
-        }                                                                      
+        }
     }
 
     private void ChangeBaitLevel()
@@ -73,9 +72,5 @@ public class BaitScript : MonoBehaviour
         {
             currentBait = 0;
         }
-        
-        
     }
-
-    
 }
