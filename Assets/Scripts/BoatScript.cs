@@ -19,6 +19,7 @@ public class BoatScript : MonoBehaviour
     [SerializeField] public float boatSpeed = 1f, BoatSpeedForce = 10f;
 
     public static event System.Action<bool> IsFishing;
+    public static event System.Action DoneFishing;
 
     //hook prefab
     public GameObject hook;
@@ -197,5 +198,8 @@ public class BoatScript : MonoBehaviour
         GameManager.instance.moveCam = 1;
         //sets rope to disabled
         ropeActive = false;
+
+        //Sends out a message for other scripts to listen
+        DoneFishing?.Invoke();
     }
 }
