@@ -15798,6 +15798,18 @@ PrefabInstance:
       propertyPath: insertCamera
       value: 
       objectReference: {fileID: 4962793760973506360}
+    - target: {fileID: 2275396812212043074, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275396812212043074, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275396812212043076, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_Radius
+      value: 10.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6626244373023877688, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
@@ -16324,6 +16336,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66c2036a87cda3479cb3ef1bde53c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4962793760973506366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962793760973506360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1001 &5442307719512976572
 PrefabInstance:
   m_ObjectHideFlags: 0
