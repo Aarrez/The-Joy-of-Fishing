@@ -19,6 +19,7 @@ public class BoatScript : MonoBehaviour
     [SerializeField] public float boatSpeed = 1f, BoatSpeedForce = 10f;
 
     public static event System.Action<bool> IsFishing;
+    public static event System.Action DoneFishing;
 
     //hook prefab
     public GameObject hook;
@@ -86,15 +87,15 @@ public class BoatScript : MonoBehaviour
         {
             currentlyReelingUp = false;
         }
-        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && boostbool == false)
+        if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.05f && rig2d.velocity.x.Equals(0) && boostbool == false)
         {
-            elapsed = elapsed % 0.2f; //polish would need floats in these statements varaibled so changeability with upgrades can be done.
+            elapsed = elapsed % 0.05f; //polish would need floats in these statements varaibled so changeability with upgrades can be done.
             RopeScript.instance.DestroyNode();
             currentlyReelingUp = true;
         }
-        else if (reelfloatup == Vector2.up && boostbool == true && elapsed >= 0.1f && ropeActive == true && rig2d.velocity.x.Equals(0))
+        else if (reelfloatup == Vector2.up && boostbool == true && elapsed >= 0.02f && ropeActive == true && rig2d.velocity.x.Equals(0))
         {
-            elapsed = elapsed % 0.1f;
+            elapsed = elapsed % 0.02f;
             RopeScript.instance.DestroyNode();
             currentlyReelingUp = true;
         }
@@ -197,5 +198,8 @@ public class BoatScript : MonoBehaviour
         GameManager.instance.moveCam = 1;
         //sets rope to disabled
         ropeActive = false;
+
+        //Sends out a message for other scripts to listen
+        DoneFishing?.Invoke();
     }
 }
