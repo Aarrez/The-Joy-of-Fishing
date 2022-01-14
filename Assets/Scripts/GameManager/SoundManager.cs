@@ -32,29 +32,13 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // FMOD bus volume 1 = whatever its set in FMOD Studio. 0-1 represents the distance between that and inf.
+        // FMOD bus volume 1 = whatever its set in FMOD Studio. 0-1 represents the distance between that and inf/mute.
         music.setVolume(musicVolume);
         sfx.setVolume(sfxVolume);
         ambience.setVolume(ambienceVolume);
         master.setVolume(masterVolume);
         //does this chug framerate? maybe not have it in update? idk how FMOD likes to do things.
     }
-
-// AAAAA
-
-
-    void OnApplicationQuit() // This should also be on Play-Mode Quit
-    {
-        master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);    
-    }
-
-    void OnApplicationPause() // This should also be on Play-Mode Quit
-    {
-	Debug.Log("Stopping Audio coz paused");
-        master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);    
-    }
-
- // TRYING TO GET THIS TO WORK!!!
 
     public void MasterVolumeLevel(float newMasterVolume)
     {

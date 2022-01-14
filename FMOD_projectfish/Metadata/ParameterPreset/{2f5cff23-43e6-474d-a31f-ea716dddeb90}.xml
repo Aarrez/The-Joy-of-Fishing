@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{2f5cff23-43e6-474d-a31f-ea716dddeb90}">
 		<property name="name">
-			<value>Pause</value>
+			<value>music_duck</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f3734e9e-ea27-4ae3-ad06-6b8cca693694}</destination>
@@ -16,7 +16,7 @@
 			<value>0</value>
 		</property>
 		<property name="seekSpeed">
-			<value>0.79999995231628418</value>
+			<value>0.59999996423721313</value>
 		</property>
 	</object>
 </objects>
