@@ -11,7 +11,7 @@ public class BaitScript : MonoBehaviour
 {
     [SerializeField] private BaitScriptAbleObject[] bait;
 
-    private int currentBait;
+    [SerializeField] private int currentBait;
 
     public static Func<int> BaitLevel;
 
