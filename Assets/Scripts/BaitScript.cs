@@ -20,13 +20,15 @@ public class BaitScript : MonoBehaviour
     public static event Action<bool> BaitIsOut;
 
     public static Action FishOnHook;
+    public static Action FishOfHook;
 
     private void OnEnable()
     {
         BaitLevel += delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(true);
 
-        FishOnHook += CheckBaitLevel;
+        FishOnHook += ChangeBaitLevel;
+        FishOfHook += ChangeBaitLevel;
     }
 
     private void OnDisable()
@@ -34,17 +36,22 @@ public class BaitScript : MonoBehaviour
         BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(false);
 
-        FishOnHook += CheckBaitLevel;
+        FishOnHook -= ChangeBaitLevel;
+        FishOfHook -= ChangeBaitLevel;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Fish"))
         {
-            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait) { return; }
-            else if (this.transform.childCount > 0) { return; }
+            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel > currentBait) { return; }
+            else if (this.transform.childCount > 1) { return; }
             
             collision.transform.parent = this.transform;
+            if (this.transform.childCount == 2)
+            {
+                Destroy(this.transform.GetChild(0).gameObject);
+            }
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
@@ -56,15 +63,19 @@ public class BaitScript : MonoBehaviour
         }                                                                      
     }
 
-    private void CheckBaitLevel()
+    private void ChangeBaitLevel()
     {
         if (this.transform.childCount > 0)
         {
             currentBait = this.transform.GetChild(0).GetComponent<FishStats>().fishStats.baitLevel + 1;
         }
-        else if (this.transform.childCount < 0)
+        else
         {
-            currentBait--;
+            currentBait = 0;
         }
+        
+        
     }
+
+    
 }

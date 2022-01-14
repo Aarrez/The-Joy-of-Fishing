@@ -44,21 +44,21 @@ public class Fish : ScriptableObject
         float wlValue = weight + length;
         switch (wlValue)
         {
-            case < 30f:
+            case <= 30f:
 
                 excitementLevel = 1;
                 struggleCount = Random.Range(0, 1);
                 baitLevel = 0;
                 break;
 
-            case > 30f when wlValue < 60f:
+            case > 30f when wlValue <= 60f:
 
                 excitementLevel = 1;
                 struggleCount = Random.Range(2, 3);
                 baitLevel = 1;
                 break;
 
-            case > 60f when wlValue < 90f:
+            case > 60f when wlValue <= 90f:
 
                 excitementLevel = 2;
                 struggleCount = 3;

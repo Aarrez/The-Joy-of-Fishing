@@ -5,7 +5,7 @@ using UnityEngine;
 public class FishMoveSound : MonoBehaviour
 {
     private FMOD.Studio.EventInstance fishMoveEvent;
-    public FMODUnity.EventReference fmodEvent; //allows us to choose event in Inspector
+    [SerializeField] private FMODUnity.EventReference fmodEvent; //allows us to choose event in Inspector
 
 
     [SerializeField] [Range(1, 3)] private int size; //1 to 3, small, medium, big.
