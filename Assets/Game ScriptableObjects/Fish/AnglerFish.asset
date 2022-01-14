@@ -15,7 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 862870237, guid: 3e57d6c8ebfa4cd42bbf1b9a488165f4, type: 3}
   animatorController: {fileID: 9100000, guid: 451c617f125f91241ae923cb43545626, type: 2}
   fishName: AnglerFish
-  weight: 30
+  weight: 40
   length: 60
   value: 10
   baitAttractionRadius: 10

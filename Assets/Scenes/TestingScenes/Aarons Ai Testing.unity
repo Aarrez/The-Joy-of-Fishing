@@ -1077,6 +1077,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 488150089, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 11.421925
+      objectReference: {fileID: 0}
+    - target: {fileID: 488150089, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 15.578774
+      objectReference: {fileID: 0}
     - target: {fileID: 4659159655356555407, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_TagString
       value: FishingRod
