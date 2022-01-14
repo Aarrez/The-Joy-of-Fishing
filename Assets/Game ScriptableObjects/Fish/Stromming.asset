@@ -15,11 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 1553179748, guid: e2115e26431098741a0483bca60a4d70, type: 3}
   animatorController: {fileID: 9100000, guid: 9b9af511ebbfe11439d479094f1a6aaa, type: 2}
   fishName: Stromming
-  weight: 120
-  length: 20
+  weight: 11
+  length: 9
   value: 10
   baitAttractionRadius: 3
   fishColor: {r: 1, g: 1, b: 1, a: 1}
-  struggleCount: 4
-  excitementLevel: 2
-  baitLevel: 3
+  struggleCount: 0
+  excitementLevel: 1
+  baitLevel: 0
