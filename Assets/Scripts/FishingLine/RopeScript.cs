@@ -39,7 +39,7 @@ public sealed class RopeScript : MonoBehaviour
     public Transform target;
 
     //added hinge joint if there is relative object
-    public HingeJoint2D hinge;
+    public SpringJoint2D hinge;
 
     BoatScript boatScript;
     public bool ActualHookObject;
@@ -118,7 +118,7 @@ public sealed class RopeScript : MonoBehaviour
                 hinge.autoConfigureConnectedAnchor = false;
 
             //binds last node to rodtransform
-            lastNode.GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+            lastNode.GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
         }
         RenderLine();
 
@@ -181,7 +181,7 @@ public sealed class RopeScript : MonoBehaviour
         go.transform.SetParent(transform);
 
         //sets hinge joint from last node to connect to this node
-        lastNode.GetComponent<HingeJoint2D>().connectedBody = go.GetComponent<Rigidbody2D>();
+        lastNode.GetComponent<SpringJoint2D>().connectedBody = go.GetComponent<Rigidbody2D>();
 
         //if attached to an object, turn of colliders (you may want this to be deleted in some cases)
         if (target != null && go.GetComponent<Collider2D>() != null)
@@ -195,7 +195,7 @@ public sealed class RopeScript : MonoBehaviour
 
         //adds node to node list
         Nodes.Add(lastNode);
-        lastNode.GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+        lastNode.GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
     }
 
     public void DestroyNode()
@@ -215,7 +215,7 @@ public sealed class RopeScript : MonoBehaviour
         Destroy(go);
 
         lastNode = Nodes[Nodes.Count - 1];
-        Nodes[Nodes.Count - 1].GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+        Nodes[Nodes.Count - 1].GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
 
 
         if (Nodes.Count <= 1)
