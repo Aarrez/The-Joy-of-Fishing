@@ -109,7 +109,7 @@ public class MoveAi : FishStats
         if (dist < base.fishStats.baitAttractionRadius)
         {
             path.canMove = true;
-            if (fishStats.baitLevel == BaitScript.BaitLevel() && player.transform.childCount <= 1)
+            if (BaitScript.BaitLevel() >= fishStats.baitLevel && player.transform.childCount <= 1)
             { 
                 agent.StartPath(this.transform.position, player.position);
             }

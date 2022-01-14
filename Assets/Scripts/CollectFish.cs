@@ -61,7 +61,7 @@ public class CollectFish : MonoBehaviour
                 {
                     hook.GetChild(i).gameObject.SetActive(false);
                     hook.GetChild(i).parent = fishInventory;
-                    BaitScript.FishOnHook?.Invoke();
+                    BaitScript.FishOfHook?.Invoke();
                 }
             }
            
