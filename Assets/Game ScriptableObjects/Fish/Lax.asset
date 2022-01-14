@@ -15,11 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 794713265, guid: 419a2ecc6667198458329045b8b90989, type: 3}
   animatorController: {fileID: 9100000, guid: 1a8481ffe315b924b9b1de968ff13ee9, type: 2}
   fishName: Lax
-  weight: 10
-  length: 11
+  weight: 15
+  length: 16
   value: 10
-  baitAttractionRadius: 3
+  baitAttractionRadius: 5
   fishColor: {r: 1, g: 1, b: 1, a: 1}
-  struggleCount: 0
+  struggleCount: 2
   excitementLevel: 1
-  baitLevel: 0
+  baitLevel: 1
