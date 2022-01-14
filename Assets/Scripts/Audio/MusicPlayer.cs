@@ -6,6 +6,9 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     private FMOD.Studio.EventInstance musicInstance;
+    
+    [Header("toggle me on to not start music at play")]
+    [SerializeField] private bool DEBUG_DONT_PLAY;
 
     private void Awake()
     {
@@ -14,7 +17,10 @@ public class MusicPlayer : MonoBehaviour
 
     private void Start()
     {
-        StartMusic();
+        if (!DEBUG_DONT_PLAY)
+        {
+            StartMusic();
+        }
     }
 
     private void StartMusic()
