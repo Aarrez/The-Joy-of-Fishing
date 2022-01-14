@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1287631276213243781}
   - component: {fileID: 5023515390090069303}
   - component: {fileID: -4499709092373924714}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Char
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181217008843519828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.772877, y: 2.4188561, z: 0}
+  m_LocalPosition: {x: 26.081713, y: 0.89144003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -167,7 +167,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2341939686376205290}
   - component: {fileID: 2240174114467267567}
   - component: {fileID: 6238731737291048182}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Char GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

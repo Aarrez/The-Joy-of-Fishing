@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class BoatScript : MonoBehaviour
 {
     //Privates
@@ -11,6 +10,8 @@ public class BoatScript : MonoBehaviour
     private Rigidbody2D rig2d;
     private AnimationCurve moveAnimCurve;
     private TheJoyofFishing GetKey;
+
+    public int maxLineLength;
 
     //Publics
     [Header("Movement stuff")]
@@ -92,7 +93,7 @@ public class BoatScript : MonoBehaviour
             RopeScript.instance.DestroyNode();
         }
 
-        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0))
+        if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && RopeScript.instance.Nodes.Count < maxLineLength)
         {
             elapsed = elapsed % 0.2f;
             RopeScript.instance.CreateNode();

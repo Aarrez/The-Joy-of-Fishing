@@ -31,7 +31,7 @@ public class CollectFish : MonoBehaviour
         if (bait)
         {
             try { fishInventory = GameObject.FindGameObjectWithTag("FishInventory").transform; }
-            catch 
+            catch
             {
                 GameObject fishGameObject = new GameObject();
                 fishGameObject.tag = "FishInventory";
@@ -61,8 +61,10 @@ public class CollectFish : MonoBehaviour
                 {
                     hook.GetChild(i).gameObject.SetActive(false);
                     hook.GetChild(i).parent = fishInventory;
+                    BaitScript.FishOnHook?.Invoke();
                 }
             }
+           
         }
     }
 }

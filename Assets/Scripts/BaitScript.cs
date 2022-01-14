@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+
 /*
  * This script is for when you have cought a fish.
  * It makes the fish a child of the transform the script is on.
@@ -11,23 +12,29 @@ public class BaitScript : MonoBehaviour
 {
     [SerializeField] private BaitScriptAbleObject[] bait;
 
-    [Range(0, 3)] [SerializeField] int currentBait;
+    private int currentBait;
 
     public static Func<int> BaitLevel;
 
     //Used to get in ColletFish and in MoveAi to get when the bait is out.
     public static event Action<bool> BaitIsOut;
 
+    public static Action FishOnHook;
+
     private void OnEnable()
     {
         BaitLevel += delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(true);
+
+        FishOnHook += CheckBaitLevel;
     }
 
     private void OnDisable()
     {
         BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(false);
+
+        FishOnHook += CheckBaitLevel;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -35,12 +42,29 @@ public class BaitScript : MonoBehaviour
         if (collision.collider.CompareTag("Fish"))
         {
             if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait) { return; }
-
+            else if (this.transform.childCount > 0) { return; }
+            
             collision.transform.parent = this.transform;
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
+                this.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
+                this.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
+                this.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
+                FishOnHook?.Invoke();
             }
         }                                                                      
+    }
+
+    private void CheckBaitLevel()
+    {
+        if (this.transform.childCount > 0)
+        {
+            currentBait = this.transform.GetChild(0).GetComponent<FishStats>().fishStats.baitLevel + 1;
+        }
+        else if (this.transform.childCount < 0)
+        {
+            currentBait--;
+        }
     }
 }

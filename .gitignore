@@ -93,3 +93,6 @@ fmod_editor.log
 FMOD_projectfish/.cache/*
 
 
+Assets/Prefabs/FishPrefabs/Char.prefab
+Assets/Prefabs/FishPrefabs/Abborre.prefab
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt

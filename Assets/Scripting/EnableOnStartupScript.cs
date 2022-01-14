@@ -19,6 +19,8 @@ public class EnableOnStartupScript : MonoBehaviour
     PlayerScript callPlayerScript;
     bool cache;
     float cacheTimeElapsed;
+
+    BoatScript callBoatScript;
     void Start()
     {
         CreatePauseMenu.SetActive(true);
@@ -27,6 +29,7 @@ public class EnableOnStartupScript : MonoBehaviour
         CoolDownText = CoolDownUIText.GetComponent<TextMeshProUGUI>();
         NodesCountText = NodesCountUI.GetComponent<TextMeshProUGUI>();
         NodesCountUI.SetActive(false);
+        callBoatScript = FindObjectOfType<BoatScript>();
 
         cache = false;
     }
@@ -69,13 +72,23 @@ public class EnableOnStartupScript : MonoBehaviour
                 }
             }
 
-            NodesCountText.text = "Line Length (feet): " + RopeScript.instance.Nodes.Count;
+            
+            if(RopeScript.instance.Nodes.Count == callBoatScript.maxLineLength)
+            {
+                NodesCountText.text = "Line Length (feet): MAX" + "(" + RopeScript.instance.Nodes.Count + ")";
+            }
+            else 
+            { 
+                NodesCountText.text = "Line Length (feet): " + RopeScript.instance.Nodes.Count; 
+            }
+
+
             if(callPlayerScript && callPlayerScript.elapsed <= 0f)
             {
-                CoolDownText.text = "RocketBoost Ready";
+                CoolDownText.text = "RocketBoost: Ready";
             }else if (callPlayerScript && callPlayerScript.elapsed <= 5)
             {
-                CoolDownText.text = "RocketBoost Cooldown: " + callPlayerScript.elapsed.ToString("F1");
+                CoolDownText.text = "RocketBoost: Cooldown " + callPlayerScript.elapsed.ToString("F1");
             }
 
 
