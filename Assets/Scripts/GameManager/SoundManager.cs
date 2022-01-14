@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SoundManager : MonoBehaviour
 {
     private FMOD.Studio.EventInstance volumeTestEvent;
@@ -17,6 +18,8 @@ public class SoundManager : MonoBehaviour
     // Any sliders connected to these values must on start have the same in insepctor component.
     // Slider component's "Value" setting Must match these float values.
     
+
+
     void Awake()
     {
         master = FMODUnity.RuntimeManager.GetBus("bus:/");
@@ -37,6 +40,21 @@ public class SoundManager : MonoBehaviour
         //does this chug framerate? maybe not have it in update? idk how FMOD likes to do things.
     }
 
+// AAAAA
+
+
+    void OnApplicationQuit() // This should also be on Play-Mode Quit
+    {
+        master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);    
+    }
+
+    void OnApplicationPause() // This should also be on Play-Mode Quit
+    {
+	Debug.Log("Stopping Audio coz paused");
+        master.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);    
+    }
+
+ // TRYING TO GET THIS TO WORK!!!
 
     public void MasterVolumeLevel(float newMasterVolume)
     {
