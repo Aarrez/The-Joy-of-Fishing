@@ -12,6 +12,7 @@ public class BoatScript : MonoBehaviour
     private TheJoyofFishing GetKey;
 
     public int maxLineLength;
+    public bool currentlyReelingUp;
 
     //Publics
     [Header("Movement stuff")]
@@ -81,16 +82,21 @@ public class BoatScript : MonoBehaviour
             boostbool = true;
         }
         else { boostbool = false; }
-
+        if (reelfloatup == Vector2.zero && reelfloatdown == Vector2.zero)
+        {
+            currentlyReelingUp = false;
+        }
         if (reelfloatup == Vector2.up && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && boostbool == false)
         {
             elapsed = elapsed % 0.2f; //polish would need floats in these statements varaibled so changeability with upgrades can be done.
             RopeScript.instance.DestroyNode();
+            currentlyReelingUp = true;
         }
-        else if (boostbool == true && elapsed >= 0.1f && ropeActive == true && rig2d.velocity.x.Equals(0))
+        else if (reelfloatup == Vector2.up && boostbool == true && elapsed >= 0.1f && ropeActive == true && rig2d.velocity.x.Equals(0))
         {
             elapsed = elapsed % 0.1f;
             RopeScript.instance.DestroyNode();
+            currentlyReelingUp = true;
         }
 
         if (reelfloatdown == Vector2.down && ropeActive == true && elapsed >= 0.2f && rig2d.velocity.x.Equals(0) && RopeScript.instance.Nodes.Count < maxLineLength)

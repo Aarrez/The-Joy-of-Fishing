@@ -1594,10 +1594,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -2096920117
-      Data2: 1301672532
-      Data3: -122187114
-      Data4: -1859781510
+      Data1: -1468504435
+      Data2: 1098158923
+      Data3: 1681246601
+      Data4: 325697073
     Path: event:/Ambience/ambience_lake
   Event: 
   PlayEvent: 11
