@@ -23,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     float check_x;
     float check_y;
 
+    BoatScript callBoatScript;
     //RopeScript callRopeScript;
 
     void Start()
@@ -36,6 +37,7 @@ public class PlayerScript : MonoBehaviour
 
         GetKey = new TheJoyofFishing();
         GetKey.Player.Enable();
+        callBoatScript = FindObjectOfType<BoatScript>();
     }
 
    
@@ -58,6 +60,14 @@ public class PlayerScript : MonoBehaviour
 
                 check_x = inputvector.x;
                 check_y = inputvector.y;
+
+                //if(callBoatScript.currentlyReelingUp == true)
+                //{
+                //    rb.AddForce(new Vector3(0, 1, 0) * forcetoAdd * Time.deltaTime);
+                //}else if(callBoatScript.currentlyReelingUp == false)
+                //{
+                //    return;
+                //}
 
                 if (check_y <= Mathf.Sqrt(3) / 2 && check_y >= 1 / 2 && inputvector != Vector2.zero)
                 {

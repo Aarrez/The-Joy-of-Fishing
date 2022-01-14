@@ -11213,7 +11213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6041324265593011362, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: maxLineLength
-      value: 600
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7824927940298590364, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_RootOrder
