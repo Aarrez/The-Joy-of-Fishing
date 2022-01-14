@@ -30,6 +30,7 @@ public sealed class RopeScript : MonoBehaviour
 
     //list of all nodes instantiated
     public List<GameObject> Nodes = new List<GameObject>();
+    private List <GameObject> NodesPos= new List<GameObject>();
 
     //check if the full rope is created
     public bool done = false;
@@ -199,11 +200,16 @@ public sealed class RopeScript : MonoBehaviour
 
     public void DestroyNode()
     {
-        for (int i = 0; i < Nodes.Count - 1; i++)
-        {
-            Nodes[i].transform.position = new Vector3(Nodes[i + 1].transform.position.x, Nodes[i + 1].transform.position.y, 0);
-        }
-
+        List<Vector3> positions = new List<Vector3>();
+                foreach (GameObject node in Nodes)
+                {
+                    positions.Add(node.transform.position);
+                }
+                for (int i = 0; i < Nodes.Count - 1; i++)
+                {
+                    Nodes[i].transform.position = positions[i+1];
+                    //Nodes[i].transform.position = new Vector3(Nodes[i + 1].transform.position.x, Nodes[i + 1].transform.position.y, 0);
+                }
         var go = Nodes[Nodes.Count - 1];
         Nodes.Remove(go);
         Destroy(go);

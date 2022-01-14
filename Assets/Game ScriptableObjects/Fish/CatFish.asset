@@ -15,11 +15,11 @@ MonoBehaviour:
   sprite: {fileID: -1670033504, guid: feb06b1dd1eb2044ab3aea80fd95beb5, type: 3}
   animatorController: {fileID: 9100000, guid: bc17b9af815b1aa449024bcd07a5b723, type: 2}
   fishName: CatFish
-  weight: 50
+  weight: 40
   length: 50
   value: 10
   baitAttractionRadius: 10
   fishColor: {r: 1, g: 1, b: 1, a: 1}
-  struggleCount: 4
+  struggleCount: 3
   excitementLevel: 2
-  baitLevel: 3
+  baitLevel: 2
