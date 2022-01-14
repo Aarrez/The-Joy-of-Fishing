@@ -1012,6 +1012,7 @@ namespace FMODUnity
 
             using (new EditorGUI.IndentLevelScope())
             {
+                EditorGUI.BeginChangeCheck();
                 DisplayTriStateBool("Live Update", platform, Platform.PropertyAccessors.LiveUpdate);
 
                 if (platform.IsLiveUpdateEnabled)
@@ -1057,6 +1058,11 @@ namespace FMODUnity
                 DisplayPlugins("Dynamic Plugins", dynamicPluginsView, platform, ref expandDynamicPlugins);
 
                 DisplayThreadAffinity("Thread Affinity", platform);
+
+                if (EditorGUI.EndChangeCheck())
+                {
+                    EditorUtility.SetDirty(target);
+                }
             }
         }
 

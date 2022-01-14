@@ -788,22 +788,18 @@ fmod_editor.log";
                 {
                     for (int i = 1; i < pageNames.Count - 1; i++)
                     {
-                        EditorGUILayout.LabelField(pageNames[i], titleStyle);
-                        EditorGUILayout.Space();
-                    }
-                }
-                EditorGUILayout.Space();
-                using (new EditorGUILayout.VerticalScope())
-                {
-                    for (int i = 1; i < pageComplete.Count - 1; i++)
-                    {
-                        GUILayout.Label(pageComplete[i] ? tickTexture : crossTexture, iconStyle);
-                        GUILayout.Space(8);
-
-                        if (pageComplete[i] == false)
+                        using (new EditorGUILayout.HorizontalScope())
                         {
-                            completed = false;
+                            EditorGUILayout.LabelField(pageNames[i], titleStyle);
+                            EditorGUILayout.Space();
+                            GUILayout.Label(pageComplete[i] ? tickTexture : crossTexture, iconStyle, GUILayout.ExpandWidth(false));
+
+                            if (pageComplete[i] == false)
+                            {
+                                completed = false;
+                            }
                         }
+                        GUILayout.Space(8);
                     }
                 }
                 GUILayout.FlexibleSpace();

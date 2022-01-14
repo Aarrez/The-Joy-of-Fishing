@@ -100,17 +100,33 @@ namespace FMODUnity
             }
         }
 
-        private void StopProcessing(string newStatus)
+        private void StopProcessing(bool isComplete)
         {
             processingState = null;
-            SetStatus(newStatus);
 
-            Settings settings = Settings.Instance;
+            if (isComplete)
+            {
+                if (tasks.Count == 0)
+                {
+                    SetStatus("No required tasks found. Event references are up to date.");
+                    Settings.Instance.LastEventReferenceScanVersion = FMOD.VERSION.number;
+                    EditorUtility.SetDirty(Settings.Instance);
 
-            settings.LastEventReferenceScanVersion = FMOD.VERSION.number;
-            EditorUtility.SetDirty(settings);
-
-            SetupWizardWindow.SetUpdateTaskComplete(SetupWizardWindow.UpdateTaskType.UpdateEventReferences);
+                    SetupWizardWindow.SetUpdateTaskComplete(SetupWizardWindow.UpdateTaskType.UpdateEventReferences);
+                }
+                else if (tasks.All(x => x.HasExecuted))
+                {
+                    SetStatus("Finished executing tasks. New tasks may now be required. Please re-scan your project.");
+                }
+                else
+                {
+                    SetStatus("Finished scanning. Please execute the tasks above.");
+                }
+            }
+            else
+            {
+                SetStatus("Cancelled.");
+            }
         }
 
         private void BeginExecuting()
@@ -147,7 +163,7 @@ namespace FMODUnity
         {
             if (IsProcessing)
             {
-                StopProcessing("Cancelled.");
+                StopProcessing(false);
             }
             else
             {
@@ -629,6 +645,8 @@ namespace FMODUnity
 
         private IEnumerator<string> ExecuteTasks(Task[] tasks)
         {
+            sceneSetup = EditorSceneManager.GetSceneManagerSetup();
+
             foreach (Task task in tasks)
             {
                 yield return string.Format("Executing: {0}", task);
@@ -637,6 +655,12 @@ namespace FMODUnity
             }
 
             EditorSceneManager.SaveOpenScenes();
+            UpdateExecutableTaskCount();
+
+            if (sceneSetup.Length > 0)
+            {
+                EditorSceneManager.RestoreSceneManagerSetup(sceneSetup);
+            }
         }
 
         private enum AssetType
@@ -691,6 +715,7 @@ namespace FMODUnity
         [Serializable]
         private class Component
         {
+            public GlobalObjectId GameObjectID;
             public string Type;
             public string Path;
             public string ScriptPath;
@@ -735,6 +760,8 @@ namespace FMODUnity
 
                 Count
             }
+
+            public bool HasExecuted { get; private set; }
 
             // Suppress warnings about using the obsolete StudioEventEmitter.Event and FMODEventPlayable.eventName fields
 #pragma warning disable 0618
@@ -1303,7 +1330,7 @@ namespace FMODUnity
 
             public bool CanExecute()
             {
-                return Enabled && !IsManual();
+                return Enabled && !IsManual() && !HasExecuted;
             }
 
             public bool IsManual()
@@ -1325,6 +1352,7 @@ namespace FMODUnity
                     if (delegates.Execute != null)
                     {
                         delegates.Execute(Data, target);
+                        HasExecuted = true;
                     }
 
                     return true;
@@ -1421,21 +1449,7 @@ namespace FMODUnity
                     return null;
                 }
 
-                PrefabStage stage = PrefabStageUtility.GetCurrentPrefabStage();
-
-                if (stage == null)
-                {
-                    return null;
-                }
-
-                Transform child = stage.prefabContentsRoot.transform.Find(component.Path);
-
-                if (child == null)
-                {
-                    return null;
-                }
-
-                return child.gameObject;
+                return GlobalObjectId.GlobalObjectIdentifierToObjectSlow(component.GameObjectID) as GameObject;
             }
             else if (asset.Type == AssetType.Scene)
             {
@@ -1467,37 +1481,7 @@ namespace FMODUnity
                     }
                 }
 
-                string rootName;
-                string subPath;
-
-                int firstSlash = component.Path.IndexOf('/');
-
-                if (firstSlash >= 0)
-                {
-                    rootName = component.Path.Substring(0, firstSlash);
-                    subPath = component.Path.Substring(firstSlash + 1);
-                }
-                else
-                {
-                    rootName = component.Path;
-                    subPath = string.Empty;
-                }
-
-                GameObject root = scene.GetRootGameObjects().FirstOrDefault(go => go.name == rootName);
-
-                if (root == null)
-                {
-                    return null;
-                }
-
-                Transform transform = root.transform.Find(subPath);
-
-                if (transform == null)
-                {
-                    return null;
-                }
-
-                return transform.gameObject;
+                return GlobalObjectId.GlobalObjectIdentifierToObjectSlow(component.GameObjectID) as GameObject;
             }
             else
             {
@@ -1522,6 +1506,7 @@ namespace FMODUnity
             MonoScript script = MonoScript.FromMonoBehaviour(behaviour);
 
             Component component = new Component() {
+                GameObjectID = GlobalObjectId.GetGlobalObjectIdSlow(behaviour.gameObject),
                 Type = behaviour.GetType().Name,
                 Path = EditorUtils.GameObjectPath(behaviour, root),
                 ScriptPath = AssetDatabase.GetAssetPath(script),
@@ -1556,6 +1541,7 @@ namespace FMODUnity
             tasks.Add(task);
             UpdateExecutableTaskCount();
             taskView.Reload();
+            taskView.ExpandAll();
         }
 
         private void UpdateProcessing()
@@ -1568,7 +1554,7 @@ namespace FMODUnity
                 }
                 else
                 {
-                    StopProcessing("Complete.");
+                    StopProcessing(true);
                 }
 
                 Repaint();
@@ -1766,7 +1752,10 @@ namespace FMODUnity
             float buttonHeight = EditorGUIUtility.singleLineHeight * 2;
 
             // Task List
-            taskView.DrawLayout(350);
+            using (var scope = new EditorGUILayout.VerticalScope(GUILayout.ExpandHeight(true)))
+            {
+                taskView.DrawLayout(scope.rect);
+            }
 
             // Selected Task
             if (selectedTask != null)
@@ -1815,7 +1804,7 @@ namespace FMODUnity
                             EditorUtils.OpenOnlineDocumentation("unity", "tools", "manual-tasks");
                         }
 
-                        using (var scope = new EditorGUILayout.ScrollViewScope(manualDescriptionScrollPosition))
+                        using (var scope = new EditorGUILayout.ScrollViewScope(manualDescriptionScrollPosition, GUILayout.Height(100)))
                         {
                             manualDescriptionScrollPosition = scope.scrollPosition;
 
@@ -1837,8 +1826,6 @@ namespace FMODUnity
                     }
                 }
             }
-
-            GUILayout.FlexibleSpace();
 
             // Status
             if (IsProcessing)
@@ -1922,6 +1909,8 @@ namespace FMODUnity
 
                 showAlternatingRowBackgrounds = true;
                 showBorder = true;
+
+                multiColumnHeader.ResizeToFit();
             }
 
             public static MultiColumnHeaderState CreateHeaderState()
@@ -1930,28 +1919,34 @@ namespace FMODUnity
                     new MultiColumnHeaderState.Column()
                     {
                         headerContent = new GUIContent("Target"),
-                        width = 350,
+                        width = 225,
                         autoResize = false,
                         allowToggleVisibility = false,
                         canSort = false,
                     },
                     new MultiColumnHeaderState.Column() {
                         headerContent = new GUIContent("Task"),
-                        width = 450,
                         autoResize = true,
                         allowToggleVisibility = false,
                         canSort = false,
                     },
+                    new MultiColumnHeaderState.Column()
+                    {
+                        headerContent = new GUIContent("Status"),
+                        width = 175,
+                        autoResize = false,
+                        allowToggleVisibility = false,
+                        canSort = false,
+                    }
                 };
 
                 return new MultiColumnHeaderState(columns);
             }
 
-            public void DrawLayout(float height)
+            public void DrawLayout(Rect rect)
             {
                 extraSpaceBeforeIconAndLabel = ToggleWidth();
 
-                Rect rect = EditorGUILayout.GetControlRect(false, height);
                 OnGUI(rect);
             }
 
@@ -1959,6 +1954,7 @@ namespace FMODUnity
             {
                 Asset,
                 Task,
+                Status,
             }
 
             private class AssetItem : TreeViewItem
@@ -2217,6 +2213,19 @@ namespace FMODUnity
                             }
 
                             Styles.TreeViewRichText.Draw(rect, text, false, false, selected, focused);
+                        }
+                        break;
+                    case Column.Status:
+                        if (Event.current.type == EventType.Repaint)
+                        {
+                            if (task.IsManual())
+                            {
+                                DefaultGUI.Label(rect, "Manual Changes Required", selected, focused);
+                            }
+                            else
+                            {
+                                DefaultGUI.Label(rect, task.HasExecuted ? "Complete" : "Pending", selected, focused);
+                            }
                         }
                         break;
                 }

@@ -19,7 +19,7 @@ namespace FMOD
     */
     public partial class VERSION
     {
-        public const int    number = 0x00020204;
+        public const int    number = 0x00020205;
 #if !UNITY_2019_4_OR_NEWER
         public const string dll    = "fmod";
 #endif
@@ -192,6 +192,7 @@ namespace FMOD
         NNAUDIO,
         WINSONIC,
         AAUDIO,
+        AUDIOWORKLET,
 
         MAX,
     }
