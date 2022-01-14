@@ -11,7 +11,7 @@ public class logoreactionscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Keyboard.current.anyKey.IsPressed())
+        if (GameManager.instance.moveCam == 3 || GameManager.instance.moveCam == 2)
         {
             StartCoroutine("ActiveLogo");
         }
@@ -19,10 +19,10 @@ public class logoreactionscript : MonoBehaviour
         {
             StartCoroutine("ActiveLogo");
         }*/
-        else if(Mouse.current.leftButton.IsPressed())
-        {
-            StartCoroutine("ActiveLogo");
-        }
+        //else if(Mouse.current.leftButton.IsPressed())
+        //{
+        //    StartCoroutine("ActiveLogo");
+        //}
     }
 
     IEnumerator ActiveLogo()
