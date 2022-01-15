@@ -16371,10 +16371,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2373523335838637457, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373523335838637457, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373523335838637457, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -782
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373523335838637457, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -409.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373523335838637462, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b6d536967d54f4c15a812fad2f8853cb, type: 3}
     - target: {fileID: 2373523335838637462, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4962793760973506361}
+    - target: {fileID: 2373523335838637463, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373523335838637463, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00eada3ecdcaf388e95d5d863223037e, type: 3}
     - target: {fileID: 2373523336441255849, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
       propertyPath: m_Name
       value: CallShopButton
@@ -16469,7 +16497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2373523336622023671, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
       propertyPath: m_text
-      value: Go To Shop
+      value: Call Shop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
@@ -16956,7 +16984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3396815136688360669, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.23
+      value: -16.14
       objectReference: {fileID: 0}
     - target: {fileID: 3396815136688360669, guid: c6a4dcf01b485c945a3ab0ded4a2f019, type: 3}
       propertyPath: m_LocalPosition.y

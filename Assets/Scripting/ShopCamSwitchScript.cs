@@ -47,7 +47,7 @@ public class ShopCamSwitchScript : MonoBehaviour
                 cmVirt.m_Lens.OrthographicSize = 9;
             }
 
-            Buttontext.text = "Go to shop";
+            Buttontext.text = "Call shop";
         }
 
         if (GameManager.instance.moveCam == 2)
