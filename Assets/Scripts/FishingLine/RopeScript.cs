@@ -15,7 +15,7 @@ public sealed class RopeScript : MonoBehaviour
     //velocity that the hook goes onto the destiny
     public float speed = 1;
     //distance between each node
-    public float distance = 0.4f;
+    public float distance = 0.3f;
     //node prefab
     public GameObject nodePrefab,hookPrefab, rodtransform, lastNode;
     //hook prefab
@@ -74,7 +74,7 @@ public sealed class RopeScript : MonoBehaviour
         //prevents game from freezing if distance is zero
         if (distance == 0)
         {
-            distance = 0.4f;
+            distance = 0.3f;
         }
     }
 
