@@ -84,26 +84,10 @@ public sealed class GameManager : MonoBehaviour
 
     public void BaitCam()
     {
-        if (RopeScript.instance.ActualHookObject == true)
-        {
-            StartCoroutine(BaitCamera());
-        }
-
-    }
-
-    IEnumerator BaitCamera()
-    {
-        yield return new WaitForSecondsRealtime(0.2f);
-        if(RopeScript.instance.go.transform == null)
-        {
-            StartCoroutine(BaitCamera());
-        }
-        else
-        {
-            CMcam.Follow = RopeScript.instance.go.transform;
-            CMcamBody.m_TrackedObjectOffset.y = 0;  
-        }
-        
+        Transform currenthook;
+        currenthook = GameObject.Find("Hook(Clone)").GetComponent<Transform>();
+            CMcam.Follow = currenthook;
+            CMcamBody.m_TrackedObjectOffset.y = 0;
     }
 
 

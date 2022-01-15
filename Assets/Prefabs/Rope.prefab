@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destiny: {x: 0, y: 0}
-  speed: 1000
+  speed: 2000
   distance: 0.4
   nodePrefab: {fileID: 1000014215547198, guid: a02635807ba30044b8200e489d8cbdb9, type: 3}
   hookPrefab: {fileID: 1000012688847204, guid: ddbf897f9a3f2a04c82360e94d84e7d1, type: 3}
