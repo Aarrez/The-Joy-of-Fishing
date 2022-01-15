@@ -9005,7 +9005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7505374907506828394, guid: bfea0ddd656a2704abe0d417dbde0471, type: 3}
       propertyPath: m_Value
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 7505374907506828394, guid: bfea0ddd656a2704abe0d417dbde0471, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -16663,6 +16663,10 @@ PrefabInstance:
       propertyPath: CreatePauseMenu
       value: 
       objectReference: {fileID: 434496383}
+    - target: {fileID: 826976823, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3498249390951015349, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: m_RootOrder
       value: 3

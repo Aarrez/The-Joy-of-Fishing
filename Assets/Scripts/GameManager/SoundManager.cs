@@ -11,7 +11,7 @@ public class SoundManager : MonoBehaviour
     private FMOD.Studio.Bus sfx;
     private FMOD.Studio.Bus master; //needed?
     private FMOD.Studio.Bus ambience;
-    private float musicVolume = 0.5f;
+    private float musicVolume = 0.25f;
     private float sfxVolume = 0.5f;
     private float masterVolume = 1f;
     private float ambienceVolume = 0.05f;
