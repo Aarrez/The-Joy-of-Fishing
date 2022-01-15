@@ -26,7 +26,7 @@ public sealed class GameManager : MonoBehaviour
             Destroy(instance.gameObject);
             instance = this;
         }
-        Fadeimage.color = new Color(255, 145, 97, 255);
+        Fadeimage.color = new Color(0, 0, 0, 255);
     }
     // Start is called before the first frame update
     void Start()
@@ -127,7 +127,7 @@ public sealed class GameManager : MonoBehaviour
         {
             currentTime += Time.deltaTime;
             float alpha = Mathf.MoveTowards(1f, 0f, currentTime/duration);
-            Fadeimage.color = new Color(255, 255, 255, alpha);
+            Fadeimage.color = new Color(0, 0, 0, alpha);
             yield return null;
         }
         FadeCanvas.SetActive(false);

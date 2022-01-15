@@ -16063,10 +16063,6 @@ PrefabInstance:
       propertyPath: insertCamera
       value: 
       objectReference: {fileID: 1485656630}
-    - target: {fileID: 1418964593, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1419649679062394681, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
@@ -16074,27 +16070,27 @@ PrefabInstance:
     - target: {fileID: 1419649679327188340, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
-      objectReference: {fileID: 4962793760973506360}
+      objectReference: {fileID: 1485656630}
     - target: {fileID: 1419649679392653132, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
-      objectReference: {fileID: 4962793760973506360}
+      objectReference: {fileID: 1485656630}
     - target: {fileID: 1419649679874298325, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
-      objectReference: {fileID: 4962793760973506360}
+      objectReference: {fileID: 1485656630}
     - target: {fileID: 1419649679887304252, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
-      objectReference: {fileID: 4962793760973506360}
+      objectReference: {fileID: 1485656630}
     - target: {fileID: 1419649680001134118, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
-      objectReference: {fileID: 4962793760973506360}
+      objectReference: {fileID: 1485656630}
     - target: {fileID: 1419649680477501102, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
-      objectReference: {fileID: 4962793760973506360}
+      objectReference: {fileID: 1485656630}
     - target: {fileID: 1419649680713122964, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -16146,27 +16142,7 @@ PrefabInstance:
     - target: {fileID: 1419649680785525699, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
-      objectReference: {fileID: 4962793760973506360}
-    - target: {fileID: 2275396812212043074, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2275396812212043074, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2275396812212043076, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
-      propertyPath: m_Radius
-      value: 10.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325890423812138494, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
-      propertyPath: m_Radius
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3581552337804981961, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1485656630}
     - target: {fileID: 6626244373023877688, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
@@ -16627,10 +16603,6 @@ PrefabInstance:
       propertyPath: CreatePauseMenu
       value: 
       objectReference: {fileID: 434496383}
-    - target: {fileID: 315441937, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
-      propertyPath: FadeCanvas
-      value: 
-      objectReference: {fileID: 4962793760973506362}
     - target: {fileID: 3498249390951015349, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -16683,14 +16655,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera and UI
       objectReference: {fileID: 0}
-    - target: {fileID: 8303227968655155172, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8303227968655155172, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
 --- !u!1 &4962793760973506360 stripped
@@ -16709,11 +16673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66c2036a87cda3479cb3ef1bde53c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4962793760973506362 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4962793761883621277, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
-  m_PrefabInstance: {fileID: 4962793760973506359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5442307719512976572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17025,6 +16984,10 @@ PrefabInstance:
     - target: {fileID: 1134714990220153720, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_Distance
       value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134714990220153720, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_Frequency
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 1134714990220153720, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_DampingRatio
