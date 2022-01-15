@@ -103,7 +103,7 @@ public sealed class GameManager : MonoBehaviour
         StartCoroutine(FadeInCR());
 
     } 
-        private IEnumerator FadeOutCR()
+    private IEnumerator FadeOutCR()
     {
         float duration = 1f; //0.5 secs
         float currentTime = 0f;
@@ -117,7 +117,7 @@ public sealed class GameManager : MonoBehaviour
         yield break;
     }
 
-        private IEnumerator FadeInCR()
+    private IEnumerator FadeInCR()
     {
         float duration = 1f; //0.5 secs
         float currentTime = 0f;
