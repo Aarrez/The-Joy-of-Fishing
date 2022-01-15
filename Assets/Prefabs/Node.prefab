@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 212000012245077370}
   - component: {fileID: 50000014153168478}
   - component: {fileID: 58000014293007010}
-  - component: {fileID: 233000013022302400}
+  - component: {fileID: 5311082797098479443}
   m_Layer: 7
   m_Name: Node
   m_TagString: Untagged
@@ -99,10 +99,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.2
-  m_LinearDrag: 0.001
+  m_Mass: 1
+  m_LinearDrag: 3
   m_AngularDrag: 0
-  m_GravityScale: 0.1
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 1cb87c123ccb883449ae1808afb4e2c2, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 0
@@ -124,8 +124,8 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!233 &233000013022302400
-HingeJoint2D:
+--- !u!231 &5311082797098479443
+SpringJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,14 +137,10 @@ HingeJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_DampingRatio: 0.91
+  m_Frequency: 10000
