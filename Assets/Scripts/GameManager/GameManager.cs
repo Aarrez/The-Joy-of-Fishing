@@ -95,8 +95,16 @@ public sealed class GameManager : MonoBehaviour
 
 //============================ ScreenFader ============================
     public Image Fadeimage;
-    public void UIScreenfadeout() => StartCoroutine(FadeOutCR());
-    public void UIScreenfadein() => StartCoroutine(FadeInCR());
+    public GameObject FadeCanvas;
+    public void UIScreenfadeout() 
+    {
+        StartCoroutine(FadeOutCR());
+    }
+    public void UIScreenfadein() 
+    {
+        StartCoroutine(FadeInCR());
+
+    } 
         private IEnumerator FadeOutCR()
     {
         float duration = 1f; //0.5 secs
@@ -106,8 +114,8 @@ public sealed class GameManager : MonoBehaviour
             currentTime += Time.deltaTime;
             float alpha = Mathf.MoveTowards(0f, 1f, currentTime/duration);
             Fadeimage.color = new Color(Fadeimage.color.r, Fadeimage.color.g, Fadeimage.color.b, alpha);
-            yield return null;
         }
+        FadeCanvas.SetActive(true);
         yield break;
     }
 
@@ -122,6 +130,7 @@ public sealed class GameManager : MonoBehaviour
             Fadeimage.color = new Color(255, 255, 255, alpha);
             yield return null;
         }
+        FadeCanvas.SetActive(false);
         yield break;
     }
 

@@ -16627,6 +16627,10 @@ PrefabInstance:
       propertyPath: CreatePauseMenu
       value: 
       objectReference: {fileID: 434496383}
+    - target: {fileID: 315441937, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: FadeCanvas
+      value: 
+      objectReference: {fileID: 4962793760973506362}
     - target: {fileID: 3498249390951015349, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -16679,6 +16683,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera and UI
       objectReference: {fileID: 0}
+    - target: {fileID: 8303227968655155172, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303227968655155172, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
 --- !u!1 &4962793760973506360 stripped
@@ -16697,6 +16709,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66c2036a87cda3479cb3ef1bde53c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4962793760973506362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4962793761883621277, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+  m_PrefabInstance: {fileID: 4962793760973506359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5442307719512976572
 PrefabInstance:
   m_ObjectHideFlags: 0
