@@ -144,6 +144,9 @@
 		<property name="volume">
 			<value>10</value>
 		</property>
+		<property name="looping">
+			<value>true</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{3da0f351-407c-484e-9b22-58922a718b6e}</destination>
 		</relationship>

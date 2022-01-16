@@ -9,6 +9,8 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class BaitScript : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance fishHookedInstance;
+
     [SerializeField] private BaitScriptAbleObject[] bait;
 
     [SerializeField] private int currentBait;
@@ -25,21 +27,18 @@ public class BaitScript : MonoBehaviour
 
     private void OnEnable()
     {
-        BaitLevel += delegate () { return bait[currentBait].baitLevel; };
+        BaitLevel += delegate() { return bait[currentBait].baitLevel; };
         BaitIsOut(true);
-
-        BaitIsOut += InstantiateBlood;
 
         FishOnHook += ChangeBaitLevel;
         FishOfHook += ChangeBaitLevel;
+        FishOnHook += PlaySound;
     }
 
     private void OnDisable()
     {
-        BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
+        BaitLevel -= delegate() { return bait[currentBait].baitLevel; };
         BaitIsOut(false);
-
-        BaitIsOut -= InstantiateBlood;
 
         FishOnHook -= ChangeBaitLevel;
         FishOfHook -= ChangeBaitLevel;
@@ -49,8 +48,14 @@ public class BaitScript : MonoBehaviour
     {
         if (collision.collider.CompareTag("Fish"))
         {
-            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait) { return; }
-            else if (this.transform.childCount > 2) { return; }
+            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait)
+            {
+                return;
+            }
+            else if (this.transform.childCount > 2)
+            {
+                return;
+            }
 
             collision.transform.parent = this.transform;
             if (this.transform.childCount == 3)
@@ -58,6 +63,7 @@ public class BaitScript : MonoBehaviour
                 Destroy(this.transform.GetChild(1).gameObject);
                 GetComponentInChildren<ParticleSystem>().Play();
             }
+
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 if (this.transform.GetChild(i).CompareTag("Fish"))
@@ -84,10 +90,11 @@ public class BaitScript : MonoBehaviour
         }
     }
 
-    private void InstantiateBlood(bool _bait)
+    private void PlaySound()
     {
-        Debug.Log("Being done");
-        GameObject blood = Instantiate(BloodParticules);
-        blood.transform.parent = this.transform;
+        fishHookedInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/fish_hook");
+        fishHookedInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.gameObject));
+        fishHookedInstance.start();
+        fishHookedInstance.release();
     }
 }
