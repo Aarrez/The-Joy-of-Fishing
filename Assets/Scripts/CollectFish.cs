@@ -25,7 +25,6 @@ public class CollectFish : MonoBehaviour
         BaitScript.BaitIsOut -= FindHookAndInventory;
     }
 
-    //Need to add to Main Scene: A object with fishinventory tag
     private void FindHookAndInventory(bool bait)
     {
         if (bait)
@@ -57,7 +56,7 @@ public class CollectFish : MonoBehaviour
         {
             for (int i = 0; i < hook.childCount; i++)
             {
-                if (hook.GetChild(i).gameObject.activeInHierarchy)
+                if (hook.GetChild(i).CompareTag("Fish"))
                 {
                     hook.GetChild(i).gameObject.SetActive(false);
                     hook.GetChild(i).parent = fishInventory;
