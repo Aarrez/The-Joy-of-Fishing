@@ -363,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806334, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
       propertyPath: m_Name
-      value: Level 3 FishSpawner (1)
+      value: Level 3 FishSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806335, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
       propertyPath: spawnRadius
@@ -433,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806334, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
       propertyPath: m_Name
-      value: Level 3 FishSpawner (3)
+      value: Level 3 FishSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806335, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
       propertyPath: spawnAmount
@@ -507,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806334, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
       propertyPath: m_Name
-      value: Level 3 FishSpawner (2)
+      value: Level 3 FishSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806335, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
       propertyPath: spawnRadius
@@ -639,7 +639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806334, guid: 437c01ea644da0247bea49396ae1be20, type: 3}
       propertyPath: m_Name
-      value: Level 0 FishSpawner (1)
+      value: Level 0 FishSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806335, guid: 437c01ea644da0247bea49396ae1be20, type: 3}
       propertyPath: spawnerPoint
@@ -727,11 +727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806328, guid: 6286aef283ab32e4e961d4785f5f9ac6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7
+      value: 227.3
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806328, guid: 6286aef283ab32e4e961d4785f5f9ac6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -67.5
+      value: -65
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806328, guid: 6286aef283ab32e4e961d4785f5f9ac6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1225,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806334, guid: b3bad65c64e98a44e803dda9e3e6a6b3, type: 3}
       propertyPath: m_Name
-      value: Level 1 FishSpawner (1)
+      value: 'Level 1 FishSpawner '
       objectReference: {fileID: 0}
     - target: {fileID: 2130221232917806335, guid: b3bad65c64e98a44e803dda9e3e6a6b3, type: 3}
       propertyPath: spawnerPoint
