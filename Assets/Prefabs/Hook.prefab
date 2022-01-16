@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 212000012579597294}
   - component: {fileID: 50000011407619950}
   - component: {fileID: 58000011381285992}
-  - component: {fileID: 233000010374877026}
   - component: {fileID: 1672819576055937797}
   - component: {fileID: -3000453649093772376}
   - component: {fileID: 4292488945438747900}
+  - component: {fileID: -2038947699508806033}
   m_Layer: 10
   m_Name: Hook
   m_TagString: Bait
@@ -102,11 +102,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 4
-  m_LinearDrag: 0.1
+  m_Mass: 7
+  m_LinearDrag: 5
   m_AngularDrag: 0
-  m_GravityScale: 0.5
-  m_Material: {fileID: 0}
+  m_GravityScale: 1.2
+  m_Material: {fileID: 6200000, guid: 1cb87c123ccb883449ae1808afb4e2c2, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
@@ -127,30 +127,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!233 &233000010374877026
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1000012688847204}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0.2}
-  m_ConnectedAnchor: {x: 0, y: 0.1}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 1
-  m_AngleLimits:
-    m_LowerAngle: -68.4
-    m_UpperAngle: 62.99
 --- !u!114 &1672819576055937797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e2bea7e604deaa48af4fa4e115633d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forcetoAdd: 1200
+  forcetoAdd: 23200
   elapsed: 4
 --- !u!114 &-3000453649093772376
 MonoBehaviour:
@@ -182,6 +158,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ef12b34bcf951e0448f6a8d8bac86170, type: 2}
   - {fileID: 11400000, guid: 3b706c610f3e3324b9775a0773b587d8, type: 2}
   - {fileID: 11400000, guid: 72210c9bd1c88db49b5a6a38e8500122, type: 2}
+  currentBait: 0
 --- !u!114 &4292488945438747900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +237,23 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!231 &-2038947699508806033
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012688847204}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.3
+  m_DampingRatio: 0.85
+  m_Frequency: 10000

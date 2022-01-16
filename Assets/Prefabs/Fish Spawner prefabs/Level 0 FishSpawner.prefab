@@ -46,7 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefabs:
   - {fileID: 6181217008843519828, guid: 165524af729b0854fb9c95a65a1ecc4c, type: 3}
-  - {fileID: 6181217008843519828, guid: 36d1822ee160b8d41bca991e0369e845, type: 3}
+  - {fileID: 6181217008843519828, guid: 165524af729b0854fb9c95a65a1ecc4c, type: 3}
+  - {fileID: 6181217008843519828, guid: 165524af729b0854fb9c95a65a1ecc4c, type: 3}
   - {fileID: 923512008135150387, guid: 9fdcb9918b0e04c429c74d5aa1d4057f, type: 3}
-  spawnerPoint: {fileID: 2130221232917806328}
-  spawnRadius: 5
+  - {fileID: 923512008135150387, guid: 9fdcb9918b0e04c429c74d5aa1d4057f, type: 3}
+  - {fileID: 923512008135150387, guid: 9fdcb9918b0e04c429c74d5aa1d4057f, type: 3}
+  - {fileID: 6181217008843519828, guid: 36d1822ee160b8d41bca991e0369e845, type: 3}
+  - {fileID: 6181217008843519828, guid: 36d1822ee160b8d41bca991e0369e845, type: 3}
+  spawnerPoint: {fileID: 0}
+  spawnRadius: 3
+  spawnAmount: 1

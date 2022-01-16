@@ -15,7 +15,7 @@ public sealed class RopeScript : MonoBehaviour
     //velocity that the hook goes onto the destiny
     public float speed = 1;
     //distance between each node
-    public float distance = 0.5f;
+    public float distance = 0.3f;
     //node prefab
     public GameObject nodePrefab,hookPrefab, rodtransform, lastNode;
     //hook prefab
@@ -30,7 +30,6 @@ public sealed class RopeScript : MonoBehaviour
 
     //list of all nodes instantiated
     public List<GameObject> Nodes = new List<GameObject>();
-    private List <GameObject> NodesPos= new List<GameObject>();
 
     //check if the full rope is created
     public bool done = false;
@@ -39,7 +38,7 @@ public sealed class RopeScript : MonoBehaviour
     public Transform target;
 
     //added hinge joint if there is relative object
-    public HingeJoint2D hinge;
+    public SpringJoint2D hinge;
 
     BoatScript boatScript;
     public bool ActualHookObject;
@@ -75,7 +74,7 @@ public sealed class RopeScript : MonoBehaviour
         //prevents game from freezing if distance is zero
         if (distance == 0)
         {
-            distance = 0.5f;
+            distance = 0.3f;
         }
     }
 
@@ -118,7 +117,7 @@ public sealed class RopeScript : MonoBehaviour
                 hinge.autoConfigureConnectedAnchor = false;
 
             //binds last node to rodtransform
-            lastNode.GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+            lastNode.GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
         }
         RenderLine();
 
@@ -181,7 +180,7 @@ public sealed class RopeScript : MonoBehaviour
         go.transform.SetParent(transform);
 
         //sets hinge joint from last node to connect to this node
-        lastNode.GetComponent<HingeJoint2D>().connectedBody = go.GetComponent<Rigidbody2D>();
+        lastNode.GetComponent<SpringJoint2D>().connectedBody = go.GetComponent<Rigidbody2D>();
 
         //if attached to an object, turn of colliders (you may want this to be deleted in some cases)
         if (target != null && go.GetComponent<Collider2D>() != null)
@@ -195,7 +194,7 @@ public sealed class RopeScript : MonoBehaviour
 
         //adds node to node list
         Nodes.Add(lastNode);
-        lastNode.GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+        lastNode.GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
     }
 
     public void DestroyNode()
@@ -215,7 +214,7 @@ public sealed class RopeScript : MonoBehaviour
         Destroy(go);
 
         lastNode = Nodes[Nodes.Count - 1];
-        Nodes[Nodes.Count - 1].GetComponent<HingeJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+        Nodes[Nodes.Count - 1].GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
 
 
         if (Nodes.Count <= 1)

@@ -113,13 +113,13 @@ public class PlayerScript : MonoBehaviour
 
     void RocketBoostUp()
     {
-        rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd * (gruggers / 2) * Time.deltaTime);
+        rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd * (gruggers / 4) * Time.deltaTime);
         elapsed = 5f;
     }
 
     void RocketBoostUpAndDir()
     {
-        rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * (gruggers / 2) * Time.deltaTime);
+        rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * (gruggers / 4) * Time.deltaTime);
         elapsed = 5f;
     }
     

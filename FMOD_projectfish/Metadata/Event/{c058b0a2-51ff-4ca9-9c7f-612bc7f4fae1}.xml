@@ -201,7 +201,7 @@
 	</object>
 	<object class="SingleSound" id="{7b6af4be-1894-4c91-aacf-c6ee1d87709f}">
 		<property name="volume">
-			<value>9</value>
+			<value>10</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{2aec4944-5e39-4a1f-bdf7-aa59071c5072}</destination>
@@ -292,7 +292,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>9</value>
 		</property>
 		<property name="curveShape">
 			<value>-0.228036165</value>
@@ -303,7 +303,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-42.5</value>
 		</property>
 	</object>
 </objects>

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 
 public sealed class GameManager : MonoBehaviour
@@ -25,6 +26,7 @@ public sealed class GameManager : MonoBehaviour
             Destroy(instance.gameObject);
             instance = this;
         }
+        Fadeimage.color = new Color(0, 0, 0, 255);
     }
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public sealed class GameManager : MonoBehaviour
         Player = GameObject.Find("Player").GetComponent<Transform>();
         boatScript = FindObjectOfType<BoatScript>();
         CMcamBody = CMcam.GetCinemachineComponent<CinemachineFramingTransposer>();
-
+        UIScreenfadein();
 
     }
 
@@ -82,12 +84,52 @@ public sealed class GameManager : MonoBehaviour
 
     public void BaitCam()
     {
-        if (RopeScript.instance.ActualHookObject == true)
-        {
-            CMcam.Follow = RopeScript.instance.go.transform;
+        Transform currenthook;
+        currenthook = GameObject.Find("Hook(Clone)").GetComponent<Transform>();
+            CMcam.Follow = currenthook;
             CMcamBody.m_TrackedObjectOffset.y = 0;
-        }
+    }
 
+
+//============================ ScreenFader ============================
+    public Image Fadeimage;
+    public GameObject FadeCanvas;
+    public void UIScreenfadeout() 
+    {
+        StartCoroutine(FadeOutCR());
+    }
+    public void UIScreenfadein() 
+    {
+        StartCoroutine(FadeInCR());
+
+    } 
+    private IEnumerator FadeOutCR()
+    {
+        float duration = 1f; //0.5 secs
+        float currentTime = 0f;
+        while(currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float alpha = Mathf.MoveTowards(0f, 1f, currentTime/duration);
+            Fadeimage.color = new Color(Fadeimage.color.r, Fadeimage.color.g, Fadeimage.color.b, alpha);
+        }
+        FadeCanvas.SetActive(true);
+        yield break;
+    }
+
+    private IEnumerator FadeInCR()
+    {
+        float duration = 1f; //0.5 secs
+        float currentTime = 0f;
+        while(currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float alpha = Mathf.MoveTowards(1f, 0f, currentTime/duration);
+            Fadeimage.color = new Color(0, 0, 0, alpha);
+            yield return null;
+        }
+        FadeCanvas.SetActive(false);
+        yield break;
     }
 
 }

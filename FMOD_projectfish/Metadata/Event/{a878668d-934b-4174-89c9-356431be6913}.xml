@@ -54,7 +54,7 @@
 			<destination>{a3709da8-51f0-40f3-8994-703d41dcf7ef}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{2afe30aa-5fb1-493e-b1d7-8b11138d4b9f}</destination>
+			<destination>{54c2e2b8-0601-47bc-abe5-4c31727a8d2d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{820c2507-e038-4af8-b316-d3079ad9f0a9}" />
@@ -108,6 +108,9 @@
 		<property name="name">
 			<value>waves</value>
 		</property>
+		<property name="volume">
+			<value>-2</value>
+		</property>
 		<property name="minimumTimeBetweenSounds">
 			<value>3000</value>
 		</property>
@@ -132,7 +135,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{3f9ef096-c8ce-40fc-8b76-4c66f0f33e4d}">
 		<property name="volume">
-			<value>-38</value>
+			<value>-8</value>
 		</property>
 		<property name="name">
 			<value>waves</value>
@@ -165,6 +168,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{621af546-665c-48a5-90e6-74cb04570dfa}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>other</value>
 		</property>
@@ -212,6 +218,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{14f66260-ea01-4e34-acab-c215041e6261}">
 		<relationship name="effects">
+			<destination>{5813ba47-7114-4045-b850-f121b5a17f7a}</destination>
 			<destination>{848e6b48-325c-4268-8609-d3e728f4648b}</destination>
 		</relationship>
 	</object>
@@ -232,6 +239,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{4206c19d-307c-461f-b70c-ae3d48347da9}">
 		<relationship name="effects">
+			<destination>{f9d0b2c2-d4c2-4ffb-96ca-01878037357f}</destination>
 			<destination>{914ca87e-8119-4c42-9091-287473fc6c61}</destination>
 		</relationship>
 	</object>
@@ -283,13 +291,21 @@
 			<destination>{0b7a6dd3-8eba-4d30-b1be-8c617b591239}</destination>
 		</relationship>
 	</object>
+	<object class="ThreeEQEffect" id="{5813ba47-7114-4045-b850-f121b5a17f7a}">
+		<property name="midGain">
+			<value>-2.5</value>
+		</property>
+		<property name="highGain">
+			<value>-6</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{848e6b48-325c-4268-8609-d3e728f4648b}" />
 	<object class="MultiSound" id="{0a5417e9-4192-4864-842e-276548fa1afc}">
 		<property name="name">
 			<value>insect_buzz</value>
 		</property>
 		<property name="volume">
-			<value>-15.5</value>
+			<value>2</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{3d79dc5d-0c7f-46d9-ac69-ae73a2df9552}</destination>
@@ -328,6 +344,11 @@
 			<destination>{0a5417e9-4192-4864-842e-276548fa1afc}</destination>
 		</relationship>
 	</object>
+	<object class="GainEffect" id="{f9d0b2c2-d4c2-4ffb-96ca-01878037357f}">
+		<property name="gain">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{914ca87e-8119-4c42-9091-287473fc6c61}" />
 	<object class="SingleSound" id="{3d79dc5d-0c7f-46d9-ac69-ae73a2df9552}">
 		<relationship name="audioFile">
@@ -354,7 +375,7 @@
 	</object>
 	<object class="SingleSound" id="{bdf57997-315d-4140-ac63-011df4f4f916}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{1ce9d7c5-4129-4ffa-8198-1e3324ef8ef0}</destination>

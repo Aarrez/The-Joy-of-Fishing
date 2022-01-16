@@ -50,7 +50,7 @@
 			<destination>{fb023233-16f9-4aef-835e-f8ab7225504c}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{2afe30aa-5fb1-493e-b1d7-8b11138d4b9f}</destination>
+			<destination>{54c2e2b8-0601-47bc-abe5-4c31727a8d2d}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6223ba33-a14e-48ae-8cd4-b87349bb716b}" />
@@ -89,6 +89,9 @@
 		<property name="length">
 			<value>4.6000000000000005</value>
 		</property>
+		<property name="volume">
+			<value>6</value>
+		</property>
 		<property name="minimumTimeBetweenSounds">
 			<value>6350</value>
 		</property>
@@ -106,6 +109,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d7de0da7-7f91-4ac5-a1b2-efd374d64840}">
+		<property name="volume">
+			<value>8.5</value>
+		</property>
 		<property name="name">
 			<value>echo</value>
 		</property>
