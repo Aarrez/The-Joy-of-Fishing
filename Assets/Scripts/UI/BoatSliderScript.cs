@@ -124,6 +124,10 @@ public class BoatSliderScript : MonoBehaviour
             depthMathTotal = depthOffset + callBoatSliderScriptOfHookVertical.DepthValueVert;
             DepthMeterText.color = new Color(1, 1, 1, 1);
             DepthMeterText.text = "Depth (meters): " + depthMathTotal.ToString("F1");
+            if(depthMathTotal <= -260)
+            {
+                DepthMeterText.text = "Warning! Depth Limit Reached! Reel Up!";
+            }
         }
         else if (thisIsDepthMeter == true && cache == false)
         {

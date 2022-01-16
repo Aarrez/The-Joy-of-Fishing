@@ -40,22 +40,22 @@ public class PlayerScript : MonoBehaviour
         callBoatScript = FindObjectOfType<BoatScript>();
     }
 
-   
+
 
     private void Update()
     {
- 
+
         gruggers = RopeScript.instance.Nodes.Count;
 
         if (cPauseScript.SetPause == false)
         {
-            if(GameManager.instance.moveCam == 3)
+            if (GameManager.instance.moveCam == 3)
             {
 
-               elapsed -= Time.deltaTime;
+                elapsed -= Time.deltaTime;
 
                 inputvector = GetKey.Player.MoveBait.ReadValue<Vector2>();
-                rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * Time.deltaTime);
+
                 inputvector2 = GetKey.Player.RocketBoost.ReadValue<Vector2>();
 
                 check_x = inputvector.x;
@@ -90,6 +90,27 @@ public class PlayerScript : MonoBehaviour
                     }
                 }
 
+                if (check_y >= -Mathf.Sqrt(3) / 2 && check_y <= -1 / 2 && inputvector != Vector2.zero)
+                {
+                    if (check_x >= 1 / 2 && check_x <= Mathf.Sqrt(3) / 2) //right joystick Down-right ^>
+                    {
+                        if (inputvector2 == Vector2.up && elapsed <= 0f)
+                        {
+                            RocketBoostDownAndDir();
+                        }
+
+                    }
+                    if (check_x <= -1 / 2 && check_x >= -Mathf.Sqrt(3) / 2) //right joystick Down-left <^
+                    {
+                        if (inputvector2 == Vector2.up && elapsed <= 0f)
+                        {
+                            RocketBoostDownAndDir();
+
+                        }
+
+                    }
+                }
+
                 if (check_y >= Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight up
                 {
                     if (inputvector2 == Vector2.up && elapsed <= 0f)
@@ -99,28 +120,146 @@ public class PlayerScript : MonoBehaviour
 
                 }
 
+                if (check_y <= -Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight Down
+                {
+                    if (inputvector2 == Vector2.up && elapsed <= 0f)
+                    {
+                        RocketBoostUp();
+                    }
+
+                }
+
+                
+                if(check_x >= Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight RIGHT
+                {
+                    if (inputvector2 == Vector2.up && elapsed <= 0f)
+                    {
+                        RocketBoostDir();
+                    }
+                }
+
+                if (check_x <= -Mathf.Sqrt(3) / 2 && inputvector != Vector2.zero) //right Joystick straight Left
+                {
+                    if (inputvector2 == Vector2.up && elapsed <= 0f)
+                    {
+                        RocketBoostDir();
+                    }
+                }
+
+                if (elapsed <= 0f)
+                {
+                    elapsed = 0f;
+                }
             }
-            if (elapsed <= 0f)
-            {
-                elapsed = 0f;
-            }
+
+
+
+
         }
-           
-        
-
-
     }
-
+    void FixedUpdate()
+    {
+        rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * Time.deltaTime);
+    }
     void RocketBoostUp()
     {
-        rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd * (gruggers / 4) * Time.deltaTime);
+        if(gruggers < 100)
+        {
+            rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 200, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 100 && gruggers < 200)
+        {
+            rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 100, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 200 && gruggers <= 700)
+        {
+            rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
+        }
+        elapsed = 5f;
+    }
+
+    void RocketBoostDown()
+    {
+        if (gruggers < 100)
+        {
+            rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 200, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 100 && gruggers < 200)
+        {
+            rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 100, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 200 && gruggers <= 700)
+        {
+            rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
+        }
         elapsed = 5f;
     }
 
     void RocketBoostUpAndDir()
     {
-        rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd * (gruggers / 4) * Time.deltaTime);
+        if (gruggers < 100)
+        {
+            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 200, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 100 && gruggers < 200)
+        {
+            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 100, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 200 && gruggers <= 700)
+        {
+            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
+        }
+
         elapsed = 5f;
     }
-    
+
+
+
+    void RocketBoostDownAndDir()
+    {
+        if (gruggers < 100)
+        {
+            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 200, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 100 && gruggers < 200)
+        {
+            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 100, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 200 && gruggers <= 700)
+        {
+            rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
+        }
+
+        elapsed = 5f;
+    }
+
+    void RocketBoostDir()
+    {
+        if (gruggers < 100)
+        {
+            rb.AddForce(new Vector3(inputvector.x, 0, 0) * forcetoAdd / 200, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 100 && gruggers < 200)
+        {
+            rb.AddForce(new Vector3(inputvector.x, 0, 0) * forcetoAdd / 100, ForceMode2D.Impulse);
+        }
+
+        if (gruggers > 200 && gruggers <= 700)
+        {
+            rb.AddForce(new Vector3(inputvector.x, 0, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
+        }
+
+        elapsed = 5f;
+    }
+
+
 }
