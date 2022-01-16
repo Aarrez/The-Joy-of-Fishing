@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9078290228449663811}
   - component: {fileID: 6162966107264325455}
   m_Layer: 0
-  m_Name: Mindy
+  m_Name: Level 3 Fishing line
   m_TagString: ShopItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7890952860622022453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.27, y: 14.17, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -105462989
   m_SortingLayer: 1
   m_SortingOrder: 191
-  m_Sprite: {fileID: 1931615274, guid: dd40fa69f2747c640b938d007c4eb7a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 774465feed020bd5d8f53d9249827ab1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
