@@ -8,6 +8,8 @@ public class MoneyEffect : MonoBehaviour
 
     private bool hookedFish = false;
 
+    public static event System.Action DeleteFish;
+
     private void OnEnable()
     {
         BoatScript.DoneFishing += GetMoney;
@@ -25,7 +27,7 @@ public class MoneyEffect : MonoBehaviour
     private void IsFishOnHook()
     {
         hookedFish = true;
-        Debug.Log("Can get money");
+        
     }
 
     private void FindFishCollector(bool bait)
@@ -37,8 +39,8 @@ public class MoneyEffect : MonoBehaviour
 
     private void GetMoney()
     {
-        if (!hookedFish) { return; }
-        Debug.Log("Gets Coins");
+        if (!hookedFish || FishCollector.transform.childCount == 0) { return; }
+        
         int a = 0;
         for (int i = 0; i < FishCollector.transform.childCount; i++)
         {
@@ -50,6 +52,8 @@ public class MoneyEffect : MonoBehaviour
         Debug.Log(a);
 
         coinParticle[a].Play();
+
+        DeleteFish?.Invoke();
     }
 
 

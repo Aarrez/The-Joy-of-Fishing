@@ -18,11 +18,13 @@ public class CollectFish : MonoBehaviour
     private void OnEnable()
     {
         BaitScript.BaitIsOut += FindHookAndInventory;
+        MoneyEffect.DeleteFish += ClearFishCollection;
     }
 
     private void OnDisable()
     {
         BaitScript.BaitIsOut -= FindHookAndInventory;
+        MoneyEffect.DeleteFish -= ClearFishCollection;
     }
 
     private void FindHookAndInventory(bool bait)
@@ -64,6 +66,14 @@ public class CollectFish : MonoBehaviour
                 }
             }
            
+        }
+    }
+
+    private void ClearFishCollection()
+    {
+        for (int i = 0; i < fishInventory.childCount; i++)
+        {
+            Destroy(fishInventory.GetChild(i).gameObject);
         }
     }
 }
