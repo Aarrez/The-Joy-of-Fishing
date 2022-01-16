@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 3 FishSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 2130221232785322352}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
 --- !u!4 &2130221232785322352 stripped
@@ -365,6 +369,10 @@ PrefabInstance:
       propertyPath: spawnRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 2130221231721400299}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
 --- !u!4 &2130221231721400299 stripped
@@ -435,6 +443,10 @@ PrefabInstance:
       propertyPath: spawnRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 2130221231993433239}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
 --- !u!4 &2130221231993433239 stripped
@@ -501,6 +513,10 @@ PrefabInstance:
       propertyPath: spawnRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 2130221232736810239}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9de8116c8fa6a29409c661361b15d5aa, type: 3}
 --- !u!4 &2130221232736810239 stripped
@@ -625,6 +641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 0 FishSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: 437c01ea644da0247bea49396ae1be20, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 1828087875195714331}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437c01ea644da0247bea49396ae1be20, type: 3}
 --- !u!4 &1828087875195714331 stripped
@@ -749,6 +769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 2 FishSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: 6286aef283ab32e4e961d4785f5f9ac6, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 1615341125754818220}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6286aef283ab32e4e961d4785f5f9ac6, type: 3}
 --- !u!4 &1615341125754818220 stripped
@@ -811,6 +835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 0 FishSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: 437c01ea644da0247bea49396ae1be20, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 1359856110232238668}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 437c01ea644da0247bea49396ae1be20, type: 3}
 --- !u!4 &1359856110232238668 stripped
@@ -1005,6 +1033,10 @@ PrefabInstance:
       propertyPath: spawnAmount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: b3bad65c64e98a44e803dda9e3e6a6b3, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 1048613170538121830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bad65c64e98a44e803dda9e3e6a6b3, type: 3}
 --- !u!4 &1048613170538121830 stripped
@@ -1195,6 +1227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1 FishSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2130221232917806335, guid: b3bad65c64e98a44e803dda9e3e6a6b3, type: 3}
+      propertyPath: spawnerPoint
+      value: 
+      objectReference: {fileID: 3553937441516517629}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3bad65c64e98a44e803dda9e3e6a6b3, type: 3}
 --- !u!4 &3553937441516517629 stripped
