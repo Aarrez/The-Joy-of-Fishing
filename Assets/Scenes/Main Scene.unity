@@ -23467,6 +23467,22 @@ PrefabInstance:
       propertyPath: m_SleepingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 490540109590172885, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: LightsModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 490540109590172886, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 490540109590172886, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 490540109590172886, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1015922365
+      objectReference: {fileID: 0}
     - target: {fileID: 1134714990220153720, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_Distance
       value: 0.005
@@ -23487,9 +23503,45 @@ PrefabInstance:
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1723046611083399177, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723046611083399177, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723046611083399177, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1015922365
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261238947880879148, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261238947880879148, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2261238947880879148, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1015922365
+      objectReference: {fileID: 0}
     - target: {fileID: 2794254112950225140, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880228523093164177, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880228523093164177, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880228523093164177, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1015922365
       objectReference: {fileID: 0}
     - target: {fileID: 7814803752114734574, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
       propertyPath: m_UIInputModule
