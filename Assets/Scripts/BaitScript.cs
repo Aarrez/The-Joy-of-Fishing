@@ -43,7 +43,7 @@ public class BaitScript : MonoBehaviour
     {
         if (collision.collider.CompareTag("Fish"))
         {
-            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel > currentBait) { return; }
+            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait) { return; }
             else if (this.transform.childCount > 1) { return; }
 
             collision.transform.parent = this.transform;
