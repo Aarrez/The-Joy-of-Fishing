@@ -42,6 +42,7 @@ public class BaitScript : MonoBehaviour
 
         FishOnHook -= ChangeBaitLevel;
         FishOfHook -= ChangeBaitLevel;
+        FishOnHook -= PlaySound;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -93,7 +94,7 @@ public class BaitScript : MonoBehaviour
     private void PlaySound()
     {
         fishHookedInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/fish_hook");
-        fishHookedInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(this.gameObject));
+        fishHookedInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         fishHookedInstance.start();
         fishHookedInstance.release();
     }

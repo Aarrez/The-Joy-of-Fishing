@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{80517722-3dbe-42c4-9d56-17553c7d5528}">
 		<property name="name">
-			<value>coin_level</value>
+			<value>level</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f3734e9e-ea27-4ae3-ad06-6b8cca693694}</destination>
@@ -15,14 +15,11 @@
 		<property name="parameterType">
 			<value>1</value>
 		</property>
-		<property name="minimum">
-			<value>1</value>
-		</property>
 		<property name="maximum">
 			<value>4</value>
 		</property>
 		<property name="initialValue">
-			<value>1</value>
+			<value>0</value>
 		</property>
 	</object>
 </objects>

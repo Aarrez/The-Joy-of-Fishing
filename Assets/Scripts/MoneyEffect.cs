@@ -1,7 +1,12 @@
+using System;
 using UnityEngine;
 
 public class MoneyEffect : MonoBehaviour
 {
+    private FMOD.Studio.EventInstance fishGetInstance;
+    private FMOD.Studio.EventInstance coinsInstance;
+    
+    
     [SerializeField] private ParticleSystem[] coinParticle;
 
     private GameObject FishCollector;
@@ -9,6 +14,16 @@ public class MoneyEffect : MonoBehaviour
     private bool hookedFish = false;
 
     public static event System.Action DeleteFish;
+
+    private void Awake()
+    {
+       fishGetInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/fish_get");
+       coinsInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/coins");
+       //FMODUnity.RuntimeManager.AttachInstanceToGameObject(fishGetInstance, gameObject.transform);
+       //FMODUnity.RuntimeManager.AttachInstanceToGameObject(coinsInstnace, gameObject.transform);
+       //coinsInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+       //fishGetInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+    }
 
     private void OnEnable()
     {
@@ -52,8 +67,18 @@ public class MoneyEffect : MonoBehaviour
         Debug.Log(a);
 
         coinParticle[a].Play();
+        PlaySound(a);
 
         DeleteFish?.Invoke();
+    }
+
+    private void PlaySound(int level)
+    {
+        // Levels 0 1 2 3 small to big.
+        coinsInstance.setParameterByName("level", level);
+        fishGetInstance.setParameterByName("level", level);
+        coinsInstance.start();
+        fishGetInstance.start();
     }
 
 

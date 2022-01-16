@@ -53,9 +53,8 @@ public sealed class RopeScript : MonoBehaviour
     {
         //get sound from FMOD
         reelTickInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/reel_tick");
-        
         //Sound at rod
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(reelTickInstance, gameObject.transform);
+        
         
         if (instance == null)
         {
@@ -85,6 +84,9 @@ public sealed class RopeScript : MonoBehaviour
         {
             distance = 0.3f;
         }
+        
+        // Define 3D attributes
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(reelTickInstance, rodtransform.transform);
     }
 
     void Update()
@@ -160,6 +162,7 @@ public sealed class RopeScript : MonoBehaviour
 
     public void CreateNode()
     {
+        reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(rodtransform.transform));
         reelTickInstance.start(); // Play sound
         
         //finds position to create and creates node (vertex)
@@ -210,6 +213,7 @@ public sealed class RopeScript : MonoBehaviour
 
     public void DestroyNode()
     {
+        reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(rodtransform.transform));
         reelTickInstance.start(); // Play sound
         
         List<Vector3> positions = new List<Vector3>();
