@@ -18,7 +18,7 @@ public class FishSpawner : MonoBehaviour
         //mainCamera = FindObjectOfType<Camera>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         PlaceFishInGameBounds();
     }

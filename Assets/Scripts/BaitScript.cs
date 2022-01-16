@@ -13,6 +13,8 @@ public class BaitScript : MonoBehaviour
 
     [SerializeField] private int currentBait;
 
+    [SerializeField] private GameObject BloodParticules;
+
     public static Func<int> BaitLevel;
 
     //Used to get in ColletFish and in MoveAi to get when the bait is out.
@@ -26,6 +28,8 @@ public class BaitScript : MonoBehaviour
         BaitLevel += delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(true);
 
+        BaitIsOut += InstantiateBlood;
+
         FishOnHook += ChangeBaitLevel;
         FishOfHook += ChangeBaitLevel;
     }
@@ -35,6 +39,8 @@ public class BaitScript : MonoBehaviour
         BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(false);
 
+        BaitIsOut -= InstantiateBlood;
+
         FishOnHook -= ChangeBaitLevel;
         FishOfHook -= ChangeBaitLevel;
     }
@@ -43,34 +49,45 @@ public class BaitScript : MonoBehaviour
     {
         if (collision.collider.CompareTag("Fish"))
         {
-            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel > currentBait) { return; }
-            else if (this.transform.childCount > 1) { return; }
+            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait) { return; }
+            else if (this.transform.childCount > 2) { return; }
 
             collision.transform.parent = this.transform;
-            if (this.transform.childCount == 2)
+            if (this.transform.childCount == 3)
             {
-                Destroy(this.transform.GetChild(0).gameObject);
+                Destroy(this.transform.GetChild(1).gameObject);
+                GetComponentInChildren<ParticleSystem>().Play();
             }
             for (int i = 0; i < this.transform.childCount; i++)
             {
-                this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
-                this.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
-                this.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
-                this.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
-                FishOnHook?.Invoke();
+                if (this.transform.GetChild(i).CompareTag("Fish"))
+                {
+                    this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
+                    this.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
+                    this.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
+                    this.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
+                    FishOnHook?.Invoke();
+                }
             }
         }
     }
 
     private void ChangeBaitLevel()
     {
-        if (this.transform.childCount > 0)
+        if (this.transform.childCount > 1)
         {
-            currentBait = this.transform.GetChild(0).GetComponent<FishStats>().fishStats.baitLevel + 1;
+            currentBait = this.transform.GetChild(1).GetComponent<FishStats>().fishStats.baitLevel + 1;
         }
         else
         {
             currentBait = 0;
         }
+    }
+
+    private void InstantiateBlood(bool _bait)
+    {
+        Debug.Log("Being done");
+        GameObject blood = Instantiate(BloodParticules);
+        blood.transform.parent = this.transform;
     }
 }
