@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.InputSystem;
 
 
 public sealed class RopeScript : MonoBehaviour
 {
-
+    //FMOD sound
+    private FMOD.Studio.EventInstance reelTickInstance;
+    
     //holds where the hook is going to
     [HideInInspector]
     public Vector2 destiny;
@@ -48,6 +51,12 @@ public sealed class RopeScript : MonoBehaviour
 
     private void Awake()
     {
+        //get sound from FMOD
+        reelTickInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/reel_tick");
+        
+        //Sound at rod
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(reelTickInstance, gameObject.transform);
+        
         if (instance == null)
         {
             instance = this;
@@ -151,6 +160,8 @@ public sealed class RopeScript : MonoBehaviour
 
     public void CreateNode()
     {
+        reelTickInstance.start(); // Play sound
+        
         //finds position to create and creates node (vertex)
 
         //makes vector that points from last node to rodtransform
@@ -199,6 +210,8 @@ public sealed class RopeScript : MonoBehaviour
 
     public void DestroyNode()
     {
+        reelTickInstance.start(); // Play sound
+        
         List<Vector3> positions = new List<Vector3>();
                 foreach (GameObject node in Nodes)
                 {
