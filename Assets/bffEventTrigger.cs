@@ -21,7 +21,7 @@ public class bffEventTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "BaitLayer")
+        if(other.tag == "Bait")
         {
             bffanim.Play("Swimmer");
         }
