@@ -296,7 +296,8 @@ GameObject:
   - component: {fileID: 389268399}
   - component: {fileID: 389268402}
   - component: {fileID: 389268401}
-  m_Layer: 0
+  - component: {fileID: 389268403}
+  m_Layer: 13
   m_Name: BFFTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +317,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.5276241, y: -11.998024}
+  m_Offset: {x: 5.9829407, y: -11.998024}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -327,7 +328,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 46.18572, y: 1.9173737}
+  m_Size: {x: 39.275085, y: 1.9173737}
   m_EdgeRadius: 0
 --- !u!4 &389268400
 Transform:
@@ -337,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389268398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.31, y: -199.6, z: 0}
+  m_LocalPosition: {x: -3.6, y: -210.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -378,6 +379,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &389268403
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389268398}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &408895239 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4814166237853460057, guid: e2cad811a20449895a8bf24288372b57, type: 3}
@@ -7313,7 +7335,7 @@ Transform:
   m_GameObject: {fileID: 2126653934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 39.2, y: -58.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2058558503}
@@ -8539,6 +8561,10 @@ PrefabInstance:
     - target: {fileID: 4814166238490080902, guid: e2cad811a20449895a8bf24288372b57, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -395
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814166238490080905, guid: e2cad811a20449895a8bf24288372b57, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7079421436490801447, guid: e2cad811a20449895a8bf24288372b57, type: 3}
       propertyPath: m_Camera
