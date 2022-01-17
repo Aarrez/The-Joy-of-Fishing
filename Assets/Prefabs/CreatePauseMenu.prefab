@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetPause: 0
+  thisIsRealPauseMenu: 1
 --- !u!1 &3836749991336474994
 GameObject:
   m_ObjectHideFlags: 0
