@@ -76,12 +76,10 @@ public class MoneyEffect : MonoBehaviour
     {
         // Levels 0 1 2 3 small to big.
         coinsInstance.setParameterByName("level", level);
-        coinsInstance.setParameterByName("triggered", 1);
         fishGetInstance.setParameterByName("level", level);
         
         coinsInstance.start();
         fishGetInstance.start();
-        coinsInstance.setParameterByName("triggered", 0);
     }
 
 
