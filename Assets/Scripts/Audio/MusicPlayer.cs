@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
@@ -41,5 +42,10 @@ public class MusicPlayer : MonoBehaviour
     public void RaiseMusic()
     {
         musicInstance.setParameterByName("music_duck", 0); //dont duck music
+    }
+
+    public void StopMusic() // This is played at the end of the game!
+    {
+        musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
     }
 }
