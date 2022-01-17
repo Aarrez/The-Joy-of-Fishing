@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 4381097790388635783}
   - component: {fileID: 7455145181207423391}
   - component: {fileID: 44484220}
+  - component: {fileID: 1928144673}
   m_Layer: 11
   m_Name: Boat
   m_TagString: Player
@@ -277,6 +278,18 @@ MonoBehaviour:
   yBobbingStrength: 0.1
   applyBobOffset: 0
   bobOffsetAmount: 0
+--- !u!114 &1928144673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053748894634533293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432ba3f5b16f2577591a8d35618d8a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4566488780851046515
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +681,7 @@ MonoBehaviour:
   rampUpTime: 1
   maxLineLength: 700
   currentlyReelingUp: 0
-  boatSpeed: 10
+  boatSpeed: 1000
   BoatSpeedForce: 1000000
   hook: {fileID: 1867930385899082835, guid: f6204882aac42494e931530d178b4831, type: 3}
   baitpoint: {fileID: 2794254112950225140}
@@ -724,26 +737,10 @@ MonoBehaviour:
     m_ActionName: Player/MoveBait[/Gamepad/rightStick,/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: c44538e2-cba9-42ee-b1c2-a790f42e7d6e
-    m_ActionName: Player/Fire[/Gamepad/rightTrigger,/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 52e30900-4b25-440a-b0ac-92ce207b9c71
     m_ActionName: Player/FishingBait[/Keyboard/q,/Keyboard/e]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6041324265593011362}
-        m_TargetAssemblyTypeName: BoatScript, Assembly-CSharp
-        m_MethodName: MovePlayer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: d0636dc7-4779-46d1-8f1e-3c6618590c5a
     m_ActionName: Player/MoveBoat[/Keyboard/leftArrow,/Keyboard/a,/Keyboard/rightArrow,/Keyboard/d,/Gamepad/dpad/x]
   - m_PersistentCalls:
@@ -754,10 +751,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 044a92e9-32fd-47ce-bc04-ec7c4c47aee5
     m_ActionName: Player/SwingRight[/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0fcd6c29-676e-4c68-a09b-80250c5900f2
-    m_ActionName: Player/Mouse1[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 0c4c1b33-a9e3-43d1-9170-e511cd710386
@@ -822,6 +815,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 7e976734-5e9a-4b9f-9fd2-8a1203b245e6
     m_ActionName: EscapeToPause/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7b10dccf-2140-429f-b357-413d073c0cab
+    m_ActionName: Player/RocketBoost[/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0fcd6c29-676e-4c68-a09b-80250c5900f2
+    m_ActionName: Player/Mouse1[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -850,6 +851,10 @@ PrefabInstance:
       propertyPath: ShapeModule.radiusThickness
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3457510618611458288, guid: 8b104f7da25932a84989b8fbfe350517, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3457510618611458289, guid: 8b104f7da25932a84989b8fbfe350517, type: 3}
       propertyPath: m_SortingLayer
       value: 4
@@ -865,6 +870,18 @@ PrefabInstance:
     - target: {fileID: 3457510618611458291, guid: 8b104f7da25932a84989b8fbfe350517, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457510618611458291, guid: 8b104f7da25932a84989b8fbfe350517, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457510618611458291, guid: 8b104f7da25932a84989b8fbfe350517, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457510618611458291, guid: 8b104f7da25932a84989b8fbfe350517, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3457510618611458291, guid: 8b104f7da25932a84989b8fbfe350517, type: 3}
       propertyPath: m_LocalPosition.x
@@ -957,9 +974,25 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4740158098452584110, guid: d967f5ed95a494a85b838466d89d5498, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4740158098452584111, guid: d967f5ed95a494a85b838466d89d5498, type: 3}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740158098452584111, guid: d967f5ed95a494a85b838466d89d5498, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740158098452584111, guid: d967f5ed95a494a85b838466d89d5498, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740158098452584111, guid: d967f5ed95a494a85b838466d89d5498, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4740158098452584111, guid: d967f5ed95a494a85b838466d89d5498, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1025,6 +1058,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4676737860773527458, guid: a908b3b76c4ff488d97fa35fd4f832da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676737860773527458, guid: a908b3b76c4ff488d97fa35fd4f832da, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676737860773527458, guid: a908b3b76c4ff488d97fa35fd4f832da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676737860773527458, guid: a908b3b76c4ff488d97fa35fd4f832da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1080,6 +1125,10 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4676737860773527461, guid: a908b3b76c4ff488d97fa35fd4f832da, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4676737860773527463, guid: a908b3b76c4ff488d97fa35fd4f832da, type: 3}
       propertyPath: m_Name
       value: Coin Fx (exotic)
@@ -1106,6 +1155,18 @@ PrefabInstance:
     - target: {fileID: 9220535096760509241, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220535096760509241, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220535096760509241, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220535096760509241, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9220535096760509241, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1150,6 +1211,10 @@ PrefabInstance:
     - target: {fileID: 9220535096760509242, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9220535096760509242, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 9220535096760509243, guid: 5e504f2428de8fb87a61f4bb0cdf1246, type: 3}
       propertyPath: m_SortingLayer

@@ -9,6 +9,8 @@ public class WaterSurface : MonoBehaviour
 
     private FMOD.Studio.EventInstance splashEvent;
     private BoatSliderScript boatSliderScript;
+
+    private BoatEmitter boatEmitter;
     
     //water ambience MOVE ME TO BETTER PLACE LATER?
     private FMOD.Studio.EventInstance lakeAmbienceEvent;
@@ -16,23 +18,36 @@ public class WaterSurface : MonoBehaviour
     private void Awake()
     {
         boatSliderScript = FindObjectOfType<BoatSliderScript>();
+        boatEmitter = FindObjectOfType<BoatEmitter>();
+        
         splashEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         splashEvent = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/hook_splash");
         //splashEvent.start();
         
         lakeAmbienceEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Ambience/ambience_lake");
         lakeAmbienceEvent.start();
+        
+        
     }
 
     private void Update()
     {
+        if (boatSliderScript.depthMathTotal < -0.5f)
+        {
+            hookSubmerged = true;
+        }
+        else hookSubmerged = false;
+        
+        
         if (hookSubmerged)
         {
             lakeAmbienceEvent.setParameterByName("music_duck", 1);
+            boatEmitter.UnderWater();
         }
         else
         {
             lakeAmbienceEvent.setParameterByName("music_duck", 0); //not paused
+            boatEmitter.AboveWater();
         }
     }
 
@@ -41,7 +56,9 @@ public class WaterSurface : MonoBehaviour
         if (other.gameObject.CompareTag("Bait") && boatSliderScript.depthMathTotal > -0.5f)
         {
             // For play lake ambience, maybe move me lateR?
-            hookSubmerged = !hookSubmerged; //swap bool mode
+            //hookSubmerged = !hookSubmerged; //swap bool mode BROKEN
+            
+            
              
             
             
