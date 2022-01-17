@@ -6,24 +6,21 @@ public class bffEventTrigger : MonoBehaviour
 {
 
     public Animator bffanim;
+    private FMOD.Studio.EventInstance inst;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        inst = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/bff_trigger");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.tag == "Bait")
         {
             bffanim.Play("Swimmer");
+            inst.start();
+            inst.release();
         }
     }
 
