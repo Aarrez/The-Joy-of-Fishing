@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
 	public float forcetoAdd = 100;
 	TheJoyofFishing GetKey;
     CreatePauseMenuScript cPauseScript;
-    public float elapsed = 4f;
+    public float elapsed = 2f;
     float gruggers;
     Vector2 UpRight = (Vector2.up + Vector2.right).normalized;
     Vector2 UpLeft = (Vector2.up + Vector2.left).normalized;
@@ -177,7 +177,7 @@ public class PlayerScript : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
         }
-        elapsed = 5f;
+        elapsed = 3f;
     }
 
     void RocketBoostDown()
@@ -196,7 +196,7 @@ public class PlayerScript : MonoBehaviour
         {
             rb.AddForce(new Vector3(0, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
         }
-        elapsed = 5f;
+        elapsed = 3f;
     }
 
     void RocketBoostUpAndDir()
@@ -216,7 +216,7 @@ public class PlayerScript : MonoBehaviour
             rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
         }
 
-        elapsed = 5f;
+        elapsed = 3f;
     }
 
 
@@ -238,7 +238,7 @@ public class PlayerScript : MonoBehaviour
             rb.AddForce(new Vector3(inputvector.x, inputvector.y, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
         }
 
-        elapsed = 5f;
+        elapsed = 3f;
     }
 
     void RocketBoostDir()
@@ -258,7 +258,7 @@ public class PlayerScript : MonoBehaviour
             rb.AddForce(new Vector3(inputvector.x, 0, 0) * forcetoAdd / 75, ForceMode2D.Impulse);
         }
 
-        elapsed = 5f;
+        elapsed = 3f;
     }
 
 
