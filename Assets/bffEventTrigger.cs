@@ -12,7 +12,7 @@ public class bffEventTrigger : MonoBehaviour
 
     void Awake()
     {
-        inst = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/bff_end");
+        inst = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/bff_end2");
         musicPlayer = FindObjectOfType<MusicPlayer>();
     }
 
@@ -25,7 +25,7 @@ public class bffEventTrigger : MonoBehaviour
             musicPlayer.StopMusic();
             inst.start();
             inst.release();
-            Invoke("endgame", 5.5f);
+            //Invoke("endgame", 5.5f);
             triggered = true;
         }
     }
