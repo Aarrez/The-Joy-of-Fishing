@@ -29,7 +29,7 @@ public class BoatSliderScript : MonoBehaviour
     TextMeshProUGUI DepthMeterText;
     public float DepthValueVert;
     float depthOffset = -11f;
-    float depthMathTotal;
+    public float depthMathTotal;
     void Start()
     {
         DepthMeterText = GameObject.Find("DepthMeter").GetComponent<TextMeshProUGUI>();
@@ -124,7 +124,7 @@ public class BoatSliderScript : MonoBehaviour
             depthMathTotal = depthOffset + callBoatSliderScriptOfHookVertical.DepthValueVert;
             DepthMeterText.color = new Color(1, 1, 1, 1);
             DepthMeterText.text = "Depth (meters): " + depthMathTotal.ToString("F1");
-            if(depthMathTotal <= -260)
+            if(depthMathTotal <= -230)
             {
                 DepthMeterText.text = "Warning! Depth Limit Reached! Reel Up!";
             }
