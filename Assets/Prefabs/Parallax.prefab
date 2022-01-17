@@ -18116,7 +18116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3943114656822016921, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3943114656924836343, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18189,6 +18189,10 @@ PrefabInstance:
     - target: {fileID: 8935125991112305571, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
       propertyPath: m_Size.y
       value: 44.116905
+      objectReference: {fileID: 0}
+    - target: {fileID: 8935125991112305571, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8935125991112305571, guid: 0faef29f0a67d0a468ecac4690203cd5, type: 3}
       propertyPath: m_Center.y
