@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 709717564203911704}
   - component: {fileID: 5433304588375642191}
   - component: {fileID: 1333158441067316756}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Piranha
   m_TagString: Fish
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 2341939686376205290}
   - component: {fileID: 2240174114467267567}
   - component: {fileID: 6238731737291048182}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fish GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

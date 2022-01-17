@@ -86,7 +86,7 @@ public class BaitScript : MonoBehaviour
         if (this.transform.childCount == 2)
         {
             currentBait = this.transform.GetChild(1).GetComponent<FishStats>().fishStats.baitLevel + 1;
-            currentBait = Mathf.Clamp(currentBait, 0, 3);
+            currentBait = Mathf.Clamp(currentBait, 0, 4);
         }
         else
         {
