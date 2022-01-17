@@ -8,12 +8,17 @@ public class CreatePauseMenuScript : MonoBehaviour
     InputAction actionEscape;
     GameObject pauseCanvas;
     public bool SetPause;
+    public bool thisIsRealPauseMenu;
     void Awake()
     {
         getKey = new TheJoyofFishing();
         actionEscape = getKey.EscapeToPause.Pause;
         pauseCanvas = GameObject.Find("PauseCanvas");
-        pauseCanvas.SetActive(false);
+        if (thisIsRealPauseMenu)
+        {
+            pauseCanvas.SetActive(false);
+        }
+
     }
 
 

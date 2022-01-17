@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public sealed class GameManager : MonoBehaviour
@@ -16,7 +17,7 @@ public sealed class GameManager : MonoBehaviour
     BoatScript boatScript;
 
     public int currentLineLevel = 0, currentBait = 0;
-
+    public float currentTime = 0f;
     private void Awake()
     {
         if (instance == null)
@@ -60,6 +61,10 @@ public sealed class GameManager : MonoBehaviour
         if (moveCam == 3 && baitCam == true)
         {
             BaitCam();
+            if(currentTime >= 3f)
+            {
+                SceneManager.LoadScene("End Scene");
+            }
         }
 
     }
@@ -108,16 +113,17 @@ public sealed class GameManager : MonoBehaviour
     } 
     private IEnumerator FadeOutCR()
     {
-        float duration = 1f; //0.5 secs
-        float currentTime = 0f;
-        while(currentTime < duration)
+        float duration = 3f; //0.5 secs
+        currentTime = 0f;
+        FadeCanvas.SetActive(true);
+        while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
             float alpha = Mathf.MoveTowards(0f, 1f, currentTime/duration);
             Fadeimage.color = new Color(Fadeimage.color.r, Fadeimage.color.g, Fadeimage.color.b, alpha);
         }
-        FadeCanvas.SetActive(true);
         yield break;
+
     }
 
     private IEnumerator FadeInCR()
