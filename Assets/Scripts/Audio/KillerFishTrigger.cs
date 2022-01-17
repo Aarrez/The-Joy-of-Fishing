@@ -30,7 +30,7 @@ public class KillerFishTrigger : MonoBehaviour
                 if (goingUp)
                 {
                     light.intensity += changePerSecond * Time.deltaTime;
-                    if (light.intensity > 0.6)
+                    if (light.intensity > 0.8)
                     {
                         goingUp = false;
                     }

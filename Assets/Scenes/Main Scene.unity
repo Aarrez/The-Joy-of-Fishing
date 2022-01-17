@@ -3100,6 +3100,26 @@ PrefabInstance:
       propertyPath: insertCamera
       value: 
       objectReference: {fileID: 1485656630}
+    - target: {fileID: 959794837, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.325
+      objectReference: {fileID: 0}
+    - target: {fileID: 959794837, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_LightVolumeIntensity
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 959794837, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 16.28959
+      objectReference: {fileID: 0}
+    - target: {fileID: 959794837, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 130.31683
+      objectReference: {fileID: 0}
+    - target: {fileID: 959794837, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_LightVolumeIntensityEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1419649679062394681, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
