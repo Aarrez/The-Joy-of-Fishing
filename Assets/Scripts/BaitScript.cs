@@ -11,6 +11,8 @@ public class BaitScript : MonoBehaviour
 {
     private FMOD.Studio.EventInstance fishHookedInstance;
 
+    private int FishNumber = 0;
+
     [SerializeField] private BaitScriptAbleObject[] bait;
 
     [SerializeField] private int currentBait;
@@ -27,7 +29,7 @@ public class BaitScript : MonoBehaviour
 
     private void OnEnable()
     {
-        BaitLevel += delegate() { return bait[currentBait].baitLevel; };
+        BaitLevel += delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(true);
 
         FishOnHook += ChangeBaitLevel;
@@ -37,7 +39,7 @@ public class BaitScript : MonoBehaviour
 
     private void OnDisable()
     {
-        BaitLevel -= delegate() { return bait[currentBait].baitLevel; };
+        BaitLevel -= delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(false);
 
         FishOnHook -= ChangeBaitLevel;
@@ -59,11 +61,6 @@ public class BaitScript : MonoBehaviour
             }
 
             collision.transform.parent = this.transform;
-            if (this.transform.childCount == 3)
-            {
-                Destroy(this.transform.GetChild(1).gameObject);
-                GetComponentInChildren<ParticleSystem>().Play();
-            }
 
             for (int i = 0; i < this.transform.childCount; i++)
             {
@@ -76,19 +73,33 @@ public class BaitScript : MonoBehaviour
                     FishOnHook?.Invoke();
                 }
             }
+            if (this.transform.childCount == 3)
+            {
+                Destroy(this.transform.GetChild(1).gameObject);
+                GetComponentInChildren<ParticleSystem>().Play();
+            }
         }
     }
 
     private void ChangeBaitLevel()
     {
-        if (this.transform.childCount > 1)
+        if (this.transform.childCount == 2)
         {
             currentBait = this.transform.GetChild(1).GetComponent<FishStats>().fishStats.baitLevel + 1;
+            currentBait = Mathf.Clamp(currentBait, 0, 3);
         }
         else
         {
+            currentBait = this.transform.GetChild(2).GetComponent<FishStats>().fishStats.baitLevel + 1;
+            currentBait = Mathf.Clamp(currentBait, 0, 4);
+        }
+        
+        
+        if (this.transform.childCount == 1)
+        {
             currentBait = 0;
         }
+        Debug.Log("BaitLevel: " + currentBait);
     }
 
     private void PlaySound()
