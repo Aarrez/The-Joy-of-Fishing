@@ -8,12 +8,14 @@ public class WaterSurface : MonoBehaviour
    [SerializeField] private bool hookSubmerged = false; //Hook is under the watersurface
 
     private FMOD.Studio.EventInstance splashEvent;
+    private BoatSliderScript boatSliderScript;
     
     //water ambience MOVE ME TO BETTER PLACE LATER?
     private FMOD.Studio.EventInstance lakeAmbienceEvent;
 
     private void Awake()
     {
+        boatSliderScript = FindObjectOfType<BoatSliderScript>();
         splashEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         splashEvent = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/hook_splash");
         //splashEvent.start();
@@ -26,17 +28,17 @@ public class WaterSurface : MonoBehaviour
     {
         if (hookSubmerged)
         {
-            lakeAmbienceEvent.setParameterByName("Pause", 1);
+            lakeAmbienceEvent.setParameterByName("music_duck", 1);
         }
         else
         {
-            lakeAmbienceEvent.setParameterByName("Pause", 0); //not paused
+            lakeAmbienceEvent.setParameterByName("music_duck", 0); //not paused
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other) //WaterSurface need to be BaitLayer. This ok?
     {
-        if (other.gameObject.CompareTag("Bait"))
+        if (other.gameObject.CompareTag("Bait") && boatSliderScript.depthMathTotal > -0.5f)
         {
             // For play lake ambience, maybe move me lateR?
             hookSubmerged = !hookSubmerged; //swap bool mode
@@ -56,8 +58,8 @@ public class WaterSurface : MonoBehaviour
                 // Using Attatch the sound will stay on target.
                 // To3DAttributes is like playOneShot. It is at that position once. not updated
                 
-                splashEvent.start();
                 splashEvent.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(other.gameObject));
+                splashEvent.start();
                
                 // No need to release this from memory. It is 1 sound played once at times.
             }

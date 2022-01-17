@@ -29,7 +29,7 @@ public class BoatSliderScript : MonoBehaviour
     TextMeshProUGUI DepthMeterText;
     public float DepthValueVert;
     float depthOffset = -11f;
-    float depthMathTotal;
+    public float depthMathTotal;
     void Start()
     {
         DepthMeterText = GameObject.Find("DepthMeter").GetComponent<TextMeshProUGUI>();
