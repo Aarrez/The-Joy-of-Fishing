@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.56
+  radius: 0.47
   height: 2
   canMove: 1
   maxSpeed: 5
@@ -150,7 +150,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.34361386, y: 1.2639008}
+  m_Size: {x: 0.25, y: 0.84}
   m_Direction: 0
 --- !u!50 &1001055594967423135
 Rigidbody2D:
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.92015034
+  m_Mass: 0.4423216
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
