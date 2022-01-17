@@ -14,6 +14,9 @@ public sealed class GameManager : MonoBehaviour
     [HideInInspector] public bool baitCam;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
     BoatScript boatScript;
+
+    public int currentLineLevel = 0, currentBait = 0;
+
     private void Awake()
     {
         if (instance == null)
