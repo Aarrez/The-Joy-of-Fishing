@@ -51,12 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e718ba05e51a7a4ca166f7825e8df74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CMcam: {fileID: 4962793760303239590}
-  moveCam: 1
-  baitCam: 0
-  ShoppeBoat: {fileID: 0}
-  Player: {fileID: 0}
-  Hook: {fileID: 0}
+  currentLineLevel: 0
+  currentBait: 0
+  currentTime: 0
   Fadeimage: {fileID: 8303227968655155172}
   FadeCanvas: {fileID: 4962793761883621277}
 --- !u!222 &234532257306780616
@@ -88,6 +85,60 @@ Canvas:
   m_SortingLayerID: 1015922365
   m_SortingOrder: 22
   m_TargetDisplay: 0
+--- !u!1 &1516124689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516124690}
+  - component: {fileID: 1516124691}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1516124690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516124689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3498249390951015349}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516124691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516124689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc2c1c2aa843a2fda696805a8a3a406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CMcam: {fileID: 4962793760303239590}
+  moveCam: 1
+  baitCam: 0
+  ShoppeBoat: {fileID: 0}
+  Player: {fileID: 0}
+  Hook: {fileID: 0}
+  CMcamOrthoSize: 0
+  currentTime: 0
+  Buttontext: {fileID: 0}
+  ShopUIAnimator: {fileID: 0}
 --- !u!1 &4962793760303239608
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +151,6 @@ GameObject:
   - component: {fileID: 4962793760303239590}
   - component: {fileID: 8388405802348014933}
   - component: {fileID: 603671712848768501}
-  - component: {fileID: 4962793760973506361}
   - component: {fileID: 4962793760973506366}
   - component: {fileID: 4671279205441373199}
   m_Layer: 6
@@ -155,7 +205,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9377162, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0
@@ -186,18 +236,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4962793760973506361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4962793760303239608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a66c2036a87cda3479cb3ef1bde53c3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4962793760973506366
@@ -468,7 +506,6 @@ GameObject:
   - component: {fileID: 4962793762173381915}
   - component: {fileID: 4962793762173381917}
   - component: {fileID: 4962793762173381918}
-  - component: {fileID: 5131595419220294455}
   m_Layer: 0
   m_Name: Pixel Perfect Camera
   m_TagString: MainCamera
@@ -602,29 +639,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5131595419220294455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4962793762173381919}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_AssetsPPU: 16
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
-  m_CropFrame: 0
-  m_GridSnapping: 0
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!1 &5105503721067358441
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +716,7 @@ Transform:
   - {fileID: 4962793762173381914}
   - {fileID: 1825911149388414358}
   - {fileID: 1406257041443001939}
+  - {fileID: 1516124690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -102,7 +102,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "1.15.7",
+      "version": "1.15.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -133,7 +133,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.9",
+      "version": "3.0.10",
       "depth": 0,
       "source": "registry",
       "dependencies": {

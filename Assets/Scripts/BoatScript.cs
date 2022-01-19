@@ -177,9 +177,9 @@ public class BoatScript : MonoBehaviour
             //sets its destiny
             curHook.GetComponent<RopeScript>().destiny = destiny;
 
-            GameManager.instance.Hook = curHook.transform;
-            GameManager.instance.baitCam = true;
-            GameManager.instance.moveCam = 3;
+            UIManager.instance.Hook = curHook.transform;
+            UIManager.instance.baitCam = true;
+            UIManager.instance.moveCam = 3;
             //sets rope to enabled
             ropeActive = true;
         }
@@ -194,8 +194,8 @@ public class BoatScript : MonoBehaviour
     public void DeleteRope()
     {
         Destroy(curHook);
-        GameManager.instance.baitCam = false;
-        GameManager.instance.moveCam = 1;
+        UIManager.instance.baitCam = false;
+        UIManager.instance.moveCam = 1;
         //sets rope to disabled
         ropeActive = false;
 

@@ -10,12 +10,10 @@ public class EnableOnStartupScript : MonoBehaviour
     public GameObject PauseCanvas;
     public GameObject CallButton;
     public GameObject GoFishButton;
-    public GameObject ControlPanel;
     [SerializeField] GameObject CoolDownUIText;
     public GameObject NodesCountUI;
     TextMeshProUGUI NodesCountText;
     TextMeshProUGUI CoolDownText;
-    bool controlPanelBool;
     PlayerScript callPlayerScript;
     bool cache;
     float cacheTimeElapsed;
@@ -25,7 +23,6 @@ public class EnableOnStartupScript : MonoBehaviour
     {
         CreatePauseMenu.SetActive(true);
         GetC = CreatePauseMenu.GetComponent<CreatePauseMenuScript>();
-        ControlPanel.SetActive(false);
         CoolDownText = CoolDownUIText.GetComponent<TextMeshProUGUI>();
         NodesCountText = NodesCountUI.GetComponent<TextMeshProUGUI>();
         NodesCountUI.SetActive(false);
@@ -44,7 +41,7 @@ public class EnableOnStartupScript : MonoBehaviour
             PauseCanvas.SetActive(false);
         }
 
-        if(GameManager.instance.moveCam == 3) //cam following fishing hook, underwater
+        if(UIManager.instance.moveCam == 3) //cam following fishing hook, underwater
         {
             CallButton.SetActive(false);
             GoFishButton.SetActive(false);
@@ -93,7 +90,7 @@ public class EnableOnStartupScript : MonoBehaviour
 
 
         }
-        else { CallButton.SetActive(true); NodesCountUI.SetActive(false); CoolDownText.color = new Color(1, 1, 1, 0);
+/*        else { CallButton.SetActive(true); NodesCountUI.SetActive(false); CoolDownText.color = new Color(1, 1, 1, 0);
 
             if (!callPlayerScript)
             {
@@ -107,19 +104,19 @@ public class EnableOnStartupScript : MonoBehaviour
 
 
 
-        if(GameManager.instance.moveCam == 1) //cam following player, overwater
+        if(UIManager.instance.moveCam == 1) //cam following player, overwater
         {
             GoFishButton.SetActive(true);
         }
 
-        if(GameManager.instance.moveCam == 2) //cam following shop
+        if(UIManager.instance.moveCam == 2) //cam following shop
         {
             GoFishButton.SetActive(false);
 
-        }
+        }*/
     }
 
-    public void ClickToEnableControlPanel()
+   /* public void ClickToEnableControlPanel()
     {
         if(controlPanelBool == false)
         {
@@ -140,5 +137,5 @@ public class EnableOnStartupScript : MonoBehaviour
     {
         ControlPanel.SetActive(false);
         controlPanelBool = false;
-    }
+    }*/
 }
