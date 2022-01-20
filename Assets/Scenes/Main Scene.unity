@@ -3090,15 +3090,15 @@ PrefabInstance:
       propertyPath: CreatePauseMenu
       value: 
       objectReference: {fileID: 434496383}
-    - target: {fileID: 1516124691, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+    - target: {fileID: 315441937, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: Buttontext
       value: 
       objectReference: {fileID: 2080769012}
-    - target: {fileID: 1516124691, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+    - target: {fileID: 315441937, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: radioMusic
       value: 
       objectReference: {fileID: 1003348074}
-    - target: {fileID: 1516124691, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+    - target: {fileID: 315441937, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
       propertyPath: ShopUIAnimator
       value: 
       objectReference: {fileID: 1555456861}

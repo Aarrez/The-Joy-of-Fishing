@@ -51,6 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e718ba05e51a7a4ca166f7825e8df74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CMcam: {fileID: 4962793760303239590}
+  radioMusic: {fileID: 0}
+  moveCam: 1
+  baitCam: 0
+  ShoppeBoat: {fileID: 0}
+  Player: {fileID: 0}
+  Hook: {fileID: 0}
+  CMcamOrthoSize: 0
+  Buttontext: {fileID: 0}
+  ShopUIAnimator: {fileID: 0}
   currentLineLevel: 0
   currentBait: 0
   cashAmount: 0
@@ -130,17 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc2c1c2aa843a2fda696805a8a3a406, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CMcam: {fileID: 4962793760303239590}
-  radioMusic: {fileID: 0}
-  moveCam: 1
-  baitCam: 0
-  ShoppeBoat: {fileID: 0}
-  Player: {fileID: 0}
-  Hook: {fileID: 0}
-  CMcamOrthoSize: 0
-  currentTime: 0
-  Buttontext: {fileID: 0}
-  ShopUIAnimator: {fileID: 0}
 --- !u!1 &4962793760303239608
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +205,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.618421, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0
