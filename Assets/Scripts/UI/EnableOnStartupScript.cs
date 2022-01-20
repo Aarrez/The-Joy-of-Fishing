@@ -41,7 +41,7 @@ public class EnableOnStartupScript : MonoBehaviour
             PauseCanvas.SetActive(false);
         }
 
-        if(UIManager.instance.moveCam == 3) //cam following fishing hook, underwater
+        if(GameManager.instance.moveCam == 3) //cam following fishing hook, underwater
         {
             CallButton.SetActive(false);
             GoFishButton.SetActive(false);
@@ -104,12 +104,12 @@ public class EnableOnStartupScript : MonoBehaviour
 
 
 
-        if(UIManager.instance.moveCam == 1) //cam following player, overwater
+        if(GameManager.instance.moveCam == 1) //cam following player, overwater
         {
             GoFishButton.SetActive(true);
         }
 
-        if(UIManager.instance.moveCam == 2) //cam following shop
+        if(GameManager.instance.moveCam == 2) //cam following shop
         {
             GoFishButton.SetActive(false);
 

@@ -12,7 +12,7 @@ public class logoreactionscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UIManager.instance.moveCam == 3 || UIManager.instance.moveCam == 2)
+        if (GameManager.instance.moveCam == 3 || GameManager.instance.moveCam == 2)
         {
             StartCoroutine("ActiveLogo");
         }

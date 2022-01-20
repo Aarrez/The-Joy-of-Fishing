@@ -49,7 +49,7 @@ public class PlayerScript : MonoBehaviour
 
         if (cPauseScript.SetPause == false)
         {
-            if (UIManager.instance.moveCam == 3)
+            if (GameManager.instance.moveCam == 3)
             {
 
                 elapsed -= Time.deltaTime;
