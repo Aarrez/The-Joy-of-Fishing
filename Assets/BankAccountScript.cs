@@ -30,20 +30,21 @@ public class BankAccountScript : MonoBehaviour
 
         if (GameManager.instance.moveCam != 3 && thisIs1)
         {
-            BankText.text = "Dolluh$: " + callMoneyEffectScript.totalMoney.ToString() + "c";
+            BankText.text = "Savings: " + callMoneyEffectScript.totalMoney.ToString() + "c";
         }
         //else if (GameManager.instance.moveCam == 3)
         //{
         //    BankText.text = "";
         //}
 
-        if (GameManager.instance.moveCam != 3 && thisIs2)
+        if (GameManager.instance.moveCam != 3 && thisIs2 && callMoneyEffectScript.totalMoney > 0)
         {
             elapsed += Time.deltaTime;
-            BankText.text = "Geebers";
+            BankText.text = "Golly, you got fish! " + callMoneyEffectScript.fractionMoney + " COINERS";
             thisIs2rb.velocity = new Vector2(0, 1);
             if(elapsed >= 3 && elapsed <= 6)
             {
+                BankText.color = new Color(1, 1, 1, 0);
                 thisIs2rb.velocity = new Vector2(0, -1);
             }
             if(elapsed > 6)
@@ -51,7 +52,11 @@ public class BankAccountScript : MonoBehaviour
                 thisIs2rb.velocity = Vector2.zero;
             }
 
-            Debug.Log("elapsed" + elapsed);
+            //Debug.Log("elapsed" + elapsed);
+        }else if (GameManager.instance.moveCam == 3 && thisIs2)
+        {
+            elapsed = 0f;
+            Debug.Log("elapsed reset to: " + elapsed);
         }
         ////else if (GameManager.instance.moveCam == 3)
         ////{

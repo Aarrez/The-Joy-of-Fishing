@@ -10,6 +10,7 @@ public class MoneyEffect : MonoBehaviour
     private GameObject FishCollector;
 
     public uint totalMoney = 0;
+    public uint fractionMoney = 0;
 
     private bool hookedFish = false;
 
@@ -72,8 +73,11 @@ public class MoneyEffect : MonoBehaviour
         foreach(uint value in b)
         {
             totalMoney += value;
+            fractionMoney = value;
+            Debug.Log("Fractiopmoney; " + fractionMoney);
         }
         Debug.Log(totalMoney);
+
 
         coinParticle[a].Play();
         PlaySound(a);
