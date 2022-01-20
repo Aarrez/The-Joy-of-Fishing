@@ -17,6 +17,7 @@ TagManager:
   - PlayerRod
   - ShopItem
   - Hook
+  - FishCollective
   layers:
   - Default
   - TransparentFX

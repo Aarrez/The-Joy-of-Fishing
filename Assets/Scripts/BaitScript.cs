@@ -108,7 +108,7 @@ public class BaitScript : MonoBehaviour
         {
             if (CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel < LowestBaitLevel)
             {
-                LowestBaitLevel = CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
+                LowestBaitLevel = i;
             }
         }
         Destroy(CollectiveFish.transform.GetChild(LowestBaitLevel).gameObject);
@@ -122,7 +122,7 @@ public class BaitScript : MonoBehaviour
         {
             if (CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel > highesBaitLevel)
             {
-                highesBaitLevel = CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
+                highesBaitLevel = i;
             }
         }
         
