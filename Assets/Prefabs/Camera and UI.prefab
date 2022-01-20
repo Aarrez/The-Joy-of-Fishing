@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLineLevel: 0
   currentBait: 0
+  cashAmount: 0
   currentTime: 0
   Fadeimage: {fileID: 8303227968655155172}
   FadeCanvas: {fileID: 4962793761883621277}
@@ -130,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CMcam: {fileID: 4962793760303239590}
+  radioMusic: {fileID: 0}
   moveCam: 1
   baitCam: 0
   ShoppeBoat: {fileID: 0}
@@ -149,7 +151,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4962793760303239591}
   - component: {fileID: 4962793760303239590}
-  - component: {fileID: 8388405802348014933}
   - component: {fileID: 603671712848768501}
   - component: {fileID: 4962793760973506366}
   - component: {fileID: 4671279205441373199}
@@ -205,7 +206,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 3.618421, y: 1}
   m_Transitions:
     m_BlendHint: 1
     m_InheritPosition: 0
@@ -214,18 +215,6 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4962793761902421645}
---- !u!114 &8388405802348014933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4962793760303239608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &603671712848768501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,6 +725,5 @@ MonoBehaviour:
   PauseCanvas: {fileID: 0}
   CallButton: {fileID: 0}
   GoFishButton: {fileID: 0}
-  ControlPanel: {fileID: 0}
   CoolDownUIText: {fileID: 0}
   NodesCountUI: {fileID: 0}

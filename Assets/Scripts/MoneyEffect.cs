@@ -5,8 +5,6 @@ public class MoneyEffect : MonoBehaviour
 {
     private FMOD.Studio.EventInstance fishGetInstance;
     private FMOD.Studio.EventInstance coinsInstance;
-    
-    
     [SerializeField] private ParticleSystem[] coinParticle;
 
     private GameObject FishCollector;
@@ -57,14 +55,18 @@ public class MoneyEffect : MonoBehaviour
         if (!hookedFish || FishCollector.transform.childCount == 0) { return; }
         
         int a = 0;
+        int b = 0;
         for (int i = 0; i < FishCollector.transform.childCount; i++)
         {
             if (FishCollector.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel > a)
             {
                 a = FishCollector.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
+                b = FishCollector.transform.GetChild(i).GetComponent<FishStats>().fishStats.value;
             }
         }
         Debug.Log(a);
+        Debug.Log(b);
+
 
         coinParticle[a].Play();
         PlaySound(a);

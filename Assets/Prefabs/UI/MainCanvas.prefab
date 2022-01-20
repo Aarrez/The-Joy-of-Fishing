@@ -926,7 +926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -575, y: 139.9975}
+  m_AnchoredPosition: {x: -575.00006, y: 139.9975}
   m_SizeDelta: {x: -1150, y: -280.005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &824158144
@@ -1459,6 +1459,7 @@ GameObject:
   - component: {fileID: 2115402442}
   - component: {fileID: 2115402440}
   - component: {fileID: 4814166237715110243}
+  - component: {fileID: 1555456864}
   m_Layer: 0
   m_Name: Shop Canvas
   m_TagString: Untagged
@@ -1545,6 +1546,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1555456864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115402438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35eebee4413a2d32394d29c4ee0bbad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2852961140130028214
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,10 +3527,14 @@ PrefabInstance:
     - target: {fileID: 2373523335838637462, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5861164604636302331, guid: f22d4fc75ffe8f24a84d3afa9ea67006, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2373523335838637462, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: onButtonnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373523335838637462, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2373523335838637463, guid: 470f4854c8401e64cbf8f7a605d142f1, type: 3}
       propertyPath: m_PreserveAspect

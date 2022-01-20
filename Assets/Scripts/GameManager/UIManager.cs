@@ -9,10 +9,10 @@ using TMPro;
 public sealed class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static UIManager instance;
+    public static UIManager instance = null;
     public CinemachineVirtualCamera CMcam;
     CinemachineFramingTransposer CMcamBody;
-    private RadioMusic radioMusic;
+    public RadioMusic radioMusic;
     [HideInInspector] public int moveCam = 1;
     [HideInInspector] public bool baitCam;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
@@ -114,7 +114,7 @@ private void Awake()
         }
     }
 
-        public void ChangeInteger()
+    public void ChangeInteger()
     {
         moveCam = 2;
     }
@@ -139,7 +139,7 @@ private void Awake()
     public void BaitCam()
     {
         Transform currenthook;
-        currenthook = GameObject.Find("Hook(Clone)").GetComponent<Transform>();
+        currenthook = GameObject.FindGameObjectWithTag("Bait").GetComponent<Transform>();
             CMcam.Follow = currenthook;
             CMcamBody.m_TrackedObjectOffset.y = 0;
     }

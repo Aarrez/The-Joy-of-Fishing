@@ -22,7 +22,7 @@ public class Fish : ScriptableObject
     public float length;
 
     [Tooltip("The amount of money you get when the fish is sold")]
-    public float value = 10f;
+    public int value = 10;
 
     public float baitAttractionRadius = 10f;
 

@@ -8,10 +8,10 @@ using UnityEngine.SceneManagement;
 
 public sealed class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager instance = null;
 
 
-    public int currentLineLevel = 0, currentBait = 0;
+    public int currentLineLevel = 0, currentBait = 0, cashAmount = 0;
     public float currentTime = 0f;
     private void Awake()
     {
