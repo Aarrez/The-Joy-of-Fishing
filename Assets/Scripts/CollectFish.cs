@@ -15,16 +15,20 @@ public class CollectFish : MonoBehaviour
 
     private bool CanCatchFish = false;
 
+    public static event System.Action DoneCollecting;
+
     private void OnEnable()
     {
         BaitScript.BaitIsOut += FindHookAndInventory;
         MoneyEffect.DeleteFish += ClearFishCollection;
+        BoatScript.DoneFishing += AddFishToInventory;
     }
 
     private void OnDisable()
     {
         BaitScript.BaitIsOut -= FindHookAndInventory;
         MoneyEffect.DeleteFish -= ClearFishCollection;
+        BoatScript.DoneFishing -= AddFishToInventory;
     }
 
     private void FindHookAndInventory(bool bait)
@@ -49,24 +53,18 @@ public class CollectFish : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void AddFishToInventory()
     {
-        if (!CanCatchFish) { return; }
-
-        float dist = Vector3.Distance(this.transform.position, hook.position);
-        if (dist < distToCollectFish)
+        for (int i = 0; i < hook.childCount; i++)
         {
-            for (int i = 0; i < hook.childCount; i++)
+            if (hook.GetChild(i).CompareTag("Fish"))
             {
-                if (hook.GetChild(i).CompareTag("Fish"))
-                {
-                    hook.GetChild(i).gameObject.SetActive(false);
-                    hook.GetChild(i).parent = fishInventory;
-                    BaitScript.FishOfHook?.Invoke();
-                }
+                hook.GetChild(i).gameObject.SetActive(false);
+                hook.GetChild(i).parent = fishInventory;
+                BaitScript.FishOfHook?.Invoke();
             }
-           
         }
+        DoneCollecting?.Invoke();
     }
 
     private void ClearFishCollection()

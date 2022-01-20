@@ -18,6 +18,7 @@ public class FishStats : MonoBehaviour
 
         sprRend.color = fishStats.fishColor;
 
+
         GetComponentInChildren<Animator>().runtimeAnimatorController = fishStats.animatorController;
         GetComponentInChildren<Animator>().SetBool("Moveing", true);
     }

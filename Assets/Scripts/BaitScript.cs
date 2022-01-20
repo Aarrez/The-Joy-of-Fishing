@@ -11,8 +11,6 @@ public class BaitScript : MonoBehaviour
 {
     private FMOD.Studio.EventInstance fishHookedInstance;
 
-    private int FishNumber = 0;
-
     [SerializeField] private BaitScriptAbleObject[] bait;
 
     [SerializeField] private int currentBait;
@@ -25,6 +23,7 @@ public class BaitScript : MonoBehaviour
     public static event Action<bool> BaitIsOut;
 
     public static Action FishOnHook;
+
     public static Action FishOfHook;
 
     private void OnEnable()

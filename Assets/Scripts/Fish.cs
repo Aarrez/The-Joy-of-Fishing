@@ -22,7 +22,7 @@ public class Fish : ScriptableObject
     public float length;
 
     [Tooltip("The amount of money you get when the fish is sold")]
-    public float value = 10f;
+    public uint value = 10;
 
     public float baitAttractionRadius = 10f;
 
@@ -41,7 +41,8 @@ public class Fish : ScriptableObject
 
     private void CheckValue()
     {
-        float wlValue = weight + length;
+        var wlValue = weight + length;
+        value = (uint)wlValue;
         switch (wlValue)
         {
             case <= 30f:
