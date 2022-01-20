@@ -15,7 +15,7 @@ public sealed class GameManager : MonoBehaviour
     CinemachineFramingTransposer CMcamBody;
     public RadioMusic radioMusic;
     [HideInInspector] public int moveCam = 1;
-    [HideInInspector] public bool baitCam;
+    [HideInInspector] public bool baitCam = false;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
     [HideInInspector] public float CMcamOrthoSize;
     BoatScript boatScript;
@@ -103,6 +103,7 @@ public sealed class GameManager : MonoBehaviour
                 {
                     CMcam.Follow = BaitCam();
                     CMcamBody.m_TrackedObjectOffset.y = 0;
+                    baitCam = true;
                 }
             if(currentTime >= 3f)
             {
@@ -112,7 +113,7 @@ public sealed class GameManager : MonoBehaviour
 
     }
 
-    public void onButtonnClick()
+    public void onShopSwitch()
     {
         if (moveCam == 1) // ShopCamFalse
         {
