@@ -11,10 +11,13 @@ public class CollectFish : MonoBehaviour
 
     private Transform fishInventory;
 
+    private GameObject fishCollective;
+
     [SerializeField] private float distToCollectFish = 5f;
 
     private bool CanCatchFish = false;
 
+    //Used in CollectFish and MoneyEffect
     public static event System.Action DoneCollecting;
 
     private void OnEnable()
@@ -55,12 +58,13 @@ public class CollectFish : MonoBehaviour
 
     private void AddFishToInventory()
     {
-        for (int i = 0; i < hook.childCount; i++)
+        fishCollective = GameObject.FindGameObjectWithTag("FishCollective");
+        for (int i = 0; i < fishCollective.transform.childCount; i++)
         {
-            if (hook.GetChild(i).CompareTag("Fish"))
+            if (fishCollective.transform.GetChild(i).CompareTag("Fish"))
             {
-                hook.GetChild(i).gameObject.SetActive(false);
-                hook.GetChild(i).parent = fishInventory;
+                fishCollective.transform.GetChild(i).gameObject.SetActive(false);
+                fishCollective.transform.GetChild(i).parent = fishInventory;
                 BaitScript.FishOfHook?.Invoke();
             }
         }

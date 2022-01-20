@@ -15,19 +15,26 @@ public class BaitScript : MonoBehaviour
 
     [SerializeField] private int currentBait;
 
-    [SerializeField] private GameObject BloodParticules;
+    //private FishStats stats;
 
+    private GameObject CollectiveFish;
+
+    //Used in BaitScrip and MoveAi
     public static Func<int> BaitLevel;
 
-    //Used to get in ColletFish and in MoveAi to get when the bait is out.
+    //Used in BaitScript, CollectFish, MoneyEffect and MoveAi
     public static event Action<bool> BaitIsOut;
 
+    //Used in BaitScript and MoneyEffect
     public static Action FishOnHook;
 
+    //Used in BaitScript and CollectFish
     public static Action FishOfHook;
 
     private void OnEnable()
     {
+        AddFishCollective();
+
         BaitLevel += delegate () { return bait[currentBait].baitLevel; };
         BaitIsOut(true);
 
@@ -48,56 +55,83 @@ public class BaitScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Fish"))
+        #region Return if:s
+
+        if (!collision.collider.CompareTag("Fish")) { return; }
+
+        if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait) { return; }
+
+        #endregion Return if:s
+
+        //stats = collision.transform.GetComponent<FishStats>();
+
+        collision.transform.parent = CollectiveFish.transform;
+
+        AddFishToHook();
+
+        if (CollectiveFish.transform.childCount == 3)
         {
-            if (collision.transform.GetComponent<FishStats>().fishStats.baitLevel != currentBait)
-            {
-                return;
-            }
-            else if (this.transform.childCount > 2)
-            {
-                return;
-            }
+            FishEatFish();
+        }
+    }
 
-            collision.transform.parent = this.transform;
+    private void AddFishCollective()
+    {
+        CollectiveFish = new GameObject();
+        CollectiveFish.transform.parent = this.transform;
+        CollectiveFish.tag = "FishCollective";
+        CollectiveFish.name = "Collective";
+        CollectiveFish.transform.position = Vector3.zero;
+    }
 
-            for (int i = 0; i < this.transform.childCount; i++)
+    private void AddFishToHook()
+    {
+        for (int i = 0; i < CollectiveFish.transform.childCount; i++)
+        {
+            if (CollectiveFish.transform.GetChild(i).CompareTag("Fish"))
             {
-                if (this.transform.GetChild(i).CompareTag("Fish"))
-                {
-                    this.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
-                    this.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
-                    this.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
-                    this.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
-                    FishOnHook?.Invoke();
-                }
-            }
-            if (this.transform.childCount == 3)
-            {
-                Destroy(this.transform.GetChild(1).gameObject);
-                GetComponentInChildren<ParticleSystem>().Play();
+                CollectiveFish.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
+                CollectiveFish.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
+                CollectiveFish.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
+                CollectiveFish.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
+                FishOnHook?.Invoke();
             }
         }
     }
 
+    private void FishEatFish()
+    {
+        int LowestBaitLevel = 0;
+        for (int i = 0; i < CollectiveFish.transform.childCount; i++)
+        {
+            if (CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel < LowestBaitLevel)
+            {
+                LowestBaitLevel = CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
+            }
+        }
+        Destroy(CollectiveFish.transform.GetChild(LowestBaitLevel).gameObject);
+        GetComponentInChildren<ParticleSystem>().Play();
+    }
+
     private void ChangeBaitLevel()
     {
-        if (this.transform.childCount == 2)
+        int highesBaitLevel = 0;
+        for (int i = 0; i < CollectiveFish.transform.childCount; i++)
         {
-            currentBait = this.transform.GetChild(1).GetComponent<FishStats>().fishStats.baitLevel + 1;
-            currentBait = Mathf.Clamp(currentBait, 0, 4);
-        }
-        else
-        {
-            currentBait = this.transform.GetChild(2).GetComponent<FishStats>().fishStats.baitLevel + 1;
-            currentBait = Mathf.Clamp(currentBait, 0, 4);
+            if (CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel > highesBaitLevel)
+            {
+                highesBaitLevel = CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
+            }
         }
         
-        
-        if (this.transform.childCount == 1)
+        currentBait = CollectiveFish.transform.GetChild(highesBaitLevel).GetComponent<FishStats>().fishStats.baitLevel + 1;
+        currentBait = Mathf.Clamp(currentBait, 0, 4);
+
+        if (CollectiveFish.transform.childCount == 0)
         {
             currentBait = 0;
         }
+
         Debug.Log("BaitLevel: " + currentBait);
     }
 

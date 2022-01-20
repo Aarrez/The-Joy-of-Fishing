@@ -65,9 +65,9 @@ public class MoneyEffect : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < b.Length; i++)
+        foreach(uint value in b)
         {
-            Debug.Log(b[i]);
+            Debug.Log(value);
         }
 
         coinParticle[a].Play();
