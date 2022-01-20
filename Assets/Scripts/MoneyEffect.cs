@@ -62,10 +62,9 @@ public class MoneyEffect : MonoBehaviour
             {
                 a = FishCollector.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
                 b = FishCollector.transform.GetChild(i).GetComponent<FishStats>().fishStats.value;
+                Debug.Log("bait level:" + a + "Value:" + b);
             }
         }
-        Debug.Log(a);
-        Debug.Log(b);
 
 
         coinParticle[a].Play();

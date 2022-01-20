@@ -19,6 +19,8 @@ public sealed class UIManager : MonoBehaviour
     [HideInInspector] public float CMcamOrthoSize;
     public float currentTime = 0f;
     BoatScript boatScript;
+
+    //public Transform currenthook;
     public TextMeshProUGUI Buttontext;
     public Animator ShopUIAnimator;
 
@@ -90,6 +92,15 @@ private void Awake()
         if (moveCam == 3 && baitCam == true)
         {
             BaitCam();
+                if (BaitCam() == null)
+                {
+                    Debug.Log("No BaitCam!");
+                }
+                else
+                {
+                    CMcam.Follow = BaitCam();
+                    CMcamBody.m_TrackedObjectOffset.y = 0;
+                }
             if(currentTime >= 3f)
             {
                 SceneManager.LoadScene("End Scene");
@@ -136,11 +147,10 @@ private void Awake()
         CMcamBody.m_TrackedObjectOffset.y = 3;
     }
 
-    public void BaitCam()
+    public Transform BaitCam()
     {
         Transform currenthook;
         currenthook = GameObject.FindGameObjectWithTag("Bait").GetComponent<Transform>();
-            CMcam.Follow = currenthook;
-            CMcamBody.m_TrackedObjectOffset.y = 0;
+        return currenthook;
     }
 }
