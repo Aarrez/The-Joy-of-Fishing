@@ -103,10 +103,9 @@ public class BaitScript : MonoBehaviour
 
     private void FishEatFish()
     {
-        
+        int LowestBaitLevel = 0;
         for (int i = 0; i < CollectiveFish.transform.childCount; i++)
         {
-            int LowestBaitLevel = 0;
             if (CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel < LowestBaitLevel)
             {
                 LowestBaitLevel = CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
