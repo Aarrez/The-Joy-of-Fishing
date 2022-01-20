@@ -37,7 +37,7 @@ public class OverworldParallaxScript : MonoBehaviour
 
         transform.position = new Vector3(startPos + xDistance, startPos + yoffset_select_all_objs_w_this_script + yDistance, transform.position.z) ;
 
-        if(UIManager.instance.moveCam == 3)
+        if(GameManager.instance.moveCam == 3)
         {
             SetXParallax = true;
             SetYParallax = false;

@@ -3,15 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Cinemachine;
+using TMPro;
 
 
 
 public sealed class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager instance = null;
+    public CinemachineVirtualCamera CMcam;
+    CinemachineFramingTransposer CMcamBody;
+    public RadioMusic radioMusic;
+    [HideInInspector] public int moveCam = 1;
+    [HideInInspector] public bool baitCam;
+    [HideInInspector] public Transform ShoppeBoat, Player, Hook;
+    [HideInInspector] public float CMcamOrthoSize;
+    BoatScript boatScript;
+    public TextMeshProUGUI Buttontext;
+    public Animator ShopUIAnimator;
 
 
-    public int currentLineLevel = 0, currentBait = 0;
+    public int currentLineLevel = 0, currentBait = 0, cashAmount = 0;
     public float currentTime = 0f;
     private void Awake()
     {
@@ -31,6 +43,118 @@ public sealed class GameManager : MonoBehaviour
     void Start()
     {
         UIScreenfadein();
+        ShoppeBoat = GameObject.Find("ShoppeBoat").GetComponent<Transform>();
+        Player = GameObject.Find("Player").GetComponent<Transform>();
+        boatScript = FindObjectOfType<BoatScript>();
+        CMcamBody = CMcam.GetCinemachineComponent<CinemachineFramingTransposer>();
+    }
+
+    void Update()
+    {
+        if (moveCam == 1)
+        {
+            CMcam.m_Lens.OrthographicSize += Time.deltaTime * 3;
+            if (CMcam.m_Lens.OrthographicSize >= 9)
+            {
+                CMcam.m_Lens.OrthographicSize = 9;
+            }
+
+            Buttontext.text = "Call shop";
+        }
+
+        else if (moveCam == 2)
+        {
+            CMcam.m_Lens.OrthographicSize -= Time.deltaTime * 3;
+            if (CMcam.m_Lens.OrthographicSize <= 5)
+            {
+                CMcam.m_Lens.OrthographicSize = 5;
+            }
+
+            Buttontext.text = "Return to fishing";
+        }
+
+        else if (moveCam == 3)
+        {
+            CMcam.m_Lens.OrthographicSize += Time.deltaTime * 3;
+            if (CMcam.m_Lens.OrthographicSize >= 9)
+            {
+                CMcam.m_Lens.OrthographicSize = 9;
+            }
+        }
+
+        if (moveCam == 2 && baitCam == false)
+        {
+            ShopCamTrue();
+        }
+
+        if (moveCam == 1 && baitCam == false)
+        {
+            ShopCamFalse();
+        }
+
+        if (moveCam == 3 && baitCam == true)
+        {
+            BaitCam();
+                if (BaitCam() == null)
+                {
+                    Debug.Log("No BaitCam!");
+                }
+                else
+                {
+                    CMcam.Follow = BaitCam();
+                    CMcamBody.m_TrackedObjectOffset.y = 0;
+                }
+            if(currentTime >= 3f)
+            {
+                SceneManager.LoadScene("End Scene");
+            }
+        }
+
+    }
+
+    public void onButtonnClick()
+    {
+        if (moveCam == 1) // ShopCamFalse
+        {
+            ChangeInteger(); // Change to shop cam
+            ShopUIAnimator.Play("ShopUIRollIn");
+            radioMusic.PlayRadio();
+        }
+        else if (moveCam == 2) // ShopCamTrue
+        {
+            ChangeIntegerAgain(); // Change to boat cam
+            ShopUIAnimator.Play("ShopUIRollOut");
+            radioMusic.StopRadio();
+        }
+    }
+
+        public void ChangeInteger()
+    {
+        moveCam = 2;
+    }
+
+    public void ChangeIntegerAgain()
+    {
+        moveCam = 1;
+    }
+
+    public void ShopCamTrue()
+    {
+        CMcam.Follow = ShoppeBoat;
+        CMcamBody.m_TrackedObjectOffset.y = 3;
+    }
+
+    public void ShopCamFalse()
+    {
+        CMcam.Follow = Player;
+        CMcamBody.m_TrackedObjectOffset.y = 3;
+    }
+
+    public Transform BaitCam()
+    {
+        Transform currenthook;
+        currenthook = GameObject.FindGameObjectWithTag("Bait").GetComponent<Transform>();
+        return currenthook;
     }
 
 
