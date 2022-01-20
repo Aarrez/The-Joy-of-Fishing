@@ -99,7 +99,7 @@ public class MoveAi : FishStats
             Wander();
         }
 
-        var x = transform.rotation.z < 0 ? base.sprRend.flipY = true : base.sprRend.flipY = false;
+        var x = transform.rotation.z < 0 ? base.transform.localScale = new Vector2(1,1) : base.transform.localScale = new Vector2(-1,1);
     }
 
     private void HookOut()
@@ -125,6 +125,6 @@ public class MoveAi : FishStats
             }
         }
 
-        var x = transform.rotation.z < 0 ? base.sprRend.flipY = true : base.sprRend.flipY = false;
+        var x = transform.rotation.z < 0 ? base.transform.localScale = new Vector2(1,1) : base.transform.localScale = new Vector2(-1,1);
     }
 }
