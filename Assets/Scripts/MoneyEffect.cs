@@ -9,9 +9,12 @@ public class MoneyEffect : MonoBehaviour
 
     private GameObject FishCollector;
 
+    private uint totalMoney = 0;
+
     private bool hookedFish = false;
 
     public static event System.Action DeleteFish;
+    public static event System.Func<uint> TheMoney;
 
     private void Awake()
     {
@@ -25,14 +28,15 @@ public class MoneyEffect : MonoBehaviour
 
     private void OnEnable()
     {
-        CollectFish.DoneCollecting += GetMoney;
+        CollectFish.DoneCollecting += EarnMoney;
         BaitScript.BaitIsOut += FindFishCollector;
         BaitScript.FishOnHook += IsFishOnHook;
+        TheMoney = delegate () { return totalMoney; };
     }
 
     private void OnDisable()
     {
-        CollectFish.DoneCollecting -= GetMoney;
+        CollectFish.DoneCollecting -= EarnMoney;
         BaitScript.BaitIsOut -= FindFishCollector;
         BaitScript.FishOnHook -= IsFishOnHook;
     }
@@ -49,7 +53,7 @@ public class MoneyEffect : MonoBehaviour
         FishCollector = GameObject.FindGameObjectWithTag("FishInventory");
     }
 
-    private void GetMoney()
+    private void EarnMoney()
     {
         if (FishCollector.transform.childCount == 0) { return; }
 
@@ -67,13 +71,15 @@ public class MoneyEffect : MonoBehaviour
 
         foreach(uint value in b)
         {
-            Debug.Log(value);
+            totalMoney += value;
         }
+        Debug.Log(totalMoney);
 
         coinParticle[a].Play();
         PlaySound(a);
 
         DeleteFish?.Invoke();
+        TheMoney?.Invoke();
     }
 
     private void PlaySound(int level)

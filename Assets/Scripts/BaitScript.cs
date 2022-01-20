@@ -15,8 +15,6 @@ public class BaitScript : MonoBehaviour
 
     [SerializeField] private int currentBait;
 
-    //private FishStats stats;
-
     private GameObject CollectiveFish;
 
     //Used in BaitScrip and MoveAi
@@ -63,16 +61,16 @@ public class BaitScript : MonoBehaviour
 
         #endregion Return if:s
 
-        //stats = collision.transform.GetComponent<FishStats>();
-
         collision.transform.parent = CollectiveFish.transform;
-
-        AddFishToHook();
-
-        if (CollectiveFish.transform.childCount == 3)
+        
+        if (CollectiveFish.transform.childCount == 2)
         {
             FishEatFish();
         }
+
+        AddFishToHook();
+
+        
     }
 
     private void AddFishCollective()
@@ -90,10 +88,14 @@ public class BaitScript : MonoBehaviour
         {
             if (CollectiveFish.transform.GetChild(i).CompareTag("Fish"))
             {
-                CollectiveFish.transform.GetChild(i).GetComponent<Collider2D>().enabled = false;
-                CollectiveFish.transform.GetChild(i).GetComponent<MoveAi>().enabled = false;
-                CollectiveFish.transform.GetChild(i).GetComponent<Pathfinding.AIPath>().enabled = false;
-                CollectiveFish.transform.GetChild(i).GetComponent<Rigidbody2D>().isKinematic = true;
+                Transform colChild = CollectiveFish.transform.GetChild(i);
+                colChild.GetComponent<Collider2D>().enabled = false;
+                colChild.GetComponent<MoveAi>().enabled = false;
+                colChild.GetComponent<Pathfinding.AIPath>().enabled = false;
+                colChild.GetComponent<Rigidbody2D>().isKinematic = true;
+                colChild.GetComponentInChildren<Animator>().SetBool("Moveing", false);
+                colChild.position = this.transform.position;
+                colChild.rotation = Quaternion.Euler(0, 0, 0);
                 FishOnHook?.Invoke();
             }
         }
@@ -101,9 +103,10 @@ public class BaitScript : MonoBehaviour
 
     private void FishEatFish()
     {
-        int LowestBaitLevel = 0;
+        
         for (int i = 0; i < CollectiveFish.transform.childCount; i++)
         {
+            int LowestBaitLevel = 0;
             if (CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel < LowestBaitLevel)
             {
                 LowestBaitLevel = CollectiveFish.transform.GetChild(i).GetComponent<FishStats>().fishStats.baitLevel;
