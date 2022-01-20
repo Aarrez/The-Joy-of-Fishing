@@ -585,6 +585,7 @@ MonoBehaviour:
   - {fileID: 490540109590172885}
   - {fileID: 2880228523093164176}
   - {fileID: 1723046611083399176}
+  totalMoney: 0
 --- !u!1 &7824927940298590366
 GameObject:
   m_ObjectHideFlags: 0

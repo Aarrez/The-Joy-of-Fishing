@@ -22,10 +22,10 @@ public class BankAccountScript : MonoBehaviour
         {
             BankText.text = "Dolluh$: " + callMoneyEffectScript.totalMoney.ToString() + "c";
         }
-        else if (GameManager.instance.moveCam == 3)
-        {
-            BankText.text = "";
-        }
+        //else if (GameManager.instance.moveCam == 3)
+        //{
+        //    BankText.text = "";
+        //}
 
         //if (GameManager.instance.moveCam != 3 && thisIs2)
         //{
