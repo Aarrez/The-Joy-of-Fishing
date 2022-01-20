@@ -14,7 +14,7 @@ public sealed class GameManager : MonoBehaviour
     public CinemachineVirtualCamera CMcam;
     CinemachineFramingTransposer CMcamBody;
     public RadioMusic radioMusic;
-    [HideInInspector] public int moveCam = 1;
+    public int moveCam = 1;
     [HideInInspector] public bool baitCam = false;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
     [HideInInspector] public float CMcamOrthoSize;
@@ -101,6 +101,7 @@ public sealed class GameManager : MonoBehaviour
                 }
                 else
                 {
+
                     CMcam.Follow = BaitCam();
                     CMcamBody.m_TrackedObjectOffset.y = 0;
                     baitCam = true;
