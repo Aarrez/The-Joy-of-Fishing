@@ -18,14 +18,14 @@ public class BankAccountScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(GameManager.instance.moveCam != 3 && thisIs1)
-        //{
-        //    BankText.text = "MoneyGane: " + callMoneyEffectScript.coinsGained.ToString();
-        //}
-        ////else if(GameManager.instance.moveCam == 3)
-        ////{
-        ////    BankText.text = "";
-        ////}
+        if (GameManager.instance.moveCam != 3)
+        {
+            BankText.text = "Dolluh$: " + callMoneyEffectScript.totalMoney.ToString() + "c";
+        }
+        else if (GameManager.instance.moveCam == 3)
+        {
+            BankText.text = "";
+        }
 
         //if (GameManager.instance.moveCam != 3 && thisIs2)
         //{

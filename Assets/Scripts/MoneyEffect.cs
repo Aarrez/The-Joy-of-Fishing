@@ -9,7 +9,7 @@ public class MoneyEffect : MonoBehaviour
 
     private GameObject FishCollector;
 
-    private uint totalMoney = 0;
+    public uint totalMoney = 0;
 
     private bool hookedFish = false;
 
