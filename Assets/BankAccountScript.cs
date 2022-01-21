@@ -42,7 +42,7 @@ public class BankAccountScript : MonoBehaviour
         {
             
             elapsed += Time.deltaTime;
-            BankText.text = "Golly, you got fish! " + callMoneyEffectScript.fractionMoney + " COINERS";
+            BankText.text = "Gains: " + callMoneyEffectScript.fractionMoney + "c";
             thisIs2rb.velocity = new Vector2(0, 1);
             if(elapsed <= 0.2)
             {
@@ -58,8 +58,6 @@ public class BankAccountScript : MonoBehaviour
                 thisIs2rb.velocity = Vector2.zero;
                 callMoneyEffectScript.gainedNow = false;
             }
-
-            Debug.Log("elapsed" + elapsed + callMoneyEffectScript.gainedNow);
         } 
         //else if (thisIs2 && callMoneyEffectScript.gainedNow == false)
         //{

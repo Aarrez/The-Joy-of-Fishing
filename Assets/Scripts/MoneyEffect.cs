@@ -78,8 +78,6 @@ public class MoneyEffect : MonoBehaviour
         {
             totalMoney += value;
             fractionMoney = value;
-            Debug.Log("Fractiopmoney; " + fractionMoney);
-            Debug.Log("gained now: " + gainedNow);
             if (callBankAccountScript.thisIs2)
             {
                 callBankAccountScript.elapsed = 0;
@@ -87,11 +85,10 @@ public class MoneyEffect : MonoBehaviour
             if (gainedNow == false)
             {
                 gainedNow = true;
-                Debug.Log("gained now2: " + gainedNow);
             }
 
         }
-        Debug.Log(totalMoney);
+        //Debug.Log(totalMoney);
 
 
         coinParticle[a].Play();
