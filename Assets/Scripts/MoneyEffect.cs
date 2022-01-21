@@ -11,11 +11,14 @@ public class MoneyEffect : MonoBehaviour
 
     public uint totalMoney = 0;
     public uint fractionMoney = 0;
+    public bool gainedNow;
 
     private bool hookedFish = false;
 
     public static event System.Action DeleteFish;
     public static event System.Func<uint> TheMoney;
+
+    BankAccountScript callBankAccountScript;
 
     private void Awake()
     {
@@ -25,6 +28,7 @@ public class MoneyEffect : MonoBehaviour
         //FMODUnity.RuntimeManager.AttachInstanceToGameObject(coinsInstnace, gameObject.transform);
         //coinsInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         //fishGetInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        callBankAccountScript = FindObjectOfType<BankAccountScript>();
     }
 
     private void OnEnable()
@@ -75,6 +79,17 @@ public class MoneyEffect : MonoBehaviour
             totalMoney += value;
             fractionMoney = value;
             Debug.Log("Fractiopmoney; " + fractionMoney);
+            Debug.Log("gained now: " + gainedNow);
+            if (callBankAccountScript.thisIs2)
+            {
+                callBankAccountScript.elapsed = 0;
+            }
+            if (gainedNow == false)
+            {
+                gainedNow = true;
+                Debug.Log("gained now2: " + gainedNow);
+            }
+
         }
         Debug.Log(totalMoney);
 
@@ -95,4 +110,6 @@ public class MoneyEffect : MonoBehaviour
         coinsInstance.start();
         fishGetInstance.start();
     }
+
+
 }
