@@ -61,6 +61,7 @@ MonoBehaviour:
   CMcamOrthoSize: 0
   Buttontext: {fileID: 0}
   ShopUIAnimator: {fileID: 0}
+  MindcontrolActive: 0
   currentLineLevel: 0
   currentBait: 0
   cashAmount: 0
