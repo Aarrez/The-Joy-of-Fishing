@@ -3230,6 +3230,10 @@ PrefabInstance:
       propertyPath: insertCamera
       value: 
       objectReference: {fileID: 1485656630}
+    - target: {fileID: 6902584941148602455, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
+      propertyPath: m_Color.a
+      value: 0.75686276
+      objectReference: {fileID: 0}
     - target: {fileID: 8179818080915788956, guid: 02cb2269b9bbb0143a103223f5ecb521, type: 3}
       propertyPath: insertCamera
       value: 
