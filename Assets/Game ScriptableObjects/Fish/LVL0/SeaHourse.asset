@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 1419070592, guid: d72cca1dc3990864a93ba5809aa167a8, type: 3}
   animatorController: {fileID: 9100000, guid: df5dcb15564abdf4dbbdcb3c4649cf58, type: 2}
-  fishName: SeaHouse
+  fishName: SeaHorse
   weight: 5
   length: 8
-  value: 16
+  value: 13
   baitAttractionRadius: 3
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 0

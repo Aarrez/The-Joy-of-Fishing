@@ -169,7 +169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Faker HAHA
+  m_text: 'Gains: E.X. coins'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e353d29240d8939c7a1c7b36c8907bc8, type: 2}
   m_sharedMaterial: {fileID: -2415543301331254922, guid: e353d29240d8939c7a1c7b36c8907bc8, type: 2}
@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisIs1: 0
   thisIs2: 1
+  elapsed: 0
 --- !u!50 &1547381564
 Rigidbody2D:
   serializedVersion: 4
@@ -859,6 +860,8 @@ MonoBehaviour:
   - {fileID: 2880228523093164176}
   - {fileID: 1723046611083399176}
   totalMoney: 0
+  fractionMoney: 0
+  gainedNow: 0
 --- !u!1 &7824927940298590366
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,7 +957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rampUpTime: 1
-  maxLineLength: 700
+  maxLineLength: 50
   currentlyReelingUp: 0
   boatSpeed: 1000
   BoatSpeedForce: 1000000
