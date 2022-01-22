@@ -17,7 +17,7 @@ MonoBehaviour:
   fishName: Haj
   weight: 100
   length: 100
-  value: 200
+  value: 400
   baitAttractionRadius: 15
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 4

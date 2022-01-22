@@ -17,7 +17,7 @@ MonoBehaviour:
   fishName: Stromming
   weight: 11
   length: 9
-  value: 20
+  value: 45
   baitAttractionRadius: 3
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 0

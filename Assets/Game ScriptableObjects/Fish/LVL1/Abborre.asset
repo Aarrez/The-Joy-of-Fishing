@@ -17,7 +17,7 @@ MonoBehaviour:
   fishName: Abborre
   weight: 20
   length: 20
-  value: 40
+  value: 70
   baitAttractionRadius: 3
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 2

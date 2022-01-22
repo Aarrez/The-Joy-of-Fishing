@@ -17,7 +17,7 @@ MonoBehaviour:
   fishName: Pihrana
   weight: 50
   length: 50
-  value: 100
+  value: 600
   baitAttractionRadius: 10
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 4

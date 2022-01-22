@@ -42,7 +42,7 @@ public class Fish : ScriptableObject
     private void CheckValue()
     {
         var wlValue = weight + length;
-        value = (uint)wlValue;
+        //value = (uint)wlValue;
         switch (wlValue)
         {
             case <= 30f:

@@ -17,7 +17,7 @@ MonoBehaviour:
   fishName: Char
   weight: 30
   length: 10
-  value: 40
+  value: 75
   baitAttractionRadius: 3
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 2

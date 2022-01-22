@@ -17,7 +17,7 @@ MonoBehaviour:
   fishName: AnglerFish
   weight: 40
   length: 60
-  value: 10
+  value: 300
   baitAttractionRadius: 10
   fishColor: {r: 1, g: 1, b: 1, a: 1}
   struggleCount: 4
