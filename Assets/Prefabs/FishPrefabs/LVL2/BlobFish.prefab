@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5734319889195117055}
   - component: {fileID: 5883369509628922158}
   - component: {fileID: 3107338935538063745}
-  - component: {fileID: 1678891643821340272}
   - component: {fileID: 709717564203911704}
   - component: {fileID: -6325705662044324846}
+  - component: {fileID: 1252752239617027681}
   m_Layer: 12
   m_Name: BlobFish
   m_TagString: Fish
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181217008843519828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2062201, y: -80.39332, z: 0}
+  m_LocalPosition: {x: -1.138421, y: -81.24988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.3
+  radius: 0.83
   height: 2
   canMove: 1
   maxSpeed: 2
@@ -123,22 +123,6 @@ MonoBehaviour:
   fishStats: {fileID: 11400000, guid: 9fc48f239eb76b447b191a99fe22c4dc, type: 2}
   wanderRadius: 8
   wanderJitter: 1
---- !u!58 &1678891643821340272
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6181217008843519828}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
 --- !u!114 &709717564203911704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +148,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.28274336
+  m_Mass: 1.362484
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -173,6 +157,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &1252752239617027681
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181217008843519828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.74, y: 2}
+  m_Direction: 0
 --- !u!1 &6843878150318292005
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ Animator:
   m_GameObject: {fileID: 6843878150318292005}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 393c8a9c0839f804c99f68b51402c49e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

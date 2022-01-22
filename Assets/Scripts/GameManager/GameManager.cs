@@ -22,7 +22,7 @@ public sealed class GameManager : MonoBehaviour
     public TextMeshProUGUI Buttontext;
     public Animator ShopUIAnimator;
 
-
+    [HideInInspector] public bool MindcontrolActive = false;
     public int currentLineLevel = 0, currentBait = 0, cashAmount = 0;
     public float currentTime = 0f;
     private void Awake()

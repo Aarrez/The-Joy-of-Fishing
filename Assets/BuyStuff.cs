@@ -23,6 +23,7 @@ public class BuyStuff : MonoBehaviour
         if (callMoneyEffectScript.totalMoney >= mindControlCost)
         {
             mindcontrol.interactable = false;
+            GameManager.instance.MindcontrolActive = true;
             callMoneyEffectScript.totalMoney = callMoneyEffectScript.totalMoney - mindControlCost;
         }
         else

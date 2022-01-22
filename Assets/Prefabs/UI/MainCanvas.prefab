@@ -399,7 +399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10c
+  m_text: 100c
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 064998254b02dd362a8c7981bbf08d7a, type: 2}
   m_sharedMaterial: {fileID: -8329400982779292132, guid: 064998254b02dd362a8c7981bbf08d7a, type: 2}
@@ -1738,13 +1738,13 @@ MonoBehaviour:
   lvl1Line: {fileID: 1244452391}
   lvl2Line: {fileID: 984366147}
   lvl3Line: {fileID: 75355242}
-  mindControlCost: 10
+  mindControlCost: 100
   lvl1Cost: 200
   lvl2Cost: 1000
   lvl3Cost: 3000
-  lvl1Length: 180
-  lvl2Length: 300
-  lvl3Lenght: 600
+  lvl1Length: 220
+  lvl2Length: 450
+  lvl3Lenght: 700
 --- !u!1 &2852961140130028214
 GameObject:
   m_ObjectHideFlags: 0
