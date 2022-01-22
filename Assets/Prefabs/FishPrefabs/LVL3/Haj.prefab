@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5734319889195117055}
   - component: {fileID: 5883369509628922158}
   - component: {fileID: 3107338935538063745}
-  - component: {fileID: 1678891643821340272}
   - component: {fileID: 709717564203911704}
-  - component: {fileID: -6325705662044324846}
+  - component: {fileID: -5600569158608685252}
+  - component: {fileID: 7458559981645361609}
   m_Layer: 12
-  m_Name: BlobFish
+  m_Name: Haj
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181217008843519828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.520679, y: -83.45164, z: 0}
+  m_LocalPosition: {x: -54.30811, y: -112.479546, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65,7 +65,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: 4
+    value: 8
 --- !u!114 &5883369509628922158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.3
+  radius: 1.3
   height: 2
   canMove: 1
-  maxSpeed: 2
+  maxSpeed: 5
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -99,11 +99,11 @@ MonoBehaviour:
     maximumInterval: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
-  maxAcceleration: 40
+  maxAcceleration: 70
   rotationSpeed: 180
-  slowdownDistance: 0.6
+  slowdownDistance: 1.5
   pickNextWaypointDist: 2
-  endReachedDistance: 0.2
+  endReachedDistance: 1.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -120,25 +120,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df30e90a46919864ca79b124c882e5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishStats: {fileID: 11400000, guid: 9fc48f239eb76b447b191a99fe22c4dc, type: 2}
-  wanderRadius: 8
+  fishStats: {fileID: 11400000, guid: 289e36e8ba67443479eb675186ba4e1d, type: 2}
+  wanderRadius: 20
   wanderJitter: 1
---- !u!58 &1678891643821340272
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6181217008843519828}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
 --- !u!114 &709717564203911704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +135,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98caa799924fb004c9de084cd196e5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishStats: {fileID: 11400000, guid: 9fc48f239eb76b447b191a99fe22c4dc, type: 2}
---- !u!50 &-6325705662044324846
+  fishStats: {fileID: 11400000, guid: 289e36e8ba67443479eb675186ba4e1d, type: 2}
+--- !u!70 &-5600569158608685252
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181217008843519828}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1, y: 0}
+  m_Size: {x: 0.76, y: 2.21}
+  m_Direction: 0
+--- !u!50 &7458559981645361609
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.28274336
+  m_Mass: 1.555646
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayerID: 1709047881
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1190743386, guid: 7f47b1884d912a14e872f60101a79a59, type: 3}
+  m_Sprite: {fileID: -252920803, guid: 2b320ad940d9bf5429418986f8823a1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1

@@ -173,7 +173,7 @@ public sealed class GameManager : MonoBehaviour
     } 
     private IEnumerator FadeOutCR()
     {
-        float duration = 3f; //0.5 secs
+        float duration = 4f; //0.5 secs
         currentTime = 0f;
         FadeCanvas.SetActive(true);
         while (currentTime < duration)
@@ -188,7 +188,7 @@ public sealed class GameManager : MonoBehaviour
 
     private IEnumerator FadeInCR()
     {
-        float duration = 1f; //0.5 secs
+        float duration = 2f; //0.5 secs
         float currentTime = 0f;
         while(currentTime < duration)
         {

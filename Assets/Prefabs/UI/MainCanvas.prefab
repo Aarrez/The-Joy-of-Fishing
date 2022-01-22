@@ -588,7 +588,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 414747226}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 35eebee4413a2d32394d29c4ee0bbad9, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &717103174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisIs1: 1
   thisIs2: 0
+  elapsed: 0
 --- !u!1 &1244452389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1722,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35eebee4413a2d32394d29c4ee0bbad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mindcontrol: {fileID: 414747225}
+  lvl1Line: {fileID: 1244452391}
+  lvl2Line: {fileID: 984366147}
+  lvl3Line: {fileID: 75355242}
+  mindControlCost: 10
+  lvl1Cost: 200
+  lvl2Cost: 1000
+  lvl3Cost: 3000
 --- !u!1 &2852961140130028214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1832,7 @@ GameObject:
   - component: {fileID: 6573065839094942421}
   - component: {fileID: 5162652854806036571}
   m_Layer: 0
-  m_Name: Welcome to Sleezy Oskars!
+  m_Name: Welcome to Sleazy Oskars!
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1865,7 +1886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to Sleezy Oskars!
+  m_text: Welcome to Sleazy Oskars!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e353d29240d8939c7a1c7b36c8907bc8, type: 2}
   m_sharedMaterial: {fileID: -2415543301331254922, guid: e353d29240d8939c7a1c7b36c8907bc8, type: 2}

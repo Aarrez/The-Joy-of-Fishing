@@ -104,7 +104,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 7
-  m_LinearDrag: 5
+  m_LinearDrag: 8
   m_AngularDrag: 0
   m_GravityScale: 1.2
   m_Material: {fileID: 6200000, guid: 1cb87c123ccb883449ae1808afb4e2c2, type: 2}
@@ -161,7 +161,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72210c9bd1c88db49b5a6a38e8500122, type: 2}
   - {fileID: 11400000, guid: f5845b55879ec8546aad0b0a66fbd5d8, type: 2}
   currentBait: 0
-  BloodParticules: {fileID: 6156807477391605434, guid: 146b21cdb1342dd419a55ed4119de3cb, type: 3}
 --- !u!114 &4292488945438747900
 MonoBehaviour:
   m_ObjectHideFlags: 0

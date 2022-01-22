@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5734319889195117055}
   - component: {fileID: 5883369509628922158}
   - component: {fileID: 3107338935538063745}
-  - component: {fileID: 1678891643821340272}
-  - component: {fileID: 709717564203911704}
-  - component: {fileID: -4851215850341437973}
+  - component: {fileID: 6055014293452640578}
+  - component: {fileID: -8701802744625785668}
+  - component: {fileID: -497235261912041190}
   m_Layer: 12
-  m_Name: CatFish
+  m_Name: ClownFish
   m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181217008843519828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.360818, y: -82.19682, z: 0}
+  m_LocalPosition: {x: -55.132175, y: -0.18959022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65,7 +65,7 @@ MonoBehaviour:
   traversableTags: -1
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
-    value: 4
+    value: 1
 --- !u!114 &5883369509628922158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,11 +79,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.3
+  radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 4
-  gravity: {x: NaN, y: NaN, z: NaN}
+  maxSpeed: 5
+  gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -97,17 +97,17 @@ MonoBehaviour:
     interval: 0.5
     sensitivity: 10
     maximumInterval: 2
-    visualizeSensitivity: 0
+    visualizeSensitivity: 1
   targetCompatibility: {fileID: 0}
-  maxAcceleration: 60
+  maxAcceleration: 20
   rotationSpeed: 180
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
-  endReachedDistance: 0.5
+  endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
-  constrainInsideGraph: 1
+  constrainInsideGraph: 0
 --- !u!114 &3107338935538063745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,11 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df30e90a46919864ca79b124c882e5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishStats: {fileID: 11400000, guid: a4763f56f034231488d23b52810d6009, type: 2}
-  wanderRadius: 12
+  fishStats: {fileID: 11400000, guid: 1ad0ed5f1b80d164d98cced4f1802ef7, type: 2}
+  wanderRadius: 5
   wanderJitter: 1
---- !u!58 &1678891643821340272
-CircleCollider2D:
+--- !u!70 &6055014293452640578
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,9 +137,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
---- !u!114 &709717564203911704
+  m_Size: {x: 0.4, y: 0.9}
+  m_Direction: 0
+--- !u!114 &-8701802744625785668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98caa799924fb004c9de084cd196e5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishStats: {fileID: 11400000, guid: a4763f56f034231488d23b52810d6009, type: 2}
---- !u!50 &-4851215850341437973
+  fishStats: {fileID: 11400000, guid: 1ad0ed5f1b80d164d98cced4f1802ef7, type: 2}
+--- !u!50 &-497235261912041190
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.28274336
+  m_Mass: 0.3256637
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 2240174114467267567}
   - component: {fileID: 6238731737291048182}
   m_Layer: 12
-  m_Name: Fish GFX
+  m_Name: ClownFish GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843878150318292005}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.24, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayerID: 1709047881
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1670033504, guid: feb06b1dd1eb2044ab3aea80fd95beb5, type: 3}
+  m_Sprite: {fileID: 1267546443, guid: 68c6626ef2f67764bb873fb1714f95d1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
