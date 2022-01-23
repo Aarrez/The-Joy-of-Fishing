@@ -34,7 +34,7 @@ public class EnableOnStartupScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+/*
 
         if (GetC.SetPause == false)
         {
@@ -117,7 +117,9 @@ public class EnableOnStartupScript : MonoBehaviour
 
         }
 
-    } }
+    } */
+    }
+    }
 
    /* public void ClickToEnableControlPanel()
     {

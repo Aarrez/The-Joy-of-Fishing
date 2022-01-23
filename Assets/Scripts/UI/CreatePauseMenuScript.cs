@@ -12,7 +12,7 @@ public class CreatePauseMenuScript : MonoBehaviour
     void Awake()
     {
         getKey = new TheJoyofFishing();
-        actionEscape = getKey.EscapeToPause.Pause;
+        //actionEscape = getKey.EscapeToPause.Pause;
         pauseCanvas = GameObject.Find("PauseCanvas");
         if (thisIsRealPauseMenu)
         {

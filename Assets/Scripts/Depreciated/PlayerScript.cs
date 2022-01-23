@@ -8,9 +8,30 @@ using System;
 public class PlayerScript : MonoBehaviour
 {
 
-	Rigidbody2D rb;
-	public float forcetoAdd = 100;
-	TheJoyofFishing GetKey;
+	public Rigidbody2D rb;
+
+    void Start()
+	{
+		rb = GetComponent<Rigidbody2D>();
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//=============================OLD CODE=====================================
+
+/*	TheJoyofFishing GetKey;
     CreatePauseMenuScript cPauseScript;
     public float elapsed = 2f;
     float gruggers;
@@ -20,13 +41,12 @@ public class PlayerScript : MonoBehaviour
     Vector2 inputvector;
     Vector2 inputvector2;
 
+    
+
     float check_x;
-    float check_y;
+    float check_y;*/
 
-    BoatScript callBoatScript;
-    //RopeScript callRopeScript;
-
-    void Start()
+/*    void Start()
 	{
         cPauseScript = FindObjectOfType<CreatePauseMenuScript>();
 		//assigns rigidbody
@@ -38,11 +58,9 @@ public class PlayerScript : MonoBehaviour
         GetKey = new TheJoyofFishing();
         GetKey.Player.Enable();
         callBoatScript = FindObjectOfType<BoatScript>();
-    }
+    }*/
 
-
-
-    private void Update()
+/*    private void Update()
     {
 
         gruggers = RopeScript.instance.Nodes.Count;
@@ -262,7 +280,4 @@ public class PlayerScript : MonoBehaviour
         }
 
         elapsed = 3f;
-    }
-
-
-}
+    }*/

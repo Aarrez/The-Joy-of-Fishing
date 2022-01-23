@@ -40,16 +40,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""name"": ""MoveBait"",
                     ""type"": ""Value"",
                     ""id"": ""2d55f57d-ec3c-4094-bdd2-a46f27a34d0b"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""FishingBait"",
-                    ""type"": ""Value"",
-                    ""id"": ""52e30900-4b25-440a-b0ac-92ce207b9c71"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -64,85 +55,40 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""SwingLeft"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""ebca5c00-5812-4efc-80d3-68989f6b3524"",
+                    ""id"": ""106a1081-2319-411c-bd57-1f9e8c8e0f9b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CastOut"",
+                    ""type"": ""Button"",
+                    ""id"": ""12440c3d-5adc-4cd7-a2de-6f52a5cfa7dc"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SwingRight"",
+                    ""name"": ""ReelRope"",
+                    ""type"": ""Value"",
+                    ""id"": ""2dea28d9-565e-40e1-beca-ad8a8c840ab5"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""FishingBait"",
                     ""type"": ""Button"",
-                    ""id"": ""044a92e9-32fd-47ce-bc04-ec7c4c47aee5"",
+                    ""id"": ""6cd799f7-8f93-4b81-8c3a-64a474f53347"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Mouse1"",
-                    ""type"": ""Button"",
-                    ""id"": ""0fcd6c29-676e-4c68-a09b-80250c5900f2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""ReelDown"",
-                    ""type"": ""Value"",
-                    ""id"": ""0c4c1b33-a9e3-43d1-9170-e511cd710386"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""ReelUp"",
-                    ""type"": ""Value"",
-                    ""id"": ""fe3152e0-96bd-4c89-b78c-c00f7bce226c"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""ReelUpBoost"",
-                    ""type"": ""Value"",
-                    ""id"": ""4936f5a6-7512-4999-8cd3-76aa0e846e89"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""BoatLeft"",
-                    ""type"": ""Value"",
-                    ""id"": ""a3b7113a-29fe-41ce-a255-3c30003fe8d4"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""BoatRight"",
-                    ""type"": ""Value"",
-                    ""id"": ""a9e584a7-3a9b-4733-9571-d88d3cba6993"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""RocketBoost"",
-                    ""type"": ""Value"",
-                    ""id"": ""7b10dccf-2140-429f-b357-413d073c0cab"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -345,728 +291,90 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""b851d816-6a57-4811-b6dd-77e61492458a"",
-                    ""path"": ""1DAxis"",
+                    ""name"": """",
+                    ""id"": ""19b64bff-256a-4566-b07d-e657d95cd220"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72de9277-225b-40eb-9328-be7d6ff3d0c1"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54bd6f79-c836-45ab-87b5-5ce236c42f24"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""CastOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2da8889-38d0-4fa2-adee-b5cbb55e8eec"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""CastOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ea79504-875a-4713-961d-8ea68ec812ee"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""FishingBait"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""ee140eae-1116-414c-ae3b-86c5251c40ff"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ReelRope"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""negative"",
-                    ""id"": ""5e2f92cb-e373-4b7f-9aaa-105a7689f379"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""id"": ""09a285a5-de0f-4488-a8b9-886aa0a7477c"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""FishingBait"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ReelRope"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""positive"",
-                    ""id"": ""3c134801-e072-4d62-a9df-a189b2e340f0"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""FishingBait"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f87b6aa7-79e6-4304-943d-0c2a19abbf91"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""SwingLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""52c3eb94-f5c3-4da7-ba81-f398e0f5481c"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""SwingRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""37c4ee96-c19e-4079-8fb3-02130de48c1e"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Mouse1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Keyboard Up"",
-                    ""id"": ""3afc0acf-5f58-49a0-afd5-98d482636926"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""301719a0-d129-4ace-9262-3887d56acdad"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""572893ae-de7f-4592-b094-8f9b6f3b942b"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""b2a010e6-9dd2-4326-8714-661715ccd6e0"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""96a50b37-d658-4eb4-ad95-22507a1bf5e2"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""GamePad Up"",
-                    ""id"": ""12ae9ae3-df68-4581-a2d7-8815b97cbc80"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""954d75c7-3ba3-4b83-bbe6-1e3f10815089"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""id"": ""60a4e143-78cb-4bcb-87c5-c2cd5b092bf8"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""ba512ea0-72b2-4321-89a1-847127a447b3"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""86a391c1-012d-4a36-ad31-1c9d5280bb8e"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""3e6b353b-363f-4507-a45a-07b8ab2b6862"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUp"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Keyboard Down"",
-                    ""id"": ""b4905099-2225-4326-8642-bbf02ecfef31"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""140cab5c-4ca3-44b5-a4fa-456639e208ca"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""d4107e52-4b75-497c-84f1-181be3d971c3"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""afa04849-290c-4b03-80f9-3a934c62b26d"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""699f9650-33ce-489c-be60-3037333eff4b"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""GamePad Down"",
-                    ""id"": ""93886cfb-b3dd-45ae-975d-1370bc4d83f4"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""bfd93c79-b685-4b76-a982-5b20ecd075bd"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""b81de8b8-9fbe-4ec9-9aaf-6f977ae7eec0"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""fa303207-4faf-4b7a-8878-9cfce1a5b146"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""87906db7-f1ea-47fa-970a-1cf2ae44a183"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelDown"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Keyboard Left"",
-                    ""id"": ""78c4b71b-012d-4bdd-a689-cdfe6ea3c7c2"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""5611fa63-3ea6-46c4-8ac9-e04ea1772fd6"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""44767ec5-a83d-4bc4-b44b-80514d61ac04"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""384d384d-1b8e-4bb9-b05e-ca010732a925"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""20a6919b-1b49-4f83-b92c-3b3dec1c1143"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""GamePad Left"",
-                    ""id"": ""86b2ca98-ee34-497d-8f18-5f09c3d95439"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""429294e9-0350-40d5-bbdf-9f27057715c0"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""94e793bd-c6ff-4a38-92ff-526148622e0e"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""db3e6133-dc9d-4f80-a108-4e67d1ab62da"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""103ac954-2569-45bc-a61b-b8c353b7d8fe"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatLeft"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Keyboard Right"",
-                    ""id"": ""0ce07aef-bf1e-473c-a611-6af039f7c8ca"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""ac0e5dd5-188e-43d9-9583-8568415f933d"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""3b7cd1ff-48d6-4c48-86a1-333725c6d209"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""d48995f1-6602-4553-a017-c5e0d8c2bb98"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""3d3050f0-9962-43aa-b46b-2bac8b766e9e"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""GamePad Right"",
-                    ""id"": ""12642a84-19ca-4210-a2c1-725dbf24d686"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""f4caf488-237f-456c-82b2-9265c594ac97"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""a210aee0-2599-4ff8-8dd8-ae34a98d0577"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""0de818d0-ed30-4b4f-bdd8-1065904cbf46"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""5c42a270-94eb-4c8e-9edb-71c0547b91ae"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BoatRight"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Keyboard Up"",
-                    ""id"": ""79a41fcb-c20f-4726-9df8-12d8096e5617"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""3f909037-240a-438d-bce9-d944823f34cf"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""6fed5040-7c67-4398-ad1c-86f362db69ed"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""2fce13b3-eda9-4665-b289-d3fab6d3e04f"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""1ef92adf-3f64-4038-9052-c5e14ca0b6b9"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""GamePad Up"",
-                    ""id"": ""3306f31b-bbb7-42be-b44d-af3bc06ce440"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""444b7936-a9d9-4a39-952b-8a58b9eefcb0"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""b9ad2257-0db3-4a76-befe-751dfc4941d7"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""298dffb1-3a9b-41b3-bf51-5070dc6e6422"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""caed336d-b5ca-4e8e-9a05-e0afc42ad5b1"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReelUpBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Boost Up Keyboard"",
-                    ""id"": ""d640e64a-817c-45cf-bb03-0077a35be9c5"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""0fbcbfed-b478-47b0-932f-6bbffff805f2"",
-                    ""path"": ""<Keyboard>/ctrl"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""45da78ba-cebd-4b80-9cb0-11bb82df57b3"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""b7e23189-c40d-41e4-ac68-68ae85bdbd0a"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""8fabb410-ab78-43ed-98d9-3ac60f7d589e"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Boost Up Gamepad"",
-                    ""id"": ""ce66e07c-f7d0-4726-9ccd-c3b6235e70ae"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""3f8de225-2555-446a-8716-aa81e24688ea"",
-                    ""path"": ""<Gamepad>/rightStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""b6930f7b-1979-4c14-aa5b-c63f8e59fadc"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""9471facb-b9ae-45cf-8958-49a2f5149f44"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""c5fd9d1c-9944-45d4-b2a0-58522b5ec935"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RocketBoost"",
+                    ""action"": ""ReelRope"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -1587,34 +895,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""EscapeToPause"",
-            ""id"": ""8f8301ae-d8f3-4555-a94c-3e1b4a349efd"",
-            ""actions"": [
-                {
-                    ""name"": ""Pause"",
-                    ""type"": ""Button"",
-                    ""id"": ""7e976734-5e9a-4b9f-9fd2-8a1203b245e6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press"",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""e1a7374f-8043-4c57-b9f5-bc54a7f01c44"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
         }
     ],
     ""controlSchemes"": [
@@ -1684,17 +964,11 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_MoveBait = m_Player.FindAction("MoveBait", throwIfNotFound: true);
-        m_Player_FishingBait = m_Player.FindAction("FishingBait", throwIfNotFound: true);
         m_Player_MoveBoat = m_Player.FindAction("MoveBoat", throwIfNotFound: true);
-        m_Player_SwingLeft = m_Player.FindAction("SwingLeft", throwIfNotFound: true);
-        m_Player_SwingRight = m_Player.FindAction("SwingRight", throwIfNotFound: true);
-        m_Player_Mouse1 = m_Player.FindAction("Mouse1", throwIfNotFound: true);
-        m_Player_ReelDown = m_Player.FindAction("ReelDown", throwIfNotFound: true);
-        m_Player_ReelUp = m_Player.FindAction("ReelUp", throwIfNotFound: true);
-        m_Player_ReelUpBoost = m_Player.FindAction("ReelUpBoost", throwIfNotFound: true);
-        m_Player_BoatLeft = m_Player.FindAction("BoatLeft", throwIfNotFound: true);
-        m_Player_BoatRight = m_Player.FindAction("BoatRight", throwIfNotFound: true);
-        m_Player_RocketBoost = m_Player.FindAction("RocketBoost", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_CastOut = m_Player.FindAction("CastOut", throwIfNotFound: true);
+        m_Player_ReelRope = m_Player.FindAction("ReelRope", throwIfNotFound: true);
+        m_Player_FishingBait = m_Player.FindAction("FishingBait", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1707,9 +981,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
-        // EscapeToPause
-        m_EscapeToPause = asset.FindActionMap("EscapeToPause", throwIfNotFound: true);
-        m_EscapeToPause_Pause = m_EscapeToPause.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1771,34 +1042,22 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_MoveBait;
-    private readonly InputAction m_Player_FishingBait;
     private readonly InputAction m_Player_MoveBoat;
-    private readonly InputAction m_Player_SwingLeft;
-    private readonly InputAction m_Player_SwingRight;
-    private readonly InputAction m_Player_Mouse1;
-    private readonly InputAction m_Player_ReelDown;
-    private readonly InputAction m_Player_ReelUp;
-    private readonly InputAction m_Player_ReelUpBoost;
-    private readonly InputAction m_Player_BoatLeft;
-    private readonly InputAction m_Player_BoatRight;
-    private readonly InputAction m_Player_RocketBoost;
+    private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_CastOut;
+    private readonly InputAction m_Player_ReelRope;
+    private readonly InputAction m_Player_FishingBait;
     public struct PlayerActions
     {
         private @TheJoyofFishing m_Wrapper;
         public PlayerActions(@TheJoyofFishing wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @MoveBait => m_Wrapper.m_Player_MoveBait;
-        public InputAction @FishingBait => m_Wrapper.m_Player_FishingBait;
         public InputAction @MoveBoat => m_Wrapper.m_Player_MoveBoat;
-        public InputAction @SwingLeft => m_Wrapper.m_Player_SwingLeft;
-        public InputAction @SwingRight => m_Wrapper.m_Player_SwingRight;
-        public InputAction @Mouse1 => m_Wrapper.m_Player_Mouse1;
-        public InputAction @ReelDown => m_Wrapper.m_Player_ReelDown;
-        public InputAction @ReelUp => m_Wrapper.m_Player_ReelUp;
-        public InputAction @ReelUpBoost => m_Wrapper.m_Player_ReelUpBoost;
-        public InputAction @BoatLeft => m_Wrapper.m_Player_BoatLeft;
-        public InputAction @BoatRight => m_Wrapper.m_Player_BoatRight;
-        public InputAction @RocketBoost => m_Wrapper.m_Player_RocketBoost;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @CastOut => m_Wrapper.m_Player_CastOut;
+        public InputAction @ReelRope => m_Wrapper.m_Player_ReelRope;
+        public InputAction @FishingBait => m_Wrapper.m_Player_FishingBait;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1814,39 +1073,21 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
                 @MoveBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
                 @MoveBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBait;
-                @FishingBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
-                @FishingBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
-                @FishingBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
                 @MoveBoat.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBoat;
                 @MoveBoat.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBoat;
                 @MoveBoat.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMoveBoat;
-                @SwingLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingLeft;
-                @SwingLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingLeft;
-                @SwingLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingLeft;
-                @SwingRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingRight;
-                @SwingRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingRight;
-                @SwingRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwingRight;
-                @Mouse1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
-                @Mouse1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
-                @Mouse1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouse1;
-                @ReelDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
-                @ReelDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
-                @ReelDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelDown;
-                @ReelUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
-                @ReelUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
-                @ReelUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUp;
-                @ReelUpBoost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUpBoost;
-                @ReelUpBoost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUpBoost;
-                @ReelUpBoost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelUpBoost;
-                @BoatLeft.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatLeft;
-                @BoatLeft.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatLeft;
-                @BoatLeft.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatLeft;
-                @BoatRight.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
-                @BoatRight.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
-                @BoatRight.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBoatRight;
-                @RocketBoost.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
-                @RocketBoost.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
-                @RocketBoost.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRocketBoost;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @CastOut.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @CastOut.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @CastOut.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCastOut;
+                @ReelRope.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelRope;
+                @ReelRope.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelRope;
+                @ReelRope.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReelRope;
+                @FishingBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
+                @FishingBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
+                @FishingBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1857,39 +1098,21 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @MoveBait.started += instance.OnMoveBait;
                 @MoveBait.performed += instance.OnMoveBait;
                 @MoveBait.canceled += instance.OnMoveBait;
-                @FishingBait.started += instance.OnFishingBait;
-                @FishingBait.performed += instance.OnFishingBait;
-                @FishingBait.canceled += instance.OnFishingBait;
                 @MoveBoat.started += instance.OnMoveBoat;
                 @MoveBoat.performed += instance.OnMoveBoat;
                 @MoveBoat.canceled += instance.OnMoveBoat;
-                @SwingLeft.started += instance.OnSwingLeft;
-                @SwingLeft.performed += instance.OnSwingLeft;
-                @SwingLeft.canceled += instance.OnSwingLeft;
-                @SwingRight.started += instance.OnSwingRight;
-                @SwingRight.performed += instance.OnSwingRight;
-                @SwingRight.canceled += instance.OnSwingRight;
-                @Mouse1.started += instance.OnMouse1;
-                @Mouse1.performed += instance.OnMouse1;
-                @Mouse1.canceled += instance.OnMouse1;
-                @ReelDown.started += instance.OnReelDown;
-                @ReelDown.performed += instance.OnReelDown;
-                @ReelDown.canceled += instance.OnReelDown;
-                @ReelUp.started += instance.OnReelUp;
-                @ReelUp.performed += instance.OnReelUp;
-                @ReelUp.canceled += instance.OnReelUp;
-                @ReelUpBoost.started += instance.OnReelUpBoost;
-                @ReelUpBoost.performed += instance.OnReelUpBoost;
-                @ReelUpBoost.canceled += instance.OnReelUpBoost;
-                @BoatLeft.started += instance.OnBoatLeft;
-                @BoatLeft.performed += instance.OnBoatLeft;
-                @BoatLeft.canceled += instance.OnBoatLeft;
-                @BoatRight.started += instance.OnBoatRight;
-                @BoatRight.performed += instance.OnBoatRight;
-                @BoatRight.canceled += instance.OnBoatRight;
-                @RocketBoost.started += instance.OnRocketBoost;
-                @RocketBoost.performed += instance.OnRocketBoost;
-                @RocketBoost.canceled += instance.OnRocketBoost;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @CastOut.started += instance.OnCastOut;
+                @CastOut.performed += instance.OnCastOut;
+                @CastOut.canceled += instance.OnCastOut;
+                @ReelRope.started += instance.OnReelRope;
+                @ReelRope.performed += instance.OnReelRope;
+                @ReelRope.canceled += instance.OnReelRope;
+                @FishingBait.started += instance.OnFishingBait;
+                @FishingBait.performed += instance.OnFishingBait;
+                @FishingBait.canceled += instance.OnFishingBait;
             }
         }
     }
@@ -1999,39 +1222,6 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
-
-    // EscapeToPause
-    private readonly InputActionMap m_EscapeToPause;
-    private IEscapeToPauseActions m_EscapeToPauseActionsCallbackInterface;
-    private readonly InputAction m_EscapeToPause_Pause;
-    public struct EscapeToPauseActions
-    {
-        private @TheJoyofFishing m_Wrapper;
-        public EscapeToPauseActions(@TheJoyofFishing wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Pause => m_Wrapper.m_EscapeToPause_Pause;
-        public InputActionMap Get() { return m_Wrapper.m_EscapeToPause; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(EscapeToPauseActions set) { return set.Get(); }
-        public void SetCallbacks(IEscapeToPauseActions instance)
-        {
-            if (m_Wrapper.m_EscapeToPauseActionsCallbackInterface != null)
-            {
-                @Pause.started -= m_Wrapper.m_EscapeToPauseActionsCallbackInterface.OnPause;
-                @Pause.performed -= m_Wrapper.m_EscapeToPauseActionsCallbackInterface.OnPause;
-                @Pause.canceled -= m_Wrapper.m_EscapeToPauseActionsCallbackInterface.OnPause;
-            }
-            m_Wrapper.m_EscapeToPauseActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @Pause.started += instance.OnPause;
-                @Pause.performed += instance.OnPause;
-                @Pause.canceled += instance.OnPause;
-            }
-        }
-    }
-    public EscapeToPauseActions @EscapeToPause => new EscapeToPauseActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -2081,17 +1271,11 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnMoveBait(InputAction.CallbackContext context);
-        void OnFishingBait(InputAction.CallbackContext context);
         void OnMoveBoat(InputAction.CallbackContext context);
-        void OnSwingLeft(InputAction.CallbackContext context);
-        void OnSwingRight(InputAction.CallbackContext context);
-        void OnMouse1(InputAction.CallbackContext context);
-        void OnReelDown(InputAction.CallbackContext context);
-        void OnReelUp(InputAction.CallbackContext context);
-        void OnReelUpBoost(InputAction.CallbackContext context);
-        void OnBoatLeft(InputAction.CallbackContext context);
-        void OnBoatRight(InputAction.CallbackContext context);
-        void OnRocketBoost(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnCastOut(InputAction.CallbackContext context);
+        void OnReelRope(InputAction.CallbackContext context);
+        void OnFishingBait(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -2105,9 +1289,5 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
-    }
-    public interface IEscapeToPauseActions
-    {
-        void OnPause(InputAction.CallbackContext context);
     }
 }

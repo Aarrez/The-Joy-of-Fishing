@@ -15,6 +15,8 @@ public sealed class RopeScript : MonoBehaviour
     public Vector2 destiny;
     public static RopeScript instance;
 
+    public Rigidbody2D hookRigidbody2D;
+
     //velocity that the hook goes onto the destiny
     public float speed = 1;
     //distance between each node
@@ -183,6 +185,7 @@ public sealed class RopeScript : MonoBehaviour
         {
             go = (GameObject)Instantiate(hookPrefab, pos2Create, Quaternion.identity);
             ActualHookObject = true; 
+            hookRigidbody2D = go.GetComponent<Rigidbody2D>();
         }
         else
         {
