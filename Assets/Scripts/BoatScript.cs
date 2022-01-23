@@ -21,7 +21,7 @@ public class BoatScript : MonoBehaviour
     [Header("Movement stuff")]
     [SerializeField] public float boatSpeed = 1f, BoatSpeedForce = 10f, forcetoAdd = 100;
 
-    public static event System.Action<bool> IsFishing;
+    //public static event System.Action<bool> IsFishing;
     public static event System.Action DoneFishing;
 
     //hook prefab
@@ -65,7 +65,7 @@ public class BoatScript : MonoBehaviour
     }
 
 
-
+//=============================================Input Stuff========================================
 
     public void GetInput(InputAction.CallbackContext context)
     {
@@ -175,12 +175,6 @@ public class BoatScript : MonoBehaviour
             //sets rope to enabled
             ropeActive = true;
         }
-        //else //commennt this else statement to remove "click 0 again to delet rope"
-        //{
-        //    //delete rope
-        //    DeleteRope();
-
-        //}
     }
 
     public void DeleteRope()

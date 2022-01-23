@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /*
- * The CollectFish script takes the children of the gameojbect taged with "Bait"
+ * The CollectFish script takes the children of the gameobject taged with "Bait"
  * and puts them in the gameobject with the tag "FishInventory".
  */
 
@@ -13,7 +13,7 @@ public class CollectFish : MonoBehaviour
 
     private GameObject fishCollective;
 
-    [SerializeField] private float distToCollectFish = 5f;
+    //[SerializeField] private float distToCollectFish = 5f;
 
     private bool CanCatchFish = false;
 

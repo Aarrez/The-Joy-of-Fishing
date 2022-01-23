@@ -55,6 +55,13 @@ public sealed class GameManager : MonoBehaviour
 
     void Update()
     {
+        CameraSwitcher();
+    }
+
+
+
+    public void CameraSwitcher()
+    {
         if (moveCam == 1)
         {
             callShopCanvas.SetActive(true);

@@ -162,7 +162,7 @@ public class OverworldParallaxScript : MonoBehaviour
             //yoffset_select_all_objs_w_this_script = -19.2f;
         }
 
-        void ParallaxAmountTransitionNeg()
+        /*void ParallaxAmountTransitionNeg()
         {
             parallaxAmount -= Time.deltaTime;
             
@@ -173,6 +173,6 @@ public class OverworldParallaxScript : MonoBehaviour
             //yield return new WaitForSeconds(0.5f);
             parallaxAmount += Time.deltaTime;
 
-        }
+        }*/
     }
 }
