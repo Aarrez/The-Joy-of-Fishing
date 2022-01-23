@@ -89,6 +89,15 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CallShopButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd6aae95-e12b-48a3-b463-e25fea21cc3d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -377,6 +386,17 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""action"": ""ReelRope"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""34f718f8-25ec-49d1-8a55-82a727de1085"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""CallShopButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -969,6 +989,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         m_Player_CastOut = m_Player.FindAction("CastOut", throwIfNotFound: true);
         m_Player_ReelRope = m_Player.FindAction("ReelRope", throwIfNotFound: true);
         m_Player_FishingBait = m_Player.FindAction("FishingBait", throwIfNotFound: true);
+        m_Player_CallShopButton = m_Player.FindAction("CallShopButton", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1047,6 +1068,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CastOut;
     private readonly InputAction m_Player_ReelRope;
     private readonly InputAction m_Player_FishingBait;
+    private readonly InputAction m_Player_CallShopButton;
     public struct PlayerActions
     {
         private @TheJoyofFishing m_Wrapper;
@@ -1058,6 +1080,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         public InputAction @CastOut => m_Wrapper.m_Player_CastOut;
         public InputAction @ReelRope => m_Wrapper.m_Player_ReelRope;
         public InputAction @FishingBait => m_Wrapper.m_Player_FishingBait;
+        public InputAction @CallShopButton => m_Wrapper.m_Player_CallShopButton;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1088,6 +1111,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @FishingBait.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
                 @FishingBait.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
                 @FishingBait.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFishingBait;
+                @CallShopButton.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCallShopButton;
+                @CallShopButton.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCallShopButton;
+                @CallShopButton.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCallShopButton;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1113,6 +1139,9 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 @FishingBait.started += instance.OnFishingBait;
                 @FishingBait.performed += instance.OnFishingBait;
                 @FishingBait.canceled += instance.OnFishingBait;
+                @CallShopButton.started += instance.OnCallShopButton;
+                @CallShopButton.performed += instance.OnCallShopButton;
+                @CallShopButton.canceled += instance.OnCallShopButton;
             }
         }
     }
@@ -1276,6 +1305,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
         void OnCastOut(InputAction.CallbackContext context);
         void OnReelRope(InputAction.CallbackContext context);
         void OnFishingBait(InputAction.CallbackContext context);
+        void OnCallShopButton(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -80,6 +80,21 @@ public class BoatScript : MonoBehaviour
     {
         hookInput = context.ReadValue<Vector2>();
     }
+    public void CastOutButton(InputAction.CallbackContext context)
+    {
+        if(context.performed && ropeActive == false)
+        {
+            OnCastOut();
+        }
+    }
+
+    public void CallShop(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            GameManager.instance.onShopSwitch();
+        }
+    }
     private void MoveLeftRight()
     {
         if (!BoatCanMove) { return; }
@@ -92,17 +107,13 @@ public class BoatScript : MonoBehaviour
         }
     }
 
-    public void CastOutButton(InputAction.CallbackContext context)
-    {
-        if(context.performed && ropeActive == false)
-        {
-            OnCastOut();
-        }
-    }
 
     public void moveHook()
     {
-        if (RopeScript.instance.hookRigidbody2D == null) {  return;   }
+        if (RopeScript.instance.hookRigidbody2D == null) 
+        {  
+            return;
+        }
 
         else if (RopeScript.instance.hookRigidbody2D != null)
         {
@@ -148,7 +159,7 @@ public class BoatScript : MonoBehaviour
     public void OnCastOut()
     {
         //when rope is not activated
-        if (ropeActive == false)
+        if (ropeActive == false && GameManager.instance.moveCam == 1)
         {
 
             //destiny is where the mouse is

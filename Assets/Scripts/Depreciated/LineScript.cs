@@ -14,7 +14,7 @@ public class LineScript : MonoBehaviour
     //[Header("Line Distance")]
     //[SerializeField] private float maxLineDist = 22f;
 
-    private float currentTime = 0f;
+    //private float currentTime = 0f;
     private Vector2 inputVector = Vector2.zero;
 
     private void Awake()

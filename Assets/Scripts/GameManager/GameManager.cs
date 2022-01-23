@@ -11,16 +11,20 @@ using TMPro;
 public sealed class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    public CinemachineVirtualCamera CMcam;
     CinemachineFramingTransposer CMcamBody;
     public RadioMusic radioMusic;
+    
+    [Header("UI Control Center")]
+    public CinemachineVirtualCamera CMcam;
+    public GameObject pauseCanvas, callShopCanvas, goFishCanvas;
     [HideInInspector] public int moveCam = 1;
     [HideInInspector] public bool baitCam = false;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
     [HideInInspector] public float CMcamOrthoSize;
-    BoatScript boatScript;
     public TextMeshProUGUI Buttontext;
     public Animator ShopUIAnimator;
+    
+    BoatScript boatScript;
 
     [HideInInspector] public bool MindcontrolActive = false;
     public int currentLineLevel = 0, currentBait = 0, cashAmount = 0;
@@ -53,64 +57,48 @@ public sealed class GameManager : MonoBehaviour
     {
         if (moveCam == 1)
         {
+            callShopCanvas.SetActive(true);
+            goFishCanvas.SetActive(true);
             CMcam.m_Lens.OrthographicSize += Time.deltaTime * 3;
             if (CMcam.m_Lens.OrthographicSize >= 9)
             {
                 CMcam.m_Lens.OrthographicSize = 9;
             }
-
+            CMcam.Follow = Player;
+            CMcamBody.m_TrackedObjectOffset.y = 3;
             Buttontext.text = "Call shop";
         }
 
         else if (moveCam == 2)
         {
+            callShopCanvas.SetActive(true);
+            goFishCanvas.SetActive(false);
             CMcam.m_Lens.OrthographicSize -= Time.deltaTime * 3;
             if (CMcam.m_Lens.OrthographicSize <= 5)
             {
                 CMcam.m_Lens.OrthographicSize = 5;
             }
-
+            CMcam.Follow = ShoppeBoat;
+            CMcamBody.m_TrackedObjectOffset.y = 3;
             Buttontext.text = "Return to fishing";
         }
 
         else if (moveCam == 3)
         {
+            callShopCanvas.SetActive(false);
+            goFishCanvas.SetActive(false);
             CMcam.m_Lens.OrthographicSize += Time.deltaTime * 3;
             if (CMcam.m_Lens.OrthographicSize >= 9)
             {
                 CMcam.m_Lens.OrthographicSize = 9;
             }
-        }
-
-        if (moveCam == 2 && baitCam == false)
-        {
-            ShopCamTrue();
-        }
-
-        if (moveCam == 1 && baitCam == false)
-        {
-            ShopCamFalse();
-        }
-
-        if (moveCam == 3 && baitCam == true)
-        {
-            BaitCam();
-                if (BaitCam() == null)
-                {
-                    Debug.Log("No BaitCam!");
-                }
-                else
-                {
-                    CMcam.Follow = BaitCam();
-                    CMcamBody.m_TrackedObjectOffset.y = 0;
-                    baitCam = true;
-                }
+            CMcam.Follow = BaitCam();
+            CMcamBody.m_TrackedObjectOffset.y = 0;
             if(currentTime >= 3f)
             {
                 SceneManager.LoadScene("End Scene");
             }
         }
-
     }
 
     public void onShopSwitch()
@@ -129,7 +117,7 @@ public sealed class GameManager : MonoBehaviour
         }
     }
 
-        public void ChangeInteger()
+    public void ChangeInteger()
     {
         moveCam = 2;
     }
@@ -138,19 +126,6 @@ public sealed class GameManager : MonoBehaviour
     {
         moveCam = 1;
     }
-
-    public void ShopCamTrue()
-    {
-        CMcam.Follow = ShoppeBoat;
-        CMcamBody.m_TrackedObjectOffset.y = 3;
-    }
-
-    public void ShopCamFalse()
-    {
-        CMcam.Follow = Player;
-        CMcamBody.m_TrackedObjectOffset.y = 3;
-    }
-
     public Transform BaitCam()
     {
         Transform currenthook;

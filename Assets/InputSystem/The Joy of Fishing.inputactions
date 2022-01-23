@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "CallShopButton",
+                    "type": "Button",
+                    "id": "bd6aae95-e12b-48a3-b463-e25fea21cc3d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -355,6 +364,17 @@
                     "action": "ReelRope",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "34f718f8-25ec-49d1-8a55-82a727de1085",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "CallShopButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

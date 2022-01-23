@@ -51,8 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e718ba05e51a7a4ca166f7825e8df74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CMcam: {fileID: 4962793760303239590}
   radioMusic: {fileID: 0}
+  CMcam: {fileID: 4962793760303239590}
+  pauseCanvas: {fileID: 0}
+  callShopCanvas: {fileID: 0}
+  goFishCanvas: {fileID: 0}
   moveCam: 1
   baitCam: 0
   ShoppeBoat: {fileID: 0}
@@ -637,7 +640,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3498249390951015349}
-  - component: {fileID: 54928294}
   m_Layer: 0
   m_Name: Camera and UI
   m_TagString: Untagged
@@ -664,21 +666,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &54928294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5861164604636302331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c49a3e61bb0403438e9e26ba26c530b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CreatePauseMenu: {fileID: 0}
-  PauseCanvas: {fileID: 0}
-  CallButton: {fileID: 0}
-  GoFishButton: {fileID: 0}
-  CoolDownUIText: {fileID: 0}
-  NodesCountUI: {fileID: 0}
