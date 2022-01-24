@@ -102,10 +102,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 7
-  m_LinearDrag: 8
+  m_Mass: 5
+  m_LinearDrag: 0.2
   m_AngularDrag: 0
-  m_GravityScale: 1.2
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 1cb87c123ccb883449ae1808afb4e2c2, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 0
@@ -243,7 +243,7 @@ SpringJoint2D:
   m_AutoConfigureDistance: 0
   m_Distance: 0.3
   m_DampingRatio: 1
-  m_Frequency: 100000
+  m_Frequency: 1000000
 --- !u!1001 &1679792216005385738
 PrefabInstance:
   m_ObjectHideFlags: 0

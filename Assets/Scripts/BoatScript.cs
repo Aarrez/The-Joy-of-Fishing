@@ -5,9 +5,7 @@ public class BoatScript : MonoBehaviour
     //Privates
     [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
 
-    float maxInterval = 0.4f;
-    float minInterval = 0.05f;
-    float lastInstanceTime = 0;
+    private float maxReelOutInterval = 0.4f, minReelOutInterval = 0.05f, maxReelInInterval = 0.4f, minReelInInterval = 0.10f, lastInstanceTime = 0;
     private float triggerValue;
     private Vector2 moveInput, hookInput;
     private bool BoatCanMove = true;
@@ -135,21 +133,28 @@ public class BoatScript : MonoBehaviour
             if (rightTrigger > 0)
             {
                 // reel out
-                if (Time.time > lastInstanceTime + Mathf.Lerp(maxInterval, minInterval, rightTrigger))
+                float nextTimeStamp = lastInstanceTime + Mathf.Lerp(maxReelOutInterval, minReelOutInterval, rightTrigger);
+                RopeScript.instance.nextAllowedInstanceTimeStamp = nextTimeStamp;
+                if (Time.time > nextTimeStamp)
                 {
                     lastInstanceTime = Time.time;
+                    RopeScript.instance.lastInstanceTimeStamp = lastInstanceTime;
                     RopeScript.instance.CreateNode();
                 }
             }
             else if (leftTrigger > 0)
             {
-                if (Time.time > lastInstanceTime + Mathf.Lerp(maxInterval, minInterval, leftTrigger))
+                float nextTimeStamp = lastInstanceTime + Mathf.Lerp(maxReelInInterval, minReelInInterval, leftTrigger);
+                RopeScript.instance.nextAllowedInstanceTimeStamp = nextTimeStamp;
+                if (Time.time > nextTimeStamp)
                 {
                     lastInstanceTime = Time.time;
+                    RopeScript.instance.lastInstanceTimeStamp = lastInstanceTime;
                     RopeScript.instance.DestroyNode();
                 }
             }   
         }
+
     
     }
 
@@ -166,7 +171,7 @@ public class BoatScript : MonoBehaviour
             Vector2 destiny = baitpoint.position;
             //creates a hook
             curHook = (GameObject)Instantiate(hook, transform.position, Quaternion.identity);
-            curHook.transform.parent = rodpoint;
+            curHook.transform.parent = transform;
             //sets its destiny
             curHook.GetComponent<RopeScript>().destiny = destiny;
             GameManager.instance.Hook = curHook.transform;

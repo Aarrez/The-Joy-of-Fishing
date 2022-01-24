@@ -7,37 +7,28 @@ using UnityEngine.InputSystem;
 
 public sealed class RopeScript : MonoBehaviour
 {
+    public static RopeScript instance;
+
     //FMOD sound
     private FMOD.Studio.EventInstance reelTickInstance;
     
     //holds where the hook is going to
-    [HideInInspector]
-    public Vector2 destiny;
-    public static RopeScript instance;
-
+    [HideInInspector] public Vector2 destiny, lastAnchorPosition;
     public Rigidbody2D hookRigidbody2D;
 
     //velocity that the hook goes onto the destiny
-    public float speed = 1;
-    //distance between each node
-    public float distance = 0.3f;
-    //node prefab
-    public GameObject nodePrefab,hookPrefab, rodtransform, lastNode;
-    //hook prefab
-    //rodtransform gameobject
-    //last node instantiated
+    //distance between each nodes
+    [HideInInspector]public float speed = 1, distance = 0.3f, lastInstanceTimeStamp = 1, nextAllowedInstanceTimeStamp = 1;
+    //required Prefabs
+    public GameObject nodePrefab,hookPrefab, rodtransform, lastNode, rodTip, go;
 
     //line that represents rope
     public LineRenderer lr;
 
-    //initial points on the rope (beginning and end)
-    //public int vertexCount = 2;
-
-    //list of all nodes instantiated
     public List<GameObject> Nodes = new List<GameObject>();
 
     //check if the full rope is created
-    public bool done = false;
+    [HideInInspector] public bool done = false, ActualHookObject;
 
     //is something if an object with a rigidbody is hit
     public Transform target;
@@ -46,8 +37,6 @@ public sealed class RopeScript : MonoBehaviour
     public SpringJoint2D hinge;
 
     BoatScript boatScript;
-    public bool ActualHookObject;
-    public GameObject go;
 
     //private Transform transform;
 
@@ -75,10 +64,12 @@ public sealed class RopeScript : MonoBehaviour
         lr = GetComponent<LineRenderer>();
         //sets rodtransform
         if (rodtransform == null)
+        {
             rodtransform = GameObject.FindGameObjectWithTag("PlayerRod");
-        boatScript = FindObjectOfType<BoatScript>();
-        lastNode = base.transform.gameObject;
-        //Nodes.Add(transform.gameObject);
+            boatScript = FindObjectOfType<BoatScript>();
+            lastNode = base.transform.gameObject;
+            //Nodes.Add(transform.gameObject);
+        }
 
 
         //prevents game from freezing if distance is zero
@@ -86,9 +77,22 @@ public sealed class RopeScript : MonoBehaviour
         {
             distance = 0.3f;
         }
+
+        if (rodTip == null)
+        {
+            rodTip = GameObject.Find("FishingRodTip"); // FIXME
+            lastAnchorPosition = rodTip.transform.position;
+        }
         
         // Define 3D attributes
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(reelTickInstance, rodtransform.transform);
+    }
+
+    void FixedUpdate() 
+    {
+        // move the anchor point towards the tip of the rod. Used to reel in the line
+        float t = Mathf.Clamp((Time.time - lastInstanceTimeStamp) / (nextAllowedInstanceTimeStamp - lastInstanceTimeStamp), 0.0f, 1.0f);
+        rodtransform.transform.position = Vector2.Lerp(lastAnchorPosition, rodTip.transform.position, t);
     }
 
     void Update()
@@ -157,7 +161,7 @@ public sealed class RopeScript : MonoBehaviour
         }
 
         //sets last vetex of rope to be the rodtransform
-        lr.SetPosition(i, rodtransform.transform.position);
+        lr.SetPosition(i, rodTip.transform.position);
 
     }
 
@@ -166,7 +170,8 @@ public sealed class RopeScript : MonoBehaviour
     {
         reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(rodtransform.transform));
         reelTickInstance.start(); // Play sound
-        
+    
+        lastAnchorPosition = rodtransform.transform.position - new Vector3(0.05f,0.05f,0.0f);
         //finds position to create and creates node (vertex)
 
         //makes vector that points from last node to rodtransform
@@ -220,22 +225,17 @@ public sealed class RopeScript : MonoBehaviour
         reelTickInstance.start(); // Play sound
         
         List<Vector3> positions = new List<Vector3>();
-                foreach (GameObject node in Nodes)
-                {
-                    positions.Add(node.transform.position);
-                }
-                for (int i = 0; i < Nodes.Count - 1; i++)
-                {
-                    Nodes[i].transform.position = positions[i+1];
-                    //Nodes[i].transform.position = new Vector3(Nodes[i + 1].transform.position.x, Nodes[i + 1].transform.position.y, 0);
-                }
-        var go = Nodes[Nodes.Count - 1];
+
+        var go = Nodes.Last();
+        Vector2 pos = go.transform.position;
+        rodtransform.transform.position = pos;
+        lastAnchorPosition = pos;
         Nodes.Remove(go);
         Destroy(go);
 
-        lastNode = Nodes[Nodes.Count - 1];
-        Nodes[Nodes.Count - 1].GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
-
+        GameObject node = Nodes.Last();
+        lastNode = node;
+        node.GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
 
         if (Nodes.Count <= 1)
         {

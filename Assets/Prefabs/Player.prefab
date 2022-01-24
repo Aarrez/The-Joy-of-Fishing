@@ -27,19 +27,19 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182856402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 0.018404908, y: 0.018404908, z: 0.018404908}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1547381563}
   m_Father: {fileID: 7824927940298590364}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3}
+  m_SizeDelta: {x: 927.6799, y: 472.537}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &182856406
 Canvas:
   m_ObjectHideFlags: 0
@@ -49,7 +49,7 @@ Canvas:
   m_GameObject: {fileID: 182856402}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -58,7 +58,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -105462989
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &182856405
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &182856404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +274,37 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &239779064323031099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4523062822712388105}
+  m_Layer: 0
+  m_Name: FishingRodTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4523062822712388105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239779064323031099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.986, y: -0.28, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7824927940298590364}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782487216117876633
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +418,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7824927940298590364}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3234611529062391127
 GameObject:
@@ -574,7 +605,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3336968370139191567}
   - component: {fileID: 488150090}
-  - component: {fileID: 1134714990220153720}
   m_Layer: 0
   m_Name: FishingRodPoint
   m_TagString: PlayerRod
@@ -595,7 +625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7824927940298590364}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &488150090
 Rigidbody2D:
@@ -618,26 +648,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!231 &1134714990220153720
-SpringJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4566488780851046515}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 18.018501, y: 12.457}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.005
-  m_DampingRatio: 0.85
-  m_Frequency: 10000
 --- !u!1 &5034702049854073347
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +850,7 @@ Transform:
   - {fileID: 2880228523093164179}
   - {fileID: 1723046611083399183}
   m_Father: {fileID: 7824927940298590364}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &185634712220478161
 MonoBehaviour:
@@ -896,6 +906,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3239065537959043001}
+  - {fileID: 4523062822712388105}
   - {fileID: 3336968370139191567}
   - {fileID: 2794254112950225140}
   - {fileID: 3537222930539192029}
@@ -980,7 +991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786263e28635b2e45869aaa0ddf84d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distToCollectFish: 2
 --- !u!114 &7814803752114734574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1122,6 +1132,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6cd799f7-8f93-4b81-8c3a-64a474f53347
     m_ActionName: Player/FishingBait
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6041324265593011362}
+        m_TargetAssemblyTypeName: BoatScript, Assembly-CSharp
+        m_MethodName: CallShop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bd6aae95-e12b-48a3-b463-e25fea21cc3d
+    m_ActionName: Player/CallShopButton[/Gamepad/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
