@@ -77,5 +77,6 @@ public class BuyStuff : MonoBehaviour
             Debug.Log("not enough money!");
         }
     }
-    
+
+
 }

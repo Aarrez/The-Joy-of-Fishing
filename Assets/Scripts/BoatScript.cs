@@ -108,14 +108,17 @@ public class BoatScript : MonoBehaviour
 
     public void moveHook()
     {
-        if (RopeScript.instance.hookRigidbody2D == null) 
-        {  
-            return;
-        }
-
-        else if (RopeScript.instance.hookRigidbody2D != null)
+        if(ropeActive == true)
         {
-            RopeScript.instance.hookRigidbody2D.AddForce(new Vector2(hookInput.x, hookInput.y) * forcetoAdd * Time.deltaTime);
+            if (RopeScript.instance.hookRigidbody2D == null) 
+            {  
+                return;
+            }
+
+            else if (RopeScript.instance.hookRigidbody2D != null)
+            {
+                RopeScript.instance.hookRigidbody2D.AddForce(new Vector2(hookInput.x, hookInput.y) * forcetoAdd * Time.deltaTime);
+            }
         }
     }
     public void ReelRope()
