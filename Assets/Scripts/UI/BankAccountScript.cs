@@ -10,8 +10,9 @@ public class BankAccountScript : MonoBehaviour
     public bool thisIs1;
     public bool thisIs2;
     Rigidbody2D thisIs2rb;
-    Transform thisIs2transform;
+    RectTransform thisIs2transform;
     public float elapsed;
+    RectTransform TextMeshParentTransform;
     void Start()
     {
         callMoneyEffectScript = FindObjectOfType<MoneyEffect>();
@@ -19,9 +20,10 @@ public class BankAccountScript : MonoBehaviour
         if (thisIs2)
         {
             thisIs2rb = GetComponent<Rigidbody2D>();
-            thisIs2transform = GetComponent<Transform>();
+            thisIs2transform = GetComponent<RectTransform>();
         }
         BankText.text = "";
+        TextMeshParentTransform = GameObject.Find("MoneyGainedCanvas").GetComponent<RectTransform>();
 
     }
 
@@ -58,7 +60,11 @@ public class BankAccountScript : MonoBehaviour
                 thisIs2rb.velocity = Vector2.zero;
                 callMoneyEffectScript.gainedNow = false;
             }
-        } 
+           
+            
+        }
+        //Debug.Log(TextMeshParentTransform.rect.position);
+        //thisIs2transform.rect.position.x = 
         //else if (thisIs2 && callMoneyEffectScript.gainedNow == false)
         //{
         //    elapsed += Time.deltaTime;
