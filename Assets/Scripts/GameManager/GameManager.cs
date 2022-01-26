@@ -21,7 +21,6 @@ public sealed class GameManager : MonoBehaviour
     [HideInInspector] public bool baitCam = false;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
     [HideInInspector] public float CMcamOrthoSize;
-    public TextMeshProUGUI Buttontext;
     public Animator ShopUIAnimator;
     BoatScript boatScript;
 
@@ -72,7 +71,6 @@ public sealed class GameManager : MonoBehaviour
             }
             CMcam.Follow = Player;
             CMcamBody.m_TrackedObjectOffset.y = 3;
-            Buttontext.text = "Call shop";
         }
 
         else if (moveCam == 2)
@@ -86,7 +84,6 @@ public sealed class GameManager : MonoBehaviour
             }
             CMcam.Follow = ShoppeBoat;
             CMcamBody.m_TrackedObjectOffset.y = 3;
-            Buttontext.text = "Return to fishing";
         }
 
         else if (moveCam == 3)
