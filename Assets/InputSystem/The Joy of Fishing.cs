@@ -181,7 +181,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""ArrowKeys"",
                     ""id"": ""77075932-d346-4e0b-b716-9c7d71eafa2f"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=1)"",
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": """",
@@ -399,7 +399,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""positive"",
                     ""id"": ""458413a6-69a9-4b25-b7aa-c856478b2cca"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
@@ -410,7 +410,7 @@ public partial class @TheJoyofFishing : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""negative"",
                     ""id"": ""b2a6fc98-466a-43a2-b591-625fd0407fbd"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
