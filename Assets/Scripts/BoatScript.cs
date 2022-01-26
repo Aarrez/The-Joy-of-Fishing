@@ -129,7 +129,7 @@ public class BoatScript : MonoBehaviour
     }
     public void ReelRope()
     {
-        if (RopeScript.instance.hookRigidbody2D == null) 
+        if (!RopeScript.instance) 
         {  
             return;   
         }
