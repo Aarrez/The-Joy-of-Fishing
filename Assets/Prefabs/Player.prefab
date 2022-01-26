@@ -972,7 +972,7 @@ MonoBehaviour:
   currentlyReelingUp: 0
   boatSpeed: 1000
   BoatSpeedForce: 60
-  forcetoAdd: 20000
+  forcetoAdd: 30000
   hook: {fileID: 1867930385899082835, guid: f6204882aac42494e931530d178b4831, type: 3}
   baitpoint: {fileID: 2794254112950225140}
   baitTransform: {fileID: 0}
@@ -1093,7 +1093,19 @@ MonoBehaviour:
     m_ActionId: 34ab1fc4-b34b-4656-866f-4ce90aaa6933
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6041324265593011362}
+        m_TargetAssemblyTypeName: BoatScript, Assembly-CSharp
+        m_MethodName: PauseButton
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 106a1081-2319-411c-bd57-1f9e8c8e0f9b
     m_ActionName: Player/Pause[/Keyboard/escape]
   - m_PersistentCalls:

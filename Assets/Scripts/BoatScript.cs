@@ -104,11 +104,17 @@ public class BoatScript : MonoBehaviour
             rig2d.velocity = playerVelocity;
         }
     }
-
+    public void PauseButton(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            GameManager.instance.Pause();
+        }
+    }
 
     public void moveHook()
     {
-        if(ropeActive == true)
+        if(ropeActive && GameManager.instance.MindcontrolActive)
         {
             if (RopeScript.instance.hookRigidbody2D == null) 
             {  

@@ -23,7 +23,6 @@ public sealed class GameManager : MonoBehaviour
     [HideInInspector] public float CMcamOrthoSize;
     public TextMeshProUGUI Buttontext;
     public Animator ShopUIAnimator;
-    
     BoatScript boatScript;
 
     [HideInInspector] public bool MindcontrolActive = false;
@@ -140,6 +139,30 @@ public sealed class GameManager : MonoBehaviour
         return currenthook;
     }
 
+//============================ PauseScreen ============================
+    public bool SetPause;
+    public void Pause()
+    {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+            pauseCanvas.SetActive(true);
+            SetPause = true;
+        } 
+        else 
+        {
+            Time.timeScale = 1; pauseCanvas.SetActive(false);
+            SetPause = false; 
+        }
+
+    }
+
+    /*public void UnPause()
+    {
+        Time.timeScale = 1;
+        pauseCanvas.SetActive(false);
+        SetPause = false;
+    }*/
 
 //============================ ScreenFader ============================
     public Image Fadeimage;
