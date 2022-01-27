@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public sealed class RopeScript : MonoBehaviour
 {
     public static RopeScript instance;
+    public int currentLineLength;
 
     //FMOD sound
     private FMOD.Studio.EventInstance reelTickInstance;
@@ -218,6 +219,7 @@ public sealed class RopeScript : MonoBehaviour
         //adds node to node list
         Nodes.Add(lastNode);
         lastNode.GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+        currentLineLength = ((int)Nodes.Count);
     }
 
     public void DestroyNode()
@@ -237,6 +239,7 @@ public sealed class RopeScript : MonoBehaviour
         GameObject node = Nodes.Last();
         lastNode = node;
         node.GetComponent<SpringJoint2D>().connectedBody = rodtransform.GetComponent<Rigidbody2D>();
+        currentLineLength = ((int)Nodes.Count);
 
         if (Nodes.Count <= 1)
         {
