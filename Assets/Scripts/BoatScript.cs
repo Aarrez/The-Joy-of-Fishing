@@ -139,7 +139,7 @@ public class BoatScript : MonoBehaviour
             float rightTrigger = Mathf.Clamp(triggerValue, 0, 1);
             float leftTrigger = Mathf.Abs(Mathf.Clamp(triggerValue, -1, 0));
 
-            if (rightTrigger > 0)
+            if (rightTrigger > 0 && RopeScript.instance.currentLineLength <= maxLineLength)
             {
                 // reel out
                 float nextTimeStamp = lastInstanceTime + Mathf.Lerp(maxReelOutInterval, minReelOutInterval, rightTrigger);
