@@ -45,6 +45,7 @@ public sealed class RopeScript : MonoBehaviour
         //get sound from FMOD
         reelTickInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/reel_tick");
         //Sound at rod
+        reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
         
         
         if (instance == null)
