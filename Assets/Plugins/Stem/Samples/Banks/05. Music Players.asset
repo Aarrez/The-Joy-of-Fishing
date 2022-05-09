@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548824825a7beb643936bc356adeb1d0, type: 3}
+  m_Name: 05. Music Players
+  m_EditorClassIdentifier: 
+  guidA: 1767886799
+  guidB: 1229879531
+  guidC: -1224167502
+  guidD: 174558615
+  playlistBatchImportMode: 0
+  showPlaylists: 1
+  showPlayers: 1
+  playlists:
+  - id: 115716293
+    name: Loops
+    tracks:
+    - clip: {fileID: 8300000, guid: d35c674b2ec3ba64699459d82622a9d4, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: a0e08843d39821641be97e46b6b56f68, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: 265460fc492cb694caafdc5877eecaa6, type: 3}
+      volume: 1
+    unfolded: 1
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+  - id: 2022048612
+    name: Ambience
+    tracks:
+    - clip: {fileID: 8300000, guid: 994190545bbba7e46b20a0d42e337313, type: 3}
+      volume: 1
+    - clip: {fileID: 8300000, guid: cedc0850de8c18941bde90b91b37f417, type: 3}
+      volume: 1
+    unfolded: 0
+    audioClipManagementMode: 0
+    audioClipUnloadInterval: 0
+    overrideAudioClipManagement: 0
+  players:
+  - id: 2079479575
+    name: Sample5Player1
+    mixerGroup: {fileID: 0}
+    syncGroup: 0
+    playbackMode: 0
+    shuffle: 0
+    loop: 1
+    playOnStart: 0
+    fade: 0.5
+    volume: 1
+    muted: 0
+    soloed: 0
+    unfolded: 1
+  - id: 1529540369
+    name: Sample5Player2
+    mixerGroup: {fileID: 0}
+    syncGroup: 0
+    playbackMode: 0
+    shuffle: 1
+    loop: 1
+    playOnStart: 0
+    fade: 0.5
+    volume: 0.5
+    muted: 0
+    soloed: 0
+    unfolded: 1
+  playlistIndices: 0000000001000000
+  playlistManagementMode: 1
+  playlistUnloadInterval: 60

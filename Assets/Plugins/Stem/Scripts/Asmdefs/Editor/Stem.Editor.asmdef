@@ -1,0 +1,17 @@
+{
+    "name": "Stem.Editor",
+    "references": [
+        "GUID:4e032480786d79744841f2b2b27a2526"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

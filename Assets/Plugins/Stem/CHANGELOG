@@ -1,0 +1,128 @@
+v1.3
+
+- *PRO* Feature: added SoundBus play limit interval
+- Feature: added master volume to Sound
+- Feature: added RetriggerMode.PingPong to Sound
+
+- API: added ability to MusicPlayer.Pause / MusicPlayer.Play / MusicPlayer.Stop allowing to control all existing music players
+- *BREAKING* API: replaced most of the SoundManager / SoundInstance / MusicManager overloads by nullable value type arguments
+
+- Improvement: added asmdefs for better script compilation experience
+
+- Fix: removed hiccups caused by full bank reload if any asset was reimported
+
+v1.2.4
+
+- Fix: removed sound / music IDs regeneration when exit play mode in Unity 2020.3
+- Improvement: make sure sound / music IDs will stay the same during the build
+
+v1.2.3
+
+- *BASIC* Fix: 'play on start' is now work as intended
+
+- Improvement: increased sound / music bank drawers performance
+
+v1.2.2
+
+- Fix: fixed no ID was generated for newly created content
+
+v1.2.1
+
+- API: added index-based SoundBank.GetSoundID / SoundBank.GetSoundBusID methods allowing to get a Stem.ID value for fast sound / sound bus refencing
+- API: added index-based MusicBank.GetPlaylistID / MusicBank.GetMusicPlayerID methods allowing to get a Stem.ID value for fast playlist / music player refencing
+
+- *BREAKING* UI: replaced logic of custom attribute drawers, they'll work with Stem.ID type instead of int
+
+- Improvement: refactored ID system, introduced new Stem.ID type for referencing bank content.
+
+- Fix: fixed AutoAdvance + Loop was not working correctly in music players on a single track playlists
+
+v1.2
+
+From this version, there'll be two packages: Stem and Stem Pro.
+
+Stem is a base package with core features such as banks with persistent IDs and optimized runtime. Stem Pro extends Stem package with additional features that improve workflow.
+
+- *PRO* Feature: batch import feature was moved to Pro version
+- *PRO* Feature: play in editor feature was moved to Pro version
+- *PRO* Feature: audio events allowing to play sound or music with no code
+- *PRO* Feature: music player synchronization via sync groups
+- *PRO* Feature: sound bank and music bank memory management modes with the ability to override it for individual sounds / playlists
+
+- API: added SoundManager.Play / SoundManager.Play3D / SoundInstance.Play / SoundInstance.Play3D overloads allowing to play specific sound variation
+
+- *BREAKING* Persistent: replaced MusicPlayer.AutoAdvance flag to MusicPlayer.PlaybackMode enum
+- *BREAKING* Persistent: merged PlaylistBatchImportMode and SoundBatchImportMode enums to a single AudioClipImportMode enum
+
+- UI: added sound bank and music bank icons
+
+- Improvement: added old track to «track changed» callback for music player / music manager
+- Improvement: optimized bank fetching code in sound & music bank drawers
+
+v1.1.1
+
+- API: added Sound.AddVariation / Sound.AddVariations methods allowing to create sounds with variations from the code
+- API: added Playlist.AddTrack / Playlist.AddTracks methods allowing to create playlists full of tracks from the code
+
+- Improvement: added meaningful error messages to all SoundManager API methods
+- Improvement: replaced 'edit' button to standard foldouts in bank inspectors
+
+- Fix: Stem won't create any game object during application quit
+- Fix: bank inspectors will take drag-drop events into account for undo/redo system
+- Fix: 'play' button now works if a sound was assigned to a newly created sound bus
+- Fix: fixed bank drawers not showing correct values in the play mode
+
+v1.1
+
+- Feature: undo/redo support for bank assets
+- Feature: unique & persistent IDs for sounds, sound buses, music player and playlists
+- Feature: custom attribute drawers for sounds, sound buses, music players and playlists allowing easier selection (no directly typed string values in prefabs anymore)
+- Feature: music player callbacks (playback change, track change)
+- Feature: sound bank callbacks (sound add/remove/rename, sound bus add/remove/rename)
+- Feature: music bank callbacks (playlist add/remove/rename, music player add/remove/rename)
+- Feature: the ability to play the playlist from the startup
+- Feature: 'play' button in sound bank inspector allowing to easily test & tune sounds
+
+- API: added SoundInstance.Target property allowing to easily attach sound instances to game objects
+- API: added MusicManager / SoundManager method overrides that take IDs
+- API: added MusicManager.IsPlaying method
+- API: added index based MusicManager.Seek method
+- API: removed internal SoundBank.AddSound / AddSoundBus and MusicBank.AddPlaylist / AddMusicPlayer methods from API
+- API: removed MusicManager.UnPause method, improved music player play/stop logic
+- API: removed SoundInstance.Transform property, use SoundInstance.Target instead
+
+- Improvement: a drag-n-drop area for music banks allowing to quickly create playlists
+- Improvement: added two float fields under range slider for precise edits
+- Improvement: better sound & music bank inspector performance
+- Improvement: support for old Unity versions starting from 5.5
+- Improvement: added workaround for Unity popups so they'll show items with duplicate names
+
+- Samples: music player samples covering all basic features
+- Samples: added sample selector
+
+- Documentation: new articles in programming section covering bank management, id system and more
+
+- Fix: crash in MusicManager.Next / MusicManager.Prev due to zero tracks in playlist
+- Fix: crash caused by sound instance deletion if it was attached to a game object
+- Fix: crash for sounds with no variations
+- Fix: music player not stopping on track end with the auto advance flag set to false
+- Fix: music player not properly advancing playlist with the loop flag set to false
+- Fix: bank initialization & registration order
+
+v1.0.4
+
+- UI: fixed inability to set a sound bus from the drop-down list in sound bank inspector
+
+v1.0.3
+
+- Build: fixed crash due to attempt to save all assets including internal ones
+
+v1.0.2
+
+- Persistent: added default bus property to SoundBus class
+- UI: fixed sounds not resetting the bus to default once the target bus was removed
+
+v1.0.1
+
+- Persistent: fixed crash caused by wrong sound bus polyphony default value
+- Runtime: fixed music player shuffle

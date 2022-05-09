@@ -37,7 +37,7 @@ public sealed class RopeScript : MonoBehaviour
     //added hinge joint if there is relative object
     public SpringJoint2D hinge;
 
-    BoatScript boatScript;
+    PlayerScript boatScript;
 
     //private Transform transform;
 
@@ -68,7 +68,7 @@ public sealed class RopeScript : MonoBehaviour
         if (rodtransform == null)
         {
             rodtransform = GameObject.FindGameObjectWithTag("PlayerRod");
-            boatScript = FindObjectOfType<BoatScript>();
+            boatScript = FindObjectOfType<PlayerScript>();
             lastNode = base.transform.gameObject;
             //Nodes.Add(transform.gameObject);
         }

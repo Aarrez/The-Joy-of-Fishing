@@ -11,7 +11,7 @@ public class BuyStuff : MonoBehaviour
     public uint mindControlCost, lvl1Cost, lvl2Cost, lvl3Cost;
     public int lvl1Length, lvl2Length, lvl3Lenght;
     MoneyEffect callMoneyEffectScript;
-    BoatScript callBoatScript;
+    PlayerScript callBoatScript;
 
     // FMOD
     private FMOD.Studio.EventInstance buyInst;
@@ -27,7 +27,7 @@ public class BuyStuff : MonoBehaviour
     private void Start() 
     {
     callMoneyEffectScript = FindObjectOfType<MoneyEffect>();   
-    callBoatScript = FindObjectOfType<BoatScript>(); 
+    callBoatScript = FindObjectOfType<PlayerScript>(); 
     }
 
     public void BuyMindControlLure()

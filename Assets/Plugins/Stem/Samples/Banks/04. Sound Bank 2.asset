@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa00304a536a34a832759c4a737c14, type: 3}
+  m_Name: 04. Sound Bank 2
+  m_EditorClassIdentifier: 
+  guidA: -369470433
+  guidB: 1196491435
+  guidC: 1107706527
+  guidD: -766425373
+  soundBatchImportMode: 0
+  showSounds: 1
+  showSoundBuses: 1
+  sounds:
+  - id: 297666806
+    name: Sample4Switch3D
+    muted: 0
+    soloed: 0
+    unfolded: 1
+    panStereo: 0
+    spatialBlend: 1
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 20
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: c3b2e32cb66926c418249b6f95ea5cb3, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+  buses:
+  - id: 1004309117
+    name: Sample4Bus
+    muted: 0
+    soloed: 0
+    mixerGroup: {fileID: 0}
+    volume: 1
+    polyphony: 4
+    unfolded: 1
+    allowVoiceStealing: 0
+  busIndices: 00000000
+  soundManagementMode: 1
+  soundUnloadInterval: 60

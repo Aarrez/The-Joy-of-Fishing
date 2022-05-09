@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa00304a536a34a832759c4a737c14, type: 3}
+  m_Name: 02. Looped Sound
+  m_EditorClassIdentifier: 
+  guidA: -1131805565
+  guidB: 1174944445
+  guidC: -886595905
+  guidD: 539529466
+  soundBatchImportMode: 0
+  showSounds: 1
+  showSoundBuses: 1
+  sounds:
+  - id: 1131448190
+    name: Sample2Siren3D
+    muted: 0
+    soloed: 0
+    unfolded: 1
+    panStereo: 0
+    spatialBlend: 1
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 0.5
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: ba3b0cae703125e45bc3bf90cefd8f4d, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+  buses:
+  - id: 134839093
+    name: Sample2Bus
+    muted: 0
+    soloed: 0
+    mixerGroup: {fileID: 0}
+    volume: 1
+    polyphony: 4
+    unfolded: 1
+    allowVoiceStealing: 1
+  busIndices: 00000000
+  soundManagementMode: 1
+  soundUnloadInterval: 60

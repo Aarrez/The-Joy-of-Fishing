@@ -18,7 +18,7 @@ public class BoatSliderScript : MonoBehaviour
     float sliderMaxMin;
     public bool thisIsBoatSlider;
     float elapsed;
-    BoatScript boatScript;
+    PlayerScript boatScript;
     bool cache;
     public bool thisIsHookSliderVertical;
     public bool thisIsHookSliderHorizontal;
@@ -48,7 +48,7 @@ public class BoatSliderScript : MonoBehaviour
         playerIniPosY = playerTransform.position.y;
 
 
-        boatScript = FindObjectOfType<BoatScript>();
+        boatScript = FindObjectOfType<PlayerScript>();
         cache = false;
 
 

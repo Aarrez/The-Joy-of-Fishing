@@ -24,14 +24,14 @@ public class CollectFish : MonoBehaviour
     {
         BaitScript.BaitIsOut += FindHookAndInventory;
         MoneyEffect.DeleteFish += ClearFishCollection;
-        BoatScript.DoneFishing += AddFishToInventory;
+        PlayerScript.DoneFishing += AddFishToInventory;
     }
 
     private void OnDisable()
     {
         BaitScript.BaitIsOut -= FindHookAndInventory;
         MoneyEffect.DeleteFish -= ClearFishCollection;
-        BoatScript.DoneFishing -= AddFishToInventory;
+        PlayerScript.DoneFishing -= AddFishToInventory;
     }
 
     private void FindHookAndInventory(bool bait)

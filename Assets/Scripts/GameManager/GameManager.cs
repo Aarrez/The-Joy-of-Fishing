@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Cinemachine;
+using Com.LuisPedroFonseca.ProCamera2D;
 using TMPro;
 
 
@@ -11,18 +11,18 @@ using TMPro;
 public sealed class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    CinemachineFramingTransposer CMcamBody;
+    //CinemachineFramingTransposer CMcamBody;
     public RadioMusic radioMusic;
     
     [Header("UI Control Center")]
-    public CinemachineVirtualCamera CMcam;
+    //public CinemachineVirtualCamera CMcam;
     public GameObject pauseCanvas, callShopCanvas, goFishCanvas;
     [HideInInspector] public int moveCam = 1;
     [HideInInspector] public bool baitCam = false;
     [HideInInspector] public Transform ShoppeBoat, Player, Hook;
     [HideInInspector] public float CMcamOrthoSize;
     public Animator ShopUIAnimator;
-    BoatScript boatScript;
+    PlayerScript boatScript;
 
     [HideInInspector] public bool MindcontrolActive = false;
     public int currentLineLevel = 0, currentBait = 0, cashAmount = 0;
@@ -47,18 +47,18 @@ public sealed class GameManager : MonoBehaviour
         UIScreenfadein();
         ShoppeBoat = GameObject.Find("ShoppeBoat").GetComponent<Transform>();
         Player = GameObject.Find("Player").GetComponent<Transform>();
-        boatScript = FindObjectOfType<BoatScript>();
-        CMcamBody = CMcam.GetCinemachineComponent<CinemachineFramingTransposer>();
+        boatScript = FindObjectOfType<PlayerScript>();
+        //CMcamBody = CMcam.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
-    void Update()
+    /*void Update()
     {
         CameraSwitcher();
-    }
+    }*/
 
 
 
-    public void CameraSwitcher()
+    /*public void CameraSwitcher()
     {
         if (moveCam == 1)
         {
@@ -102,7 +102,7 @@ public sealed class GameManager : MonoBehaviour
                 SceneManager.LoadScene("End Scene");
             }
         }
-    }
+    }*/
 
     public void onShopSwitch()
     {
