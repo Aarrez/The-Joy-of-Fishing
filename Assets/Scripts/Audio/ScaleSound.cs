@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScaleSound : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance inst;
+    /*private FMOD.Studio.EventInstance inst;
     private bool triggered;
     private MusicPlayer musicPlayer;
 
@@ -30,5 +30,5 @@ public class ScaleSound : MonoBehaviour
     void DoMusic()
     {
         musicPlayer.RaiseMusic();
-    }
+    }*/
 }

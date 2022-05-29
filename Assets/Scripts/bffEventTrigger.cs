@@ -6,13 +6,13 @@ public class bffEventTrigger : MonoBehaviour
 {
 
     public Animator bffanim;
-    private FMOD.Studio.EventInstance inst;
+    //private FMOD.Studio.EventInstance inst;
     private MusicPlayer musicPlayer;
     private bool triggered;
 
     void Awake()
     {
-        inst = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/bff_end2");
+        //inst = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/bff_end2");
         musicPlayer = FindObjectOfType<MusicPlayer>();
     }
 
@@ -22,9 +22,9 @@ public class bffEventTrigger : MonoBehaviour
         if(other.tag == "Bait" && !triggered)
         {
             bffanim.Play("Swimmer");
-            musicPlayer.StopMusic();
-            inst.start();
-            inst.release();
+            //musicPlayer.StopMusic();
+            //inst.start();
+            //inst.release();
             //Invoke("endgame", 5.5f);
             triggered = true;
         }

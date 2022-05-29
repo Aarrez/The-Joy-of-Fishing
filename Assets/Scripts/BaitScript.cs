@@ -9,7 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class BaitScript : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance fishHookedInstance;
+    //private FMOD.Studio.EventInstance fishHookedInstance;
 
     [SerializeField] private BaitScriptAbleObject[] bait;
 
@@ -38,7 +38,7 @@ public class BaitScript : MonoBehaviour
 
         FishOnHook += ChangeBaitLevel;
         FishOfHook += ChangeBaitLevel;
-        FishOnHook += PlaySound;
+        //FishOnHook += PlaySound;
     }
 
     private void OnDisable()
@@ -48,7 +48,7 @@ public class BaitScript : MonoBehaviour
 
         FishOnHook -= ChangeBaitLevel;
         FishOfHook -= ChangeBaitLevel;
-        FishOnHook -= PlaySound;
+        //FishOnHook -= PlaySound;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -137,11 +137,11 @@ public class BaitScript : MonoBehaviour
         Debug.Log("BaitLevel: " + currentBait);
     }
 
-    private void PlaySound()
+    /*private void PlaySound()
     {
         fishHookedInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/fish_hook");
         fishHookedInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         fishHookedInstance.start();
         fishHookedInstance.release();
-    }
+    }*/
 }

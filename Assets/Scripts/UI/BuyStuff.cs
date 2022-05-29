@@ -14,13 +14,13 @@ public class BuyStuff : MonoBehaviour
     PlayerScript callBoatScript;
 
     // FMOD
-    private FMOD.Studio.EventInstance buyInst;
+    //private FMOD.Studio.EventInstance buyInst;
 
     private void Awake()
     {
         // TODO: FMOD Make better instantiate so it doesnt "choppy" when spamming
         // Buy sound
-        buyInst = FMODUnity.RuntimeManager.CreateInstance("{84b218c5-8150-4332-90fe-fd7cc469203d}");
+        //buyInst = FMODUnity.RuntimeManager.CreateInstance("{84b218c5-8150-4332-90fe-fd7cc469203d}");
 
     }
 
@@ -37,12 +37,12 @@ public class BuyStuff : MonoBehaviour
             mindcontrol.interactable = false;
             GameManager.instance.MindcontrolActive = true;
             callMoneyEffectScript.totalMoney = callMoneyEffectScript.totalMoney - mindControlCost;
-            FinishBuySound(true);
+            //FinishBuySound(true);
         }
         else
         {
             Debug.Log("not enough money!");
-            FinishBuySound(false);
+            //FinishBuySound(false);
         }
     }
 
@@ -92,21 +92,21 @@ public class BuyStuff : MonoBehaviour
         }
     }
 
-    public void StartBuySound() // Public for event component
+    /*public void StartBuySound() // Public for event component
     {
        //Reset Parameters for event
        buyInst.setParameterByName("gotMoney", 0);
        buyInst.setParameterByName("mouseReleased", 0);
        buyInst.start();
-    }
+    }*/
 
-    private void FinishBuySound(bool money)
+    /*private void FinishBuySound(bool money)
     {
         buyInst.setParameterByName("gotMoney", money ? 1 : 0);
         // ? Operator = condition ? consequent : alternative
         // if true consequent expression is chose.
 
         buyInst.setParameterByName("mouseReleased", 1);
-    }
+    }*/
 
 }

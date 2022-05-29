@@ -110,13 +110,13 @@ public sealed class GameManager : MonoBehaviour
         {
             ChangeInteger(); // Change to shop cam
             ShopUIAnimator.Play("ShopUIRollIn");
-            radioMusic.PlayRadio();
+            //radioMusic.PlayRadio();
         }
         else if (moveCam == 2) // ShopCamTrue
         {
             ChangeIntegerAgain(); // Change to boat cam
             ShopUIAnimator.Play("ShopUIRollOut");
-            radioMusic.StopRadio();
+            //radioMusic.StopRadio();
         }
     }
 

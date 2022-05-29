@@ -11,7 +11,7 @@ public sealed class RopeScript : MonoBehaviour
     public int currentLineLength;
 
     //FMOD sound
-    private FMOD.Studio.EventInstance reelTickInstance;
+    //private FMOD.Studio.EventInstance reelTickInstance;
     
     //holds where the hook is going to
     [HideInInspector] public Vector2 destiny, lastAnchorPosition;
@@ -44,9 +44,9 @@ public sealed class RopeScript : MonoBehaviour
     private void Awake()
     {
         //get sound from FMOD
-        reelTickInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/reel_tick");
+        //reelTickInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/reel_tick");
         //Sound at rod
-        reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
+        //reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(transform.position));
         
         
         if (instance == null)
@@ -87,7 +87,7 @@ public sealed class RopeScript : MonoBehaviour
         }
         
         // Define 3D attributes
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(reelTickInstance, rodtransform.transform);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(reelTickInstance, rodtransform.transform);
     }
 
     void FixedUpdate() 
@@ -170,8 +170,8 @@ public sealed class RopeScript : MonoBehaviour
 
     public void CreateNode()
     {
-        reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(rodtransform.transform));
-        reelTickInstance.start(); // Play sound
+        //reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(rodtransform.transform));
+        //reelTickInstance.start(); // Play sound
     
         lastAnchorPosition = rodtransform.transform.position - new Vector3(0.05f,0.05f,0.0f);
         //finds position to create and creates node (vertex)
@@ -224,8 +224,8 @@ public sealed class RopeScript : MonoBehaviour
 
     public void DestroyNode()
     {
-        reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(rodtransform.transform));
-        reelTickInstance.start(); // Play sound
+        //reelTickInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(rodtransform.transform));
+        //reelTickInstance.start(); // Play sound
         
         List<Vector3> positions = new List<Vector3>();
 

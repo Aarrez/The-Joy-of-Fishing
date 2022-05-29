@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using FMOD.Studio;
+//using FMOD.Studio;
 using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance musicInstance;
+    /*private FMOD.Studio.EventInstance musicInstance;
     
     [Header("toggle me on to not start music at play")]
     [SerializeField] private bool DEBUG_DONT_PLAY;
@@ -47,5 +47,5 @@ public class MusicPlayer : MonoBehaviour
     public void StopMusic() // This is played at the end of the game!
     {
         musicInstance.stop(STOP_MODE.ALLOWFADEOUT);
-    }
+    }*/
 }

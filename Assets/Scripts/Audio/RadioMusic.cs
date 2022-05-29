@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class RadioMusic : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance radioInstance;
+    /*private FMOD.Studio.EventInstance radioInstance;
     private MusicPlayer musicPlayer;
 
     private void Awake()
@@ -35,6 +35,6 @@ public class RadioMusic : MonoBehaviour
         musicPlayer.RaiseMusic();
         radioInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         //radioInstance.release();
-    }
+    }*/
 
 }

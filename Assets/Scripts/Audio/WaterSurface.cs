@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class WaterSurface : MonoBehaviour
 {
-    [SerializeField] private bool hookSubmerged = false; //Hook is under the watersurface
+    /*[SerializeField] private bool hookSubmerged = false; //Hook is under the watersurface
 
     private FMOD.Studio.EventInstance splashEvent;
     private BoatEmitter boatEmitter;
@@ -67,5 +67,5 @@ public class WaterSurface : MonoBehaviour
                 hookSubmerged = false;
             }
         }
-    }
+    }*/
 }

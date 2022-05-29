@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class KillerFishTrigger : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance statueEvent;
+    /*private FMOD.Studio.EventInstance statueEvent;
     private bool triggered = false;
     private Light2D[] eyeLight;
     private float lightValue;
@@ -56,5 +56,5 @@ public class KillerFishTrigger : MonoBehaviour
             statueEvent.start();
             statueEvent.release();
         }
-    }
+    }*/
 }

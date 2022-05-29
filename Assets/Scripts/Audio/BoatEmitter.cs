@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BoatEmitter : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance inst;
+    /*private FMOD.Studio.EventInstance inst;
 
     private FMOD.Studio.EventInstance instUnderwater;
     //
@@ -41,5 +41,5 @@ public class BoatEmitter : MonoBehaviour
     {
         instUnderwater.setParameterByName("music_duck", 1); // Mute
         inst.setParameterByName("music_duck", 0); // Play
-    }
+    }*/
 }

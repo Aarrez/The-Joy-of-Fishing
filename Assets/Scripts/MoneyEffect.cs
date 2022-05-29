@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MoneyEffect : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance fishGetInstance;
-    private FMOD.Studio.EventInstance coinsInstance;
+    //private FMOD.Studio.EventInstance fishGetInstance;
+    //private FMOD.Studio.EventInstance coinsInstance;
 
     [SerializeField] private ParticleSystem[] coinParticle;
 
@@ -22,8 +22,8 @@ public class MoneyEffect : MonoBehaviour
 
     private void Awake()
     {
-        fishGetInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/fish_get");
-        coinsInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/coins");
+        //fishGetInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/fish_get");
+        //coinsInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/coins");
         //FMODUnity.RuntimeManager.AttachInstanceToGameObject(fishGetInstance, gameObject.transform);
         //FMODUnity.RuntimeManager.AttachInstanceToGameObject(coinsInstnace, gameObject.transform);
         //coinsInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
@@ -92,13 +92,13 @@ public class MoneyEffect : MonoBehaviour
 
 
         coinParticle[a].Play();
-        PlaySound(a);
+        //PlaySound(a);
 
         DeleteFish?.Invoke();
         TheMoney?.Invoke();
     }
 
-    private void PlaySound(int level)
+    /*private void PlaySound(int level)
     {
         // Levels 0 1 2 3 small to big.
         coinsInstance.setParameterByName("level", level);
@@ -106,7 +106,7 @@ public class MoneyEffect : MonoBehaviour
 
         coinsInstance.start();
         fishGetInstance.start();
-    }
+    }*/
 
 
 }

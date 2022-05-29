@@ -695,6 +695,7 @@ MonoBehaviour:
   rampUpTime: 1
   maxLineLength: 80
   currentlyReelingUp: 0
+  playerVariables: {fileID: 11400000, guid: ab653450194d4a668b8deeb9431275e3, type: 2}
   boatSpeed: 1000
   BoatSpeedForce: 60
   forcetoAdd: 30000
@@ -885,6 +886,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bd6aae95-e12b-48a3-b463-e25fea21cc3d
     m_ActionName: Player/CallShopButton[/Gamepad/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c6ffe190-79e2-46a6-84a9-3d26ffaf6f12
+    m_ActionName: Bait Movement/MoveBait[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6eb82b15-6c57-4d88-9847-95933f0ea57e
+    m_ActionName: Bait Movement/MoveBoat[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1a802f6a-5dee-45d4-893a-ddf9de268293
+    m_ActionName: Bait Movement/ReelRope[/Keyboard/s,/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
