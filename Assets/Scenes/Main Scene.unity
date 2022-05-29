@@ -3080,6 +3080,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.0010375977
       objectReference: {fileID: 0}
+    - target: {fileID: 8262733505652236816, guid: 03217dd84dbaec19abdf10ca25c14622, type: 3}
+      propertyPath: CameraTargets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262733505652236816, guid: 03217dd84dbaec19abdf10ca25c14622, type: 3}
+      propertyPath: CameraTargets.Array.data[0].TargetTransform
+      value: 
+      objectReference: {fileID: 7824927939095893823}
+    - target: {fileID: 8262733505652236816, guid: 03217dd84dbaec19abdf10ca25c14622, type: 3}
+      propertyPath: CameraTargets.Array.data[0].TargetInfluenceH
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262733505652236816, guid: 03217dd84dbaec19abdf10ca25c14622, type: 3}
+      propertyPath: CameraTargets.Array.data[0].TargetInfluenceV
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8664616580569129773, guid: 03217dd84dbaec19abdf10ca25c14622, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3478,3 +3494,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+--- !u!4 &7824927939095893823 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7824927940298590364, guid: 4768b34c54479b441af32aacd2aa619c, type: 3}
+  m_PrefabInstance: {fileID: 7824927939095893822}
+  m_PrefabAsset: {fileID: 0}
