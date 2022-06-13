@@ -18,7 +18,7 @@ public sealed class RopeScript : MonoBehaviour
     //distance between each nodes
     [HideInInspector]public float speed = 1, distance = 0.3f, lastInstanceTimeStamp = 1, nextAllowedInstanceTimeStamp = 1;
     //required Prefabs
-    public GameObject nodePrefab,hookPrefab, rodtransform, lastNode, go;
+    public GameObject nodePrefab,hookPrefab, rodtransform, lastNode, rodTip, go;
 
     //line that represents rope
     public LineRenderer lr;
@@ -79,10 +79,10 @@ public sealed class RopeScript : MonoBehaviour
             distance = 0.3f;
         }
 
-        if (rodtransform == null)
+        if (rodTip == null)
         {
-            rodtransform = GameObject.Find("FishingRodTip"); // FIXME
-            lastAnchorPosition = rodtransform.transform.position;
+            rodTip = GameObject.Find("rodTip"); // FIXME
+            lastAnchorPosition = rodTip.transform.position;
         }
 
 
@@ -95,7 +95,7 @@ public sealed class RopeScript : MonoBehaviour
     {
         // move the anchor point towards the tip of the rod. Used to reel in the line
         float t = Mathf.Clamp((Time.time - lastInstanceTimeStamp) / (nextAllowedInstanceTimeStamp - lastInstanceTimeStamp), 0.0f, 1.0f);
-        rodtransform.transform.position = Vector2.Lerp(lastAnchorPosition, rodtransform.transform.position, t);
+        rodtransform.transform.position = Vector2.Lerp(lastAnchorPosition, rodTip.transform.position, t);
     }
 
     void Update()
@@ -164,7 +164,7 @@ public sealed class RopeScript : MonoBehaviour
         }
 
         //sets last vetex of rope to be the rodtransform
-        lr.SetPosition(i, rodtransform.transform.position);
+        lr.SetPosition(i, rodTip.transform.position);
 
     }
 
