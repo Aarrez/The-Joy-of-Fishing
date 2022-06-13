@@ -1,11 +1,25 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 public class PlayerScript : MonoBehaviour
 {
-    //Privates
-    [Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
 
+    [Header("Sounds")]
+    [Stem.SoundID]
+    public Stem.ID ambientcreaks = Stem.ID.None;
+
+    [Stem.SoundID]
+    public Stem.ID ambientsplash = Stem.ID.None;
+    
+    [Stem.SoundID]
+    public Stem.ID reeling = Stem.ID.None;
+
+    [Stem.SoundID]
+    public Stem.ID soundID = Stem.ID.None;
+    //[Min(0.02f)] [SerializeField] private float rampUpTime = 1f;
+
+    [Header("Variables")]
     private float maxReelOutInterval = 0.4f, minReelOutInterval = 0.05f, maxReelInInterval = 0.4f, minReelInInterval = 0.10f, lastInstanceTime = 0;
     private float triggerValue;
     private Vector2 moveInput, hookInput;
@@ -28,7 +42,9 @@ public class PlayerScript : MonoBehaviour
     //hook prefab
     public GameObject hook;
 
-    public Transform baitpoint, baitTransform, rodpoint;
+    public Transform baitpoint, rodpoint;
+
+    private Transform baitTransform;
 
     //holds whether rope is active or not
     [HideInInspector] public bool ropeActive, boostbool;
@@ -42,19 +58,17 @@ public class PlayerScript : MonoBehaviour
 
     private void Start()
     {
-        //MakeAnimationCurve();
-        //GetKey = new TheJoyofFishing();
-        //GetKey.Enable();
+
     }
 
     #region Make a animation curve
 
-    private void MakeAnimationCurve()
+    /*private void MakeAnimationCurve()
     {
         moveAnimCurve = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(rampUpTime, 1f));
         moveAnimCurve.preWrapMode = WrapMode.PingPong;
         moveAnimCurve.postWrapMode = WrapMode.PingPong;
-    }
+    }*/
 
     #endregion Make a animation curve
 
@@ -65,7 +79,7 @@ public class PlayerScript : MonoBehaviour
         ReelRope();
     }
 
-
+    #region InputEvents
 //=============================================Input Stuff========================================
 
     public void GetInput(InputAction.CallbackContext context)
@@ -96,6 +110,15 @@ public class PlayerScript : MonoBehaviour
             GameManager.instance.onShopSwitch();
         }
     }
+    public void PauseButton(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            GameManager.instance.Pause();
+        }
+    }
+
+    #endregion InputEvents
     private void MoveLeftRight()
     {
         if (!BoatCanMove) { return; }
@@ -105,13 +128,6 @@ public class PlayerScript : MonoBehaviour
             bool playerhashorizontalspeed = Mathf.Abs(rig2d.velocity.x) > Mathf.Epsilon;
             Vector2 playerVelocity = new Vector2(moveInput.x * BoatSpeedForce, rig2d.velocity.y);
             rig2d.velocity = playerVelocity;
-        }
-    }
-    public void PauseButton(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            GameManager.instance.Pause();
         }
     }
 
@@ -152,6 +168,7 @@ public class PlayerScript : MonoBehaviour
                     lastInstanceTime = Time.time;
                     RopeScript.instance.lastInstanceTimeStamp = lastInstanceTime;
                     RopeScript.instance.CreateNode();
+                    Stem.SoundManager.Play3D(reeling, transform.position);
                 }
             }
             else if (leftTrigger > 0)
@@ -163,6 +180,7 @@ public class PlayerScript : MonoBehaviour
                     lastInstanceTime = Time.time;
                     RopeScript.instance.lastInstanceTimeStamp = lastInstanceTime;
                     RopeScript.instance.DestroyNode();
+                    Stem.SoundManager.Play3D(reeling, transform.position);
                 }
             }   
         }
@@ -197,10 +215,11 @@ public class PlayerScript : MonoBehaviour
     public void DeleteRope()
     {
         Destroy(curHook);
-        GameManager.instance.baitCam = false;
-        GameManager.instance.moveCam = 1;
+        
         //sets rope to disabled
         ropeActive = false;
+        ProCamera2D.Instance.RemoveAllCameraTargets();
+        ProCamera2D.Instance.AddCameraTarget(transform, 1f, 1f, 0f);
 
         //Sends out a message for other scripts to listen
         DoneFishing?.Invoke();

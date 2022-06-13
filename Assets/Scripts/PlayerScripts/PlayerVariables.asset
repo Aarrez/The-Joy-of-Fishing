@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c252fd1836fcaecc9bd59a1026785c9b, type: 3}
   m_Name: PlayerVariables
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   currentHook: {fileID: 0}
+  fishingRodTip: {fileID: 0}

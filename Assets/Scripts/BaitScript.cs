@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 /*
- * This script is for when you have cought a fish.
+ * This script is for when you have caught a fish.
  * It makes the fish a child of the transform the script is on.
  */
 

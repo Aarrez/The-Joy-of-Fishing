@@ -1,9 +1,25 @@
 using UnityEngine;
+using Stem;
 
 public class MoneyEffect : MonoBehaviour
 {
-    //private FMOD.Studio.EventInstance fishGetInstance;
-    //private FMOD.Studio.EventInstance coinsInstance;
+
+    [Stem.SoundID]
+    public Stem.ID UICoins = Stem.ID.None;
+
+    [Stem.SoundID]
+
+    public Stem.ID UICommonGet = Stem.ID.None;
+
+    [Stem.SoundID]
+
+    public Stem.ID UIRareGet = Stem.ID.None;
+
+    [Stem.SoundID]
+
+    public Stem.ID UILegendaryGet = Stem.ID.None;
+
+    [Stem.SoundID]
 
     [SerializeField] private ParticleSystem[] coinParticle;
 
@@ -92,21 +108,35 @@ public class MoneyEffect : MonoBehaviour
 
 
         coinParticle[a].Play();
-        //PlaySound(a);
+        PlaySound(a);
 
         DeleteFish?.Invoke();
         TheMoney?.Invoke();
     }
 
-    /*private void PlaySound(int level)
+    private void PlaySound(int level)
     {
-        // Levels 0 1 2 3 small to big.
-        coinsInstance.setParameterByName("level", level);
-        fishGetInstance.setParameterByName("level", level);
+        
+        //coinsInstance.start();
+        fishGetLevel(level);
+    }
 
-        coinsInstance.start();
-        fishGetInstance.start();
-    }*/
+    private void fishGetLevel(int level)
+    {
+        if (level == 0) 
+        {
+            Stem.SoundManager.Play3D(UICommonGet, transform.position);
+        }
+        else if (level == 1)
+        {
+            Stem.SoundManager.Play3D(UIRareGet, transform.position);
+        }
+        else if (level == 2)
+        {
+            Stem.SoundManager.Play3D(UILegendaryGet, transform.position);
+        }
+
+    }
 
 
 }

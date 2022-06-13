@@ -11,11 +11,8 @@ using TMPro;
 public sealed class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-    //CinemachineFramingTransposer CMcamBody;
-    public RadioMusic radioMusic;
     
     [Header("UI Control Center")]
-    //public CinemachineVirtualCamera CMcam;
     public GameObject pauseCanvas, callShopCanvas, goFishCanvas;
     [HideInInspector] public int moveCam = 1;
     [HideInInspector] public bool baitCam = false;
@@ -41,7 +38,6 @@ public sealed class GameManager : MonoBehaviour
         }
         Fadeimage.color = new Color(0, 0, 0, 255);
     }
-    // Start is called before the first frame update
     void Start()
     {
         UIScreenfadein();
@@ -50,59 +46,6 @@ public sealed class GameManager : MonoBehaviour
         boatScript = FindObjectOfType<PlayerScript>();
         //CMcamBody = CMcam.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
-
-    /*void Update()
-    {
-        CameraSwitcher();
-    }*/
-
-
-
-    /*public void CameraSwitcher()
-    {
-        if (moveCam == 1)
-        {
-            callShopCanvas.SetActive(true);
-            goFishCanvas.SetActive(true);
-            CMcam.m_Lens.OrthographicSize += Time.deltaTime * 3;
-            if (CMcam.m_Lens.OrthographicSize >= 9)
-            {
-                CMcam.m_Lens.OrthographicSize = 9;
-            }
-            CMcam.Follow = Player;
-            CMcamBody.m_TrackedObjectOffset.y = 3;
-        }
-
-        else if (moveCam == 2)
-        {
-            callShopCanvas.SetActive(true);
-            goFishCanvas.SetActive(false);
-            CMcam.m_Lens.OrthographicSize -= Time.deltaTime * 3;
-            if (CMcam.m_Lens.OrthographicSize <= 5)
-            {
-                CMcam.m_Lens.OrthographicSize = 5;
-            }
-            CMcam.Follow = ShoppeBoat;
-            CMcamBody.m_TrackedObjectOffset.y = 3;
-        }
-
-        else if (moveCam == 3)
-        {
-            callShopCanvas.SetActive(false);
-            goFishCanvas.SetActive(false);
-            CMcam.m_Lens.OrthographicSize += Time.deltaTime * 3;
-            if (CMcam.m_Lens.OrthographicSize >= 9)
-            {
-                CMcam.m_Lens.OrthographicSize = 9;
-            }
-            CMcam.Follow = BaitCam();
-            CMcamBody.m_TrackedObjectOffset.y = 0;
-            if(currentTime >= 3f)
-            {
-                SceneManager.LoadScene("End Scene");
-            }
-        }
-    }*/
 
     public void onShopSwitch()
     {

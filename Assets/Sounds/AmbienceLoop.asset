@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548824825a7beb643936bc356adeb1d0, type: 3}
+  m_Name: AmbienceLoop
+  m_EditorClassIdentifier: 
+  guidA: -688694116
+  guidB: 1230070736
+  guidC: 1203643026
+  guidD: 1988319973
+  playlistBatchImportMode: 0
+  showPlaylists: 1
+  showPlayers: 1
+  playlists:
+  - id: 1672377966
+    name: track_ambience_lake_loop
+    tracks:
+    - clip: {fileID: 8300000, guid: c2c0c728518f2a6e58566a2a35a58970, type: 3}
+      volume: 1
+    unfolded: 1
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+  players:
+  - id: 1730273871
+    name: Ambience Player
+    mixerGroup: {fileID: 6535456353747361689, guid: bf1afe7e214c676569c6bd19e8cb6bf3, type: 2}
+    syncGroup: 0
+    playbackMode: 1
+    shuffle: 0
+    loop: 1
+    playOnStart: 1
+    fade: 0.5
+    volume: 1
+    muted: 0
+    soloed: 0
+    unfolded: 1
+  playlistIndices: 00000000
+  playlistManagementMode: 1
+  playlistUnloadInterval: 60

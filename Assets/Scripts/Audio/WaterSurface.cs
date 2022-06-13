@@ -3,11 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 public class WaterSurface : MonoBehaviour
 {
-    /*[SerializeField] private bool hookSubmerged = false; //Hook is under the watersurface
-
+    [SerializeField] private bool hookSubmerged = false; //Hook is under the watersurface
+    
+    
+    [Stem.SoundID]
+    public Stem.ID HookSplash = Stem.ID.None;
+    
+    
+    
+    
+    
+    
+    /*
     private FMOD.Studio.EventInstance splashEvent;
     private BoatEmitter boatEmitter;
 

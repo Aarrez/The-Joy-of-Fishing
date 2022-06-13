@@ -1,0 +1,310 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa00304a536a34a832759c4a737c14, type: 3}
+  m_Name: Playersounds
+  m_EditorClassIdentifier: 
+  guidA: -246809782
+  guidB: 1211526274
+  guidC: 1936448915
+  guidD: -1384696848
+  soundBatchImportMode: 0
+  showSounds: 1
+  showSoundBuses: 1
+  sounds:
+  - id: 245852444
+    name: Coin
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 357c7206d5f045d0aa451cb03e39919a, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: 16ce893c0da58cf249969ddcd44d8d46, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+    volume: 1
+    hasVolume: 1
+  - id: 915493300
+    name: Hook_splash
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 100
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 417a40f129a13dd8eba74150b662d70f, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0.91
+      randomizeVolume: 0
+      randomizePitch: 1
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 0.8, y: 1.2}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+    volume: 1
+    hasVolume: 1
+  - id: 921518676
+    name: Reeling
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 100
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: a0f2b2278f66861e3a4465ee4b656614, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: de27e1a60f683e8c394b8c498438867e, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: 25c087e7b61d87aab9485cb786a3418d, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: 4a7a0b66091df2a029d699d53bbd7242, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: 415d947cc3f3e93b0a529f52fe8991f3, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: d6b0176b045a454ff8a4c681d47714be, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: b232555d462ea74869efe3ef305052e1, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: 791351263769f213e841ce83d8307de0, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: 9421585c488945884a5a440da8f19366, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    - clip: {fileID: 8300000, guid: e5e53cb8a176f77a49995e25d891e8cf, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+    volume: 1
+    hasVolume: 1
+  - id: 779632232
+    name: fish_get_common
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 1044acbb0bac27f8ba3ceaee70190e8f, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+    volume: 1
+    hasVolume: 0
+  - id: 413734413
+    name: fish_get_legendary
+    muted: 0
+    soloed: 0
+    unfolded: 0
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 65823e110974dd80bbe66f09b0db26c6, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+    volume: 1
+    hasVolume: 1
+  - id: 1947227421
+    name: fish_get_rare
+    muted: 0
+    soloed: 0
+    unfolded: 1
+    panStereo: 0
+    spatialBlend: 0
+    attenuationMode: 0
+    spread: 0
+    dopplerLevel: 1
+    minDistance: 1
+    maxDistance: 500
+    variationRetriggerMode: 2
+    variations:
+    - clip: {fileID: 8300000, guid: 9498bc46783a8c683968865a01dfb9cd, type: 3}
+      fixedVolume: 1
+      fixedPitch: 1
+      fixedDelay: 0
+      randomizeVolume: 0
+      randomizePitch: 0
+      randomizeDelay: 0
+      randomVolumeRange: {x: 1, y: 1}
+      randomPitchRange: {x: 1, y: 1}
+      randomDelayRange: {x: 0, y: 0}
+    audioClipManagementMode: 1
+    audioClipUnloadInterval: 60
+    overrideAudioClipManagement: 0
+    volume: 1
+    hasVolume: 1
+  buses:
+  - id: 563752260
+    name: Master
+    muted: 0
+    soloed: 0
+    mixerGroup: {fileID: 9009387826427739276, guid: bf1afe7e214c676569c6bd19e8cb6bf3, type: 2}
+    volume: 1
+    polyphony: 32
+    unfolded: 1
+    allowVoiceStealing: 0
+    playLimitInterval: 0
+  busIndices: 000000000000000000000000000000000000000000000000
+  soundManagementMode: 1
+  soundUnloadInterval: 60
