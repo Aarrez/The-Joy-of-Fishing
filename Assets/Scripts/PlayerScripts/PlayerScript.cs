@@ -30,8 +30,6 @@ public class PlayerScript : MonoBehaviour
     public int maxLineLength;
     public bool currentlyReelingUp;
 
-    public PlayerVariables playerVariables;
-
     //Publics
     [Header("Movement stuff")]
     [SerializeField] public float boatSpeed = 1f, BoatSpeedForce = 10f, forcetoAdd = 100;
@@ -42,12 +40,11 @@ public class PlayerScript : MonoBehaviour
     //hook prefab
     public GameObject hook;
 
-    public Transform baitpoint, rodpoint;
+    public Transform baitpoint, rodpoint, baitTransform;
 
-    private Transform baitTransform;
 
     //holds whether rope is active or not
-    [HideInInspector] public bool ropeActive, boostbool;
+    public bool ropeActive, boostbool;
 
     //current hook on the scene
 
@@ -205,8 +202,6 @@ public class PlayerScript : MonoBehaviour
             //sets its destiny
             curHook.GetComponent<RopeScript>().destiny = destiny;
             GameManager.instance.Hook = curHook.transform;
-            GameManager.instance.baitCam = true;
-            GameManager.instance.moveCam = 3;
             //sets rope to enabled
             ropeActive = true;
         }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Com.LuisPedroFonseca.ProCamera2D;
 using TMPro;
+using Stem;
 
 
 
@@ -66,17 +67,15 @@ public sealed class GameManager : MonoBehaviour
     public void ChangeInteger()
     {
         moveCam = 2;
+        ProCamera2D.Instance.RemoveAllCameraTargets();
+        ProCamera2D.Instance.AddCameraTarget(ShoppeBoat.transform, 1f, 1f, 0f);
     }
 
     public void ChangeIntegerAgain()
     {
         moveCam = 1;
-    }
-    public Transform BaitCam()
-    {
-        Transform currenthook;
-        currenthook = GameObject.FindGameObjectWithTag("Bait").GetComponent<Transform>();
-        return currenthook;
+        ProCamera2D.Instance.RemoveAllCameraTargets();
+        ProCamera2D.Instance.AddCameraTarget(Player.transform, 1f, 1f, 0f);
     }
 
 //============================ PauseScreen ============================

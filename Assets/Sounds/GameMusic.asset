@@ -49,11 +49,11 @@ MonoBehaviour:
     name: LoopingMusicPlayer
     mixerGroup: {fileID: -1296908680264907824, guid: bf1afe7e214c676569c6bd19e8cb6bf3, type: 2}
     syncGroup: 0
-    playbackMode: 1
+    playbackMode: 2
     shuffle: 1
     loop: 1
     playOnStart: 1
-    fade: 0.5
+    fade: 0.2
     volume: 1
     muted: 0
     soloed: 0

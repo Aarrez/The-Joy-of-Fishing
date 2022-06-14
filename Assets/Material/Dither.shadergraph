@@ -645,7 +645,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"6651118c12b0827a28800b5e4b00c285\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"61d7871a44ff1964db0d1d7db2ed9614\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -710,7 +710,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Opacity",
     "m_StageCapability": 3,
-    "m_Value": 0.5199999809265137,
+    "m_Value": 0.30000001192092898,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -969,7 +969,7 @@
     "m_ShaderOutputName": "In",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.800000011920929,
+        "x": 0.6499999761581421,
         "y": 0.0,
         "z": 0.0,
         "w": 0.0

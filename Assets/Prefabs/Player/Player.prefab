@@ -10,8 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4523062822712388105}
   - component: {fileID: 2866191675285302502}
-  - component: {fileID: 1143543732334315315}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: FishingRodTip
   m_TagString: PlayerRod
   m_Icon: {fileID: 0}
@@ -26,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239779064323031099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.986, y: -0.28, z: 0}
+  m_LocalPosition: {x: 0.98, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54,30 +53,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!233 &1143543732334315315
-HingeJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239779064323031099}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 18.018501, y: 12.45}
-  m_UseMotor: 0
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_AngleLimits:
-    m_LowerAngle: 0
-    m_UpperAngle: 359
 --- !u!1 &782487216117876633
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,13 +711,13 @@ MonoBehaviour:
     itemId: 915493300
   maxLineLength: 80
   currentlyReelingUp: 0
-  playerVariables: {fileID: 11400000, guid: ab653450194d4a668b8deeb9431275e3, type: 2}
   boatSpeed: 1000
   BoatSpeedForce: 60
   forcetoAdd: 30000
   hook: {fileID: 1867930385899082835, guid: f6204882aac42494e931530d178b4831, type: 3}
   baitpoint: {fileID: 2794254112950225140}
   rodpoint: {fileID: 4523062822712388105}
+  baitTransform: {fileID: 0}
   ropeActive: 0
   boostbool: 0
 --- !u!114 &7890050411347847053

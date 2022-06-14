@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00018310547, y: 0}
+  m_AnchoredPosition: {x: 0.00018310547, y: 0.00024414062}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &393241934400603232
@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 7340098894150519215}
   - component: {fileID: 5311909491738641387}
   - component: {fileID: 1368049863501621199}
+  - component: {fileID: 3762452464638660407}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -85,11 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8c96e2cdc154e848a3d9fe62464d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraTargets:
-  - TargetTransform: {fileID: 0}
-    TargetInfluenceH: 1
-    TargetInfluenceV: 1
-    TargetOffset: {x: 0, y: 0}
+  CameraTargets: []
   CenterTargetOnStart: 1
   Axis: 0
   UpdateType: 0
@@ -215,6 +212,27 @@ MonoBehaviour:
   DrawGrid: 0
   GridColor: {r: 1, g: 0, b: 0, a: 0.1}
   GridDensity: 2
+--- !u!114 &3762452464638660407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393241934400603232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b9c22c96ab04d479afeb29c7b9bfc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pc2D: {fileID: 8262733505652236816}
+  _serializedAxis: 0
+  CameraWindowRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0.06
+    height: 0.092
+  IsRelativeSizeAndPosition: 1
 --- !u!1 &895586545248243796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,7 +1505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e718ba05e51a7a4ca166f7825e8df74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radioMusic: {fileID: 0}
   pauseCanvas: {fileID: 0}
   callShopCanvas: {fileID: 895586545248243796}
   goFishCanvas: {fileID: 3214921222721437651}
